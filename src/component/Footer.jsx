@@ -19,7 +19,7 @@ const footerData = {
     center: "88/1A Tidewalk Blvd, Byron Bay, Coimbatore 641045, India",
     right: {
       text: "Developed and Maintained by",
-      link: "Atelaier",
+      link: "Atelier",
       url: "https://www.theateliercreation.com/",
     },
   },
