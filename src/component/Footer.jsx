@@ -85,7 +85,7 @@ export default function Footer() {
           </span>
         </div>
         <div className="leading-relaxed">{footerData.bottomRow.center}</div>
-        <div className="leading-relaxed">
+        <div className="leading-relaxed text-right">
           {footerData.bottomRow.right.text}{" "}
           <a
             className="underline cursor-pointer text-white/70"
