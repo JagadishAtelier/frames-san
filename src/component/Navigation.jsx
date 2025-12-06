@@ -46,7 +46,7 @@ const Navigation = () => {
         </div>
 
         {/* CENTER LOGO (desktop only) */}
-        <div className="hidden md:flex h-full w-36 items-center justify-center">
+        <div className="hidden md:flex mx-auto h-full w-36 items-center justify-center">
           <img
             src="/sel_logo_white.png"
             alt="SEL Hospitality"
@@ -55,7 +55,7 @@ const Navigation = () => {
         </div>
 
         {/* RIGHT — Book Now (desktop) + Hamburger (mobile) */}
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 ml-auto">
 
           {/* DESKTOP BUTTON */}
           <button className="hidden md:block px-6 py-2 rounded-full border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20 transition">

@@ -27,3 +27,97 @@ button{
   transform: translateX(0);
   transition: all 1s ease;
 }
+
+/* Remove default border */
+.react-datepicker {
+  border: none !important;
+  font-family: inherit;
+  padding: 10px 0;
+}
+
+/* Header alignment */
+.react-datepicker__header {
+  background: white !important;
+  border-bottom: none;
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+
+/* Month titles */
+.react-datepicker__current-month {
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Day names (Su Mo Tu…) */
+.react-datepicker__day-name {
+  color: #7a7a7a !important;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+/* Regular days */
+.react-datepicker__day {
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  margin: 0;
+  border-radius: 50%;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Selected day (start or end) */
+.react-datepicker__day--selected {
+  background: #4f46e5 !important;
+  border-radius: 50% 0 0 50% !important;
+  color: white !important;
+  line-height: 3 !important;
+  
+}
+
+/* Range highlight */
+.react-datepicker__day--in-range {
+  background: #e7eafe !important;
+  color: #111 !important;
+  border-radius: 5px !important;
+  line-height: 3 !important;
+}
+
+/* Range start */
+.react-datepicker__day--range-start {
+  background: #4f46e5 !important;
+  color: white !important;
+  border-radius: 50% 0 0 50% !important;
+  line-height: 3 !important;
+}
+
+/* Range end */
+.react-datepicker__day--range-end {
+  background: #4f46e5 !important;
+  color: white !important;
+  border-radius: 0 50% 50% 0 !important;
+  line-height: 3 !important;
+}
+
+/* Remove hover effect */
+.react-datepicker__day:hover {
+  background: #dfe6ff !important;
+  line-height: 3 !important;
+}
+
+/* Navigation arrows */
+.react-datepicker__navigation {
+  top: 22px !important;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+}
+
+.react-datepicker__navigation:hover {
+  background: #f1f1f1;
+  line-height: 3 !important;
+}
+

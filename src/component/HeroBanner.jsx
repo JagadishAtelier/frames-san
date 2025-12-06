@@ -4,6 +4,7 @@ import { Navigation, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css/effect-fade";
 import "swiper/css";
 import "swiper/css/navigation";
+import HeroSearchForm from "./HeroSearchForm";
 
 export default function HeroBanner() {
   const slides = [
@@ -16,7 +17,7 @@ export default function HeroBanner() {
 
 
   return (
-    <section className="relative w-full h-screen p-2 overflow-x-hidden">
+    <section className="relative w-full min-h-screen h-screen p-2 overflow-x-clip overflow-y-visible">
       {/* ---------- SLIDER ONLY FOR IMAGES ---------- */}
       <Swiper
         modules={[Navigation, Autoplay, EffectFade]}
@@ -56,31 +57,28 @@ export default function HeroBanner() {
             SEL Offers <br /> Quiet and Deep <br /> Stillness
           </h1>
 
-          <div className="absolute bottom-10 flex mt-6 items-center pointer-events-auto">
+          {/* <div className="absolute bottom-10 flex mt-6 items-center pointer-events-auto">
             <p className="text-lg leading-relaxed max-w-md text-gray-100 drop-shadow">
               We have a holistic philosophy which translates into creating a
               harmonious environment, by wellness services that aim to detoxify
             </p>
 
-            {/* Round Arrow Button */}
             <button className="group w-15 h-15 cursor-pointer rounded-full border border-white/30 flex items-center justify-center backdrop-blur-md bg-white/10 hover:bg-white/20 transition overflow-hidden relative">
-              {/* Top Arrow (Appears on Hover – slides down) */}
+              
               <img
                 src="/icons/arrow-down.svg"
                 className="w-6 invert-100 absolute transition-all duration-300 transform group-hover:translate-y-10 group-hover:translate-x-10 group-hover:opacity-0"
               />
-
-              {/* Hidden Arrow (Appears from top on Hover) */}
               <img
                 src="/icons/arrow-down.svg"
                 className="w-6 invert-100 absolute -translate-y-10 -translate-x-10 transition-all duration-300 opacity-0 transform group-hover:translate-y-0 group-hover:translate-x-0 group-hover:opacity-100 group-hover:scale-105"
               />
             </button>
-          </div>
+          </div> */}
         </div>
 
         {/* ---------- FIXED VIDEO CARD ---------- */}
-       <div className="hidden sm:block absolute bottom-10 right-10 pointer-events-auto">
+       {/* <div className="hidden sm:block absolute bottom-10 right-10 pointer-events-auto">
           <div className="flex items-center gap-4 max-w-100 bg-white/70 backdrop-blur-xl rounded-3xl p-4 shadow-lg">
             <div className="w-1.7/3">
               <h3 className="text-black font-semibold text-lg leading-tight">
@@ -96,7 +94,6 @@ export default function HeroBanner() {
                   alt="Video Preview"
                 />
 
-                {/* Play Button */}
                 <div className="absolute inset-0 flex items-center justify-center cursor-pointer">
                   <div className="relative flex items-center justify-center w-[90px] h-[90px]">
                     <div className="absolute inset-0 rounded-full bg-white/20 backdrop-blur-md animate-pulse"></div>
@@ -113,6 +110,9 @@ export default function HeroBanner() {
               </div>
             </div>
           </div>
+        </div> */}
+        <div className="hidden sm:block absolute z-200 bottom-30 right-10 pointer-events-auto">
+        <HeroSearchForm/>
         </div>
 
         {/* ---------- NAV BUTTONS ---------- */}
