@@ -1,7 +1,7 @@
 export default function VillaBookingSection() {
   return (
     <section className="relative px-5 overflow-hidden mt-10">
-      <div className="w-full h-screen rounded-3xl relative">
+      <div className="w-full h-[70vh] sm:h-screen rounded-3xl relative">
 
         {/* Background Image */}
         <div className="absolute inset-0">
@@ -16,7 +16,7 @@ export default function VillaBookingSection() {
         <div className="absolute inset-0 bg-black/40 rounded-3xl"></div>
 
         {/* CONTENT */}
-        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between py-20 px-16 h-full gap-10">
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between py-8 sm:py-20 px-16 h-full gap-2 sm:gap-10">
 
           {/* LEFT SIDE TEXT */}
           <div className="text-white max-w-xl">

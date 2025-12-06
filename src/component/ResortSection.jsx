@@ -32,16 +32,16 @@ const villas = {
 
 export default function ResortSection() {
   return (
-    <section className="py-16 md:py-20">
+    <section className="pt-16 pb-5 md:py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 
         {/* HEADER */}
         <div className="flex flex-col md:flex-row items-start justify-between gap-6 md:gap-10 mb-14">
           <div className="max-w-xl">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold mb-4">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl sm:text-start text-center font-semibold mb-4">
               Life Along The Coast
             </h2>
-            <p className="text-gray-600 text-base sm:text-lg">
+            <p className="text-gray-600 text-base sm:text-lg sm:text-start text-center">
               The villas were built with low-impact methods, following the
               land’s natural curves to blend seamlessly into the coastal
               landscape.
@@ -52,7 +52,7 @@ export default function ResortSection() {
           <button className="
             group bg-black text-white px-6 py-3 rounded-full 
             flex items-center gap-4 
-            relative overflow-hidden self-start
+            relative overflow-hidden self-start mx-auto md:mx-0
             hover:bg-gray-900 transition
           ">
             {/* LEFT ARROW (appears on hover) */}
