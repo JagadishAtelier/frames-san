@@ -16,7 +16,7 @@ const ReviewSection = () => {
 
   return (
     <div className="px-2">
-        <section className="py-10 bg-[#95b1eb] relative rounded-xl" data-aos="fade-up">
+        <section className="py-10 bg-[#ffb47d] relative rounded-xl" data-aos="fade-up">
 {/* <div className="absolute inset-0 pointer-events-none -z-10">
     <div
       className="w-full h-full opacity-100"
@@ -61,7 +61,7 @@ const ReviewSection = () => {
             data-aos="zoom-in"
             data-aos-delay="200"
           >
-            <img src="/icons/booking.png" className="h-8 mx-auto mb-4" />
+            <img src="/icons/booking.png" className="h-8 mx-auto mb-4 object-contain" />
             <p className="text-5xl font-bold text-gray-900">9.1</p>
             <p className="text-gray-500 text-sm mt-2">
               Excellent · 1,240 Reviews
