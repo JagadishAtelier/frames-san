@@ -139,3 +139,36 @@ button{
 .tab-underline.active::after {
   width: 100%;
 }
+
+.testimonial .swiper-wrapper{
+  overflow-y: visible !important;
+  padding: 3rem 0rem;
+}
+
+.hero-nav-btn {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 246px;
+}
+
+.hero-nav-left {
+  inset: 50% auto 0% -4px;
+  background-position: right;
+}
+
+.hero-nav-right {
+  inset: 50% -4px 0% auto;
+  background-position: left;
+}
+
+/* MOBILE OVERRIDES */
+@media (max-width: 768px) {
+  .hero-nav-left {
+  inset: 66% auto 0% -5px;
+}
+
+.hero-nav-right {
+  inset: 66% -5px 0% auto;
+}
+
+}

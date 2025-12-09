@@ -7,8 +7,23 @@ import VillaBookingSection from '../component/VillaBookingSection'
 import VisionMissionSection from '../component/VisionMissionSection'
 import TestimonialCard from '../component/TestimonialCard'
 import Footer from '../component/Footer'
+import ReviewSection from '../component/ReviewSection'
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import ReviewSlider from '../component/ReviewSlider'
+import RestaurantResortSection from '../component/RestaurantResortSection'
+
 
 const Home = () => {
+  useEffect(() => {
+  AOS.init({
+    duration: 800,
+    easing: "ease-out-quart",
+    once: true,
+  });
+}, []);
+
   return (
     <>
     <Navigation/>
@@ -17,7 +32,10 @@ const Home = () => {
     <ResortSection/>
     <VillaBookingSection/>
     <VisionMissionSection/>
-    <TestimonialCard/>
+    <RestaurantResortSection/>
+    <ReviewSection/>
+    <ReviewSlider/>
+        {/* <TestimonialCard/> */}
     <div className='px-2'>
     <Footer/>
     </div>

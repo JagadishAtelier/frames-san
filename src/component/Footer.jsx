@@ -93,9 +93,9 @@ export default function Footer() {
       <h1
         ref={bgTextRef}
         className={`absolute left-1/2 -translate-x-1/2 
-          bottom-0 md:-bottom-8
+          bottom-0 md:-bottom-4
           text-[48px] sm:text-[100px] md:text-[150px] font-bold tracking-tight
-          pointer-events-none select-none leading-none
+          pointer-events-none whitespace-nowrap select-none leading-none
           bg-linear-to-r from-[#95b1eb] via-indigo-600 to-[#95b1eb]
           text-transparent bg-clip-text
           transition-transform duration-1000

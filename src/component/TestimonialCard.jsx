@@ -37,12 +37,12 @@ export default function TestimonialCard() {
   }, []);
 
   return (
-    <div className="w-full relative min-h-[90vh] flex flex-col items-center gap-10 py-16 bg-white">
+    <div className="w-full relative min-h-[65vh] sm:pb-0 pb-10 flex flex-col items-center gap-10 bg-white">
       
       {/* HEADING */}
-      <h2 className="text-4xl text-center px-10 leading-relaxed sm:leading-normal sm:px-0 md:text-5xl sm:mb-2 relative z-50 font-semibold text-black/80">
+      {/* <h2 className="text-4xl text-center px-10 leading-relaxed sm:leading-normal sm:px-0 md:text-5xl sm:mb-2 relative z-50 font-semibold text-black/80">
         What our Customers say?
-      </h2>
+      </h2> */}
 
       {/* GRID BACKGROUND */}
       <div className="absolute inset-0 pointer-events-none">

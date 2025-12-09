@@ -52,7 +52,7 @@ export default function HeroBanner() {
 
       {/* ---------- FIXED OVERLAY CONTENT (NOT SLIDING) ---------- */}
       <div className="absolute inset-0 z-10 pointer-events-none ">
-        <div className="h-full flex flex-col justify-center px-12 md:px-20 lg:px-28 text-white max-w-3xl">
+        <div className="h-full flex flex-col justify-self-start mt-30 sm:mt-0 sm:justify-center px-12 md:px-20 lg:px-28 text-white max-w-3xl">
           <h1 className="text-6xl md:text-7xl font-bold leading-tight drop-shadow-xl">
             SEL Offers <br /> Quiet and Deep <br /> Stillness
           </h1>
@@ -110,22 +110,17 @@ export default function HeroBanner() {
               </div>
             </div>
           </div>
-        </div> */}
-        <div className="hidden sm:block absolute z-200 bottom-30 right-10 pointer-events-auto">
+        </div> hidden sm:block */}
+        <div className=" absolute z-200 bg-white/30 backdrop-blur-xl px-3 rounded-xl sm:bg-none bottom-4 sm:bottom-30 right-3.5 sm:right-10 pointer-events-auto">
         <HeroSearchForm/>
         </div>
 
         {/* ---------- NAV BUTTONS ---------- */}
         <button
-          className="hero-prev-btn absolute left-0 top-1/2 -translate-y-1/2 w-14 h-32 flex items-center justify-end pointer-events-auto group"
+          className="hero-prev-btn hero-nav-btn hero-nav-left absolute left-0 top-1/2 -translate-y-1/2 w-14 h-32 flex items-center justify-end pointer-events-auto group"
           style={{
             backgroundImage:
               'url("https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684fcedd774fca94d66d9706_Left%20Png.svg")',
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "100% 50%",
-            height: "246px",
-            inset: "50% auto 0% -4px",
           }}
         >
           <img
@@ -135,15 +130,10 @@ export default function HeroBanner() {
         </button>
 
         <button
-          className="hero-next-btn absolute right-0 top-1/2 -translate-y-1/2 w-14 h-32 flex items-center justify-start pointer-events-auto group"
+          className="hero-prev-btn hero-nav-btn hero-nav-right absolute right-0 top-1/2 -translate-y-1/2 w-14 h-32 flex items-center justify-start pointer-events-auto group"
           style={{
             backgroundImage:
               'url("https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/684fcedc25e45d423cca2cd2_Right%20Png.svg")',
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "0% 50%",
-            height: "246px",
-            inset: "50% -4px 0% auto",
           }}
         >
           <img

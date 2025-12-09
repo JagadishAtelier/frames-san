@@ -115,8 +115,7 @@ export default function ResortSection() {
                   transition={{ type: "spring", stiffness: 200, damping: 24 }}
                   onClick={() => setActiveIndex(index)}
                   className={`lg:col-span-2 bg-white/30 backdrop-blur-sm rounded-3xl shadow-lg p-2
-    flex flex-col md:flex-row gap-4 cursor-pointer border
-    ${activeIndex === index ? "border-[#ff7a2d]" : "border-[#ffb47d]"}`}
+    flex flex-col md:flex-row gap-4 cursor-pointer`}
                 >
                   {/* LEFT SIDE */}
                   <div className="w-full md:w-1/2 relative rounded-2xl overflow-hidden">
