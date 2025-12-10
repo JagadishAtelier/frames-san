@@ -18,7 +18,7 @@ export default function GuestsInput({ className }) {
               open ? "ring-2 ring-black/40" : ""
             }`}
           >
-            <div className="text-neutral-300 dark:text-neutral-400">
+            <div className="text-neutral-500 dark:text-neutral-400">
                 <UserPlusIcon className="w-5 h-5 lg:w-7 lg:h-7" />
               </div>
             <div>

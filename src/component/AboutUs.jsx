@@ -49,7 +49,7 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="relative w-full pt-32 pb-10 overflow-hidden">
+    <section className="relative z-0 w-full pt-32 pb-10 overflow-hidden">
       {/* RIGHT SIDE VECTOR */}
       <img
         src="/icons/vector-light1.png"
