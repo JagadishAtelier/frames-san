@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { LayoutGroup, motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const villas = {
   left: {
     img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/68513c47b3dcbe5b21c6c162_1.jpg",
@@ -47,17 +50,36 @@ export default function ResortSection() {
   const [fullyExpandedIndex, setFullyExpandedIndex] = useState(0);
 
   const allCards = [
-    {
-      type: "big",
-      ...villas.left,
-    },
+    { type: "big", ...villas.left },
     ...villas.right.map((c) => ({ type: "small", ...c })),
   ];
 
+  // ⭐ Initialize AOS
+  useEffect(() => {
+    AOS.init({
+      duration: 900,
+      once: false,
+      easing: "ease-out",
+      offset: 120,
+    });
+
+    AOS.refresh();
+  }, []);
+
   return (
-    <section className="pt-16 pb-5 md:py-20">
+    <section
+      className="pt-16 pb-5 md:py-20"
+      data-aos="fade-up"
+      data-aos-delay="50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-6 md:gap-10 mb-14">
+
+        {/* TOP SECTION */}
+        <div
+          className="flex flex-col md:flex-row items-start justify-between gap-6 md:gap-10 mb-14"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           <div className="max-w-xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl sm:text-start text-center font-semibold mb-4">
               Life Along The Coast
@@ -70,59 +92,49 @@ export default function ResortSection() {
           </div>
 
           {/* BUTTON */}
-          <button className="
-            group bg-black text-white px-6 py-3 rounded-full 
-            flex items-center gap-4 
-            relative overflow-hidden self-start mx-auto md:mx-0
-            hover:bg-gray-900 transition
-          ">
-            {/* LEFT ARROW (appears on hover) */}
+          <button
+            className="group bg-black text-white px-6 py-3 rounded-full flex items-center
+            gap-4 relative overflow-hidden self-start mx-auto md:mx-0 hover:bg-gray-900 transition"
+            data-aos="zoom-in"
+            data-aos-delay="150"
+          >
             <img
               src="/icons/chevron-right.svg"
-              className="
-                absolute invert left-5 w-4 opacity-0 
-                -translate-x-4 transition-all duration-300
-                group-hover:opacity-100 group-hover:translate-x-0
-              "
+              className="absolute invert left-5 w-4 opacity-0 -translate-x-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
             />
-
-            {/* Text */}
             <span className="relative z-10 transition-all duration-300 group-hover:translate-x-6">
               View All Available Villas
             </span>
-
-            {/* RIGHT ARROW (slides out) */}
             <img
               src="/icons/chevron-right.svg"
-              className="
-                invert w-4 relative transition-all duration-300
-                group-hover:translate-x-4 group-hover:opacity-0
-              "
+              className="invert w-4 relative transition-all duration-300 group-hover:translate-x-4 group-hover:opacity-0"
             />
           </button>
         </div>
+
         <LayoutGroup>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             {allCards.map((card, index) => {
               const isActive = activeIndex === index;
 
               return isActive ? (
-                /* ---------------- ACTIVE BIG CARD ---------------- */
+                /* ⭐ ACTIVE EXPANDED CARD WITH AOS */
                 <motion.div
                   key={index}
                   layout
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 150}
+                  onClick={() => setActiveIndex(index)}
                   onLayoutAnimationComplete={() => setFullyExpandedIndex(index)}
                   transition={{ type: "spring", stiffness: 200, damping: 24 }}
-                  onClick={() => setActiveIndex(index)}
-                  className={`lg:col-span-2 bg-white/30 backdrop-blur-sm rounded-3xl shadow-lg p-2
-    flex flex-col md:flex-row gap-4 cursor-pointer`}
+                  className="lg:col-span-2 bg-white/30 backdrop-blur-sm rounded-3xl shadow-lg p-2 flex flex-col md:flex-row gap-4 cursor-pointer"
                 >
-                  {/* LEFT SIDE */}
                   <div className="w-full md:w-1/2 relative rounded-2xl overflow-hidden">
-                    <img
-                      src={card.img}
-                      className="w-full h-full object-cover"
-                    />
+                    <img src={card.img} className="w-full h-full object-cover" />
 
                     <div className="absolute top-4 left-4 flex flex-wrap gap-2">
                       {card.features?.map((item, i) => (
@@ -136,7 +148,6 @@ export default function ResortSection() {
                     </div>
                   </div>
 
-                  {/* RIGHT SIDE (text fades in after expansion) */}
                   <motion.div
                     initial={{ opacity: 0, x: -40 }}
                     animate={
@@ -194,10 +205,12 @@ export default function ResortSection() {
                   </motion.div>
                 </motion.div>
               ) : (
-                /* ---------------- SMALL COLLAPSED CARDS ---------------- */
+                /* ⭐ SMALL CARD WITH AOS */
                 <motion.div
                   key={index}
                   layout
+                  data-aos="fade-up"
+                  data-aos-delay={100 + index * 120}
                   transition={{ type: "spring", stiffness: 200, damping: 24 }}
                   onClick={() => setActiveIndex(index)}
                   className="rounded-3xl overflow-hidden shadow-lg relative cursor-pointer"

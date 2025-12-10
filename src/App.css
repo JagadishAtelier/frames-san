@@ -7,6 +7,21 @@
 button{
   cursor: pointer;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#smooth-wrapper {
+  height: 100%;
+  overflow: hidden; /* required */
+}
+
+#smooth-content {
+  min-height: 200vh; /* ensures scrolling exists */
+  will-change: transform;
+}
 
 .swiper-slide-active .slide-image {
   animation: zoomIn 4s ease-in-out forwards;

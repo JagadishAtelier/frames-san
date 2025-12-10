@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function AboutUs() {
   const text =
@@ -10,19 +12,23 @@ export default function AboutUs() {
 
   const controls = useAnimation();
 
-  // 👇 allow animation to run when entering & leaving
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.2,
   });
 
-  // 👇 scroll UP = hide, scroll DOWN = show
   useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
+    // Initialize AOS inside the component (safe with Smoother)
+    AOS.init({
+      duration: 1000,
+      once: false,
+      easing: "ease-out",
+    });
+
+    AOS.refresh();
+
+    if (inView) controls.start("visible");
+    else controls.start("hidden");
   }, [inView]);
 
   const items = [
@@ -49,7 +55,11 @@ export default function AboutUs() {
   ];
 
   return (
-    <section className="relative z-0 w-full pt-32 pb-10 overflow-hidden">
+    <section
+      className="relative z-0 w-full pt-32 pb-10 overflow-hidden"
+      data-aos="fade-up"
+      data-aos-offset="150"
+    >
       {/* RIGHT SIDE VECTOR */}
       <img
         src="/icons/vector-light1.png"
@@ -59,7 +69,11 @@ export default function AboutUs() {
 
       <div className="max-w-6xl mx-auto px-6 text-center relative z-10">
         {/* TOP CONTENT */}
-        <h6 className="text-[#758dc2] tracking-widest text-lg font-semibold mb-6">
+        <h6
+          className="text-[#758dc2] tracking-widest text-lg font-semibold mb-6"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
           About Us
         </h6>
 
@@ -67,6 +81,8 @@ export default function AboutUs() {
         <h2
           ref={ref}
           className="text-3xl md:text-5xl lg:text-6xl text-center font-semibold leading-tight text-[#0A0A0A] max-w-6xl mx-auto flex flex-wrap justify-center"
+          data-aos="fade-up"
+          data-aos-delay="150"
         >
           {words.map((word, i) => (
             <motion.span
@@ -92,11 +108,17 @@ export default function AboutUs() {
         </h2>
 
         {/* ICON ROW */}
-        <div className="grid grid-cols-2 md:flex md:justify-center md:gap-20 gap-8 mt-20">
+        <div
+          className="grid grid-cols-2 md:flex md:justify-center md:gap-20 gap-8 mt-20"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
           {items.map((item, idx) => (
             <div
               key={idx}
               className="flex flex-col items-center group cursor-pointer"
+              data-aos="fade-up"
+              data-aos-delay={250 + idx * 100}
             >
               <div className="relative w-24 h-24 rounded-full flex items-center justify-center bg-white border border-[#a3b7c2] shadow-sm transition-all duration-300 group-hover:bg-[#1C1C1C]">
                 <img

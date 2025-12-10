@@ -96,7 +96,7 @@ export default function Footer() {
           bottom-0 md:-bottom-4
           text-[48px] sm:text-[100px] md:text-[150px] font-bold tracking-tight
           pointer-events-none whitespace-nowrap select-none leading-none
-          bg-linear-to-r from-[#95b1eb] via-indigo-600 to-[#95b1eb]
+          bg-linear-to-b from-[#0E0F0F] to-[#61605ec2]
           text-transparent bg-clip-text
           transition-transform duration-1000
           ${isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}
