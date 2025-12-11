@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { LayoutGroup, motion } from "framer-motion";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-router-dom";
 
 const villas = {
   left: {
@@ -194,7 +195,7 @@ export default function ResortSection() {
                     </div>
 
                     <div className="flex items-center gap-3 group cursor-pointer">
-                      <span className="font-medium">Discover More</span>
+                      <Link to={`/stay/${card.title}`}><span className="font-medium">Discover More</span></Link>
                       <div className="w-10 h-10 rounded-full bg-black/80 flex items-center justify-center overflow-hidden transition group-hover:bg-white">
                         <img
                           src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/68512e74aec665cf47b7a252_Vector.svg"

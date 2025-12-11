@@ -15,14 +15,18 @@ html, body {
 
 #smooth-wrapper {
   height: 100%;
-  overflow: hidden; /* required */
+  
 }
 
 #smooth-content {
   min-height: 200vh; /* ensures scrolling exists */
   will-change: transform;
 }
-
+nav {
+  position: fixed !important;
+  z-index: 9999 !important;
+  will-change: transform;
+}
 .swiper-slide-active .slide-image {
   animation: zoomIn 4s ease-in-out forwards;
 }

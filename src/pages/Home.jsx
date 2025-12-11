@@ -26,7 +26,7 @@ const Home = () => {
 
   return (
     <>
-      <Navigation />
+      {/* <Navigation /> */}
       <HeroBanner />
       <AboutUs />
       <ResortSection />
