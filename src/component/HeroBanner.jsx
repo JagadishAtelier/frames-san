@@ -8,8 +8,9 @@ import HeroSearchForm from "./HeroSearchForm";
 
 export default function HeroBanner() {
   const slides = [
-    "/images/hero-bg.webp",
-    "/images/hero-bg.webp",
+    "https://pix10.agoda.net/hotelImages/32213458/-1/c2d3121e2b831da904593823f4778548.jpg?ce=0&s=2000x2000",
+    "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/df/4b/6e/caption.jpg?w=1200&h=-1&s=1",
+    "https://pix10.agoda.net/hotelImages/32213458/-1/0d2053fde927f5e04adfe7228b793b5d.jpg?ce=0&s=2000x2000",
     "/images/hero-bg.webp",
   ];
 
@@ -41,7 +42,7 @@ export default function HeroBanner() {
               />
 
               {/* DARK OVERLAY */}
-              <div className="absolute inset-0 bg-black/40 rounded-[20px] z-10 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-black/20 rounded-[20px] z-10 pointer-events-none"></div>
             </div>
           </SwiperSlide>
         ))}
@@ -50,7 +51,7 @@ export default function HeroBanner() {
       {/* ---------- FIXED OVERLAY CONTENT (NOT SLIDING) ---------- */}
       <div className="absolute inset-0 z-10 pointer-events-none ">
         <div className="h-full flex flex-col justify-self-start mt-30 sm:mt-0 sm:justify-center px-12 md:px-20 lg:px-28 text-white max-w-screen">
-          <h1 className="text-6xl md:text-7xl font-bold leading-tight drop-shadow-xl">
+          <h1 className=" opacity-0 text-6xl md:text-7xl font-bold leading-tight drop-shadow-xl">
             SEL Offers <br /> Quiet and Deep <br /> Stillness
           </h1>
           <h1 className="opacity-0 text-6xl md:text-4xl font-bold leading-tight drop-shadow-xl">

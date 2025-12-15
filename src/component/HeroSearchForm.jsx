@@ -11,7 +11,7 @@ const HeroSearchForm = ({
 
   return (
     <div className={`w-full max-w-6xl py-5 lg:py-3 px-1 ${className}`}>
-      <h2 className="text-white mb-3 font-bold text-2xl">Select Your Stay</h2>
+      <h2 className="text-white text-center mb-4 font-bold text-2xl">Select Your Stay with Sel</h2>
       {/* TABS */}
       <ul className=" flex space-x-5 sm:space-x-8 lg:space-x-11 overflow-x-auto">
         {tabs.map((tab, index) => {
