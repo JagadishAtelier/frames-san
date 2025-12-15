@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CircularGallery from "./CircularGallery"; // adjust path
+import { Link } from "react-router-dom";
 
 const GallerySection = () => {
   const [bendValue, setBendValue] = useState(1.5); // desktop default
@@ -55,9 +56,9 @@ const GallerySection = () => {
 
       {/* Button */}
       <div className="flex justify-center absolute -bottom-40 w-full">
-        <button className="px-8 py-3 rounded-full bg-black text-white hover:bg-gray-800 transition shadow-lg">
+        <Link to={"/gallery"} className="px-8 py-3 rounded-full bg-black text-white hover:bg-gray-800 transition shadow-lg">
           View All
-        </button>
+        </Link>
       </div>
     </div>
   );

@@ -97,31 +97,32 @@ export default function StayHeaderGallery() {
 
       {/* ---------- FULLSCREEN LIGHTBOX ---------- */}
       {open && (
-        <div className="fixed inset-0 h-screen bg-black/90 z-50 flex flex-col justify-center items-center">
+        <div className="fixed top-20 inset-0 h-screen bg-black/90 flex flex-col justify-center items-center">
           {/* Close Button */}
           <button
             onClick={() => setOpen(false)}
-            className="absolute top-22 right-6 lg:top-5 lg:right-5 bg-black/50 border-gray-10 hover:bg-white/40 backdrop-blur p-3 rounded-full text-white"
+            className="absolute top-22 right-6 lg:top-5 lg:right-10 bg-black/50 border-gray-10 hover:bg-white/40 backdrop-blur p-3 rounded-full text-white"
           >
             <X />
           </button>
 
           {/* Main Image */}
-          <div className="w-[90vw] lg:w-[95vw] max-h-[80vh] h-[80vh] mt-20 lg:mt-0 lg:h-auto rounded-2xl overflow-hidden flex items-center justify-center">
+          <div className="w-[90vw] lg:w-[95vw] max-h-[95vh] h-screen lg:h-auto rounded-sm overflow-hidden flex items-center justify-center">
             <img
               src={images[activeIndex]}
               alt=""
-              className="w-full h-full object-cover rounded-2xl"
+              className="w-full h-full object-cover rounded-md"
             />
           </div>
 
           {/* Thumbnails Row */}
           <div
             className="
-              flex gap-2 mt-4 
+              flex gap-2  absolute bottom-20
               overflow-x-auto 
-              px-4 pb-6 
-              w-full justify-center
+              my-auto
+              px-4 py-4 
+              w-full justify-center bg-linear-180 from-transparent to-70% to-black/50
             "
           >
             {images.map((img, i) => (

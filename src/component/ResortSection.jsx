@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const villas = {
   left: {
-    img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/68513c47b3dcbe5b21c6c162_1.jpg",
-    title: "Villa Sundara",
+    img: "https://pix10.agoda.net/hotelImages/32213458/-1/c2d3121e2b831da904593823f4778548.jpg?ce=0&s=1000x1000",
+    title: "The Farm Retreat",
     desc: "A paradise for two, where morning light dances on the water and evenings are filled with the sweet silence.",
     features: ["4 bedrooms", "2 terrace", "sauna", "6 bedrooms", "3 bathrooms"],
     area: "218",
@@ -15,7 +15,7 @@ const villas = {
   },
   right: [
     {
-      img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/68513cc3714afb19871074e3_2.jpg",
+      img: "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/df/4b/6e/caption.jpg?w=1200&h=-1&s=1",
       title: "Villa Kaela",
       desc: "A paradise for two, where morning light dances on the water and evenings are filled with the sweet silence.",
       area: "218",
@@ -30,7 +30,7 @@ const villas = {
       ],
     },
     {
-      img: "https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5e08/68513ce889084115b2592b97_3.jpg",
+      img: "https://cf.bstatic.com/xdata/images/hotel/max1024x768/171882184.jpg?k=1f8bc7a69eec4ef641847dddf2fd516bee49b8e345a0f938eb4b3b86255a53b9&o=",
       title: "Villa Solaya",
       area: "218",
       areaDesc: "stylish space",
@@ -195,7 +195,7 @@ export default function ResortSection() {
                     </div>
 
                     <div className="flex items-center gap-3 group cursor-pointer">
-                      <Link to={`/stay/${card.title}`}><span className="font-medium">Discover More</span></Link>
+                      <Link to={`/stay/${card.title}`} className="flex items-center gap-3 group cursor-pointer" ><span className="font-medium">Discover More</span>
                       <div className="w-10 h-10 rounded-full bg-black/80 flex items-center justify-center overflow-hidden transition group-hover:bg-white">
                         <img
                           src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/68512e74aec665cf47b7a252_Vector.svg"
@@ -206,6 +206,7 @@ export default function ResortSection() {
                           className="w-4 absolute opacity-0 -translate-x-4 transition group-hover:opacity-100 group-hover:translate-x-0 invert"
                         />
                       </div>
+                      </Link>
                     </div>
                   </motion.div>
                 </motion.div>
