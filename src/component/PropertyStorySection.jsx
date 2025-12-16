@@ -15,45 +15,49 @@ const iconMap = {
 
 /* ---------------- DATA ---------------- */
 const data = {
-  sectionLabel: "Our Restaurants on Resort's",
+  sectionLabel: "Our Restaurants at the Resort",
   title: [
-    "Experience Premium",
-    "Dining Crafted to Give",
-    "You Unforgettable Moments.",
+    "Exceptional Dining",
+    "Crafted by Master Chefs",
+    "For Unforgettable Evenings.",
   ],
   rightDescription:
-    "A paradise for two, where morning light dances on the water and evenings are filled with the sweet silence.",
-  cta: "Book Now",
+    "From sunrise breakfasts to candle-lit dinners, our restaurants blend exquisite flavors, refined ambience, and warm hospitality for a truly memorable dining experience.",
+  cta: "Reserve a Table",
   slides: [
     {
-      title: "Modern living upgrades",
+      title: "Signature Dining Spaces",
       description:
-        "Discover contemporary design with state-of-the-art amenities that redefine comfort and elegance in every corner.",
+        "Thoughtfully designed restaurant interiors that balance elegance and comfort, creating the perfect setting for every occasion.",
       icon: "Home",
-      leftImage: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+      leftImage:
+        "https://images.unsplash.com/photo-1552566626-52f8b828add9",
       rightImage:
-        "https://images.unsplash.com/photo-1600210492493-0946911123ea",
+        "https://images.unsplash.com/photo-1559339352-11d035aa65de",
     },
     {
-      title: "Fine dining experience",
+      title: "Chef-Curated Cuisine",
       description:
-        "Savor world-class cuisine prepared by renowned chefs, offering an exquisite culinary journey you won't forget.",
+        "Indulge in carefully crafted menus featuring seasonal ingredients, bold flavors, and artful presentation by our expert chefs.",
       icon: "Utensils",
-      leftImage: "https://images.unsplash.com/photo-1600210492493-0946911123ea",
+      leftImage:
+        "https://images.unsplash.com/photo-1541544741938-0af808871cc0",
       rightImage:
-        "https://images.unsplash.com/photo-1616594039964-ae9021a400a0",
+        "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c",
     },
     {
-      title: "Luxury ambience",
+      title: "Atmosphere & Ambience",
       description:
-        "Immerse yourself in sophisticated surroundings with premium service and breathtaking views at every moment.",
+        "Enjoy dining in beautifully lit spaces with serene views, soft music, and an inviting ambience that elevates every meal.",
       icon: "Sparkles",
-      leftImage: "https://images.unsplash.com/photo-1616594039964-ae9021a400a0",
+      leftImage:
+        "https://images.unsplash.com/photo-1555396273-367ea4eb4db5",
       rightImage:
-        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+        "https://images.unsplash.com/photo-1559339352-11d035aa65de",
     },
   ],
 };
+
 
 /* ---------------- SCROLL SCALE HOOK ---------------- */
 const useScrollScale = () => {
