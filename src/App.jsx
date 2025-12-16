@@ -8,10 +8,7 @@ import Navigation from "./component/Navigation.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import ScrollRestoration from "./component/ScrollRestoration.jsx";
 import NotFound from "./pages/NotFound.jsx";
-
-function About() {
-  return <h1>About Page</h1>;
-}
+import About from "./pages/About.jsx";
 
 function Contact() {
   return <h1>Contact Page</h1>;
@@ -31,6 +28,7 @@ function App() {
           <Route path="/stay/:name" element={<StaylistPage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
+          <Route path="/about" element={<About />} />
           {/* 404 route */}
           <Route path="*" element={<NotFound />} />
         </Routes>

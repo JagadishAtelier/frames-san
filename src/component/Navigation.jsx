@@ -51,10 +51,10 @@ const Navigation = ({ bg }) => {
             <Link to="/" className="hover:text-gray-300 transition">
               Home
             </Link>
-            <Link to="/" className="hover:text-gray-300 transition">
+            <Link to="/about" className="hover:text-gray-300 transition">
               About
             </Link>
-            <Link to="/" className="hover:text-gray-300 transition">
+            <Link to="/contact" className="hover:text-gray-300 transition">
               Contact
             </Link>
             <Link to="/" className="hover:text-gray-300 transition">
