@@ -23,7 +23,7 @@ const data = {
   ],
   rightDescription:
     "From sunrise breakfasts to candle-lit dinners, our restaurants blend exquisite flavors, refined ambience, and warm hospitality for a truly memorable dining experience.",
-  cta: "Reserve a Table",
+  cta: "Book Resort Now",
   slides: [
     {
       title: "Signature Dining Spaces",
@@ -58,8 +58,6 @@ const data = {
   ],
 };
 
-
-/* ---------------- SCROLL SCALE HOOK ---------------- */
 const useScrollScale = () => {
   const ref = useRef(null);
   const [scale, setScale] = useState(1);
