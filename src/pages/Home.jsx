@@ -18,6 +18,7 @@ import PropertyStorySection from "../component/PropertyStorySection";
 import AboutUsNew from "../component/AboutUsNew";
 import ArchitecturalStatsSection from "../component/ArchitecturalStatsSection";
 import GallerySectionNew from "../component/GallerySectionNew";
+import TestimonialSlider from "../component/TestimonialSlider";
 
 const Home = () => {
   useEffect(() => {
@@ -44,7 +45,8 @@ const Home = () => {
       <GallerySectionNew/>
       {/* <div className="h-0 sm:h-90 md:h-0 lg:h-0"/> */}
       <ReviewSection />
-      <ReviewSlider />
+      {/* <ReviewSlider /> */}
+      <TestimonialSlider/>
       
       {/* <TestimonialCard/> */}
       <div className="px-2">

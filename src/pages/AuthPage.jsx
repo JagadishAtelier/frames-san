@@ -7,9 +7,9 @@ export default function AuthPage() {
   const axios = [1, 2];
 
   return (
-    <div className="bg-gray-50 p-0 md:p-2 min-h-screen">
+    <div className="bg-gray-200 p-0 md:px-2 md:pt-1 min-h-screen">
       {/* Card */}
-      <div className="w-full max-w-screen h-screen md:h-[97vh] md:rounded-2xl shadow-xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
+      <div className="w-full max-w-screen h-screen md:h-[99vh] md:rounded-2xl md:shadow-md overflow-hidden grid grid-cols-1 md:grid-cols-2">
         {/* LEFT IMAGE */}
         <div className="relative hidden md:block">
           <img
@@ -20,7 +20,7 @@ export default function AuthPage() {
           />
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-linear-to-b from-black/50 to-black/10" />
+          <div className="absolute inset-0 bg-linear-to-b from-black/50 to-black/5" />
 
           {/* Branding */}
           <div className="relative z-10 p-10 text-white text-center">

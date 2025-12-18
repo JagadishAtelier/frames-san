@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const NotFound = () => {
   return (
-    <div className="h-full mt-16 flex flex-col items-center justify-center bg-[#fff] text-center px-4">
+    <div className="h-full min-h-screen flex flex-col items-center justify-center bg-white text-center px-4">
       
       <div className="max-w-md w-full">
         <Lottie
@@ -27,7 +27,7 @@ const NotFound = () => {
         to="/"
         className="mt-6 inline-block rounded-xl bg-black px-6 py-3 text-white text-sm font-medium hover:bg-gray-900 transition"
       >
-        Go Back Home
+        Go Back Sel Hospitality Home
       </Link>
     </div>
   );
