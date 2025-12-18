@@ -68,14 +68,18 @@ const Navigation = ({ bg }) => {
           </div>
         </div>
 
-        <div className="hidden md:flex mx-auto h-full w-36 items-center justify-center">
+        <div className="hidden md:flex mx-auto h-full justify-self-center w-36 items-center justify-center">
           <img src="/sel_logo_white.png" alt="SEL Hospitality" className="w-full" />
         </div>
 
-        <div className="flex items-center gap-6 ml-auto">
+        <div className="flex items-center gap-3">
           <button className="hidden md:block px-6 py-2 rounded-full border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20 transition">
             Book Now
           </button>
+          <Link to={"/auth"} className="hidden md:block px-6 py-2 rounded-full text-black border border-white/30 backdrop-blur-md bg-[#eea159] hover:bg-[#eea1597e] hover:text-white transition duration-200">
+            Log in
+          </Link>
+          
 
           <button
             onClick={() => setOpen(!open)}
@@ -98,6 +102,9 @@ const Navigation = ({ bg }) => {
           <Link onClick={() => setOpen(false)} to="/" className="hover:text-gray-300">Aminities</Link>
           <button className="mt-3 px-6 py-2 rounded-full border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20 transition">
             Book Now
+          </button>
+          <button className="mt-3 px-6 py-2 rounded-full border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20 transition">
+            Log in
           </button>
         </div>
       </div>
