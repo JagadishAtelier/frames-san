@@ -68,11 +68,11 @@ export default function ResortSection() {
 
   return (
     <section
-      className="pt-16 pb-5 md:py-10"
+      className="pt-16 pb-5 md:py-10 lg:px-10"
       data-aos="fade-up"
       data-aos-delay="50"
     >
-      <div className="max-w-7xl mx-auto px-4 py-4 sm:px-6 sm:py-10 bg-[#232426] rounded-3xl">
+      <div className="max-w-8xl mx-auto px-4 py-4 sm:px-6 sm:py-15 bg-[#232426] rounded-3xl">
         {/* TOP SECTION */}
         <div
           className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 mb-14"
@@ -165,18 +165,18 @@ export default function ResortSection() {
                   >
                     {card.area && (
                       <div className="flex items-center gap-4 mb-6 sm:mb-15">
-                        <div className="p-6 bg-white/70 border rounded-full shadow-sm">
+                        <div className="p-3 bg-white/70 border rounded-full shadow-sm">
                           <img
                             src="https://cdn.prod.website-files.com/683d7e98e0d3f4e5915a5def/6851263bb91fe7531b08f691_Frame.svg"
                             className="w-10 sm:w-12"
                           />
                         </div>
 
-                        <div className="px-3 py-6 bg-white/70 border rounded-full text-center shadow-sm">
+                        <div className="px-1 py-4 bg-white/70 border rounded-full text-center shadow-sm">
                           <div className="text-lg sm:text-xl font-semibold">
                             {card.area} <span className="text-sm ml-1">M2</span>
                           </div>
-                          <div className="text-gray-500 text-xs">
+                          <div className="text-gray-500 text-xs ">
                             {card.areaDesc}
                           </div>
                         </div>
