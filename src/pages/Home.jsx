@@ -18,6 +18,7 @@ import PropertyStorySection from "../component/PropertyStorySection";
 import AboutUsNew from "../component/AboutUsNew";
 import ArchitecturalStatsSection from "../component/ArchitecturalStatsSection";
 import GallerySectionNew from "../component/GallerySectionNew";
+import NewAboutSection from "../component/NewAboutSection";
 
 const Home = () => {
   useEffect(() => {
@@ -34,7 +35,7 @@ const Home = () => {
       <HeroBanner />
       {/* <AboutUs /> */}
       <ArchitecturalStatsSection/>
-      <AboutUsNew />
+      <NewAboutSection />
       <ResortSection />
       <VillaBookingSection />
       <VisionMissionSection />
