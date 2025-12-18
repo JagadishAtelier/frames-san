@@ -20,7 +20,7 @@ import ArchitecturalStatsSection from "../component/ArchitecturalStatsSection";
 import GallerySectionNew from "../component/GallerySectionNew";
 import NewAboutSection from "../component/NewAboutSection";
 import AcademicSection from "../component/AcademicSection";
-
+import TestimonialSlider from '../component/TestimonialSlider'
 const Home = () => {
   useEffect(() => {
     AOS.init({
@@ -46,7 +46,8 @@ const Home = () => {
       <GallerySectionNew/>
       {/* <div className="h-0 sm:h-90 md:h-0 lg:h-0"/> */}
       <ReviewSection />
-      <ReviewSlider />
+      {/* <ReviewSlider /> */}
+      <TestimonialSlider/>
       
       {/* <TestimonialCard/> */}
       <div className="px-2">

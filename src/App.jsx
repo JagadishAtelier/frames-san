@@ -26,6 +26,8 @@ export default function App() {
         {/* ================= AUTH ROUTE (NO NAV, NO SCROLL) ================= */}
         <Route path="/auth" element={<AuthPage />} />
 
+        
+
         {/* ================= MAIN SITE ROUTES ================= */}
         <Route
           path="/*"
@@ -40,12 +42,12 @@ export default function App() {
                   <Route path="/gallery" element={<Gallery />} />
                   <Route path="/about" element={<About />} />
                   <Route path="/resort/:name" element={<ResortDetails />} />
-                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </SmoothScroll>
             </>
           }
         />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
   );
