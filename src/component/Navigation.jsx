@@ -73,10 +73,10 @@ const Navigation = ({ bg }) => {
         </div>
 
         <div className="flex items-center gap-3">
-          <button className="hidden md:block px-6 py-2 rounded-full border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20 transition">
+          <button className="hidden md:block px-6 py-2 rounded-full border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20 transition duration-200">
             Book Now
           </button>
-          <Link to={"/auth"} className="hidden md:block px-6 py-2 rounded-full text-black border border-white/30 backdrop-blur-md bg-[#eea159] hover:bg-[#eea1597e] hover:text-white transition duration-200">
+          <Link to={"/auth"} className="hidden md:block px-6 py-2 rounded-full text-black/80 border border-white/30 backdrop-blur-md bg-[#eea159] hover:bg-[#eea1597e] hover:text-white/90 transition duration-200">
             Log in
           </Link>
           
