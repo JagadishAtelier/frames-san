@@ -25,25 +25,25 @@ export default function HappeningCities() {
 
   const bubbles = [
     {
-      name: "Jean Meulen",
+      name: "Arun Kumar",
       rating: 4.9,
-      img: "https://randomuser.me/api/portraits/women/44.jpg",
+      img: "https://randomuser.me/api/portraits/men/45.jpg",
       className: "top-10 -left-10",
     },
     {
-      name: "Jean Cook",
+      name: "Priya Sharma",
       rating: 5.0,
-      img: "https://randomuser.me/api/portraits/men/32.jpg",
+      img: "https://randomuser.me/api/portraits/women/32.jpg",
       className: "top-5 right-10",
     },
     {
-      name: "Lindsay Walton",
+      name: "Kavya Reddy",
       rating: 4.9,
       img: "https://randomuser.me/api/portraits/women/68.jpg",
       className: "top-40 right-0",
     },
     {
-      name: "Michael Foster",
+      name: "Vikram Patel",
       rating: 5.0,
       img: "https://randomuser.me/api/portraits/men/75.jpg",
       className: "top-1/2 left-10",

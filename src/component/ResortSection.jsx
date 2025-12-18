@@ -68,7 +68,7 @@ export default function ResortSection() {
 
   return (
     <section
-      className="pt-16 pb-5 md:py-20"
+      className="pt-16 pb-5 md:py-10"
       data-aos="fade-up"
       data-aos-delay="50"
     >

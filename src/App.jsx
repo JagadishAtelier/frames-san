@@ -9,6 +9,7 @@ import Gallery from "./pages/Gallery.jsx";
 import ScrollRestoration from "./component/ScrollRestoration.jsx";
 import NotFound from "./pages/NotFound.jsx";
 import About from "./pages/About.jsx";
+import { ResortDetails } from "./pages/ResortDetails.jsx";
 
 function Contact() {
   return <h1>Contact Page</h1>;
@@ -29,6 +30,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/about" element={<About />} />
+          <Route path="/resort/:name" element={<ResortDetails />} />
           {/* 404 route */}
           <Route path="*" element={<NotFound />} />
         </Routes>

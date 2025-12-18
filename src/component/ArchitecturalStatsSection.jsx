@@ -1,7 +1,7 @@
 const ArchitecturalStatsSection = () => {
   return (
     <section className="bg-white text-black">
-      <div className="max-w-7xl mx-auto px-5 py-14 sm:py-16 md:pt-20 md:pb-20 ">
+      <div className="max-w-7xl mx-auto px-5 py-14 sm:py-16 md:pt-15 md:pb-5 ">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-4 md:gap-8 items-center mx-auto">
           
           {/* Left Content */}

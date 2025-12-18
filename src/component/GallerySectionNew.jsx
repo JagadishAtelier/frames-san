@@ -24,7 +24,7 @@ const galleryData = {
     title: "Escape to Unrivaled Serenity",
     description:
       "Discover a sanctuary where the ocean meets the sky. Immerse yourself in private villas, world-class spas, and curated experiences designed to rejuvenate your soul.",
-    cta: "Explore Our Suites ↗",
+    cta: "Explore Gallery ↗",
     video:
       "https://cdn.prod.website-files.com/6667d7bcc80d3c3ef173af9f%2F67bdaf1a42755b16fbdd0b47_7578544-uhd_3840_2160_30fps-transcode.mp4",
   },
@@ -190,7 +190,7 @@ const GallerySectionNew = () => {
         </div>
       </section>
 
-      <section className="h-screen bg-transparent"></section>
+      {/* <section className="h-screen bg-transparent"></section> */}
     </div>
   );
 };
