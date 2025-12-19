@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400..700;1,400..700&display=swap');
 @import "tailwindcss";
 #root {
-  font-family: 'Instrument Sans', sans-serif;
-  background-color: #fbfbfd;
+    font-family: "Mona Sans", sans-serif !important;
+  background-color: #f3f3f3;
 }
 .btn-bg-primery{
   background-color: #FFC299;
@@ -17,8 +17,21 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #f3f3f3;
+    font-family: "Mona Sans", sans-serif !important;
+    line-height: 150%;
 }
-
+h1,h2,h3,h4,h5,h6{
+  background-image: linear-gradient(150deg, #5a5a5a, #0e0e0e);
+  color: var(--heading);
+    letter-spacing: -.01em;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 104%;
+}
 #smooth-wrapper {
   height: 100%;
   
@@ -26,11 +39,6 @@ html, body {
 
 #smooth-content {
   min-height: 200vh; /* ensures scrolling exists */
-  will-change: transform;
-}
-nav {
-  position: fixed !important;
-  z-index: 9999 !important;
   will-change: transform;
 }
 .swiper-slide-active .slide-image {
