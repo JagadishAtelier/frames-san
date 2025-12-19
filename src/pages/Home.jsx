@@ -21,6 +21,7 @@ import GallerySectionNew from "../component/GallerySectionNew";
 import NewAboutSection from "../component/NewAboutSection";
 import AcademicSection from "../component/AcademicSection";
 import TestimonialSlider from '../component/TestimonialSlider'
+import NewFooter from "../component/NewFooter";
 const Home = () => {
   useEffect(() => {
     AOS.init({
@@ -50,8 +51,8 @@ const Home = () => {
       <TestimonialSlider/>
       
       {/* <TestimonialCard/> */}
-      <div className="px-2">
-        <Footer />
+      <div className="">
+        <NewFooter />
       </div>
     </>
   );

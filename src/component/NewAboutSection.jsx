@@ -48,7 +48,7 @@ export default function NewAboutSection() {
                         </div>
 
                         {/* Heading */}
-                        <h2 className="font-serif text-4xl lg:text-5xl leading-tight mb-8">
+                        <h2 className="text-4xl lg:text-5xl font-semibold mb-8">
                             Sel Offers
                             Quiet Beauty
                         </h2>
