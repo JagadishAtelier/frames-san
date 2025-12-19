@@ -42,10 +42,10 @@ const projects = [
 
 
 export default function HeroSection() {
-const visibleTime = 5;
-const gapTime = 0;
-const slotTime = visibleTime + gapTime;
-const totalCycleTime = projects.length * slotTime;
+  const visibleTime = 5;
+  const gapTime = 0;
+  const slotTime = visibleTime + gapTime;
+  const totalCycleTime = projects.length * slotTime;
 
 
   return (
@@ -65,27 +65,27 @@ const totalCycleTime = projects.length * slotTime;
         <div className="relative h-full w-full">
           {projects.map((project, index) => (
             <motion.a
-  key={index}
-  href={project.link}
-  initial={{ opacity: 1 }}
-  animate={{
-    y: ["100vh", "0vh", "0vh", "-150vh"],
-    x: ["15vw", "0vw", "0vw", "40vw"],
-    rotateZ: [-15, 0, 0, 45],
-    rotateX: [15, 0, 0, -10],
-  }}
-  transition={{
-    duration: visibleTime,
-    ease: "easeInOut",
-    times: [0, 0.4, 0.6, 1],
+              key={index}
+              href={project.link}
+              initial={{ opacity: 1 }}
+              animate={{
+                y: ["100vh", "0vh", "0vh", "-150vh"],
+                x: ["15vw", "0vw", "0vw", "40vw"],
+                rotateZ: [-15, 0, 0, 45],
+                rotateX: [15, 0, 0, -10],
+              }}
+              transition={{
+                duration: visibleTime,
+                ease: "easeInOut",
+                times: [0, 0.4, 0.6, 1],
 
-    repeat: Infinity,
-    repeatDelay: totalCycleTime - visibleTime,
-    delay: index * slotTime,
-  }}
-  style={{ originX: 0.5, originY: 0.5 }}
-  className="absolute right-[15%] top-[25%] md:h-[52vh] h-[30vh] w-[38vw] min-w-[360px] rounded-[3rem] border-8 border-white overflow-hidden"
->
+                repeat: Infinity,
+                repeatDelay: totalCycleTime - visibleTime,
+                delay: index * slotTime,
+              }}
+              style={{ originX: 0.5, originY: 0.5 }}
+              className="absolute right-[15%] top-[25%] md:h-[52vh] lg:w-[40vw] md:w-[50vw] h-[30vh] w-[80vw] rounded-[3rem] border-8 border-white overflow-hidden"
+            >
 
               <div
                 className="h-full w-full bg-cover bg-center"
