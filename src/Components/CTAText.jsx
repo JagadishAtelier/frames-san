@@ -1,5 +1,14 @@
 import React from "react";
-
+const socialLinks = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/framesofsan", // client Instagram
+  },
+  {
+    label: "Contact Us",
+    href: "https://wa.me/8610878315 ", // client WhatsApp number
+  },
+];
 const CTAText = () => {
   return (
     <section className="relative lg:mt-10">
@@ -26,24 +35,27 @@ const CTAText = () => {
         </a>
       </div>
       <div className="flex justify-center mx-auto mt-24 w-fit items-center gap-10 text-sm font-semibold bg-white py-3 px-5 rounded-4xl mb-0">
-        {["Instagram", "Contact Us"].map((item) => (
-          <p
-            key={item}
+        {socialLinks.map((item) => (
+          <a
+            key={item.label}
+            href={item.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative h-5 overflow-hidden cursor-pointer text-black"
           >
             {/* Default text */}
             <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-5">
-              {item}
+              {item.label}
             </span>
 
             {/* Hover text */}
             <span className="absolute left-0 top-5 block transition-transform duration-300 ease-out group-hover:-translate-y-5">
-              {item}
+              {item.label}
             </span>
-          </p>
+          </a>
         ))}
       </div>
-      <div className="mt-4 flex justify-end">
+      <div className="mt-4 flex lg:justify-end text-center">
         <p className="text-gray-500 text-sm">
           Copyright @ 2025 designed by <a href="https://ateliertechnologysolutions.com/" className="">Atelier Technology</a> - powered by Atelier
         </p>
