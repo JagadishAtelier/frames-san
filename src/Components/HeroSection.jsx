@@ -37,18 +37,18 @@ useEffect(() => {
 
 
   return (
-    <section className="relative flex items-center md:h-screen w-full overflow-hidden ps-10 lg:px-10 pt-40 md:pt-0 bg-gray-50">
+    <section className="relative flex items-center md:h-screen w-full overflow-hidden ps-10 lg:px-10 pt-40 md:pt-0 ">
       {/* Left Content */}
 <motion.div
   animate={leftControls}
   initial={{ scale: 1, x: 0 }}
   className="relative z-10 select-none"
 >
-  <h1 className="text-[14vw] font-[900] uppercase leading-[0.75] tracking-[-0.06em] text-black">
+  <h1 className="text-[14vw] font-[900] uppercase leading-[0.75] tracking-[-0.06em] text-black" data-aos="fade-left" data-aos-delay="0">
     Frames <br /> of San
   </h1>
 
-  <p className="mt-12 max-w-sm text-xl lg:text-2xl font-medium text-gray-700">
+  <p className="mt-12 max-w-sm text-xl lg:text-2xl font-medium text-gray-700" data-aos="fade-right" data-aos-delay="0">
     A creative studio shaping bold ideas into meaningful design.
   </p>
 </motion.div>

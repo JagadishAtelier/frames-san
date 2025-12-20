@@ -53,7 +53,7 @@ const RecentProjects = () => {
       <div className="mx-auto lg:px-10 px-5">
         {/* Heading */}
         <div className="flex md:flex-row flex-col justify-between  md:items-center gap-6 mb-16">
-          <div className="flex lg:flex-row flex-col lg:items-center items-start gap-3">
+          <div className="flex lg:flex-row flex-col lg:items-center items-start gap-3" data-aos="fade-right" data-aos-delay="0">
             <div className="flex items-center gap-1">
               <span className="w-2 h-2 rounded-full bg-black" />
               <span className="uppercase text-sm tracking-wide text-black/70">
@@ -68,6 +68,7 @@ const RecentProjects = () => {
           <div className="md:text-right">
             <a
               to="/work/work-1"
+              data-aos="fade-right" data-aos-delay="0"
               className="relative inline-block overflow-hidden group bg-black text-white py-3 px-10 rounded-4xl"
             >
               <span className="block transition-transform duration-300 group-hover:-translate-y-full">
@@ -81,13 +82,14 @@ const RecentProjects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12" >
           {projects.map((project, index) => (
             <a
               key={index}
               to={project.link}
               className="group block rounded-2xl transition-all duration-300
                          hover:-translate-y-4 hover:shadow-2xl hover:bg-white"
+                         data-aos="fade-down" data-aos-delay="0"
             >
               <div className="relative overflow-hidden rounded-xl border-8 border-white">
                 {/* Image */}

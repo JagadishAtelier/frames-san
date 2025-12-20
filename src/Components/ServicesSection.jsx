@@ -41,7 +41,7 @@ const ServicesSection = () => {
         {/* Heading */}
         <div className="grid md:grid-cols-2 gap-10 lg:mb-20 mb-7">
           <div>
-            <div className="flex lg:flex-row flex-col lg:items-center gap-3 ">
+            <div className="flex lg:flex-row flex-col lg:items-center gap-3 " data-aos="fade-right" data-aos-delay="0">
               <div className="flex gap-1 items-center">
               <span className="w-2 h-2 rounded-full bg-black" />
               <span className="uppercase tracking-widest text-sm text-gray-600">
@@ -58,6 +58,7 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={index}
+              data-aos="fade-down" data-aos-delay="0"
               className="group relative grid md:grid-cols-[80px_1fr_1fr] gap-6 items-start bg-[#ececec] hover:bg-white lg:px-8 px-3 py-10 overflow-visible rounded-2xl relative"
             >
               {/* Number */}

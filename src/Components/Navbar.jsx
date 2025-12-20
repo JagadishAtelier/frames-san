@@ -20,7 +20,7 @@ export default function Navbar() {
     );
 
     return (
-        <header className="w-full fixed top-2 z-50">
+        <header className="w-full fixed top-2 z-50" data-aos="fade-down" data-aos-delay="0">
             <div className="mx-auto lg:px-10">
                 <div className="flex items-center justify-between h-20">
 

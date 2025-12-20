@@ -11,7 +11,7 @@ const socialLinks = [
 ];
 const CTAText = () => {
   return (
-    <section className="relative lg:mt-10">
+    <section className="relative lg:mt-10" data-aos="fade-down" data-aos-delay="0">
       <div className="relative z-10 text-center">
         {/* ===== Text ===== */}
         <p className="mx-auto max-w-3xl text-3xl font-medium text-black md:text-4xl">
@@ -21,6 +21,7 @@ const CTAText = () => {
         {/* ===== Hover Button ===== */}
         <a
           href="/contact/contact-1"
+          data-aos="fade-down" data-aos-delay="0"
           className="group relative inline-flex mt-8 py-5 px-20 items-center justify-center overflow-hidden rounded-full border border-black bg-black text-sm font-medium text-white"
         >
           {/* Default text */}
@@ -42,6 +43,7 @@ const CTAText = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="group relative h-5 overflow-hidden cursor-pointer text-black"
+            data-aos="fade-right" data-aos-delay="0"
           >
             {/* Default text */}
             <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-5">
@@ -55,7 +57,7 @@ const CTAText = () => {
           </a>
         ))}
       </div>
-      <div className="mt-4 flex lg:justify-end text-center">
+      <div className="mt-4 flex lg:justify-end text-center" data-aos="fade-up" data-aos-delay="0">
         <p className="text-gray-500 text-sm">
           Copyright @ 2025 designed by <a href="https://ateliertechnologysolutions.com/" className="">Atelier Technology</a> - powered by Atelier
         </p>

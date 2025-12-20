@@ -22,17 +22,22 @@ export default function AboutClients() {
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-1 grid-cols-1 gap-20 items-center">
 
                 {/* LEFT CONTENT */}
-                <div className="flex lg:flex-row flex-col gap-5 items-start lg:justify-end lg:ms-auto lg:w-[75%] w-full">
-                    <div className="flex items-center gap-3 mb-6">
-                        <span className="w-2 h-2 rounded-full" />
-                        <span className="uppercase tracking-widest text-sm text-black">
-                            About
-                        </span>
-                    </div>
+                <div className="flex lg:flex-row flex-col gap-5 items-start lg:justify-end lg:ms-auto w-full">
+                    <div className="flex justify-between items-center">
+                        <img src="/fs-logo.png" data-aos="fade-down" data-aos-delay="0"/>
+                        <div data-aos="fade-left" data-aos-delay="0">
+                            <div className="flex items-center gap-3 mb-6" >
+                                <span className="w-2 h-2 rounded-full" />
+                                <span className="uppercase tracking-widest text-sm text-black">
+                                    About
+                                </span>
+                            </div>
 
-                    <h2 className="text-4xl lg:text-5xl leading-tight">
-                        Frames of San is a creative design studio built for brands and startups that value clarity, speed, and impact. We craft thoughtful visual experiences that help ideas take shape and stories stand out.
-                    </h2>
+                            <h2 className="text-4xl lg:text-5xl leading-tight" >
+                                Frames of San is a creative design studio built for brands and startups that value clarity, speed, and impact. We craft thoughtful visual experiences that help ideas take shape and stories stand out.
+                            </h2>
+                        </div>
+                    </div>
                 </div>
 
                 {/* RIGHT CAROUSEL */}
@@ -58,6 +63,7 @@ export default function AboutClients() {
                                 <img
                                     src={logo.src}
                                     alt="Client logo"
+                                    data-aos="fade-down" data-aos-delay="0"
                                     className={`${logo.classes} opacity-80 hover:opacity-100 transition`}
                                 />
                             </SwiperSlide>

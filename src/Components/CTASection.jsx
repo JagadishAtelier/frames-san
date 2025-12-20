@@ -12,13 +12,11 @@ const CTASection = () => {
 
 const cardVariants = {
   animate: (i) => {
-    // Entry Y positions
     const startY =
-      i === 0 ? -120 :  // top
-      i === 1 ? 0 :     // center
-      120;              // bottom
+      i === 0 ? -120 :
+      i === 1 ? 0 :
+      120;
 
-    // Depth layering
     const scale =
       i === 0 ? 1 :
       i === 1 ? 0.96 :
@@ -29,11 +27,22 @@ const cardVariants = {
       i === 1 ? 0.9 :
       0.85;
 
+    // 🔥 HOLD TIME AT CENTER
+    const centerHold =
+      i === 2 ? 0.15 :   // index 2 moves FIRST
+      i === 1 ? 0.45 :
+      0.55;
+
+    const t0 = 0;
+    const t1 = 0.3;                 // reach center
+    const t2 = t1 + centerHold;     // hold
+    const tEnd = 1;
+
     return {
       x:
-        i === 0
-          ? ["-120vw", "0vw", "3vw", "-1.5vw", "6vw", "120vw"] // jerk motion
-          : ["-120vw", "0vw", "5vw", "120vw"],
+        i === 2
+          ? ["-120vw", "0vw", "3vw", "-1.5vw", "6vw", "120vw"] // jerk first
+          : ["-120vw", "0vw", "0vw", "120vw"],               // wait → follow
 
       y: [startY, 0, 0, 0],
       scale: [scale, 1, 1, 1],
@@ -51,10 +60,12 @@ const cardVariants = {
         repeat: Infinity,
         ease: "easeInOut",
         delay: i * 0.4,
+
+        // ⏱️ KEY PART
         times:
-          i === 0
-            ? [0, 0.35, 0.45, 0.55, 0.65, 1] // extra beats for jerk
-            : [0, 0.35, 0.65, 1],
+          i === 2
+            ? [t0, t1, t1 + 0.05, t2, t2 + 0.1, tEnd] // exits immediately
+            : [t0, t1, t2, tEnd],                     // waits, then follows
       },
     };
   },
@@ -62,8 +73,9 @@ const cardVariants = {
 
 
 
+
   return (
-    <section className="relative overflow-hidden lg:py-5 py-20 lg:mt-24 mt-0">
+    <section className="relative overflow-hidden lg:py-5 py-20 lg:mt-24 mt-0" data-aos="fade-right" data-aos-delay="0">
 
       {/* ===== BACKGROUND TEXT (Top) ===== */}
       <div className="absolute lg:-top-30 -top-5 left-0 w-full z-0 opacity-10">
@@ -86,7 +98,8 @@ const cardVariants = {
             variants={cardVariants}
             animate="animate"
             className="absolute rounded-2xl border-[6px] border-white bg-white shadow-2xl"
-            style={{ zIndex: 30 - i }}
+            style={{ zIndex: 10 + i }}
+
 
           >
             <img
