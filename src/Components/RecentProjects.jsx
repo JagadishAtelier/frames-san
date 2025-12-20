@@ -49,7 +49,7 @@ const projects = [
 
 const RecentProjects = () => {
   return (
-    <section className="lg:py-20 py-10">
+    <section className="lg:py-15 py-10">
       <div className="mx-auto lg:px-10 px-5">
         {/* Heading */}
         <div className="flex md:flex-row flex-col justify-between  md:items-center gap-6 mb-16">

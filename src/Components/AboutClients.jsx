@@ -3,17 +3,18 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const clients = [
-    "https://cdn.prod.website-files.com/688eb7fda28d7033fb817172/68916f6174cc8d5a9b1245f1_logo_client_4.svg",
-    "https://cdn.prod.website-files.com/688eb7fda28d7033fb817172/68916f61c5a40dff924f4b88_logo_client_2.svg",
-    "https://cdn.prod.website-files.com/688eb7fda28d7033fb817172/68916f612ef6479f918060c5_logo_client_10.svg",
-    "https://cdn.prod.website-files.com/688eb7fda28d7033fb817172/68916f61c76749dd0c71edbd_logo_client_7.svg",
-    "https://cdn.prod.website-files.com/688eb7fda28d7033fb817172/68916f6129f1da9e4e27248f_logo_client_3.svg",
-    "https://cdn.prod.website-files.com/688eb7fda28d7033fb817172/68916f61fd9fd8d7e6629d57_logo_client_5.svg",
-    "https://cdn.prod.website-files.com/688eb7fda28d7033fb817172/68916f61e684d3c62f4f66a7_logo_client_8.svg",
-    "https://cdn.prod.website-files.com/688eb7fda28d7033fb817172/68916f612d62fe871eec4da2_logo_client_6.svg",
-    "https://cdn.prod.website-files.com/688eb7fda28d7033fb817172/68916f617797fb214c939688_logo_client_9.svg",
-    "https://cdn.prod.website-files.com/688eb7fda28d7033fb817172/68916f614cd14cc9dd08432b_logo_client_1.svg",
+    { src: "/brand1.png", classes: "lg:h-20 h-6" },
+    { src: "/brand2.png", classes: "lg:h-20 h-5" },
+    { src: "/brand3.png", classes: "lg:h-20 h-5" },
+    { src: "/brand4.png", classes: "lg:h-20 h-7" },
+    { src: "/brand5.png", classes: "lg:h-20 h-6" },
+    { src: "/brand6.png", classes: "lg:h-20 h-5" },
+    { src: "/brand7.png", classes: "lg:h-12 h-6" },
+    { src: "/brand8.png", classes: "lg:h-20 h-6" },
+    { src: "/brand9.png", classes: "lg:h-20 h-5" },
+    { src: "/brand10.png", classes: "lg:h-20 h-7" },
 ];
+
 
 export default function AboutClients() {
     return (
@@ -53,16 +54,14 @@ export default function AboutClients() {
                         className="w-full"
                     >
                         {[...clients, ...clients].map((logo, index) => (
-                            <SwiperSlide
-                                key={index}
-                                className="!w-auto flex items-center"
-                            >
+                            <SwiperSlide key={index} className="!w-auto flex items-center">
                                 <img
-                                    src={logo}
+                                    src={logo.src}
                                     alt="Client logo"
-                                    className="lg:h-10 h-5 opacity-80 hover:opacity-100 transition"
+                                    className={`${logo.classes} opacity-80 hover:opacity-100 transition`}
                                 />
                             </SwiperSlide>
+
                         ))}
                     </Swiper>
                 </div>
