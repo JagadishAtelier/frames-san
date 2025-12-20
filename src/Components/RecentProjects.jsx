@@ -86,7 +86,8 @@ const RecentProjects = () => {
             <a
               key={index}
               to={project.link}
-              className="group block hover:shadow-2xl bg-transparent rounded-xl"
+              className="group block rounded-2xl transition-all duration-300
+                         hover:-translate-y-4 hover:shadow-2xl hover:bg-white"
             >
               <div className="relative overflow-hidden rounded-xl border-8 border-white">
                 {/* Image */}

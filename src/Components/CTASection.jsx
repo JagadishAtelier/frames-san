@@ -10,24 +10,57 @@ const CTASection = () => {
     "/h6.jpg", // Replace with your 3rd image
   ];
 
-  const cardVariants = {
-    animate: (i) => ({
-      // Start far left (-1200), come to center (0), then exit far right (1200)
-      x: ["-120vw", "0vw", "5vw", "120vw"],
-      // Each image rotates its own way when it hits the center
-      rotate: [0, 0, i === 0 ? -12 : i === 2 ? 12 : 0, 0],
-      opacity: [1, 1, 1, 1],
+const cardVariants = {
+  animate: (i) => {
+    // Entry Y positions
+    const startY =
+      i === 0 ? -120 :  // top
+      i === 1 ? 0 :     // center
+      120;              // bottom
+
+    // Depth layering
+    const scale =
+      i === 0 ? 1 :
+      i === 1 ? 0.96 :
+      0.92;
+
+    const opacity =
+      i === 0 ? 1 :
+      i === 1 ? 0.9 :
+      0.85;
+
+    return {
+      x:
+        i === 0
+          ? ["-120vw", "0vw", "3vw", "-1.5vw", "6vw", "120vw"] // jerk motion
+          : ["-120vw", "0vw", "5vw", "120vw"],
+
+      y: [startY, 0, 0, 0],
+      scale: [scale, 1, 1, 1],
+      opacity: [opacity, 1, 1, 1],
+
+      rotate: [
+        i === 0 ? -8 : i === 2 ? 8 : 0,
+        0,
+        i === 0 ? -12 : i === 2 ? 12 : 0,
+        0,
+      ],
+
       transition: {
         duration: 7,
         repeat: Infinity,
         ease: "easeInOut",
-        // Delay each image by 0.4s so they come from the left one after another
         delay: i * 0.4,
-        // 0%: start, 35%: reach center, 65%: stay & rotate, 100%: exit right
-        times: [0, 0.35, 0.65, 1],
+        times:
+          i === 0
+            ? [0, 0.35, 0.45, 0.55, 0.65, 1] // extra beats for jerk
+            : [0, 0.35, 0.65, 1],
       },
-    }),
-  };
+    };
+  },
+};
+
+
 
   return (
     <section className="relative overflow-hidden lg:py-5 py-20 lg:mt-24 mt-0">
@@ -53,7 +86,8 @@ const CTASection = () => {
             variants={cardVariants}
             animate="animate"
             className="absolute rounded-2xl border-[6px] border-white bg-white shadow-2xl"
-            style={{ zIndex: 10 + i }}
+            style={{ zIndex: 30 - i }}
+
           >
             <img
               src={src}
