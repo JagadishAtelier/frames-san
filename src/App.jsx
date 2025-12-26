@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./Components/Navbar";
-import HeroSection from "./Components/HeroSection";
-import AboutClients from "./Components/AboutClients";
-import RecentProjects from "./Components/RecentProjects";
-import ServicesSection from "./Components/ServicesSection";
 import CTASection from "./Components/CTASection";
 import CTAText from "./Components/CTAText";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
+import NewHeroSec from "./Components/NewHeroSec";
+import NewAboutSec from "./Components/NewAboutSec";
+import LatestProjects from "./Components/LatestProjects";
+import HomeGallery from "./Components/HomeGallery";
 
 // Initialize AOS once
 AOS.init({
@@ -22,10 +22,10 @@ export default function App() {
   return (
 <>
 <Navbar/>
-<HeroSection/>
-<AboutClients/>
-<RecentProjects/>
-<ServicesSection/>
+<NewHeroSec/>
+<NewAboutSec/>
+<LatestProjects/>
+<HomeGallery/>
 <CTASection/>
 <CTAText/>
 </>

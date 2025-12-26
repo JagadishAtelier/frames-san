@@ -43,7 +43,7 @@ export default function Navbar() {
                         </nav>
                     </div>
                     {/* Right Actions */}
-                    <div className="flex md:flex items-center gap-6 bg-white rounded-4xl ps-4 py-1">
+                    <div className="hidden md:flex items-center gap-6 bg-white rounded-4xl ps-4 py-1">
                         <a
                             href="mailto:framesofsan@gmail.com"
                             className="group flex items-center gap-2 overflow-hidden"
