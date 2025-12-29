@@ -30,7 +30,7 @@ export default function Navbar() {
                             <img
                                 src="/san1.png"
                                 alt="Logo"
-                                className="h-25"
+                                className="lg:h-25 h-20"
                             />
                         </a>
 

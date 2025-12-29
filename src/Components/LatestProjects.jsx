@@ -54,13 +54,13 @@ const projectsRight = [
 export default function LatestProjects() {
     return (
         <section className="lg:py-24 overflow-hidden">
-            <div className="mx-auto px-10">
+            <div className="mx-auto lg:px-10 px-5">
                 {/* Title */}
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-16">
-                    <div className="uppercase tracking-wider text-gray-600 font-medium"  data-aos="fade-right" data-aos-delay="0">
+                    <div className="uppercase tracking-wider text-gray-600 font-medium" data-aos="fade-right" data-aos-delay="0">
                         Our Work
                     </div>
-                    <div  data-aos="fade-left" data-aos-delay="0">
+                    <div data-aos="fade-left" data-aos-delay="0">
                         <h2 className="text-3xl font-semibold mb-2">
                             Our latest projects
                         </h2>
@@ -74,7 +74,7 @@ export default function LatestProjects() {
                 {/* Projects Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-30">
                     {/* Left Column */}
-                    <div className="space-y-16"  data-aos="fade-right" data-aos-delay="0">
+                    <div className="space-y-16" data-aos="fade-right" data-aos-delay="0">
                         {projectsLeft.map((item, i) => (
                             <ProjectCard key={i} {...item} />
                         ))}
@@ -85,14 +85,14 @@ export default function LatestProjects() {
                     </div>
 
                     {/* Right Column */}
-                    <div className="space-y-16 lg:pt-25"  data-aos="fade-left" data-aos-delay="0">
+                    <div className="space-y-16 lg:pt-25" data-aos="fade-left" data-aos-delay="0">
                         {projectsRight.map((item, i) => (
                             <ProjectCard key={i} {...item} />
                         ))}
                     </div>
-                                            <button className="lg:hidden block px-8 py-3 border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
-                            All Works
-                        </button>
+                    <button className="lg:hidden block mt-10 md:mt-0 px-8 py-3 border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
+                        All Works
+                    </button>
                 </div>
             </div>
         </section>
@@ -107,7 +107,7 @@ function ProjectCard({ title, date, link, image, videoMp4, videoWebm }) {
             <a
                 href={link}
                 className="relative block overflow-hidden rounded-lg group"
-                 data-aos="fade-down" data-aos-delay="0"
+                data-aos="fade-down" data-aos-delay="0"
             >
                 {/* Image */}
                 <img

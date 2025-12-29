@@ -24,7 +24,7 @@ function HomeGallery() {
     });
 
     return (
-        <div ref={containerRef} className="relative h-[400vh] bg-[#f3f3f3]">
+        <div ref={containerRef} className="relative h-[400vh]">
             <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center">
 
                 {/* ALWAYS SLIDING BACKGROUND TEXT */}

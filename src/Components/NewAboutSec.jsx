@@ -45,7 +45,7 @@ function NewAboutSec() {
                         whileInView={{ x: 0, y: 0 }}
                         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="relative lg:absolute -top-30 left-1/6 md:-top-40 md:left-1/5 lg:top-[13%] lg:left-[21%] md:w-60 lg:h-60 w-40 h-40 z-20 shadow-2xl"
+                        className="relative lg:absolute -top-30 left-1/6 md:-top-30 md:left-1/6 lg:top-[13%] lg:left-[21%] md:w-60 lg:h-60 w-40 h-40 z-20 shadow-2xl"
                     >
                         <img
                             src="/h1.jpg"
@@ -65,7 +65,7 @@ function NewAboutSec() {
                         whileInView={{ x: 0, y: 0 }}
                         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
                         viewport={{ once: true }}
-                        className="relative lg:absolute -top-60 left-1/3 md:-top-80 md:left-70 lg:top-[28%] lg:left-[42%] md:w-60 lg:h-60 w-40 h-40 rounded-md md:rounded-[40px] z-30 shadow-2xl"
+                        className="relative lg:absolute -top-60 left-1/3 md:-top-60 md:left-1/3 lg:top-[28%] lg:left-[42%] md:w-60 lg:h-60 w-40 h-40 rounded-md md:rounded-[40px] z-30 shadow-2xl"
                     >
                         <img
                             src="/h2.jpg"
@@ -85,7 +85,7 @@ function NewAboutSec() {
                         whileInView={{ x: 0, y: 0 }}
                         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.6 }}
                         viewport={{ once: true }}
-                        className="relative lg:absolute -top-90 left-1/2 md:-top-120 md:left-100 lg:top-[45%] lg:left-[62.8%] md:w-60 lg:h-60 w-40 h-40 rounded-md md:rounded-[40px] overflow-hidden z-40 shadow-2xl"
+                        className="relative lg:absolute -top-90 left-1/2 md:-top-90 md:left-1/2 lg:top-[45%] lg:left-[62.8%] md:w-60 lg:h-60 w-40 h-40 rounded-md md:rounded-[40px] overflow-hidden z-40 shadow-2xl"
                     >
                         <img
                             src="/h3.jpg"
