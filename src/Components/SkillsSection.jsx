@@ -69,7 +69,7 @@ const handleScroll = () => {
         <div className="w-fit">
           <div className="sticky top-1/2 -translate-y-1/2 flex items-center gap-2">
             <p className="text-lg tracking-widest uppercase text-black font-semibold">
-              Skills
+               Service
             </p>
             <div className="w-14 h-[2px] bg-red-500 " />
           </div>
