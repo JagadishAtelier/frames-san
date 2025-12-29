@@ -1,14 +1,32 @@
 import React from 'react';
 
 const LegionSection = () => {
+  // const keys = [
+  //   { src: "/Keys/F-RED.png", rotate: "-rotate-[16deg]", translate: "-translate-y-2" },
+  //   { src: "https://cdn.prod.website-files.com/68d144a80d497ed4650a22b0/68d2f7218a42e83168255817_Keys%206.avif", rotate: "rotate-[8deg]", translate: "-translate-y-0" },
+  //   { src: "https://cdn.prod.website-files.com/68d144a80d497ed4650a22b0/68d2f7212eb0ac6549c67e31_Keys%205.avif", rotate: "-rotate-[25deg]", translate: "translate-y-2" },
+  //   { src: "https://cdn.prod.website-files.com/68d144a80d497ed4650a22b0/68d2f721e58c58a4e79802ce_Keys%204.avif", rotate: "rotate-0", translate: "translate-y-0" },
+  //   { src: "https://cdn.prod.website-files.com/68d144a80d497ed4650a22b0/68d2f721c59aee920800b5df_Keys%202.avif", rotate: "rotate-[8deg]", translate: "translate-y-6" },
+  //   { src: "https://cdn.prod.website-files.com/68d144a80d497ed4650a22b0/68d2f7219fd506c24419ae39_Keys%203.avif", rotate: "rotate-[17deg]", translate: "translate-y-2" },
+  // ];
   const keys = [
-    { src: "https://cdn.prod.website-files.com/68d144a80d497ed4650a22b0/68d2f721deea35389ccefbbf_Keys%201.avif", rotate: "-rotate-[16deg]", translate: "-translate-y-2" },
-    { src: "https://cdn.prod.website-files.com/68d144a80d497ed4650a22b0/68d2f7218a42e83168255817_Keys%206.avif", rotate: "rotate-[8deg]", translate: "-translate-y-0" },
-    { src: "https://cdn.prod.website-files.com/68d144a80d497ed4650a22b0/68d2f7212eb0ac6549c67e31_Keys%205.avif", rotate: "-rotate-[25deg]", translate: "translate-y-2" },
-    { src: "https://cdn.prod.website-files.com/68d144a80d497ed4650a22b0/68d2f721e58c58a4e79802ce_Keys%204.avif", rotate: "rotate-0", translate: "translate-y-0" },
-    { src: "https://cdn.prod.website-files.com/68d144a80d497ed4650a22b0/68d2f721c59aee920800b5df_Keys%202.avif", rotate: "rotate-[8deg]", translate: "translate-y-6" },
-    { src: "https://cdn.prod.website-files.com/68d144a80d497ed4650a22b0/68d2f7219fd506c24419ae39_Keys%203.avif", rotate: "rotate-[17deg]", translate: "translate-y-2" },
+    { src: "/Keys/F-RED.png", },
+    { src: "/Keys/R.png" },
+    { src: "/Keys/A.png", },
+    { src: "/Keys/M.png", },
+    { src: "/Keys/E.png",},
+    { src: "/Keys/S.png", },
   ];
+  const keys2 = [
+    { src: "/Keys/O.png", },
+    { src: "/Keys/F_.png" },
+    
+  ]
+  const keys3 = [
+    { src: "/Keys/S-RED.png", },
+    { src: "/Keys/A_.png" },
+    { src: "/Keys/N.png" },
+  ]
 
   return (
     <section className="flex items-center justify-center px-6 py-10 font-sans text-[#0a0a0a]">
@@ -25,7 +43,7 @@ const LegionSection = () => {
         </h1>
 
         {/* Keycaps Container */}
-        <div className="flex justify-center items-center gap-2 md:gap-4 mb-10 h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
+        <div className="flex justify-center items-center gap-2 md:gap-0  h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
           {keys.map((key, index) => (
             <div 
               key={index} 
@@ -34,12 +52,41 @@ const LegionSection = () => {
               <img 
                 src={key.src} 
                 alt={`Keycap ${index}`} 
-                className="w-16 md:w-24 h-auto drop-shadow-xl"
+                className="w-16 md:w-28 h-auto drop-shadow-xl"
               />
             </div>
           ))}
         </div>
-
+        <div className='flex gap-10 mb-10'>
+        <div className="flex justify-center items-center gap-2 md:gap-0 h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
+          {keys2.map((key, index) => (
+            <div 
+              key={index} 
+              className={`transition-transform duration-500 hover:scale-110 ${key.rotate} ${key.translate}`}
+            >
+              <img 
+                src={key.src} 
+                alt={`Keycap ${index}`} 
+                className="w-16 md:w-28 h-auto drop-shadow-xl"
+              />
+            </div>
+          ))}
+        </div>
+        <div className="flex justify-center items-center gap-2 md:gap-0 h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
+          {keys3.map((key, index) => (
+            <div 
+              key={index} 
+              className={`transition-transform duration-500 hover:scale-110 ${key.rotate} ${key.translate}`}
+            >
+              <img 
+                src={key.src} 
+                alt={`Keycap ${index}`} 
+                className="w-16 md:w-28 h-auto drop-shadow-xl"
+              />
+            </div>
+          ))}
+        </div>
+</div>
         {/* Description Paragraph */}
         <div className="max-w-2xl mb-6">
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed" data-aos="fade-down" data-aos-delay="3">

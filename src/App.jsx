@@ -12,6 +12,7 @@ import LatestProjects from "./Components/LatestProjects";
 import HomeGallery from "./Components/HomeGallery";
 import SkillsSection from "./Components/SkillsSection";
 import LegionSection from "./Components/LegionSection";
+import HeroSection from "./Components/HeroSection";
 
 // Initialize AOS once
 AOS.init({
