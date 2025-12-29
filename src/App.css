@@ -1,46 +1,61 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400..700;1,400..700&display=swap');
 @import "tailwindcss";
+
 #root {
-    font-family: "Mona Sans", sans-serif !important;
+  font-family: "Mona Sans", sans-serif !important;
   background-color: #f3f3f3;
 }
-.btn-bg-primery{
+
+.btn-bg-primery {
   background-color: #FFC299;
 }
-.btn-bg-primery:hover{
+
+.btn-bg-primery:hover {
   background-color: #ffb47d;
 }
-button{
+
+button {
   cursor: pointer;
 }
-html, body {
+
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
   background-color: #f3f3f3;
-    font-family: "Mona Sans", sans-serif !important;
-    line-height: 150%;
+  font-family: "Mona Sans", sans-serif !important;
+  line-height: 150%;
 }
-h1,h2,h3,h4,h5,h6{
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   background-image: linear-gradient(150deg, #5a5a5a, #0e0e0e);
   color: var(--heading);
-    letter-spacing: -.01em;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 104%;
+  letter-spacing: -.01em;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 104%;
 }
+
 #smooth-wrapper {
   height: 100%;
-  
+
 }
 
 #smooth-content {
-  min-height: 200vh; /* ensures scrolling exists */
+  min-height: 200vh;
+  /* ensures scrolling exists */
   will-change: transform;
 }
+
 .swiper-slide-active .slide-image {
   animation: zoomIn 4s ease-in-out forwards;
 }
@@ -49,6 +64,7 @@ h1,h2,h3,h4,h5,h6{
   from {
     transform: scale(1);
   }
+
   to {
     transform: scale(1.12);
   }
@@ -108,7 +124,7 @@ h1,h2,h3,h4,h5,h6{
   border-radius: 50% 0 0 50% !important;
   color: white !important;
   line-height: 3 !important;
-  
+
 }
 
 /* Range highlight */
@@ -134,19 +150,26 @@ h1,h2,h3,h4,h5,h6{
   border-radius: 0 50% 50% 0 !important;
   line-height: 3 !important;
 }
-.react-datepicker__day{
+
+.react-datepicker__day {
   line-height: 3 !important;
 }
+
 /* Remove hover effect */
 .react-datepicker__day:hover {
   background: #e7eafe !important;
 }
-.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range), .react-datepicker__month-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range), .react-datepicker__quarter-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range), .react-datepicker__year-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range) {
+
+.react-datepicker__day--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range),
+.react-datepicker__month-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range),
+.react-datepicker__quarter-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range),
+.react-datepicker__year-text--in-selecting-range:not(.react-datepicker__day--in-range, .react-datepicker__month-text--in-range, .react-datepicker__quarter-text--in-range, .react-datepicker__year-text--in-range) {
   background: #e7eafe !important;
   color: #111 !important;
   border-radius: 5px !important;
   line-height: 3 !important;
 }
+
 /* Navigation arrows */
 .react-datepicker__navigation {
   top: 22px !important;
@@ -179,7 +202,7 @@ h1,h2,h3,h4,h5,h6{
   width: 100%;
 }
 
-.testimonial .swiper-wrapper{
+.testimonial .swiper-wrapper {
   overflow-y: visible !important;
   padding: 3rem 0rem;
 }
@@ -199,18 +222,22 @@ h1,h2,h3,h4,h5,h6{
   inset: 50% -4px 0% auto;
   background-position: left;
 }
-.react-datepicker__day-name, .react-datepicker__day, .react-datepicker__time-name{
-  width:2.5rem !important;
+
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker__time-name {
+  width: 2.5rem !important;
 }
+
 /* MOBILE OVERRIDES */
 @media (max-width: 768px) {
   .hero-nav-left {
-  inset: 66% auto 0% -5px;
-}
+    inset: 66% auto 0% -5px;
+  }
 
-.hero-nav-right {
-  inset: 66% -5px 0% auto;
-}
+  .hero-nav-right {
+    inset: 66% -5px 0% auto;
+  }
 
 }
 
@@ -218,20 +245,51 @@ h1,h2,h3,h4,h5,h6{
   0% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-12px);
   }
+
   100% {
     transform: translateY(0);
   }
 }
+
 .font-script {
-  font-family: "Tangerine", cursive;;
+  font-family: "Tangerine", cursive;
+  ;
 }
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
 
 img {
   backface-visibility: hidden;
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right linear infinite;
 }

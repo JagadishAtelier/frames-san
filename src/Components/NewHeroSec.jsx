@@ -4,7 +4,9 @@ import { MapIcon, MapPin } from 'lucide-react';
 
 function NewHeroSec() {
     const totalDuration = 10;
-    const TEXT_DISTANCE = 310;
+const LEFT_TEXT_DISTANCE = 250;
+const RIGHT_TEXT_DISTANCE = 340;
+
     const [isDesktop, setIsDesktop] = useState(false);
 
     useEffect(() => {
@@ -19,29 +21,30 @@ function NewHeroSec() {
 
     /* ================= TEXT ================= */
 
-    const leftTextVariants = {
-        animate: {
-            x: [0, 0, -TEXT_DISTANCE, -TEXT_DISTANCE, 0],
-            transition: {
-                duration: totalDuration,
-                repeat: Infinity,
-                times: [0, 0.3, 0.5, 0.85, 1],
-                ease: "easeInOut"
-            }
-        }
-    };
+const leftTextVariants = {
+  animate: {
+    x: [0, 0, -LEFT_TEXT_DISTANCE, -LEFT_TEXT_DISTANCE, 0],
+    transition: {
+      duration: totalDuration,
+      repeat: Infinity,
+      times: [0, 0.3, 0.5, 0.85, 1],
+      ease: "easeInOut"
+    }
+  }
+};
 
-    const rightTextVariants = {
-        animate: {
-            x: [0, 0, TEXT_DISTANCE, TEXT_DISTANCE, 0],
-            transition: {
-                duration: totalDuration,
-                repeat: Infinity,
-                times: [0, 0.3, 0.5, 0.85, 1],
-                ease: "easeInOut"
-            }
-        }
-    };
+const rightTextVariants = {
+  animate: {
+    x: [0, 0, RIGHT_TEXT_DISTANCE, RIGHT_TEXT_DISTANCE, 0],
+    transition: {
+      duration: totalDuration,
+      repeat: Infinity,
+      times: [0, 0.3, 0.5, 0.85, 1],
+      ease: "easeInOut"
+    }
+  }
+};
+
 
     /* ================= IMAGE STACK (VERTICAL) ================= */
 
@@ -116,26 +119,26 @@ function NewHeroSec() {
     return (
         <>
             <section className="hidden lg:flex w-full h-screen overflow-hidden text-black items-center justify-center">
-                <div className="max-w-7xl mx-auto px-6 w-full flex flex-col items-center">
+                <div className="w-full flex flex-col items-center">
                     <div className="relative flex items-center justify-center min-h-[50vh]">
 
                         {/* TEXT */}
-                        <div className="flex items-center justify-center">
-                            <motion.h1
+                        <div className="flex items-center justify-center text-black " data-aos="fade-up" data-aos-delay="0">
+                            <motion.p
                                 variants={isDesktop ? leftTextVariants : undefined}
                                 animate={isDesktop ? "animate" : false}
-                                className="text-[15vw] font-bold leading-none z-30 tracking-tighter"
+                                className="text-[13vw] font-bold leading-none z-30 tracking-tighter text-black"
                             >
                                 Fra
-                            </motion.h1>
+                            </motion.p>
 
-                            <motion.h1
+                            <motion.p
                                 variants={isDesktop ? rightTextVariants : undefined}
                                 animate={isDesktop ? "animate" : false}
-                                className="text-[14vw] font-bold leading-none z-30 tracking-tighter"
+                                className="text-[13vw] font-bold leading-none z-30 tracking-tighter"
                             >
                                 mes
-                            </motion.h1>
+                            </motion.p>
                         </div>
 
                         {/* IMAGES */}
@@ -150,7 +153,7 @@ function NewHeroSec() {
                                 className="absolute w-[300px] md:w-[250px] h-[50vh] z-10"
                             >
                                 <img
-                                    src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b405ad684b0fde92895_Camera%20Image.webp"
+                                    src="/hero1.jpg"
                                     className="rounded-2xl shadow-xl h-full w-full"
                                     alt=""
                                 />
@@ -162,7 +165,7 @@ function NewHeroSec() {
                                 className="absolute w-[300px] md:w-[250px] h-[50vh] z-10"
                             >
                                 <img
-                                    src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b3c968a6c6dd3d9bb26_Girl%20Takeing%20Image.webp"
+                                    src="/hero-2.jpg"
                                     className="rounded-2xl shadow-xl h-full w-full"
                                     alt=""
                                 />
@@ -170,7 +173,7 @@ function NewHeroSec() {
 
                             <div className="relative w-[300px] md:w-[250px] h-[55vh] z-20">
                                 <img
-                                    src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b3836b1758db903e8e4_Holding%20Camra.webp"
+                                    src="/hero3.jpg"
                                     className="rounded-2xl shadow-2xl h-full w-full"
                                     alt=""
                                 />

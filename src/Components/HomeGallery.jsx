@@ -31,7 +31,7 @@ function HomeGallery() {
                 <div className="absolute inset-0 flex items-center pointer-events-none select-none overflow-hidden">
                     <div className="flex whitespace-nowrap animate-marquee-continuous">
                         {[...Array(4)].map((_, i) => (
-                            <h1 key={i} className="text-9xl font-black uppercase tracking-tighter leading-none">
+                            <h1 key={i} className="text-9xl font-black uppercase tracking-tighter leading-none me-10">
                                 Frames of san
                             </h1>
                         ))}

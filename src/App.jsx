@@ -10,6 +10,8 @@ import NewHeroSec from "./Components/NewHeroSec";
 import NewAboutSec from "./Components/NewAboutSec";
 import LatestProjects from "./Components/LatestProjects";
 import HomeGallery from "./Components/HomeGallery";
+import SkillsSection from "./Components/SkillsSection";
+import LegionSection from "./Components/LegionSection";
 
 // Initialize AOS once
 AOS.init({
@@ -26,6 +28,8 @@ export default function App() {
 <NewAboutSec/>
 <LatestProjects/>
 <HomeGallery/>
+<SkillsSection/>
+<LegionSection/>
 <CTASection/>
 <CTAText/>
 </>
