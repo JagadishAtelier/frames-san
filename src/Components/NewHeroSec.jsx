@@ -186,7 +186,7 @@ const rightTextVariants = {
             {/* ================= TABLET VIEW ================= */}
             <section className="hidden md:flex lg:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center">
 
-                <h1 className="text-6xl font-bold mb-8">VISUAL</h1>
+                <h1 className="text-6xl font-bold mb-8">FRAMES</h1>
 
                 <div className="flex items-center justify-center gap-4">
                     <img
@@ -222,7 +222,7 @@ const rightTextVariants = {
             {/* ================= MOBILE VIEW ================= */}
             <section className="flex md:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center mt-20">
 
-                <h1 className="text-4xl font-bold mb-6">VISUAL</h1>
+                <h1 className="text-4xl font-bold mb-6">FRAMES</h1>
 
                 <img
                     src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b3836b1758db903e8e4_Holding%20Camra.webp"
