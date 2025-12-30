@@ -1,103 +1,198 @@
-import React, { useEffect } from "react";
-import { motion,useAnimation  } from "framer-motion";
+import React, { useEffect, useState, useRef } from "react";
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring
+} from "framer-motion";
 
-const projects = [
-  { name: "Velocity Car", subtitle: "Precision Motion", img: "/h1.jpg", link: "#" },
-  { name: "Urban Drive", subtitle: "Modern Performance", img: "/h2.jpg", link: "#" },
-  { name: "Razor Bike", subtitle: "Pure Speed", img: "/h3.jpg", link: "#" },
-  { name: "Concept Coupe", subtitle: "Future Form", img: "/h4.jpg", link: "#" },
-  { name: "Sound Sphere", subtitle: "Bold Acoustics", img: "/h5.jpg", link: "#" },
-  { name: "Street Moto", subtitle: "Raw Control", img: "/h6.jpg", link: "#" },
-];
+function HeroSection() {
+  const [isDesktop, setIsDesktop] = useState(false);
+  const containerRef = useRef(null);
 
-export default function HeroSection() {
-  // CONFIGURATION
-  const duration = 6; // How long one card stays on screen total
-  const overlapFactor = 0.5; // 0.5 means the next card starts when the current one is halfway through
-  const staggerDelay = duration * overlapFactor; 
-  const totalCycleTime = projects.length * staggerDelay;
-const leftControls = useAnimation();
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
 
-useEffect(() => {
-  if (window.innerWidth < 1024) return; // ❌ mobile & tablet
+  useEffect(() => {
+    const checkScreen = () => setIsDesktop(window.innerWidth >= 1024);
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
-  const timer = setTimeout(() => {
-    leftControls.start({
-      scale: 0.85,
-      x: -80,
-      transition: {
-        duration: 0.8,
-        ease: "easeInOut",
+  /* ================= CINEMATIC SPRING ================= */
+  const springConfig = {
+    stiffness: 45,
+    damping: 35,
+    mass: 1.4
+  };
+
+  /* ================= TEXT (MERGES AT VERY END) ================= */
+  const leftTextRaw = useTransform(
+    scrollYProgress,
+    [0, 0.35, 0.9, 1],
+    [0, -250, -250, 0]
+  );
+  const rightTextRaw = useTransform(
+    scrollYProgress,
+    [0, 0.35, 0.9, 1],
+    [0, 340, 340, 0]
+  );
+  const leftTextX = useSpring(leftTextRaw, springConfig);
+  const rightTextX = useSpring(rightTextRaw, springConfig);
+
+  /* ================= CARD ENTER → HOLD → MOVE UP ================= */
+  const stackYRaw = useTransform(
+    scrollYProgress,
+    [0, 0.35, 0.85, 1],
+    [800, 0, 0, -320]
+  );
+  const stackY = useSpring(stackYRaw, springConfig);
+
+  /* ================= SPLIT AFTER CENTER ================= */
+  const leftImgXRaw = useTransform(
+    scrollYProgress,
+    [0.35, 0.55, 0.85],
+    [0, -220, 0]
+  );
+  const rightImgXRaw = useTransform(
+    scrollYProgress,
+    [0.35, 0.55, 0.85],
+    [0, 220, 0]
+  );
+
+  /* ================= ROTATE → STRAIGHT ================= */
+  const leftImgRotateRaw = useTransform(
+    scrollYProgress,
+    [0.55, 0.7, 0.85],
+    [0, -6, 0]
+  );
+  const rightImgRotateRaw = useTransform(
+    scrollYProgress,
+    [0.55, 0.7, 0.85],
+    [0, 6, 0]
+  );
+
+  const leftImgX = useSpring(leftImgXRaw, springConfig);
+  const rightImgX = useSpring(rightImgXRaw, springConfig);
+  const leftImgRotate = useSpring(leftImgRotateRaw, springConfig);
+  const rightImgRotate = useSpring(rightImgRotateRaw, springConfig);
+
+  /* ================= SLOW SCROLL HANDLER (TRACKPAD + MOUSE NORMALIZED) ================= */
+  useEffect(() => {
+    const section = containerRef.current;
+    if (!section) return;
+
+    let isActive = false;
+
+    // Intersection observer to detect section in view
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isActive = entry.isIntersecting;
       },
-    });
-  }, 800);
+      { threshold: 0.3 }
+    );
 
-  return () => clearTimeout(timer);
-}, []);
+    observer.observe(section);
 
+    // Normalize scroll delta across devices
+    const normalizeDelta = (deltaY) => {
+      // Ensure trackpad delta is not too small
+      const minDelta = 10;
+      return Math.sign(deltaY) * Math.max(Math.abs(deltaY), minDelta);
+    };
+
+    const onWheel = (e) => {
+      if (!isActive) return;
+      e.preventDefault();
+
+      const slowFactor = 0.15; // cinematic scroll speed
+      const delta = normalizeDelta(e.deltaY);
+
+      window.scrollBy({
+        top: delta * slowFactor,
+        left: 0,
+        behavior: "auto" // smoother, no double interpolation
+      });
+    };
+
+    window.addEventListener("wheel", onWheel, { passive: false });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("wheel", onWheel);
+    };
+  }, []);
 
   return (
-    <section className="relative flex items-center md:h-screen w-full overflow-hidden ps-10 lg:px-10 pt-40 md:pt-0 ">
-      {/* Left Content */}
-<motion.div
-  animate={leftControls}
-  initial={{ scale: 1, x: 0 }}
-  className="relative z-10 select-none"
->
-  <h1 className="text-[14vw] font-[900] uppercase leading-[0.75] tracking-[-0.06em] text-black" data-aos="fade-left" data-aos-delay="0">
-    Frames <br /> of San
-  </h1>
+    <section
+      ref={containerRef}
+      className="hidden lg:block w-full h-[220vh]"
+    >
+      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+        <div className="relative w-full h-full flex items-center justify-center">
 
-  <p className="mt-12 max-w-sm text-xl lg:text-2xl font-medium text-gray-700" data-aos="fade-right" data-aos-delay="0">
-    A creative studio shaping bold ideas into meaningful design.
-  </p>
-</motion.div>
-
-
-      {/* Right Cards */}
-      <div className="absolute right-0 z-20 top-0 h-full w-[30vw] [perspective:1500px]">
-        <div className="relative h-full w-full">
-          {projects.map((project, index) => (
-            <motion.a
-              key={index}
-              href={project.link}
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: [0, 1, 1, 0], // Smooth fade in and out
-                y: ["100vh", "0vh", "0vh", "-120vh"],
-                x: ["15vw", "0vw", "0vw", "30vw"],
-                rotateZ: [-15, 0, 0, 35],
-                rotateX: [15, 0, 0, -10],
-              }}
-              transition={{
-                duration: duration,
-                ease: "easeInOut",
-               times: [0, 0.4, 0.6, 1], // Timing of the keyframes
-                repeat: Infinity,
-                // The repeat delay ensures the card waits for the rest of the list to finish
-                repeatDelay: totalCycleTime - duration, 
-                delay: index * staggerDelay,
-              }}
-              style={{ originX: 0.5, originY: 0.5 }}
-              className="absolute right-[15%] top-[25%] md:h-[52vh] lg:w-[40vw] md:w-[50vw] h-[35vh] w-[80vw] rounded-[3rem] border-8 border-white overflow-hidden shadow-2xl"
+          {/* ================= TEXT ================= */}
+          <motion.div className="absolute z-30 flex text-black will-change-transform">
+            <motion.p
+              style={{ x: isDesktop ? leftTextX : 0 }}
+              className="text-[13vw] font-bold leading-none"
             >
-              <div
-                className="h-full w-full bg-cover bg-center"
-                style={{ backgroundImage: `url(${project.img})` }}
-              >
-                <div className="absolute inset-0 flex flex-col justify-end p-12 bg-gradient-to-t from-black/60 to-transparent">
-                  <span className="text-3xl font-black text-white uppercase tracking-tight">
-                    {project.name}
-                  </span>
-                  <span className="text-sm font-bold text-white/80 uppercase tracking-[0.2em] mt-1">
-                    {project.subtitle}
-                  </span>
-                </div>
-              </div>
-            </motion.a>
-          ))}
+              Fra
+            </motion.p>
+            <motion.p
+              style={{ x: isDesktop ? rightTextX : 0 }}
+              className="text-[13vw] font-bold leading-none text-red-600"
+            >
+              mes
+            </motion.p>
+          </motion.div>
+
+          {/* ================= IMAGE STACK ================= */}
+          <motion.div
+            style={{ y: isDesktop ? stackY : 0 }}
+            className="relative flex items-center justify-center will-change-transform"
+          >
+            {/* LEFT */}
+            <motion.div
+              style={{ x: leftImgX, rotate: leftImgRotate }}
+              className="absolute w-[250px] h-[50vh]"
+            >
+              <img
+                src="/hero1.jpg"
+                className="rounded-2xl h-full w-full object-cover shadow-xl"
+                alt=""
+              />
+            </motion.div>
+
+            {/* RIGHT */}
+            <motion.div
+              style={{ x: rightImgX, rotate: rightImgRotate }}
+              className="absolute w-[250px] h-[50vh]"
+            >
+              <img
+                src="/hero-2.jpg"
+                className="rounded-2xl h-full w-full object-cover shadow-xl"
+                alt=""
+              />
+            </motion.div>
+
+            {/* CENTER */}
+            <div className="relative w-[250px] h-[55vh] z-20">
+              <img
+                src="/hero3.jpg"
+                className="rounded-2xl h-full w-full object-cover shadow-2xl"
+                alt=""
+              />
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>
   );
 }
+
+export default HeroSection;

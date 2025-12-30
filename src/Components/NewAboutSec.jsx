@@ -3,28 +3,28 @@ import { motion } from 'framer-motion'
 
 function NewAboutSec() {
     return (
-        <section className="lg:py-20 px-6 md:px-12 lg:px-10 ">
+        <section className="lg:pb-0 px-6 md:px-12 lg:px-10 ">
             <div className="mx-auto flex flex-col lg:flex-row lg:items-end gap-16">
 
                 {/* Left Content Column */}
                 <div className="flex-1 space-y-8">
-                    <div className="uppercase tracking-wider text-gray-600 font-medium"  data-aos="fade-down" data-aos-delay="0">
+                    <div className="uppercase tracking-wider text-black border-b-2 border-red-600 w-fit font-medium"  data-aos="fade-down" data-aos-delay="0">
                         About Us
                     </div>
 
-                    <h2 className="text-5xl md:text-6xl font-black uppercase leading-[1.1] tracking-tight text-black"  data-aos="fade-down" data-aos-delay="2">
-                        Photography & Videography Studio
-                    </h2>
+                    <p className="text-5xl md:text-6xl font-black uppercase leading-[1.1] tracking-tight text-black"  data-aos="fade-down" data-aos-delay="2">
+                        <span className='text-red-600'>Photography & Videography</span> Studio
+                    </p>
 
-                    <p className="text-lg text-gray-700 max-w-lg leading-relaxed mt-5"  data-aos="fade-down" data-aos-delay="2">
+                    <p className="text-lg text-black max-w-lg leading-relaxed mt-5"  data-aos="fade-down" data-aos-delay="2">
                         Frames of San is a creative photography and videography studio dedicated to capturing real emotions and meaningful moments. We believe every frame should tell a story — one that feels natural, timeless, and authentic.
 
                         With a passion for visual storytelling, we specialize in photography and cinematic videography that preserves memories beautifully. From weddings and portraits to events and brand visuals, our work is driven by creativity, detail, and emotion.
                     </p>
-
+{/* 
                     <button  data-aos="fade-down" data-aos-delay="0" className="px-8 py-3 border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
                         Read More
-                    </button>
+                    </button> */}
                 </div>
 
                 {/* Right Cards */}

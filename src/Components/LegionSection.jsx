@@ -33,11 +33,11 @@ const LegionSection = () => {
       <div className="w-full text-center flex flex-col items-center">
         
         {/* Subheading */}
-        <span className="text-lg mb-6 opacity-80 block"data-aos="fade-down" data-aos-delay="0">(Who are we)</span>
+        <span className="text-lg mb-6 opacity-80 block border-b-2 border-red-600 w-fit"data-aos="fade-down" data-aos-delay="0">Who are we</span>
 
         {/* Main Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-12" data-aos="fade-down" data-aos-delay="1">
-         We don’t just take photos —  <br className="hidden md:block" />
+         We don’t just take photos <br className="hidden md:block" />
           we frame emotions, <br className="hidden md:block" />
           stories, and timeless moments.
         </h1>
@@ -57,7 +57,7 @@ const LegionSection = () => {
             </div>
           ))}
         </div>
-        <div className='flex gap-10 mb-10'>
+        <div className='flex flex-col gap-0 mb-10'>
         <div className="flex justify-center items-center gap-2 md:gap-0 h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
           {keys2.map((key, index) => (
             <div 
@@ -89,7 +89,7 @@ const LegionSection = () => {
 </div>
         {/* Description Paragraph */}
         <div className="max-w-2xl mb-6">
-          <p className="text-lg md:text-xl text-gray-600 leading-relaxed" data-aos="fade-down" data-aos-delay="3">
+          <p className="text-lg md:text-xl text-black leading-relaxed" data-aos="fade-down" data-aos-delay="3">
 Frames of San is a creative photography studio dedicated to capturing authentic emotions, 
 natural expressions, and meaningful stories. From portraits to events, we craft visuals 
 that feel timeless, personal, and truly yours.
@@ -98,14 +98,14 @@ that feel timeless, personal, and truly yours.
         </div>
 
         {/* CTA Button */}
-        <a 
+        {/* <a 
           href="/contact" 
           data-aos="fade-down" data-aos-delay="4"
           className="group relative flex items-center bg-black text-white px-8 py-3 rounded-full transition-all duration-300 hover:bg-zinc-800"
         >
           <span className="w-3 h-3 bg-red-600 rounded-full mr-3 animate-pulse"></span>
           <span className="text-lg font-medium">Learn More</span>
-        </a>
+        </a> */}
 
       </div>
     </section>

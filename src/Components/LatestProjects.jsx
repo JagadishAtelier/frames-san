@@ -57,13 +57,13 @@ export default function LatestProjects() {
             <div className="mx-auto lg:px-10 px-5">
                 {/* Title */}
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-16">
-                    <div className="uppercase tracking-wider text-gray-600 font-medium" data-aos="fade-right" data-aos-delay="0">
+                    <div className="uppercase border-b-2 border-red-600 w-fit tracking-wider text-black font-medium" data-aos="fade-right" data-aos-delay="0">
                         Our Work
                     </div>
                     <div data-aos="fade-left" data-aos-delay="0">
-                        <h2 className="text-3xl font-semibold mb-2">
-                            Our latest projects
-                        </h2>
+                        <p className="text-3xl font-semibold mb-2">
+                            Our <span className="text-red-600">latest projects</span>
+                        </p>
                         <p className="max-w-md">
                             Each project reflects our dedication to excellence, creativity,
                             and innovation.
@@ -79,9 +79,9 @@ export default function LatestProjects() {
                             <ProjectCard key={i} {...item} />
                         ))}
 
-                        <button className="lg:block hidden px-8 py-3 border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
+                        {/* <button className="lg:block hidden px-8 py-3 border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
                             All Works
-                        </button>
+                        </button> */}
                     </div>
 
                     {/* Right Column */}
@@ -90,9 +90,9 @@ export default function LatestProjects() {
                             <ProjectCard key={i} {...item} />
                         ))}
                     </div>
-                    <button className="lg:hidden block mt-10 md:mt-0 px-8 py-3 border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
+                    {/* <button className="lg:hidden block mt-10 md:mt-0 px-8 py-3 border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
                         All Works
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </section>
@@ -135,19 +135,19 @@ function ProjectCard({ title, date, link, image, videoMp4, videoWebm }) {
             <div className="flex items-center justify-between mt-5">
                 <div>
                     <a href={link}>
-                        <h4 className="text-2xl font-semibold hover:opacity-70 transition">
+                        <p className="text-2xl font-semibold hover:opacity-70 transition text-red-600">
                             {title}
-                        </h4>
+                        </p>
                     </a>
-                    <p className="text-sm mt-2">{date}</p>
+                    <p className="text-sm mt-2 text-black">{date}</p>
                 </div>
 
-                <a
+                {/* <a
                     href={link}
                     className="relative text-sm font-medium after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[1px] after:bg-black after:scale-x-0 hover:after:scale-x-100 after:origin-left after:transition-transform"
                 >
                     Learn more
-                </a>
+                </a> */}
             </div>
         </div>
     );

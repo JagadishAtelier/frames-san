@@ -33,7 +33,10 @@ export default function Navbar() {
                                 className="lg:h-25 h-20"
                             />
                         </a>
-
+                    </div>
+                    {/* Right Actions */}
+                    <div className="hidden md:flex items-center gap-6 ">
+                        
                         {/* Desktop Menu */}
                         <nav className="hidden md:flex items-center gap-10 text-sm text-black font-semibold bg-white py-3 px-5 rounded-4xl mb-0">
                             <NavLink href="/" label="Home" />
@@ -41,9 +44,7 @@ export default function Navbar() {
                             <NavLink href="/about" label="About" />
                             {/* <NavLink href="/blog" label="Blog" /> */}
                         </nav>
-                    </div>
-                    {/* Right Actions */}
-                    <div className="hidden md:flex items-center gap-6 bg-white rounded-4xl ps-4 py-1">
+                        <div className="bg-white rounded-4xl ps-4 py-1 md:flex items-center gap-6">
                         <a
                             href="mailto:framesofsan@gmail.com"
                             className="group flex items-center gap-2 overflow-hidden"
@@ -74,6 +75,7 @@ export default function Navbar() {
                                 Contact
                             </span>
                         </a>
+                        </div>
                     </div>
 
                     {/* Mobile Menu Button */}

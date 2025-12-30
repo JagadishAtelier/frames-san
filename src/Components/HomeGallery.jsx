@@ -31,9 +31,9 @@ function HomeGallery() {
                 <div className="absolute inset-0 flex items-center pointer-events-none select-none overflow-hidden">
                     <div className="flex whitespace-nowrap animate-marquee-continuous">
                         {[...Array(4)].map((_, i) => (
-                            <h1 key={i} className="text-9xl font-black uppercase tracking-tighter leading-none me-10">
-                                Frames of san
-                            </h1>
+                            <p key={i} className="text-9xl font-black uppercase tracking-tighter leading-none me-10">
+                                <span className='text-red-600'>F</span>rames <span className='text-red-600'>o</span>f <span className='text-red-600'>s</span>an
+                            </p>
                         ))}
                     </div>
                 </div>
@@ -75,13 +75,13 @@ function HomeGallery() {
                 </div>
 
                 {/* STATIC UI ELEMENTS */}
-                <div className="absolute bottom-10 flex flex-col items-center">
+                {/* <div className="absolute bottom-10 flex flex-col items-center">
                     <p className="text-gray-800 font-medium mb-4">Frames Of San</p>
                     <button className="flex items-center gap-3 bg-black text-white px-10 py-4 rounded-full hover:scale-105 transition-transform">
                         <span className="w-2.5 h-2.5 bg-red-600 rounded-full shadow-[0_0_8px_red]" />
                         <span className="font-bold text-xs uppercase tracking-widest">Learn More</span>
                     </button>
-                </div>
+                </div> */}
             </div>
 
             <style jsx>{`

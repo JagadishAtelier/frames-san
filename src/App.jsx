@@ -25,7 +25,8 @@ export default function App() {
   return (
 <>
 <Navbar/>
-<NewHeroSec/>
+<HeroSection/>
+{/* <NewHeroSec/> */}
 <NewAboutSec/>
 <LatestProjects/>
 <HomeGallery/>
