@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -12,17 +12,30 @@ const NewBrandSec = () => {
         offset: ["start start", "end end"], // Trigger while the container is in view
     });
 
-    // 2. Map scroll progress (0 to 1) to the clip-path percentage (50% to 0%)
-    // [0, 0.4] means the animation finishes when you've scrolled 40% of the section height
-    const revealValue = useTransform(scrollYProgress, [0, 0.4], [50, 0]);
+// Delay + longer range (starts after slight scroll)
+const rawReveal = useTransform(
+  scrollYProgress,
+  [0.05, 0.65],   // ⬅️ starts a bit late, opens slowly
+  [60, 0]         // ⬅️ more closed initially = larger reveal
+);
 
-    // 3. Generate the clip-path string: inset(top% right% bottom% left%)
-    // We use the same 'v' for top and bottom to make it open from the center
-    const clipPath = useTransform(revealValue, (v) => `inset(${v}% 0% ${v}% 0%)`);
+// Spring for smoothness
+const smoothReveal = useSpring(rawReveal, {
+  stiffness: 20,
+  damping: 20,
+  mass: 0.6,
+});
+
+// Vertical open from center
+const clipPath = useTransform(
+  smoothReveal,
+  (v) => `inset(${v}% 0% ${v}% 0%)`
+);
+
 
     return (
         // Increase height (300vh) to give the user enough "room" to scroll and see the animation
-        <section ref={containerRef} className="relative w-full h-[300vh] bg-white">
+        <section ref={containerRef} className="relative w-full h-[300vh]">
 
             {/* Sticky wrapper: keeps the content locked to the screen */}
             <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">

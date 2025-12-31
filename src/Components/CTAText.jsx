@@ -1,4 +1,5 @@
 import React from "react";
+import FadeUpText from "./FadeUpText";
 const socialLinks = [
   {
     label: "Instagram",
@@ -9,14 +10,21 @@ const socialLinks = [
     href: "https://wa.me/8610878315 ", // client WhatsApp number
   },
 ];
+
 const CTAText = () => {
   return (
     <section className="relative lg:mt-10" data-aos="fade-down" data-aos-delay="0">
       <div className="relative z-10 text-center">
         {/* ===== Text ===== */}
-        <p className="mx-auto max-w-3xl text-3xl font-medium text-black md:text-4xl">
-          Frames of San is a creative studio delivering focused design solutions for modern brands. We value speed, simplicity, and strong visual direction.
-        </p>
+      <FadeUpText
+        text="Frames of San is a creative studio delivering focused design solutions for modern brands."
+        className="mx-auto max-w-3xl text-3xl font-medium text-black md:text-4xl"
+      />
+      <FadeUpText
+        text="We value speed, simplicity, and strong visual direction."
+        className="mx-auto max-w-3xl text-3xl font-medium text-black md:text-4xl"
+      />
+
 
         {/* ===== Hover Button ===== */}
         <a

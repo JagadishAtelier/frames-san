@@ -54,8 +54,9 @@ const textXRaw = useTransform(scrollYProgress, [0, 0.35], [1200, 0]);
   });
 
   return (
+    <div className='relative'>
     <section ref={sectionRef} className="relative h-[200vh] bg-[#1c1c1c]">
-      <div className="sticky top-0 h-fit w-full flex items-start overflow-hidden px-6 md:px-12 lg:px-20 pt-20">
+      <div className="sticky top-0 h-fit w-full flex items-start overflow-hidden px-6 md:px-12 lg:px-20 pt-20 z-10">
         <div className="mx-auto flex flex-col lg:flex-row items-center w-full gap-10">
 
           {/* ================= LEFT COLUMN ================= */}
@@ -79,7 +80,7 @@ const textXRaw = useTransform(scrollYProgress, [0, 0.35], [1200, 0]);
             />
 
             <AnimatedWords
-              text="Frames of San is a creative photography and videography studio dedicated to capturing real emotions and meaningful moments. We believe every frame should tell a story one that feels natural, timeless, and authentic. With a passion for visual storytelling, we specialize in photography and cinematic videography that preserves memories beautifully. From weddings and portraits to events and brand visuals, our work is driven by creativity, detail, and emotion."
+              text="Frames of San is a creative photography and videography studio dedicated to capturing real emotions and meaningful moments. We believe every frame should tell a story one that feels natural, timeless, and authentic. With a passion for visual storytelling, we specialize in photography and cinematic videography that preserves memories beautifully."
               progress={scrollYProgress}
               limit={0.45}
               startOffset={0.3}
@@ -127,11 +128,11 @@ const textXRaw = useTransform(scrollYProgress, [0, 0.35], [1200, 0]);
 
         </div>
       </div>
-
-      <div className="pointer-events-none absolute -bottom-30 left-0 w-full z-50">
+    </section>
+          <div className="pointer-events-none absolute -bottom-30 left-0 w-full z-0">
         <img src="https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68f284506ddef7dee7053edf_Bg.avif" loading="lazy" alt="Texture" class="h-50 w-full"/>
         </div>
-    </section>
+    </div>
   );
 }
 
