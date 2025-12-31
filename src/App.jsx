@@ -28,9 +28,9 @@ export default function App() {
 <HeroSection/>
 <NewAboutSec/>
 <LatestProjects/>
-{/* <HomeGallery/>
+<HomeGallery/>
 <SkillsSection/>
-<LegionSection/>
+{/* <LegionSection/>
 <CTASection/>
 <CTAText/> */}
 </>

@@ -8,15 +8,15 @@ function NewAboutSec() {
 
                 {/* Left Content Column */}
                 <div className="flex-1 space-y-8">
-                    <div className="uppercase tracking-wider text-black border-b-2 border-red-600 w-fit font-medium"  data-aos="fade-down" data-aos-delay="0">
+                    <div className="uppercase tracking-wider text-black border-b-2 border-red-600 w-fit font-medium mb-3"  data-aos="fade-down" data-aos-delay="0">
                         About Us
                     </div>
 
-                    <p className="text-3xl md:text-6xl font-black uppercase leading-[1.1] tracking-tight text-black"  data-aos="fade-down" data-aos-delay="2">
+                    <p className="text-4xl md:text-6xl font-black uppercase leading-[1.1] tracking-tight text-black mb-3"  data-aos="fade-down" data-aos-delay="2">
                         <span className='text-red-600'>Photography</span> & <span className='text-red-600'>Videography</span> Studio
                     </p>
 
-                    <p className="text-lg text-black max-w-none lg:max-w-lg leading-relaxed mt-5"  data-aos="fade-down" data-aos-delay="2">
+                    <p className="text-lg text-black max-w-none lg:max-w-lg leading-relaxed lg:mt-5"  data-aos="fade-down" data-aos-delay="2">
                         Frames of San is a creative photography and videography studio dedicated to capturing real emotions and meaningful moments. We believe every frame should tell a story one that feels natural, timeless, and authentic.
 
                         With a passion for visual storytelling, we specialize in photography and cinematic videography that preserves memories beautifully. From weddings and portraits to events and brand visuals, our work is driven by creativity, detail, and emotion.

@@ -61,7 +61,7 @@ export default function LatestProjects() {
                         Our Work
                     </div>
                     <div data-aos="fade-left" data-aos-delay="0">
-                        <p className="text-3xl font-semibold mb-2">
+                        <p className="text-4xl font-semibold mb-2">
                             Our <span className="text-red-600">latest projects</span>
                         </p>
                         <p className="max-w-md">
