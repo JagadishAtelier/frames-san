@@ -63,8 +63,8 @@ export default function SkillsSection() {
   }, []);
 
   return (
-    <section className="border-t border-b border-gray-500 w-fit mx-auto lg:py-20 py-10">
-      <div className="px-6 flex gap-7 justify-center">
+    <section className="border-t border-b border-gray-500 md:w-fit mx-auto lg:py-20 py-10">
+      <div className="px-6 flex md:flex-row flex-col md:gap-7 justify-center">
 
         {/* LEFT — STICKY */}
         <div className="w-fit">
