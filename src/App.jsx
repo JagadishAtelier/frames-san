@@ -34,8 +34,7 @@ export default function App() {
 <LegionSection/>
 <CTASection/>
 <CTAText/>
-<TickerSection/>
-<CTAText/>
+{/* <TickerSection/> */}
 </>
   );
 }
