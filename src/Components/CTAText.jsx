@@ -35,33 +35,12 @@ const CTAText = () => {
           </span>
         </a>
       </div>
-      <div className="flex justify-center mx-auto lg:mt-24 mt-5 w-fit items-center gap-10 text-sm font-semibold bg-white py-3 px-5 rounded-4xl mb-0">
-        {socialLinks.map((item) => (
-          <a
-            key={item.label}
-            href={item.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative h-5 overflow-hidden cursor-pointer text-black"
-            data-aos="fade-right" data-aos-delay="0"
-          >
-            {/* Default text */}
-            <span className="block transition-transform duration-300 ease-out group-hover:-translate-y-5">
-              {item.label}
-            </span>
 
-            {/* Hover text */}
-            <span className="absolute left-0 top-5 block transition-transform duration-300 ease-out group-hover:-translate-y-5">
-              {item.label}
-            </span>
-          </a>
-        ))}
-      </div>
-      <div className="mt-4 flex lg:justify-end text-center" data-aos="fade-up" data-aos-delay="0">
+      {/* <div className="mt-4 flex lg:justify-end text-center" data-aos="fade-up" data-aos-delay="0">
         <p className="text-gray-500 text-sm">
           Copyright @ 2025 designed by <a href="https://ateliertechnologysolutions.com/" className="">Atelier Creation</a>
         </p>
-      </div>
+      </div> */}
 
 
     </section>

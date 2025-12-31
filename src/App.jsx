@@ -13,6 +13,7 @@ import HomeGallery from "./Components/HomeGallery";
 import SkillsSection from "./Components/SkillsSection";
 import LegionSection from "./Components/LegionSection";
 import HeroSection from "./Components/HeroSection";
+import TickerSection from "./Components/TickerSection";
 
 // Initialize AOS once
 AOS.init({
@@ -32,6 +33,8 @@ export default function App() {
 <SkillsSection/>
 <LegionSection/>
 <CTASection/>
+<CTAText/>
+<TickerSection/>
 <CTAText/>
 </>
   );
