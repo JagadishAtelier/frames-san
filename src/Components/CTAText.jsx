@@ -59,7 +59,7 @@ const CTAText = () => {
       </div>
       <div className="mt-4 flex lg:justify-end text-center" data-aos="fade-up" data-aos-delay="0">
         <p className="text-gray-500 text-sm">
-          Copyright @ 2025 designed by <a href="https://ateliertechnologysolutions.com/" className="">Atelier Technology</a> - powered by Atelier
+          Copyright @ 2025 designed by <a href="https://ateliertechnologysolutions.com/" className="">Atelier Creation</a>
         </p>
       </div>
 

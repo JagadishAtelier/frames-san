@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 function NewAboutSec() {
     return (
         <section className="lg:pb-0 px-6 md:px-12 lg:px-10 ">
-            <div className="mx-auto flex flex-col lg:flex-row lg:items-end gap-16">
+            <div className="mx-auto flex flex-col lg:flex-row lg:items-end md:gap-16 lg:gap-0">
 
                 {/* Left Content Column */}
                 <div className="flex-1 space-y-8">
@@ -12,12 +12,12 @@ function NewAboutSec() {
                         About Us
                     </div>
 
-                    <p className="text-5xl md:text-6xl font-black uppercase leading-[1.1] tracking-tight text-black"  data-aos="fade-down" data-aos-delay="2">
-                        <span className='text-red-600'>Photography & Videography</span> Studio
+                    <p className="text-3xl md:text-6xl font-black uppercase leading-[1.1] tracking-tight text-black"  data-aos="fade-down" data-aos-delay="2">
+                        <span className='text-red-600'>Photography</span> & <span className='text-red-600'>Videography</span> Studio
                     </p>
 
-                    <p className="text-lg text-black max-w-lg leading-relaxed mt-5"  data-aos="fade-down" data-aos-delay="2">
-                        Frames of San is a creative photography and videography studio dedicated to capturing real emotions and meaningful moments. We believe every frame should tell a story — one that feels natural, timeless, and authentic.
+                    <p className="text-lg text-black max-w-none lg:max-w-lg leading-relaxed mt-5"  data-aos="fade-down" data-aos-delay="2">
+                        Frames of San is a creative photography and videography studio dedicated to capturing real emotions and meaningful moments. We believe every frame should tell a story one that feels natural, timeless, and authentic.
 
                         With a passion for visual storytelling, we specialize in photography and cinematic videography that preserves memories beautifully. From weddings and portraits to events and brand visuals, our work is driven by creativity, detail, and emotion.
                     </p>
@@ -33,7 +33,7 @@ function NewAboutSec() {
                     {/* Card 1 (SOURCE) */}
                     <div className="relative lg:absolute top-0 left-0 md:w-60 lg:h-60 w-40 h-40 rounded-md  md:rounded-[40px] overflow-hidden z-10 shadow-xl">
                         <img
-                            src="/g5.jpg"
+                            src="/hero3.jpg"
                             className="w-full h-full object-cover"
                             alt="Artistic student"
                         />
@@ -45,7 +45,7 @@ function NewAboutSec() {
                         whileInView={{ x: 0, y: 0 }}
                         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
                         viewport={{ once: true }}
-                        className="relative lg:absolute -top-30 left-1/6 md:-top-30 md:left-1/6 lg:top-[13%] lg:left-[21%] md:w-60 lg:h-60 w-40 h-40 z-20 shadow-2xl"
+                        className="relative lg:absolute -top-30 left-1/6 md:-top-30 md:left-1/6 lg:top-[13%] lg:left-[21%] md:w-60 lg:h-60 w-40 h-40 z-20 shadow-2xl md:rounded-[40px]"
                     >
                         <img
                             src="/h1.jpg"
@@ -65,7 +65,7 @@ function NewAboutSec() {
                         whileInView={{ x: 0, y: 0 }}
                         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
                         viewport={{ once: true }}
-                        className="relative lg:absolute -top-60 left-1/3 md:-top-60 md:left-1/3 lg:top-[28%] lg:left-[42%] md:w-60 lg:h-60 w-40 h-40 rounded-md md:rounded-[40px] z-30 shadow-2xl"
+                        className=" relative lg:absolute -top-60 left-1/3 md:-top-60 md:left-1/3 lg:top-[28%] lg:left-[42%] md:w-60 lg:h-60 w-40 h-40 rounded-md md:rounded-[40px] z-30 shadow-2xl"
                     >
                         <img
                             src="/h2.jpg"
@@ -85,7 +85,7 @@ function NewAboutSec() {
                         whileInView={{ x: 0, y: 0 }}
                         transition={{ duration: 0.8, ease: 'easeOut', delay: 0.6 }}
                         viewport={{ once: true }}
-                        className="relative lg:absolute -top-90 left-1/2 md:-top-90 md:left-1/2 lg:top-[45%] lg:left-[62.8%] md:w-60 lg:h-60 w-40 h-40 rounded-md md:rounded-[40px] overflow-hidden z-40 shadow-2xl"
+                        className=" relative lg:absolute -top-90 left-1/2 md:-top-90 md:left-1/2 lg:top-[45%] lg:left-[62.8%] md:w-60 lg:h-60 w-40 h-40 rounded-md md:rounded-[40px] overflow-hidden z-40 shadow-2xl !transform-none"
                     >
                         <img
                             src="/h3.jpg"

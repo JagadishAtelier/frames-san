@@ -32,7 +32,7 @@ function HomeGallery() {
                     <div className="flex whitespace-nowrap animate-marquee-continuous">
                         {[...Array(4)].map((_, i) => (
                             <p key={i} className="text-9xl font-black uppercase tracking-tighter leading-none me-10">
-                                <span className='text-red-600'>F</span>rames <span className='text-red-600'>o</span>f <span className='text-red-600'>s</span>an
+                                Frames <span className='text-red-600'>of</span> san *
                             </p>
                         ))}
                     </div>

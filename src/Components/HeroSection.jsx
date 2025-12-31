@@ -5,7 +5,7 @@ import {
   useTransform,
   useSpring
 } from "framer-motion";
-
+import { MapIcon, MapPin } from 'lucide-react';
 function HeroSection() {
   const [isDesktop, setIsDesktop] = useState(false);
   const containerRef = useRef(null);
@@ -52,16 +52,19 @@ function HeroSection() {
   const stackY = useSpring(stackYRaw, springConfig);
 
   /* ================= SPLIT AFTER CENTER ================= */
-  const leftImgXRaw = useTransform(
-    scrollYProgress,
-    [0.35, 0.55, 0.85],
-    [0, -220, 0]
-  );
-  const rightImgXRaw = useTransform(
-    scrollYProgress,
-    [0.35, 0.55, 0.85],
-    [0, 220, 0]
-  );
+/* ================= SPLIT AFTER CENTER (FIXED) ================= */
+const leftImgXRaw = useTransform(
+  scrollYProgress,
+  [0.55, 0.7, 0.85],
+  [0, -200, 0]
+);
+
+const rightImgXRaw = useTransform(
+  scrollYProgress,
+  [0.55, 0.7, 0.85],
+  [0, 200, 0]
+);
+
 
   /* ================= ROTATE → STRAIGHT ================= */
   const leftImgRotateRaw = useTransform(
@@ -108,7 +111,7 @@ function HeroSection() {
       if (!isActive) return;
       e.preventDefault();
 
-      const slowFactor = 0.15; // cinematic scroll speed
+      const slowFactor = 0.6; // cinematic scroll speed
       const delta = normalizeDelta(e.deltaY);
 
       window.scrollBy({
@@ -127,6 +130,7 @@ function HeroSection() {
   }, []);
 
   return (
+    <div>
     <section
       ref={containerRef}
       className="hidden lg:block w-full h-[220vh]"
@@ -173,7 +177,7 @@ function HeroSection() {
               className="absolute w-[250px] h-[50vh]"
             >
               <img
-                src="/hero-2.jpg"
+                src="/hero3.jpg"
                 className="rounded-2xl h-full w-full object-cover shadow-xl"
                 alt=""
               />
@@ -182,7 +186,7 @@ function HeroSection() {
             {/* CENTER */}
             <div className="relative w-[250px] h-[55vh] z-20">
               <img
-                src="/hero3.jpg"
+                src="/herocam.jpg"
                 className="rounded-2xl h-full w-full object-cover shadow-2xl"
                 alt=""
               />
@@ -192,6 +196,68 @@ function HeroSection() {
         </div>
       </div>
     </section>
+                {/* ================= TABLET VIEW ================= */}
+            <section className="hidden mt-25 md:flex lg:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center">
+
+                <h1 className="text-6xl font-bold mb-8">FRAMES</h1>
+
+                <div className="flex items-center justify-center gap-4">
+                    <img
+                        src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b405ad684b0fde92895_Camera%20Image.webp"
+                        className="w-[220px] h-[380px] object-cover rounded-2xl relative -right-10"
+                        alt=""
+                    />
+                    <img
+                        src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b3836b1758db903e8e4_Holding%20Camra.webp"
+                        className="w-[240px] h-[420px] object-cover rounded-2xl shadow-xl relative z-10"
+                        alt=""
+                    />
+                    <img
+                        src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b3c968a6c6dd3d9bb26_Girl%20Takeing%20Image.webp"
+                        className="w-[220px] h-[380px] object-cover rounded-2xl relative -left-10"
+                        alt=""
+                    />
+                </div>
+                <div className="flex items-center gap-2 mt-10 mb-5">
+                    <MapPin />
+                    <span className="text-lg">Based in Coimbatore</span>
+                </div>
+
+                <h2 className="text-xl font-bold mb-5">We Capture Moments</h2>
+
+                <p className="text-lg text-gray-600 mb-4 w-1/2">
+                    Specialized in Commercial, Editorial, Event, Portrait, Product, and Fashion photography.
+                </p>
+
+                <p className="font-semibold">Since 2016</p>
+
+            </section>
+            {/* ================= MOBILE VIEW ================= */}
+            <section className="flex md:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center mt-20">
+
+                <h1 className="text-4xl font-bold mb-6">FRAMES</h1>
+
+                <img
+                    src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b3836b1758db903e8e4_Holding%20Camra.webp"
+                    className="w-full max-w-[320px] h-[420px] object-cover rounded-2xl mb-6"
+                    alt=""
+                />
+
+                <div className="flex items-center gap-2 mb-4">
+                    <MapPin />
+                    <span className="text-lg">Based in Coimbatore</span>
+                </div>
+
+                <h2 className="text-xl font-bold mb-2">We Capture Moments</h2>
+
+                <p className="text-base text-gray-600 mb-4">
+                    Specialized in Commercial, Editorial, Event, Portrait, Product, and Fashion photography.
+                </p>
+
+                <p className="font-semibold">Since 2016</p>
+
+            </section>
+    </div>
   );
 }
 

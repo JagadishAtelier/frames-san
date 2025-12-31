@@ -26,14 +26,13 @@ export default function App() {
 <>
 <Navbar/>
 <HeroSection/>
-{/* <NewHeroSec/> */}
 <NewAboutSec/>
 <LatestProjects/>
-<HomeGallery/>
+{/* <HomeGallery/>
 <SkillsSection/>
 <LegionSection/>
 <CTASection/>
-<CTAText/>
+<CTAText/> */}
 </>
   );
 }

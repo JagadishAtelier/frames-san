@@ -53,10 +53,10 @@ const projectsRight = [
 
 export default function LatestProjects() {
     return (
-        <section className="lg:py-24 overflow-hidden">
+        <section className="lg:py-24 overflow-hidden py-10">
             <div className="mx-auto lg:px-10 px-5">
                 {/* Title */}
-                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-16">
+                <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 lg:mb-16 mb-4">
                     <div className="uppercase border-b-2 border-red-600 w-fit tracking-wider text-black font-medium" data-aos="fade-right" data-aos-delay="0">
                         Our Work
                     </div>
@@ -103,7 +103,7 @@ export default function LatestProjects() {
 
 function ProjectCard({ title, date, link, image, videoMp4, videoWebm }) {
     return (
-        <div>
+        <div className="mb-4">
             <a
                 href={link}
                 className="relative block overflow-hidden rounded-lg group"
