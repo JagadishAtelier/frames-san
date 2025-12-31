@@ -1,103 +1,134 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useRef } from 'react';
+import {
+  motion,
+  useScroll,
+  useTransform,
+  useSpring
+} from "framer-motion";
+import AnimatedWords from './AnimatedWords';
 
 function NewAboutSec() {
-    return (
-        <section className="lg:pb-0 px-6 md:px-12 lg:px-10 ">
-            <div className="mx-auto flex flex-col lg:flex-row lg:items-end md:gap-16 lg:gap-0">
+  const sectionRef = useRef(null);
 
-                {/* Left Content Column */}
-                <div className="flex-1 space-y-8">
-                    <div className="uppercase tracking-wider text-black border-b-2 border-red-600 w-fit font-medium mb-3"  data-aos="fade-down" data-aos-delay="0">
-                        About Us
-                    </div>
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end end"],
+  });
 
-                    <p className="text-4xl md:text-6xl font-black uppercase leading-[1.1] tracking-tight text-black mb-3"  data-aos="fade-down" data-aos-delay="2">
-                        <span className='text-red-600'>Photography</span> & <span className='text-red-600'>Videography</span> Studio
-                    </p>
+  /* ================= LEFT TEXT ================= */
 
-                    <p className="text-lg text-black max-w-none lg:max-w-lg leading-relaxed lg:mt-5"  data-aos="fade-down" data-aos-delay="2">
-                        Frames of San is a creative photography and videography studio dedicated to capturing real emotions and meaningful moments. We believe every frame should tell a story one that feels natural, timeless, and authentic.
+  // Raw transforms (slightly faster range)
+  const textXRaw = useTransform(scrollYProgress, [0, 0.35], [200, 0]);
+  const textOpacityRaw = useTransform(
+    scrollYProgress,
+    [0, 0.15, 0.35],
+    [0, 1, 1]
+  );
 
-                        With a passion for visual storytelling, we specialize in photography and cinematic videography that preserves memories beautifully. From weddings and portraits to events and brand visuals, our work is driven by creativity, detail, and emotion.
-                    </p>
-{/* 
-                    <button  data-aos="fade-down" data-aos-delay="0" className="px-8 py-3 border-2 border-black rounded-full font-semibold hover:bg-black hover:text-white transition-all duration-300">
-                        Read More
-                    </button> */}
-                </div>
+  // Smooth spring motion
+  const textX = useSpring(textXRaw, {
+    stiffness: 120,
+    damping: 20,
+    mass: 0.6,
+  });
 
-                {/* Right Cards */}
-                <div className="flex-none lg:flex-1 relative w-full h-[35vh] md:h-[55vh] lg:h-[500px] mt-12 lg:mt-0">
+  const textOpacity = useSpring(textOpacityRaw, {
+    stiffness: 120,
+    damping: 25,
+  });
 
-                    {/* Card 1 (SOURCE) */}
-                    <div className="relative lg:absolute top-0 left-0 md:w-60 lg:h-60 w-40 h-40 rounded-md  md:rounded-[40px] overflow-hidden z-10 shadow-xl">
-                        <img
-                            src="/hero3.jpg"
-                            className="w-full h-full object-cover"
-                            alt="Artistic student"
-                        />
-                    </div>
+  /* ================= RIGHT CARDS ================= */
 
-                    {/* Card 2 */}
-                    <motion.div
-                        initial={{ x: -126, y: -65 }}
-                        whileInView={{ x: 0, y: 0 }}
-                        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.2 }}
-                        viewport={{ once: true }}
-                        className="relative lg:absolute -top-30 left-1/6 md:-top-30 md:left-1/6 lg:top-[13%] lg:left-[21%] md:w-60 lg:h-60 w-40 h-40 z-20 shadow-2xl md:rounded-[40px]"
-                    >
-                        <img
-                            src="/h1.jpg"
-                            className="w-full h-full object-cover md:rounded-[40px] rounded-md"
-                            alt="Desk setup"
-                        />
-                        {/* Tag */}
-                        <div className="absolute -top-17 right-1/8 bg-white text-black px-6 py-3 rounded-full text-sm font-bold shadow-md flex items-center gap-1">
-                            @nina
-                            <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-white absolute -bottom-2 right-4"></div>
-                        </div>
-                    </motion.div>
+  const card1Opacity = useTransform(scrollYProgress, [0.5, 0.58], [0, 1]);
+  const card2Opacity = useTransform(scrollYProgress, [0.58, 0.66], [0, 1]);
+  const card3Opacity = useTransform(scrollYProgress, [0.66, 0.74], [0, 1]);
+  const card4Opacity = useTransform(scrollYProgress, [0.74, 0.82], [0, 1]);
 
-                    {/* Card 3 */}
-                    <motion.div
-                        initial={{ x: -252, y: -140 }}
-                        whileInView={{ x: 0, y: 0 }}
-                        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
-                        viewport={{ once: true }}
-                        className=" relative lg:absolute -top-60 left-1/3 md:-top-60 md:left-1/3 lg:top-[28%] lg:left-[42%] md:w-60 lg:h-60 w-40 h-40 rounded-md md:rounded-[40px] z-30 shadow-2xl"
-                    >
-                        <img
-                            src="/h2.jpg"
-                            className="w-full h-full object-cover md:rounded-[40px] rounded-md"
-                            alt="Record player"
-                        />
-                        {/* Tag */}
-                        <div className="absolute -top-17 right-1/8 bg-zinc-800 text-white px-6 py-3 rounded-full text-sm font-bold shadow-md">
-                            @austin
-                            <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-zinc-800 absolute -bottom-2 right-4"></div>
-                        </div>
-                    </motion.div>
+  const cardScaleRaw = useTransform(scrollYProgress, [0.5, 0.82], [0.85, 1]);
 
-                    {/* Card 4 */}
-                    <motion.div
-                        initial={{ x: -376, y: -225 }}
-                        whileInView={{ x: 0, y: 0 }}
-                        transition={{ duration: 0.8, ease: 'easeOut', delay: 0.6 }}
-                        viewport={{ once: true }}
-                        className=" relative lg:absolute -top-90 left-1/2 md:-top-90 md:left-1/2 lg:top-[45%] lg:left-[62.8%] md:w-60 lg:h-60 w-40 h-40 rounded-md md:rounded-[40px] overflow-hidden z-40 shadow-2xl !transform-none"
-                    >
-                        <img
-                            src="/h3.jpg"
-                            className="w-full h-full object-cover"
-                            alt="Books and headphones"
-                        />
-                    </motion.div>
+  const cardScale = useSpring(cardScaleRaw, {
+    stiffness: 100,
+    damping: 18,
+  });
 
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section ref={sectionRef} className="relative h-[200vh] bg-[#1c1c1c]">
+      <div className="sticky top-0 h-fit w-full flex items-start overflow-hidden px-6 md:px-12 lg:px-20 py-20">
+        <div className="mx-auto flex flex-col lg:flex-row items-center w-full gap-10">
+
+          {/* ================= LEFT COLUMN ================= */}
+          <motion.div
+            style={{ x: textX, opacity: textOpacity }}
+            className="flex-1 space-y-8"
+          >
+            <AnimatedWords
+              text="About Us"
+              progress={scrollYProgress}
+              limit={0.15}
+              className="text-4xl md:text-5xl font-bold text-white"
+            />
+
+            <AnimatedWords
+              text="Photography & Videography Studio"
+              progress={scrollYProgress}
+              limit={0.3}
+              startOffset={0.15}
+              className="text-2xl md:text-7xl font-semibold text-red-600"
+            />
+
+            <AnimatedWords
+              text="Frames of San is a creative photography and videography studio dedicated to capturing real emotions and meaningful moments. We believe every frame should tell a story one that feels natural, timeless, and authentic. With a passion for visual storytelling, we specialize in photography and cinematic videography that preserves memories beautifully. From weddings and portraits to events and brand visuals, our work is driven by creativity, detail, and emotion."
+              progress={scrollYProgress}
+              limit={0.45}
+              startOffset={0.3}
+              className="text-lg md:text-xl text-white"
+            />
+          </motion.div>
+
+          {/* ================= RIGHT COLUMN ================= */}
+          <motion.div className="flex-none lg:flex-1 relative w-full h-[50vh] lg:h-[600px] mt-12 lg:mt-0">
+
+            <motion.div
+              style={{ opacity: card1Opacity, scale: cardScale }}
+              className="absolute top-0 left-0 md:w-60 md:h-60 w-36 h-36 rounded-2xl md:rounded-[40px] overflow-hidden z-10"
+            >
+              <img src="/hero3.jpg" className="w-full h-full object-cover" alt="" />
+            </motion.div>
+
+            <motion.div
+              style={{ opacity: card2Opacity, scale: cardScale }}
+              className="absolute top-[15%] left-[25%] md:w-60 md:h-60 w-36 h-36 z-20"
+            >
+              <img src="/h1.jpg" className="w-full h-full object-cover md:rounded-[40px] rounded-2xl" alt="" />
+              <div className="hidden md:flex absolute -top-10 right-0 bg-white text-black px-4 py-2 rounded-full text-xs font-bold">
+                @nina
+              </div>
+            </motion.div>
+
+            <motion.div
+              style={{ opacity: card3Opacity, scale: cardScale }}
+              className="absolute top-[30%] left-[40%] md:w-60 md:h-60 w-36 h-36 z-30"
+            >
+              <img src="/h2.jpg" className="w-full h-full object-cover md:rounded-[40px] rounded-2xl" alt="" />
+              <div className="hidden md:flex absolute -top-10 left-0 bg-zinc-800 text-white px-4 py-2 rounded-full text-xs font-bold">
+                @austin
+              </div>
+            </motion.div>
+
+            <motion.div
+              style={{ opacity: card4Opacity, scale: cardScale }}
+              className="absolute top-[45%] left-[60%] md:w-60 md:h-60 w-36 h-36 rounded-2xl md:rounded-[40px] overflow-hidden z-40"
+            >
+              <img src="/h3.jpg" className="w-full h-full object-cover" alt="" />
+            </motion.div>
+          </motion.div>
+
+        </div>
+      </div>
+
+      <div className="pointer-events-none absolute -bottom-10 left-0 w-full h-[10vh] bg-gradient-to-b from-[#1c1c1c] to-[#f3f3f3]" />
+    </section>
+  );
 }
 
-export default NewAboutSec
+export default NewAboutSec;

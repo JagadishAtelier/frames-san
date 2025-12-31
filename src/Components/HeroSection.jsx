@@ -5,7 +5,8 @@ import {
   useTransform,
   useSpring
 } from "framer-motion";
-import { MapIcon, MapPin } from 'lucide-react';
+import { MapPin } from "lucide-react";
+
 function HeroSection() {
   const [isDesktop, setIsDesktop] = useState(false);
   const containerRef = useRef(null);
@@ -29,53 +30,51 @@ function HeroSection() {
     mass: 1.4
   };
 
-  /* ================= TEXT (MERGES AT VERY END) ================= */
+  /* ================= TEXT (NO MERGE BACK) ================= */
   const leftTextRaw = useTransform(
     scrollYProgress,
-    [0, 0.35, 0.9, 1],
-    [0, -250, -250, 0]
+    [0, 0.35],
+    [0, -250]
   );
   const rightTextRaw = useTransform(
     scrollYProgress,
-    [0, 0.35, 0.9, 1],
-    [0, 340, 340, 0]
+    [0, 0.35],
+    [0, 340]
   );
+
   const leftTextX = useSpring(leftTextRaw, springConfig);
   const rightTextX = useSpring(rightTextRaw, springConfig);
 
-  /* ================= CARD ENTER → HOLD → MOVE UP ================= */
+  /* ================= CARD ENTER → HOLD ================= */
   const stackYRaw = useTransform(
     scrollYProgress,
-    [0, 0.35, 0.85, 1],
-    [800, 0, 0, -320]
+    [0, 0.35],
+    [800, 0]
   );
   const stackY = useSpring(stackYRaw, springConfig);
 
-  /* ================= SPLIT AFTER CENTER ================= */
-/* ================= SPLIT AFTER CENTER (FIXED) ================= */
-const leftImgXRaw = useTransform(
-  scrollYProgress,
-  [0.55, 0.7, 0.85],
-  [0, -200, 0]
-);
+  /* ================= SPLIT (FINAL STATE) ================= */
+  const leftImgXRaw = useTransform(
+    scrollYProgress,
+    [0.55, 0.7],
+    [0, -180]
+  );
+  const rightImgXRaw = useTransform(
+    scrollYProgress,
+    [0.55, 0.7],
+    [0, 180]
+  );
 
-const rightImgXRaw = useTransform(
-  scrollYProgress,
-  [0.55, 0.7, 0.85],
-  [0, 200, 0]
-);
-
-
-  /* ================= ROTATE → STRAIGHT ================= */
+  /* ================= ROTATION (FINAL STATE) ================= */
   const leftImgRotateRaw = useTransform(
     scrollYProgress,
-    [0.55, 0.7, 0.85],
-    [0, -6, 0]
+    [0.55, 0.7],
+    [0, -6]
   );
   const rightImgRotateRaw = useTransform(
     scrollYProgress,
-    [0.55, 0.7, 0.85],
-    [0, 6, 0]
+    [0.55, 0.7],
+    [0, 6]
   );
 
   const leftImgX = useSpring(leftImgXRaw, springConfig);
@@ -83,14 +82,13 @@ const rightImgXRaw = useTransform(
   const leftImgRotate = useSpring(leftImgRotateRaw, springConfig);
   const rightImgRotate = useSpring(rightImgRotateRaw, springConfig);
 
-  /* ================= SLOW SCROLL HANDLER (TRACKPAD + MOUSE NORMALIZED) ================= */
+  /* ================= SCROLL NORMALIZER ================= */
   useEffect(() => {
     const section = containerRef.current;
     if (!section) return;
 
     let isActive = false;
 
-    // Intersection observer to detect section in view
     const observer = new IntersectionObserver(
       ([entry]) => {
         isActive = entry.isIntersecting;
@@ -100,9 +98,7 @@ const rightImgXRaw = useTransform(
 
     observer.observe(section);
 
-    // Normalize scroll delta across devices
     const normalizeDelta = (deltaY) => {
-      // Ensure trackpad delta is not too small
       const minDelta = 10;
       return Math.sign(deltaY) * Math.max(Math.abs(deltaY), minDelta);
     };
@@ -111,13 +107,12 @@ const rightImgXRaw = useTransform(
       if (!isActive) return;
       e.preventDefault();
 
-      const slowFactor = 0.6; // cinematic scroll speed
+      const slowFactor = 0.6;
       const delta = normalizeDelta(e.deltaY);
 
       window.scrollBy({
         top: delta * slowFactor,
-        left: 0,
-        behavior: "auto" // smoother, no double interpolation
+        behavior: "auto"
       });
     };
 
@@ -130,133 +125,108 @@ const rightImgXRaw = useTransform(
   }, []);
 
   return (
-    <div>
-    <section
-      ref={containerRef}
-      className="hidden lg:block w-full h-[220vh]"
+    <div
+      className="bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage:
+          "url('https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68f0f5cdb4be16b218305de8_Hero%20Bg.avif')"
+      }}
     >
-      <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-        <div className="relative w-full h-full flex items-center justify-center">
 
-          {/* ================= TEXT ================= */}
-          <motion.div className="absolute z-30 flex text-black will-change-transform">
-            <motion.p
-              style={{ x: isDesktop ? leftTextX : 0 }}
-              className="text-[13vw] font-bold leading-none"
-            >
-              Fra
-            </motion.p>
-            <motion.p
-              style={{ x: isDesktop ? rightTextX : 0 }}
-              className="text-[13vw] font-bold leading-none text-red-600"
-            >
-              mes
-            </motion.p>
-          </motion.div>
+      {/* ================= DESKTOP VIEW ================= */}
+      <section
+        ref={containerRef}
+        className="hidden lg:block w-full h-[220vh]"
+      >
+        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+          <div className="relative w-full h-full flex items-center justify-center bg-cover bg-center bg-no-repeat"
+                style={{
+        backgroundImage:
+          "url('https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68f0f5cdb4be16b218305de8_Hero%20Bg.avif')"
+      }}>
 
-          {/* ================= IMAGE STACK ================= */}
-          <motion.div
-            style={{ y: isDesktop ? stackY : 0 }}
-            className="relative flex items-center justify-center will-change-transform"
-          >
-            {/* LEFT */}
-            <motion.div
-              style={{ x: leftImgX, rotate: leftImgRotate }}
-              className="absolute w-[250px] h-[50vh]"
-            >
-              <img
-                src="/hero1.jpg"
-                className="rounded-2xl h-full w-full object-cover shadow-xl"
-                alt=""
-              />
+            {/* TEXT */}
+            <motion.div className="absolute z-30 flex text-black">
+              <motion.p
+                style={{ x: isDesktop ? leftTextX : 0 }}
+                className="text-[13vw] font-bold leading-none"
+              >
+                Fra
+              </motion.p>
+              <motion.p
+                style={{ x: isDesktop ? rightTextX : 0 }}
+                className="text-[13vw] font-bold leading-none text-red-600"
+              >
+                mes
+              </motion.p>
             </motion.div>
 
-            {/* RIGHT */}
+            {/* IMAGE STACK */}
             <motion.div
-              style={{ x: rightImgX, rotate: rightImgRotate }}
-              className="absolute w-[250px] h-[50vh]"
+              style={{ y: isDesktop ? stackY : 0 }}
+              className="relative flex items-center justify-center"
             >
-              <img
-                src="/hero3.jpg"
-                className="rounded-2xl h-full w-full object-cover shadow-xl"
-                alt=""
-              />
-            </motion.div>
-
-            {/* CENTER */}
-            <div className="relative w-[250px] h-[55vh] z-20">
-              <img
-                src="/herocam.jpg"
-                className="rounded-2xl h-full w-full object-cover shadow-2xl"
-                alt=""
-              />
-            </div>
-          </motion.div>
-
-        </div>
-      </div>
-    </section>
-                {/* ================= TABLET VIEW ================= */}
-            <section className="hidden mt-25 md:flex lg:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center">
-
-                <h1 className="text-6xl font-bold mb-8">FRAMES</h1>
-
-                <div className="flex items-center justify-center gap-4">
-                    <img
-                        src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b405ad684b0fde92895_Camera%20Image.webp"
-                        className="w-[220px] h-[380px] object-cover rounded-2xl relative -right-10"
-                        alt=""
-                    />
-                    <img
-                        src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b3836b1758db903e8e4_Holding%20Camra.webp"
-                        className="w-[240px] h-[420px] object-cover rounded-2xl shadow-xl relative z-10"
-                        alt=""
-                    />
-                    <img
-                        src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b3c968a6c6dd3d9bb26_Girl%20Takeing%20Image.webp"
-                        className="w-[220px] h-[380px] object-cover rounded-2xl relative -left-10"
-                        alt=""
-                    />
-                </div>
-                <div className="flex items-center gap-2 mt-10 mb-5">
-                    <MapPin />
-                    <span className="text-lg">Based in Coimbatore</span>
-                </div>
-
-                <h2 className="text-xl font-bold mb-5">We Capture Moments</h2>
-
-                <p className="text-lg text-gray-600 mb-4 w-1/2">
-                    Specialized in Commercial, Editorial, Event, Portrait, Product, and Fashion photography.
-                </p>
-
-                <p className="font-semibold">Since 2016</p>
-
-            </section>
-            {/* ================= MOBILE VIEW ================= */}
-            <section className="flex md:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center mt-20">
-
-                <h1 className="text-4xl font-bold mb-6">FRAMES</h1>
-
+              {/* LEFT */}
+              <motion.div
+                style={{ x: leftImgX, rotate: leftImgRotate }}
+                className="absolute w-[250px] h-[50vh]"
+              >
                 <img
-                    src="https://cdn.prod.website-files.com/686ca5fa622705ab1db8a274/686e0b3836b1758db903e8e4_Holding%20Camra.webp"
-                    className="w-full max-w-[320px] h-[420px] object-cover rounded-2xl mb-6"
-                    alt=""
+                  src="/hero1.jpg"
+                  className="rounded-2xl h-full w-full object-cover shadow-xl"
+                  alt=""
                 />
+              </motion.div>
 
-                <div className="flex items-center gap-2 mb-4">
-                    <MapPin />
-                    <span className="text-lg">Based in Coimbatore</span>
-                </div>
+              {/* RIGHT */}
+              <motion.div
+                style={{ x: rightImgX, rotate: rightImgRotate }}
+                className="absolute w-[250px] h-[50vh]"
+              >
+                <img
+                  src="/hero3.jpg"
+                  className="rounded-2xl h-full w-full object-cover shadow-xl"
+                  alt=""
+                />
+              </motion.div>
 
-                <h2 className="text-xl font-bold mb-2">We Capture Moments</h2>
+              {/* CENTER */}
+              <div className="relative w-[250px] h-[55vh] z-20">
+                <img
+                  src="/herocam.jpg"
+                  className="rounded-2xl h-full w-full object-cover shadow-2xl"
+                  alt=""
+                />
+              </div>
+            </motion.div>
 
-                <p className="text-base text-gray-600 mb-4">
-                    Specialized in Commercial, Editorial, Event, Portrait, Product, and Fashion photography.
-                </p>
+          </div>
+        </div>
+      </section>
 
-                <p className="font-semibold">Since 2016</p>
+      {/* ================= TABLET VIEW ================= */}
+      <section className="hidden md:flex lg:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center">
+        <h1 className="text-6xl font-bold mb-8">FRAMES</h1>
+        <div className="flex items-center justify-center gap-4">
+          <img className="w-[220px] h-[380px] object-cover rounded-2xl -right-10 relative" src="/hero1.jpg" />
+          <img className="w-[240px] h-[420px] object-cover rounded-2xl z-10" src="/herocam.jpg" />
+          <img className="w-[220px] h-[380px] object-cover rounded-2xl -left-10 relative" src="/hero3.jpg" />
+        </div>
+        <div className="flex items-center gap-2 mt-10">
+          <MapPin />
+          <span>Based in Coimbatore</span>
+        </div>
+      </section>
 
-            </section>
+      {/* ================= MOBILE VIEW ================= */}
+      <section className="flex md:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center">
+        <h1 className="text-4xl font-bold mb-6">FRAMES</h1>
+        <img src="/herocam.jpg" className="w-full max-w-[320px] h-[420px] rounded-2xl mb-6 object-cover" />
+        <div className="flex items-center gap-2">
+          <MapPin />
+          <span>Based in Coimbatore</span>
+        </div>
+      </section>
     </div>
   );
 }
