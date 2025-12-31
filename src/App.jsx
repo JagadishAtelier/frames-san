@@ -30,8 +30,8 @@ export default function App() {
 <LatestProjects/>
 <HomeGallery/>
 <SkillsSection/>
-{/* <LegionSection/>
-<CTASection/>
+<LegionSection/>
+{/* <CTASection/>
 <CTAText/> */}
 </>
   );
