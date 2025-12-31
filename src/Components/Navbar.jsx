@@ -73,15 +73,15 @@ export default function Navbar() {
                     {/* Right Actions */}
                     <div className="hidden md:flex items-center gap-6">
 
-                        <div className="bg-white rounded-4xl ps-4 py-1 flex items-center gap-6">
-                            <a href="mailto:framesofsan@gmail.com" className="flex items-center gap-2">
+                        <div className="rounded-4xl ps-4 py-1 flex items-center gap-6">
+                            {/* <a href="mailto:framesofsan@gmail.com" className="flex items-center gap-2">
                                 <img
                                     src="https://cdn.prod.website-files.com/688eb7fda28d7033fb817172/688ed27b183ff7b96a8f0002_email.svg"
                                     alt="Email"
                                     className="w-4"
                                 />
                                 <span className="text-black">Email</span>
-                            </a>
+                            </a> */}
 
                             <a
                                 href="/contact/contact-1"

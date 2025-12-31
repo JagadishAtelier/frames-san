@@ -15,7 +15,9 @@ const AnimatedWords = ({
         const start = startOffset + (i / words.length) * limit;
         const end = start + 0.05;
 
-        const x = useTransform(progress, [start, end], [100, 0]);
+const x = useTransform(progress, [start, end], [150, 0]);
+
+
         const opacity = useTransform(progress, [start, end], [0, 1]);
 
         const isSymbol = word === "&";

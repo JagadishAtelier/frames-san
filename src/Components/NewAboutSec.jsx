@@ -18,7 +18,9 @@ function NewAboutSec() {
   /* ================= LEFT TEXT ================= */
 
   // Raw transforms (slightly faster range)
-  const textXRaw = useTransform(scrollYProgress, [0, 0.35], [200, 0]);
+const textXRaw = useTransform(scrollYProgress, [0, 0.35], [1200, 0]);
+
+
   const textOpacityRaw = useTransform(
     scrollYProgress,
     [0, 0.15, 0.35],
@@ -53,7 +55,7 @@ function NewAboutSec() {
 
   return (
     <section ref={sectionRef} className="relative h-[200vh] bg-[#1c1c1c]">
-      <div className="sticky top-0 h-fit w-full flex items-start overflow-hidden px-6 md:px-12 lg:px-20 py-20">
+      <div className="sticky top-0 h-fit w-full flex items-start overflow-hidden px-6 md:px-12 lg:px-20 pt-20">
         <div className="mx-auto flex flex-col lg:flex-row items-center w-full gap-10">
 
           {/* ================= LEFT COLUMN ================= */}
@@ -126,7 +128,9 @@ function NewAboutSec() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute -bottom-10 left-0 w-full h-[10vh] bg-gradient-to-b from-[#1c1c1c] to-[#f3f3f3]" />
+      <div className="pointer-events-none absolute -bottom-30 left-0 w-full z-50">
+        <img src="https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68f284506ddef7dee7053edf_Bg.avif" loading="lazy" alt="Texture" class="h-50 w-full"/>
+        </div>
     </section>
   );
 }

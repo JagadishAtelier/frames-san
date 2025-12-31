@@ -15,6 +15,7 @@ import LegionSection from "./Components/LegionSection";
 import HeroSection from "./Components/HeroSection";
 import TickerSection from "./Components/TickerSection";
 import Footer from "./Components/Footer";
+import NewBrandSec from "./Components/NewBrandSec";
 
 // Initialize AOS once
 AOS.init({
@@ -29,7 +30,7 @@ export default function App() {
 <Navbar/>
 <HeroSection/>
 <NewAboutSec/>
-<LatestProjects/>
+<NewBrandSec/>
 <HomeGallery/>
 <SkillsSection/>
 <LegionSection/>

@@ -34,12 +34,12 @@ function HeroSection() {
   const leftTextRaw = useTransform(
     scrollYProgress,
     [0, 0.35],
-    [0, -250]
+    [0, -430]
   );
   const rightTextRaw = useTransform(
     scrollYProgress,
     [0, 0.35],
-    [0, 340]
+    [0, 470]
   );
 
   const leftTextX = useSpring(leftTextRaw, springConfig);
@@ -146,18 +146,20 @@ function HeroSection() {
       }}>
 
             {/* TEXT */}
-            <motion.div className="absolute z-30 flex text-black">
+            <motion.div className="absolute z-30 flex text-black flex-col">
               <motion.p
                 style={{ x: isDesktop ? leftTextX : 0 }}
-                className="text-[13vw] font-bold leading-none"
+                className="text-[10vw] font-bold leading-none uppercase"
               >
-                Fra
+                <span>Visi</span>
+                <span>lity</span>
               </motion.p>
               <motion.p
                 style={{ x: isDesktop ? rightTextX : 0 }}
-                className="text-[13vw] font-bold leading-none text-red-600"
+                className="text-[10vw] font-bold leading-none text-red-600 uppercase"
               >
-                mes
+                                <span>Imp</span>
+                <span>act</span>
               </motion.p>
             </motion.div>
 
