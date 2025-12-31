@@ -3,18 +3,18 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const images = [
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/681c8ebe21ea87383387c0f4_Follow%20Me%20Card%20Img3.jpg",
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/681c8ebdb91b926a56051877_Follow%20Me%20Card%20Img2.jpg",
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/681c8ebe21ea87383387c0f4_Follow%20Me%20Card%20Img3.jpg",
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/6835a4f59a8cd04a64b8906f_Insta%20Img4.jpg",
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/681c8ebdb91b926a56051877_Follow%20Me%20Card%20Img2.jpg",
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/681c8ebe21ea87383387c0f4_Follow%20Me%20Card%20Img3.jpg",
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/681c8ebe21ea87383387c0f4_Follow%20Me%20Card%20Img3.jpg",
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/681c8ebdb91b926a56051877_Follow%20Me%20Card%20Img2.jpg",
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/681c8ebe21ea87383387c0f4_Follow%20Me%20Card%20Img3.jpg",
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/6835a4f59a8cd04a64b8906f_Insta%20Img4.jpg",
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/681c8ebdb91b926a56051877_Follow%20Me%20Card%20Img2.jpg",
-    "https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/681c8ebe21ea87383387c0f4_Follow%20Me%20Card%20Img3.jpg",
+    "/follow/f1.jpg",
+    "/follow/f2.jpg",
+    "/follow/f3.jpg",
+    "/follow/f4.jpg",
+    "/follow/f5.jpg",
+    "/follow/f6.jpg",
+    "/follow/f7.jpg",
+    "/follow/f1.jpg",
+    "/follow/f2.jpg",
+    "/follow/f3.jpg",
+    "/follow/f4.jpg",
+    "/follow/f1.jpg",
 ];
 
 export default function TickerSection() {

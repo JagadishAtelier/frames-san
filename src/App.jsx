@@ -14,6 +14,7 @@ import SkillsSection from "./Components/SkillsSection";
 import LegionSection from "./Components/LegionSection";
 import HeroSection from "./Components/HeroSection";
 import TickerSection from "./Components/TickerSection";
+import Footer from "./Components/Footer";
 
 // Initialize AOS once
 AOS.init({
@@ -34,7 +35,8 @@ export default function App() {
 <LegionSection/>
 <CTASection/>
 <CTAText/>
-{/* <TickerSection/> */}
+<TickerSection/>
+<Footer/>
 </>
   );
 }
