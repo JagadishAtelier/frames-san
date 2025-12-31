@@ -76,10 +76,10 @@ const CTASection = () => {
 
 
   return (
-    <section className="relative overflow-hidden lg:py-5 py-20 lg:mt-24 mt-0" data-aos="fade-right" data-aos-delay="0">
+    <section className="relative overflow-hidden lg:py-5 py-0 lg:mt-24 mt-0" data-aos="fade-right" data-aos-delay="0">
 
       {/* ===== BACKGROUND TEXT (Top) ===== */}
-      <div className="absolute lg:-top-2 top-20 left-0 w-full z-0 opacity-10 pointer-events-none">
+      <div className="absolute lg:-top-2 top-0 left-0 w-full z-0 opacity-10 pointer-events-none">
         <MarqueeText text="Let’s Create" direction="left" speed={5} />
       </div>
 
@@ -107,7 +107,7 @@ const CTASection = () => {
       </div>
 
       {/* ===== BACKGROUND TEXT (Bottom) ===== */}
-      <div className="absolute lg:-bottom-2 bottom-20 left-0 w-full z-0 opacity-10">
+      <div className="absolute lg:-bottom-2 bottom-0 left-0 w-full z-0 opacity-10">
         <MarqueeText text="Let’s Create" direction="right" speed={5} />
       </div>
 

@@ -35,7 +35,7 @@ const CTAText = () => {
           </span>
         </a>
       </div>
-      <div className="flex justify-center mx-auto mt-24 w-fit items-center gap-10 text-sm font-semibold bg-white py-3 px-5 rounded-4xl mb-0">
+      <div className="flex justify-center mx-auto lg:mt-24 mt-5 w-fit items-center gap-10 text-sm font-semibold bg-white py-3 px-5 rounded-4xl mb-0">
         {socialLinks.map((item) => (
           <a
             key={item.label}
