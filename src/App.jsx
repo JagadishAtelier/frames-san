@@ -17,6 +17,7 @@ import TickerSection from "./Components/TickerSection";
 import Footer from "./Components/Footer";
 import NewBrandSec from "./Components/NewBrandSec";
 import CallToAction from "./Components/CallToAction";
+import Testimonials from "./Components/Testimonials";
 
 // Initialize AOS once
 AOS.init({
@@ -36,6 +37,7 @@ export default function App() {
 <SkillsSection/>
 <LegionSection/>
 <CTASection/>
+<Testimonials/>
 <CTAText/>
 <TickerSection/>
 <Footer/>

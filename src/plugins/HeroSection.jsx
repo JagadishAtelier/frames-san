@@ -67,29 +67,19 @@ function HeroSection() {
     v => (v < 0.18 ? "nowrap" : "normal")
   );
   const leftAlign = useTransform(
-    scrollYProgress,
-    v => (v < 0.18 ? "left" : "flex-start")
-  );
+  scrollYProgress,
+  v => (v < 0.18 ? "left" : "flex-start")
+);
 
-  const rightAlign = useTransform(
-    scrollYProgress,
-    v => (v < 0.18 ? "right" : "flex-end")
-  );
+const rightAlign = useTransform(
+  scrollYProgress,
+  v => (v < 0.18 ? "right" : "flex-end")
+);
 
 
   /* ================= CARD ENTER ================= */
   const stackY = useSpring(
     useTransform(scrollYProgress, [0, 0.35], [800, 0]),
-    springConfig
-  );
-
-  const sideStackY = useSpring(
-    useTransform(scrollYProgress, [0.35, 0.55], [800, 0]),
-    springConfig
-  );
-
-  const sideOpacity = useSpring(
-    useTransform(scrollYProgress, [0.35, 0.40], [0, 1]),
     springConfig
   );
 
@@ -179,16 +169,12 @@ function HeroSection() {
             </div>
 
             {/* IMAGES */}
-            <div
+            <motion.div
+              style={{ y: isDesktop ? stackY : 0 }}
               className="relative flex items-center justify-center"
             >
               <motion.div
-                style={{
-                  x: leftImgX,
-                  rotate: leftImgRotate,
-                  y: isDesktop ? sideStackY : 0,
-                  opacity: isDesktop ? sideOpacity : 1
-                }}
+                style={{ x: leftImgX, rotate: leftImgRotate }}
                 className="absolute w-[250px] h-[50vh]"
               >
                 <img
@@ -199,12 +185,7 @@ function HeroSection() {
               </motion.div>
 
               <motion.div
-                style={{
-                  x: rightImgX,
-                  rotate: rightImgRotate,
-                  y: isDesktop ? sideStackY : 0,
-                  opacity: isDesktop ? sideOpacity : 1
-                }}
+                style={{ x: rightImgX, rotate: rightImgRotate }}
                 className="absolute w-[250px] h-[50vh]"
               >
                 <img
@@ -214,17 +195,14 @@ function HeroSection() {
                 />
               </motion.div>
 
-              <motion.div
-                style={{ y: isDesktop ? stackY : 0 }}
-                className="relative w-[250px] h-[55vh] z-20"
-              >
+              <div className="relative w-[250px] h-[55vh] z-20">
                 <img
-                  src="/SanthoshPNG.png"
-                  className="rounded-2xl h-full w-full object-cover"
+                  src="/herocam.jpg"
+                  className="rounded-2xl h-full w-full object-cover shadow-2xl"
                   alt=""
                 />
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
