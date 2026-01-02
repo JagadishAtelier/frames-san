@@ -77,6 +77,7 @@ function HeroSection() {
   );
 
 
+
   /* ================= CARD ENTER ================= */
   const stackY = useSpring(
     useTransform(scrollYProgress, [0, 0.35], [800, 0]),
@@ -84,33 +85,33 @@ function HeroSection() {
   );
 
   const sideStackY = useSpring(
-    useTransform(scrollYProgress, [0.35, 0.55], [800, 0]),
+    useTransform(scrollYProgress, [0.35, 0.6], [800, 0]),
     springConfig
   );
 
   const sideOpacity = useSpring(
-    useTransform(scrollYProgress, [0.35, 0.40], [0, 1]),
+    useTransform(scrollYProgress, [0.35, 0.45], [0, 1]),
     springConfig
   );
 
-  /* ================= SPLIT ================= */
+  /* ================= SPLIT & ROTATE (SYNCED WITH SIDE RISE) ================= */
   const leftImgX = useSpring(
-    useTransform(scrollYProgress, [0.55, 0.7], [0, -180]),
+    useTransform(scrollYProgress, [0.35, 0.6], [0, -180]),
     springConfig
   );
 
   const rightImgX = useSpring(
-    useTransform(scrollYProgress, [0.55, 0.7], [0, 180]),
+    useTransform(scrollYProgress, [0.35, 0.6], [0, 180]),
     springConfig
   );
 
   const leftImgRotate = useSpring(
-    useTransform(scrollYProgress, [0.55, 0.7], [0, -6]),
+    useTransform(scrollYProgress, [0.35, 0.6], [0, -6]),
     springConfig
   );
 
   const rightImgRotate = useSpring(
-    useTransform(scrollYProgress, [0.55, 0.7], [0, 6]),
+    useTransform(scrollYProgress, [0.35, 0.6], [0, 6]),
     springConfig
   );
 

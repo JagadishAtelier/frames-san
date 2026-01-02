@@ -132,71 +132,56 @@ const NewBrandSec = () => {
                     style={{ perspective: 1200 }}
                 >
                     {cards.map((card, i) => {
-
-                        const CARDS_START = 0.65;
-                        const CARDS_END = 0.99;
+                        const CARDS_START = 0.6;
+                        const CARDS_END = 0.95;
                         const TOTAL_RANGE = CARDS_END - CARDS_START;
                         const STEP = TOTAL_RANGE / cards.length;
 
-                        const start = CARDS_START + i * STEP;
-                        const end = start + STEP * 1;
+                        // The card starts moving here
+                        const startEntry = CARDS_START + i * STEP;
+                        // The card FINISHES its movement here (0.75 creates a gap before the next card)
+                        const endEntry = startEntry + (STEP * 0.75);
 
+                        // Y Animation: Starts off-screen, moves to center, then stays clamped at 0
                         const y = useTransform(
                             scrollYProgress,
-                            [start, end, CARDS_END],
-                            ["120%", "0%", "0%"]
+                            [startEntry, endEntry],
+                            ["100vh", "0vh"],
+                            { clamp: true }
                         );
 
-                        const rotateX = useTransform(scrollYProgress, [start, end], [40, 0]);
-                        const rotateY = useTransform(scrollYProgress, [start, end], [0, 0]);
-                        const rotateZ = useTransform(scrollYProgress, [start, end], [0, 0]);
-
-                        const opacity = useTransform(
+                        // Scale Animation: Shrinks previous cards slightly as the next ones arrive
+                        const nextCardStart = CARDS_START + (i + 1) * STEP;
+                        const scale = useTransform(
                             scrollYProgress,
-                            [start, start + 0.01],
-                            [0, 1]
+                            [nextCardStart, nextCardStart + STEP * 0.5],
+                            [1, 0.95],
+                            { clamp: true }
                         );
+
+                        // Using Spring for the "Smooth" physics
+                        const smoothY = useSpring(y, { stiffness: 50, damping: 20 });
+                        const smoothScale = useSpring(scale, { stiffness: 50, damping: 20 });
 
                         return (
                             <motion.div
                                 key={card.id}
-                                style={{ y, rotateX, rotateY, rotateZ, opacity }}
-                                className="group absolute w-[320px] md:w-[70vw] rounded-2xl overflow-hidden"
+                                style={{
+                                    y: smoothY,
+                                    scale: smoothScale,
+                                    opacity: 1, // Opacity is now locked to 1 (No Fade)
+                                    zIndex: i,
+                                }}
+                                className="absolute w-[90vw] md:w-[70vw] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)] border border-white/10"
                             >
-                                {/* IMAGE WRAPPER */}
                                 <div className="overflow-hidden">
                                     <img
                                         src={card.image}
-                                        alt=""
-                                        className="
-        w-full h-[70vh] object-cover
-        transition-transform duration-700 ease-out
-        rounded-2xl
-      "
+                                        alt={card.title}
+                                        className="w-full h-[60vh] md:h-[70vh] object-cover"
                                     />
                                 </div>
-
-                                {/* TEXT CONTAINER */}
-                                {/* <div
-                                    className="
-      relative -top-16
-      w-1/2 group-hover:w-full
-      mx-auto
-      flex justify-center
-      px-8 py-3
-      text-center font-semibold text-lg
-      rounded-2xl
-      bg-white/70
-      backdrop-blur-md
-      border border-white/40
-      transition-all duration-500 ease-out
-      group-hover:shadow-[0_12px_30px_rgba(0,0,0,0.15)]
-    "
-                                >
-                                    {card.title}
-                                </div> */}
                             </motion.div>
-
                         );
                     })}
                 </div>
