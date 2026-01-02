@@ -1,121 +1,159 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { FaFacebookF, FaTwitter, FaLinkedinIn } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+
 const testimonials = [
-  {
-    name: "Emily Johnson",
-    location: "USA, California",
-    rating: 5,
-    text:
-      "Damien's photography doesn’t just capture moments; it captures emotions. His work is simply mesmerizing.",
-  },
-  {
-    name: "John Smith",
-    location: "USA, California",
-    rating: 5,
-    text:
-      "Damien has an incredible talent for making every event feel effortless, and the results speak for themselves.",
-  },
-  {
-    name: "Samantha Davis",
-    location: "USA, California",
-    rating: 5,
-    text:
-      "I was blown away by Damien’s ability to capture the essence of our wedding day. His photographs are our memories.",
-  },
+    {
+        name: "Emily Johnson",
+        location: "USA, California",
+        rating: 5,
+        text: "Damien's photography doesn’t just capture moments; it captures emotions. His work is simply mesmerizing.",
+    },
+    {
+        name: "John Smith",
+        location: "UK, London",
+        rating: 5,
+        text: "Damien has an incredible talent for making every event feel effortless, and the results speak for themselves.",
+    },
+    {
+        name: "Samantha Davis",
+        location: "Canada, Toronto",
+        rating: 5,
+        text: "I was blown away by Damien’s ability to capture the essence of our wedding day. His photographs are our memories.",
+    },
+    {
+        name: "Michael Brown",
+        location: "Australia, Sydney",
+        rating: 5,
+        text: "Working with Damien was a dream. He made us feel comfortable and the photos turned out absolutely stunning.",
+    },
+    {
+        name: "Sarah Wilson",
+        location: "USA, New York",
+        rating: 5,
+        text: "The best photographer we could have asked for. He saw details that everyone else missed. Highly recommended!",
+    },
+    {
+        name: "David Lee",
+        location: "Singapore",
+        rating: 5,
+        text: "Each shot is a masterpiece. The lighting, quantity, and composition are always perfect. A true artist.",
+    },
+    {
+        name: "Emma Watson",
+        location: "UK, Manchester",
+        rating: 5,
+        text: "We will cherish these photos forever. Thank you for being so patient and creative with our family.",
+    },
+    {
+        name: "Oliver Martinez",
+        location: "Spain, Barcelona",
+        rating: 5,
+        text: "Incredible energy and output. The photos are vibrant and full of life, just like the event itself.",
+    }
 ];
 
 export default function Testimonials() {
-  const [index, setIndex] = useState(0);
+    const swiperRef = useRef(null);
 
-  const next = () => {
-    setIndex((prev) => (prev + 1) % testimonials.length);
-  };
+    return (
+        <section className="relative bg-[#050505] text-white py-24 px-6 md:px-12 lg:px-20 overflow-hidden min-h-screen flex flex-col justify-center my-30">
+            <div className="max-w-[1400px] mx-auto w-full">
+                {/* HEADER SECTION */}
+                <div className="flex flex-col md:flex-row justify-between items-center sm:mb-24 gap-8">
+                    <div>
+                        <p className="text-sm tracking-[0.2em] text-[#666] uppercase mb-5 font-semibold">
+                            TESTIMONIALS
+                        </p>
+                        <h2 className="text-6xl md:text-8xl leading-none uppercase font-anton tracking-wide text-white">
+                            WHAT MY <br />
+                            <span className="text-[#D00] font-handwriting text-5xl md:text-8xl capitalize ml-1 mt-2 inline-block transform -rotate-2">
+                                Clients Say
+                            </span>
+                        </h2>
+                    </div>
 
-  const prev = () => {
-    setIndex((prev) =>
-      prev === 0 ? testimonials.length - 1 : prev - 1
-    );
-  };
+                    {/* NAVIGATION BUTTONS */}
+                    <div className="flex flex-col-reverse md:flex-row items-center gap-4 mb-4">
+                        <div className="flex gap-4 items-center">
+                            <button
+                            onClick={() => swiperRef.current?.slidePrev()}
+                            className="w-14 h-14 rounded-full border border-[#222] bg-[#0a0a0a] flex items-center justify-center hover:bg-[#1a1a1a] hover:border-[#333] transition-all text-gray-400 hover:text-white group"
+                        >
+                            <ChevronLeft size={24} className="group-hover:-translate-x-0.5 transition-transform" />
+                        </button>
+                        <button
+                            onClick={() => swiperRef.current?.slideNext()}
+                            className="w-14 h-14 rounded-full border border-[#222] bg-[#0a0a0a] flex items-center justify-center hover:bg-[#1a1a1a] hover:border-[#333] transition-all text-gray-400 hover:text-white group"
+                        >
+                            <ChevronRight size={24} className="group-hover:translate-x-0.5 transition-transform" />
+                        </button>
+                        </div>
 
-  return (
-    <section className="relative bg-black text-white py-20 overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/80 to-black" />
-
-      <div className="relative max-w-7xl mx-auto px-6">
-        {/* HEADER */}
-        <div className="flex justify-between items-start mb-14">
-          <div>
-            <p className="text-xs tracking-widest text-gray-400 uppercase mb-2">
-              Testimonials
-            </p>
-            <h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
-              WHAT MY <br />
-              <span className="text-red-600 font-handwriting tracking-wide">
-                CLIENTS SAY
-              </span>
-            </h2>
-          </div>
-
-          {/* CONTROLS */}
-          <div className="flex items-center gap-3">
-            <button
-              onClick={prev}
-              className="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center hover:border-white transition"
-            >
-              ‹
-            </button>
-            <button
-              onClick={next}
-              className="w-9 h-9 rounded-full border border-gray-600 flex items-center justify-center hover:border-white transition"
-            >
-              ›
-            </button>
-            <button className="ml-3 px-4 py-2 text-xs rounded-md bg-gray-800 hover:bg-gray-700 transition">
-              View all Testimonials →
-            </button>
-          </div>
-        </div>
-
-        {/* SLIDER */}
-        <div className="flex gap-6">
-          {testimonials.map((item, i) => (
-            <div
-              key={i}
-              className={`w-full md:w-1/3 bg-[#111] border border-[#222] rounded-xl p-6 transition-all duration-300 ${
-                i === index
-                  ? "opacity-100 scale-100"
-                  : "opacity-40 scale-95 hidden md:block"
-              }`}
-            >
-              {/* HEADER */}
-              <div className="flex justify-between items-start mb-3">
-                <div>
-                  <h4 className="font-semibold">{item.name}</h4>
-                  <p className="text-xs text-gray-400">{item.location}</p>
+                        <button className="ml-6 px-8 h-14 rounded-lg bg-[#1a1a1a] hover:bg-[#252525] border border-transparent hover:border-[#333] text-sm font-medium hidden sm:flex items-center gap-3 transition-all text-gray-300 hover:text-white">
+                            View All Testimonials <ArrowRight size={18} />
+                        </button>
+                    </div>
                 </div>
-                <div className="flex gap-2 text-gray-400 text-sm">
-                  <span>◯</span>
-                  <span>◯</span>
-                  <span>◯</span>
-                </div>
-              </div>
+                <div className="border-b border-[#222] mb-10 sm:my-15" />
 
-              {/* STARS */}
-              <div className="flex text-yellow-400 mb-3">
-                {"★".repeat(item.rating)}
-              </div>
+                {/* SWIPER SLIDER */}
+                <Swiper
+                    onSwiper={(swiper) => (swiperRef.current = swiper)}
+                    modules={[Autoplay, Navigation]}
+                    spaceBetween={30}
+                    slidesPerView={1}
+                    loop={testimonials.length > 3}
+                    autoplay={
+                        testimonials.length > 3
+                            ? { delay: 3000, disableOnInteraction: false }
+                            : false
+                    }
+                    breakpoints={{
+                        640: { slidesPerView: 1 },
+                        768: { slidesPerView: 2 },
+                        1024: { slidesPerView: 3 },
+                    }}
+                    className="w-full"
+                >
+                    {testimonials.map((item, i) => (
+                        <SwiperSlide key={i} style={{height:"-webkit-fill-available"}}>
+                            <div className="h-full group bg-[#0a0a0a] border border-[#1f1f1f] rounded-2xl p-10 hover:border-[#333] transition-all duration-300 relative shadow-2xl shadow-black/50 flex flex-col justify-between">
+                                <div className="h-full">
+                                    {/* SOCIALS PILL */}
+                                    <div className="absolute top-8 right-8 flex items-center gap-4 bg-[#141414] px-5 py-2.5 rounded-full border border-[#222]">
+                                        <div className="w-full h-full rounded-full border-gray-400 border p-2"><FaFacebookF size={16} className="text-gray-100 hover:text-white cursor-pointer transition-colors" /></div>
+                                        <div className="w-full h-full rounded-full border-gray-400 border p-2"><FaTwitter size={16} className="text-gray-100 hover:text-white cursor-pointer transition-colors" /></div>
+                                        <div className="w-full h-full rounded-full border-gray-400 border p-2"><FaLinkedinIn size={16} className="text-gray-100 hover:text-white cursor-pointer transition-colors" /></div>
+                                    </div>
 
-              {/* TEXT */}
-              <p className="text-sm text-gray-300 leading-relaxed">
-                {item.text}
-              </p>
+                                    {/* USER INFO */}
+                                    <div className="mb-8 pt-2">
+                                        <h4 className="text-xl font-bold text-gray-100 mb-1 tracking-wide">{item.name}</h4>
+                                        <p className="text-xs text-gray-600 font-medium uppercase tracking-wider">{item.location}</p>
+                                    </div>
+
+                                    {/* STARS */}
+                                    <div className="flex gap-1.5 text-yellow-500 mb-8 text-sm">
+                                        {[...Array(5)].map((_, index) => (
+                                            <span key={index} className="text-lg">★</span>
+                                        ))}
+                                    </div>
+
+                                    {/* TEXT */}
+                                    <p className="text-[#888] leading-relaxed text-[15px] font-medium pr-4">
+                                        {item.text}
+                                    </p>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
-          ))}
-        </div>
-
-        {/* BOTTOM LINE */}
-        <div className="mt-16 h-[2px] w-full bg-gradient-to-r from-blue-500 to-transparent" />
-      </div>
-    </section>
-  );
+        </section>
+    );
 }

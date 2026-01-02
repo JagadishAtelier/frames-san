@@ -160,9 +160,9 @@ function HeroSection() {
                   whiteSpace: textWrap,
                   textAlign: leftAlign
                 }}
-                className="text-[4vw] font-bold leading-[0.9] uppercase overflow-hidden"
+                className="text-[5vw] font-bold font-anton leading-[0.9] uppercase"
               >
-                Capturing Stories.
+                Capturing Stories.{" "}
               </motion.p>
 
               <motion.p
@@ -173,7 +173,7 @@ function HeroSection() {
                   whiteSpace: textWrap,
                   textAlign: rightAlign
                 }}
-                className="text-[4vw] font-bold leading-[0.9] uppercase text-red-600 overflow-hidden"
+                className="text-[5vw] font-bold font-anton leading-[0.9] uppercase"
               >
                 Creating Legacy.
               </motion.p>
@@ -235,7 +235,7 @@ function HeroSection() {
         <h1 className="text-6xl font-bold mb-8">FRAMES</h1>
         <div className="flex items-center justify-center gap-4">
           <img className="w-[220px] h-[380px] rounded-2xl" src="/hero1.jpg" />
-          <img className="w-[240px] h-[420px] rounded-2xl z-10" src="/herocam.jpg" />
+          <img className="w-[240px] h-[420px] rounded-2xl z-10" src="/SanthoshPNG.png" />
           <img className="w-[220px] h-[380px] rounded-2xl" src="/hero3.jpg" />
         </div>
         <div className="flex items-center gap-2 mt-10">
@@ -245,11 +245,11 @@ function HeroSection() {
       </section>
 
       {/* ================= MOBILE ================= */}
-      <section className="flex md:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center">
+      <section className="flex md:hidden w-full min-h-screen flex-col items-center justify-center px-6 pt-10 text-center">
         <h1 className="text-4xl font-bold mb-6">FRAMES</h1>
         <img
-          src="/herocam.jpg"
-          className="w-full max-w-[320px] h-[420px] rounded-2xl mb-6 object-cover"
+          src="/SanthoshPNG.png"
+          className="w-full max-w-[320px] h-[480px] rounded-2xl mb-8 object-cover"
         />
         <div className="flex items-center gap-2">
           <MapPin />

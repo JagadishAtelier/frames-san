@@ -29,7 +29,8 @@ const AnimatedWords = ({
             key={i}
             style={{ x, opacity }}
             className={`
-              inline-block whitespace-nowrap mr-[0.3em]
+              inline-block whitespace-nowrap 
+              ${i === words.length - 1 ? "" : "mr-[0.3em]"}
               ${highlightCount && i < highlightCount ? highlightClass : ""}
             `}
           >

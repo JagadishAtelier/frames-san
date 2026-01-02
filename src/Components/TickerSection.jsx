@@ -84,7 +84,7 @@ const x = useSpring(rawX, {
     return (
         <section ref={sectionRef} className="relative lg:h-[400vh] h-fit lg:mt-10">
             <div className="sticky top-0 lg:h-screen h-fit overflow-hidden flex lg:items-center items-start justify-center">
-                <p className="absolute lg:top-20 top-10 left-5 lg:left-1/2 lg:-translate-x-1/2 z-0 lg:text-8xl text-4xl w-full lg:w-auto font-bold text-black pointer-events-none">
+                <p className="absolute font-anton lg:top-18 top-10 left-5 lg:left-1/2 lg:-translate-x-1/2 z-0 lg:text-8xl text-4xl w-full lg:w-auto font-bold text-black pointer-events-none">
                     FOLLOW ME
                 </p>
                 <a href="https://www.instagram.com/frames_of_san?igsh=bnNiMHM3N2EzY3N6" target="_blank" className="absolute flex gap-2 top-1/2 left-1/2 -translate-x-1/2 z-50 text-2xl font-bold text-black cursor-pointer bg-white px-10 py-3 rounded-4xl">

@@ -65,7 +65,7 @@ export default function Navbar() {
                             />
                         </a>
                     </div>
-                        <nav className="flex items-center gap-10 text-sm font-semibold bg-white py-3 px-5 rounded-4xl">
+                        <nav className="hidden sm:flex items-center gap-10 text-sm font-semibold bg-white py-3 px-5 rounded-4xl">
                             <NavLink href="/" label="Home" />
                             <NavLink href="/work/work-1" label="Work" />
                             <NavLink href="/about" label="About" />
