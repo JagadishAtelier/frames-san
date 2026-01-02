@@ -11,21 +11,16 @@ const cards = [
 
 const HomeGallery = () => {
     const containerRef = useRef(null);
-    
-    // 1. Detect when the section is in view
-    // once: true ensures the observer stops after the first trigger
     const isInView = useInView(containerRef, { once: true, amount: 0.1 });
-    
-    // Stages: 'idle' -> 'bg-opening' -> 'bg-finished' -> 'ready'
     const [stage, setStage] = useState('idle');
 
     useEffect(() => {
         if (isInView && stage === 'idle') {
             setStage('bg-opening');
             
-            // Sequence Timing
+            // Adjusted timers to match the slower zoom-out feel
             const timer1 = setTimeout(() => setStage('bg-finished'), 1600);
-            const timer2 = setTimeout(() => setStage('ready'), 2600);
+            const timer2 = setTimeout(() => setStage('ready'), 3200);
             
             return () => { clearTimeout(timer1); clearTimeout(timer2); };
         }
@@ -43,12 +38,12 @@ const HomeGallery = () => {
         <div ref={containerRef} className="relative h-[400vh]">
             <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col items-center justify-center">
                 
-                {/* 1. BACKGROUND IMAGE REVEAL (Triggered once) */}
+                {/* 1. BACKGROUND IMAGE REVEAL */}
                 <AnimatePresence>
                     {stage === 'bg-opening' && (
                         <motion.div 
                             exit={{ opacity: 0 }} 
-                            transition={{ duration: 0.5 }}
+                            transition={{ duration: 0.8 }}
                             className="absolute inset-0 flex z-50"
                         >
                             {columns.map((_, i) => (
@@ -74,7 +69,7 @@ const HomeGallery = () => {
                     )}
                 </AnimatePresence>
 
-                {/* 2. BACKGROUND CAROUSEL TEXT (Visible after BG reveal) */}
+                {/* 2. BACKGROUND CAROUSEL TEXT */}
                 <motion.div 
                     initial={{ opacity: 0 }}
                     animate={stage !== 'idle' && stage !== 'bg-opening' ? { opacity: 1 } : { opacity: 0 }}
@@ -89,11 +84,17 @@ const HomeGallery = () => {
                     </div>
                 </motion.div>
 
-                {/* 3. STACKED CARDS (Zoom Out Animation) */}
+                {/* 3. STACKED CARDS (Smoothed & Slowed Zoom Out) */}
                 <motion.div 
                     initial={{ scale: 2.5, opacity: 0 }}
                     animate={stage !== 'idle' && stage !== 'bg-opening' ? { scale: 1, opacity: 1 } : {}}
-                    transition={{ duration: 1, ease: "easeOut" }}
+                    transition={{ 
+                        // Increased duration to 2s for a cinematic feel
+                        duration: 2, 
+                        // quintOut ease for a very smooth deceleration
+                        ease: [0.22, 1, 0.36, 1],
+                        opacity: { duration: 1.5 } 
+                    }}
                     className="relative md:w-1/2 md:h-[50vh] w-[85%] h-[35vh] z-20"
                 >
                     {cards.map((card, index) => {
