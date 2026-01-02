@@ -18,6 +18,7 @@ import Footer from "./Components/Footer";
 import NewBrandSec from "./Components/NewBrandSec";
 import CallToAction from "./Components/CallToAction";
 import { useEffect } from "react";
+import Testimonials from "./Components/Testimonials";
 
 // Initialize AOS once
 AOS.init({
@@ -52,6 +53,7 @@ export default function App() {
 <SkillsSection/>
 <LegionSection/>
 <CTASection/>
+<Testimonials/>
 <CTAText/>
 <TickerSection/>
 <Footer/>
