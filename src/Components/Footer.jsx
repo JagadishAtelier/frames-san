@@ -59,11 +59,11 @@ const Footer = () => {
           />
 
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/60" />
 
-          {/* <h1 className="absolute bottom-10 left-10 text-white text-[12vw] font-bold opacity-20 leading-none">
-            ATELIER
-          </h1> */}
+          <h1 className="absolute bottom-0 left-60 text-white text-[12vw] font-bold opacity-60 leading-none uppercase">
+            Creativity
+          </h1>
         </div>
     </div>
   );
