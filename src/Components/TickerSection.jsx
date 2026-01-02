@@ -69,8 +69,15 @@ const heroOpacity = useSpring(heroOpacityRaw, {
 
 
     /* SECTION-BOUND LOOP */
-    const rawX = useTransform(scrollYProgress, [0.45, 1], [0, -50]);
-    const x = useTransform(rawX, (v) => `${v % 20}%`);
+/* SLIDER SMOOTH SCROLL */
+const rawX = useTransform(scrollYProgress, [0.45, 1], [0, -3000]);
+
+const x = useSpring(rawX, {
+  stiffness: 40,
+  damping: 25,
+  mass: 1.2,
+});
+
 
     const loopImages = [...images, ...images];
 
