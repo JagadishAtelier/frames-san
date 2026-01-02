@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+
 import { useEffect, useState } from "react";
 
 const images = [
@@ -37,11 +38,35 @@ const { scrollYProgress } = useScroll({
 });
 
 
-    /* HERO TRANSFORM */
-    const heroWidth = useTransform(scrollYProgress, [0, 0.35], ["100vw", "25rem"]);
-    const heroHeight = useTransform(scrollYProgress, [0, 0.35], ["100vh", "70vh"]);
-    const heroRadius = useTransform(scrollYProgress, [0, 0.35], ["0px", "20px"]);
-    const heroOpacity = useTransform(scrollYProgress, [0.32, 0.36], [1, 0]);
+/* HERO TRANSFORM (RAW) */
+const heroWidthRaw = useTransform(scrollYProgress, [0, 0.35], ["100vw", "25rem"]);
+const heroHeightRaw = useTransform(scrollYProgress, [0, 0.35], ["100vh", "70vh"]);
+const heroRadiusRaw = useTransform(scrollYProgress, [0, 0.35], ["0px", "20px"]);
+const heroOpacityRaw = useTransform(scrollYProgress, [0.32, 0.36], [1, 0]);
+
+/* SMOOTH SPRINGS */
+const heroWidth = useSpring(heroWidthRaw, {
+  stiffness: 60,
+  damping: 20,
+  mass: 0.8,
+});
+
+const heroHeight = useSpring(heroHeightRaw, {
+  stiffness: 60,
+  damping: 20,
+  mass: 0.8,
+});
+
+const heroRadius = useSpring(heroRadiusRaw, {
+  stiffness: 80,
+  damping: 18,
+});
+
+const heroOpacity = useSpring(heroOpacityRaw, {
+  stiffness: 100,
+  damping: 25,
+});
+
 
     /* SECTION-BOUND LOOP */
     const rawX = useTransform(scrollYProgress, [0.45, 1], [0, -50]);

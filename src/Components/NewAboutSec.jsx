@@ -99,14 +99,14 @@ function NewAboutSec() {
         </div>
 
         {/* BOTTOM IMAGE - Anchored to the section floor */}
-        <div className="absolute -bottom-40 left-0 w-full z-0 h-40 pointer-events-none">
+        {/* <div className="absolute -bottom-40 left-0 w-full z-0 h-40 pointer-events-none">
           <img
             src="https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68f284506ddef7dee7053edf_Bg.avif"
             loading="lazy"
             alt="Texture"
             className="w-full h-full"
           />
-        </div>
+        </div> */}
       </section>
     </div>
   );

@@ -4,10 +4,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 const cards = [
-    { id: 1, title: "Brand Identity", image: "/h1.jpg" },
-    { id: 2, title: "UI / UX Design", image: "/h2.jpg" },
-    { id: 3, title: "Web Experience", image: "/h3.jpg" },
+    { id: 1, title: "Moments in Motion", image: "/h1.jpg" },
+    { id: 2, title: "Timeless Portraits", image: "/h2.jpg" },
+    { id: 3, title: "Visual Storytelling", image: "/h3.jpg" },
 ];
+
 
 const NewBrandSec = () => {
     const containerRef = useRef(null);
@@ -138,7 +139,7 @@ const NewBrandSec = () => {
                         const STEP = TOTAL_RANGE / cards.length;
 
                         const start = CARDS_START + i * STEP;
-                        const end = start + STEP * 0.9;
+                        const end = start + STEP * 1;
 
                         const y = useTransform(
                             scrollYProgress,
@@ -176,7 +177,7 @@ const NewBrandSec = () => {
                                 </div>
 
                                 {/* TEXT CONTAINER */}
-                                <div
+                                {/* <div
                                     className="
       relative -top-16
       w-1/2 group-hover:w-full
@@ -193,7 +194,7 @@ const NewBrandSec = () => {
     "
                                 >
                                     {card.title}
-                                </div>
+                                </div> */}
                             </motion.div>
 
                         );
