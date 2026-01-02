@@ -30,57 +30,79 @@ function HeroSection() {
     mass: 1.4
   };
 
-  /* ================= TEXT (NO MERGE BACK) ================= */
-  const leftTextRaw = useTransform(
-    scrollYProgress,
-    [0, 0.35],
-    [0, -430]
-  );
-  const rightTextRaw = useTransform(
-    scrollYProgress,
-    [0, 0.35],
-    [0, 470]
+  /* ================= TEXT MOVEMENT ================= */
+  const leftTextX = useSpring(
+    useTransform(scrollYProgress, [0, 0.35], [0, -120]),
+    springConfig
   );
 
-  const leftTextX = useSpring(leftTextRaw, springConfig);
-  const rightTextX = useSpring(rightTextRaw, springConfig);
-
-  /* ================= CARD ENTER → HOLD ================= */
-  const stackYRaw = useTransform(
-    scrollYProgress,
-    [0, 0.35],
-    [800, 0]
-  );
-  const stackY = useSpring(stackYRaw, springConfig);
-
-  /* ================= SPLIT (FINAL STATE) ================= */
-  const leftImgXRaw = useTransform(
-    scrollYProgress,
-    [0.55, 0.7],
-    [0, -180]
-  );
-  const rightImgXRaw = useTransform(
-    scrollYProgress,
-    [0.55, 0.7],
-    [0, 180]
+  const leftTextY = useSpring(
+    useTransform(scrollYProgress, [0, 0.35], [0, 150]),
+    springConfig
   );
 
-  /* ================= ROTATION (FINAL STATE) ================= */
-  const leftImgRotateRaw = useTransform(
-    scrollYProgress,
-    [0.55, 0.7],
-    [0, -6]
-  );
-  const rightImgRotateRaw = useTransform(
-    scrollYProgress,
-    [0.55, 0.7],
-    [0, 6]
+  const rightTextX = useSpring(
+    useTransform(scrollYProgress, [0, 0.35], [0, 120]),
+    springConfig
   );
 
-  const leftImgX = useSpring(leftImgXRaw, springConfig);
-  const rightImgX = useSpring(rightImgXRaw, springConfig);
-  const leftImgRotate = useSpring(leftImgRotateRaw, springConfig);
-  const rightImgRotate = useSpring(rightImgRotateRaw, springConfig);
+  const rightTextY = useSpring(
+    useTransform(scrollYProgress, [0, 0.35], [0, -150]),
+    springConfig
+  );
+
+  /* ================= TEXT WRAP AFTER DISTANCE ================= */
+  const leftTextMaxWidth = useSpring(
+    useTransform(scrollYProgress, [0.18, 0.35], ["70vw", "32vw"]),
+    springConfig
+  );
+
+  const rightTextMaxWidth = useSpring(
+    useTransform(scrollYProgress, [0.18, 0.35], ["55vw", "32vw"]),
+    springConfig
+  );
+
+  const textWrap = useTransform(
+    scrollYProgress,
+    v => (v < 0.18 ? "nowrap" : "normal")
+  );
+  const leftAlign = useTransform(
+  scrollYProgress,
+  v => (v < 0.18 ? "left" : "flex-start")
+);
+
+const rightAlign = useTransform(
+  scrollYProgress,
+  v => (v < 0.18 ? "right" : "flex-end")
+);
+
+
+  /* ================= CARD ENTER ================= */
+  const stackY = useSpring(
+    useTransform(scrollYProgress, [0, 0.35], [800, 0]),
+    springConfig
+  );
+
+  /* ================= SPLIT ================= */
+  const leftImgX = useSpring(
+    useTransform(scrollYProgress, [0.55, 0.7], [0, -180]),
+    springConfig
+  );
+
+  const rightImgX = useSpring(
+    useTransform(scrollYProgress, [0.55, 0.7], [0, 180]),
+    springConfig
+  );
+
+  const leftImgRotate = useSpring(
+    useTransform(scrollYProgress, [0.55, 0.7], [0, -6]),
+    springConfig
+  );
+
+  const rightImgRotate = useSpring(
+    useTransform(scrollYProgress, [0.55, 0.7], [0, 6]),
+    springConfig
+  );
 
   /* ================= SCROLL NORMALIZER ================= */
   useEffect(() => {
@@ -88,36 +110,20 @@ function HeroSection() {
     if (!section) return;
 
     let isActive = false;
-
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        isActive = entry.isIntersecting;
-      },
+      ([entry]) => (isActive = entry.isIntersecting),
       { threshold: 0.3 }
     );
 
     observer.observe(section);
 
-    const normalizeDelta = (deltaY) => {
-      const minDelta = 10;
-      return Math.sign(deltaY) * Math.max(Math.abs(deltaY), minDelta);
-    };
-
-    const onWheel = (e) => {
+    const onWheel = e => {
       if (!isActive) return;
       e.preventDefault();
-
-      const slowFactor = 0.6;
-      const delta = normalizeDelta(e.deltaY);
-
-      window.scrollBy({
-        top: delta * slowFactor,
-        behavior: "auto"
-      });
+      window.scrollBy({ top: e.deltaY * 0.6, behavior: "auto" });
     };
 
     window.addEventListener("wheel", onWheel, { passive: false });
-
     return () => {
       observer.disconnect();
       window.removeEventListener("wheel", onWheel);
@@ -125,48 +131,48 @@ function HeroSection() {
   }, []);
 
   return (
-    <div
-      className="bg-cover bg-center bg-no-repeat"
-      style={{
-        backgroundImage:
-          "url('https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68f0f5cdb4be16b218305de8_Hero%20Bg.avif')"
-      }}
-    >
-
-      {/* ================= DESKTOP VIEW ================= */}
-      <section
-        ref={containerRef}
-        className="hidden lg:block w-full h-[220vh]"
-      >
+    <div className="bg-cover bg-center bg-no-repeat">
+      {/* ================= DESKTOP ================= */}
+      <section ref={containerRef} className="hidden lg:block w-full h-[220vh]">
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
-          <div className="relative w-full h-full flex items-center justify-center bg-cover bg-center bg-no-repeat"
-                style={{
-        backgroundImage:
-          "url('https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68f0f5cdb4be16b218305de8_Hero%20Bg.avif')"
-      }}>
-
+          <div
+            className="relative w-full h-full flex items-center justify-center bg-cover bg-center"
+            style={{ backgroundImage: "url('/hero-image-bg.jpg')" }}
+          >
             {/* TEXT */}
-            <motion.div className="absolute z-30 flex text-black flex-col">
+            <div className="absolute z-30 flex w-full justify-center px-20 pointer-events-none">
               <motion.p
-                style={{ x: isDesktop ? leftTextX : 0 }}
-                className="text-[10vw] font-bold leading-none uppercase"
+                style={{
+                  x: isDesktop ? leftTextX : 0,
+                  y: isDesktop ? leftTextY : 0,
+                  maxWidth: isDesktop ? leftTextMaxWidth : "auto",
+                  whiteSpace: textWrap,
+                  textAlign: leftAlign
+                }}
+                className="text-[4vw] font-bold leading-[0.9] uppercase overflow-hidden"
               >
-                <span data-aos="fade-down" data-aos-delay="0">Visility</span>
+                Capturing Stories.
               </motion.p>
-              <motion.p
-                style={{ x: isDesktop ? rightTextX : 0 }}
-                className="text-[10vw] font-bold leading-none text-red-600 uppercase"
-              >
-                <span data-aos="fade-up" data-aos-delay="0">Impact</span>
-              </motion.p>
-            </motion.div>
 
-            {/* IMAGE STACK */}
+              <motion.p
+                style={{
+                  x: isDesktop ? rightTextX : 0,
+                  y: isDesktop ? rightTextY : 0,
+                  maxWidth: isDesktop ? rightTextMaxWidth : "auto",
+                  whiteSpace: textWrap,
+                  textAlign: rightAlign
+                }}
+                className="text-[4vw] font-bold leading-[0.9] uppercase text-red-600 overflow-hidden"
+              >
+                Creating Legacy.
+              </motion.p>
+            </div>
+
+            {/* IMAGES */}
             <motion.div
               style={{ y: isDesktop ? stackY : 0 }}
               className="relative flex items-center justify-center"
             >
-              {/* LEFT */}
               <motion.div
                 style={{ x: leftImgX, rotate: leftImgRotate }}
                 className="absolute w-[250px] h-[50vh]"
@@ -178,7 +184,6 @@ function HeroSection() {
                 />
               </motion.div>
 
-              {/* RIGHT */}
               <motion.div
                 style={{ x: rightImgX, rotate: rightImgRotate }}
                 className="absolute w-[250px] h-[50vh]"
@@ -190,7 +195,6 @@ function HeroSection() {
                 />
               </motion.div>
 
-              {/* CENTER */}
               <div className="relative w-[250px] h-[55vh] z-20">
                 <img
                   src="/herocam.jpg"
@@ -199,18 +203,17 @@ function HeroSection() {
                 />
               </div>
             </motion.div>
-
           </div>
         </div>
       </section>
 
-      {/* ================= TABLET VIEW ================= */}
+      {/* ================= TABLET ================= */}
       <section className="hidden md:flex lg:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center">
         <h1 className="text-6xl font-bold mb-8">FRAMES</h1>
         <div className="flex items-center justify-center gap-4">
-          <img className="w-[220px] h-[380px] object-cover rounded-2xl -right-10 relative" src="/hero1.jpg" />
-          <img className="w-[240px] h-[420px] object-cover rounded-2xl z-10" src="/herocam.jpg" />
-          <img className="w-[220px] h-[380px] object-cover rounded-2xl -left-10 relative" src="/hero3.jpg" />
+          <img className="w-[220px] h-[380px] rounded-2xl" src="/hero1.jpg" />
+          <img className="w-[240px] h-[420px] rounded-2xl z-10" src="/herocam.jpg" />
+          <img className="w-[220px] h-[380px] rounded-2xl" src="/hero3.jpg" />
         </div>
         <div className="flex items-center gap-2 mt-10">
           <MapPin />
@@ -218,10 +221,13 @@ function HeroSection() {
         </div>
       </section>
 
-      {/* ================= MOBILE VIEW ================= */}
+      {/* ================= MOBILE ================= */}
       <section className="flex md:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center">
         <h1 className="text-4xl font-bold mb-6">FRAMES</h1>
-        <img src="/herocam.jpg" className="w-full max-w-[320px] h-[420px] rounded-2xl mb-6 object-cover" />
+        <img
+          src="/herocam.jpg"
+          className="w-full max-w-[320px] h-[420px] rounded-2xl mb-6 object-cover"
+        />
         <div className="flex items-center gap-2">
           <MapPin />
           <span>Based in Coimbatore</span>

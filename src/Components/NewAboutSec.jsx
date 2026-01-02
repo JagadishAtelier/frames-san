@@ -23,9 +23,9 @@ function NewAboutSec() {
 
   return (
     <div className='relative'>
-      <section ref={sectionRef} className="relative h-[300vh] bg-[#1c1c1c]">
-        
-        <div className="sticky top-0 h-screen w-full flex items-start overflow-hidden px-6 md:px-12 lg:px-20 pt-20 z-10">
+      <section ref={sectionRef} className="relative h-[300vh] bg-black">
+
+        <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden px-6 md:px-12 lg:px-20 pt-20 z-10">
           <div className="mx-auto flex flex-col lg:flex-row items-center w-full gap-10">
 
             {/* ================= LEFT COLUMN (TEXT) ================= */}
@@ -41,15 +41,18 @@ function NewAboutSec() {
               {/* Wrapped in a container to ensure consistent alignment during travel */}
               <div className="w-full">
                 <AnimatedWords
-                  text="Photography & Videography Studio"
+                  text="Visuals That Speak Louder Than Words"
                   progress={scrollYProgress}
                   limit={0.3}
                   startOffset={0.05}
+                  highlightCount={2}           // 👈 Visuals That
+                  highlightClass="text-white" // 👈 white
                   className="text-3xl md:text-7xl font-semibold text-red-600 uppercase tracking-tighter"
                 />
+
               </div>
 
-              <div className="max-w-2xl">
+              <div className="max-w-2xl relative z-50">
                 <AnimatedWords
                   text="Frames of San is a creative photography and videography studio dedicated to capturing real emotions and meaningful moments. We believe every frame should tell a story—one that feels natural, timeless, and authentic. With a passion for visual storytelling, we specialize in photography and cinematic videography that preserves memories beautifully."
                   progress={scrollYProgress}
@@ -62,35 +65,45 @@ function NewAboutSec() {
 
             {/* ================= RIGHT COLUMN (CARDS - ORIGINAL DESIGN) ================= */}
             <motion.div className="flex-none lg:flex-1 relative w-full h-[50vh] lg:h-[600px] mt-12 lg:mt-0">
-              
+{/* 
               <motion.div style={{ opacity: card1Opacity, scale: cardScale }} className="absolute top-0 left-0 md:w-60 md:h-60 w-36 h-36 rounded-2xl md:rounded-[40px] overflow-hidden z-10">
                 <img src="/hero3.jpg" className="w-full h-full object-cover" alt="" />
-              </motion.div>
+              </motion.div> */}
 
-              <motion.div style={{ opacity: card2Opacity, scale: cardScale }} className="absolute top-[15%] left-[25%] md:w-60 md:h-60 w-36 h-36 z-20">
+              {/* <motion.div style={{ opacity: card2Opacity, scale: cardScale }} className="absolute top-[15%] left-[25%] md:w-60 md:h-60 w-36 h-36 z-20">
                 <img src="/h1.jpg" className="w-full h-full object-cover md:rounded-[40px] rounded-2xl" alt="" />
                 <div className="hidden md:flex absolute -top-10 right-0 bg-white text-black px-4 py-2 rounded-full text-xs font-bold">@nina</div>
-              </motion.div>
+              </motion.div> */}
 
-              <motion.div style={{ opacity: card3Opacity, scale: cardScale }} className="absolute top-[30%] left-[40%] md:w-60 md:h-60 w-36 h-36 z-30">
-                <img src="/h2.jpg" className="w-full h-full object-cover md:rounded-[40px] rounded-2xl" alt="" />
-                <div className="hidden md:flex absolute -top-10 left-0 bg-zinc-800 text-white px-4 py-2 rounded-full text-xs font-bold">@austin</div>
-              </motion.div>
-
+<motion.div 
+  style={{ opacity: card3Opacity, scale: cardScale }} 
+  className="absolute top-[0%] left-[10%] md:w-120 md:h-full w-36 h-36 z-0 flex items-center justify-center bg-[radial-gradient(circle,_rgba(120,0,0,1)_0%,_rgba(0,0,0,1)_70%)]"
+>
+  <img 
+    src="/about1.png" 
+    className="w-full h-full object-contain rotate-90" 
+    alt="about" 
+  />
+</motion.div>
+{/* 
               <motion.div style={{ opacity: card4Opacity, scale: cardScale }} className="absolute top-[45%] left-[60%] md:w-60 md:h-60 w-36 h-36 rounded-2xl md:rounded-[40px] overflow-hidden z-40">
                 <img src="/h3.jpg" className="w-full h-full object-cover" alt="" />
-              </motion.div>
+              </motion.div> */}
 
             </motion.div>
+
+            {/* <div className='h-[50vh] flex-1'>
+              <img src='/about1.png' className='h-full w-full rotate-90 object-cover'/>
+            </div> */}
           </div>
         </div>
 
         {/* BOTTOM IMAGE - Anchored to the section floor */}
         <div className="absolute -bottom-40 left-0 w-full z-0 h-40 pointer-events-none">
-          <img 
-            src="https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68f284506ddef7dee7053edf_Bg.avif" 
-            loading="lazy" 
-            alt="Texture" 
+          <img
+            src="https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68f284506ddef7dee7053edf_Bg.avif"
+            loading="lazy"
+            alt="Texture"
             className="w-full h-full"
           />
         </div>
