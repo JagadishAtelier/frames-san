@@ -1,43 +1,42 @@
-import { motion, useTransform } from "framer-motion";
+import React from "react";
+import { motion, useTransform, useSpring } from "framer-motion";
 
 const AnimatedWords = ({
   text,
   progress,
-  limit = 0.4,
+  limit = 0.2,
   startOffset = 0,
-  className = ""
+  className = "",
 }) => {
+  // Split text by spaces to animate words individually
   const words = text.split(" ");
 
   return (
-    <p className="flex flex-wrap gap-x-2 overflow-hidden">
+    <div className={`flex flex-wrap items-center ${className}`}>
       {words.map((word, i) => {
-        const start = startOffset + (i / words.length) * limit;
-        const end = start + 0.05;
+        // Distance delay logic
+        const start = startOffset + i * 0.01;
+        const end = start + limit;
 
-const x = useTransform(progress, [start, end], [150, 0]);
+        // Animate from off-screen right to natural position
+        const xRaw = useTransform(progress, [start, end], ["100vw", "0vw"]);
+        const opacityRaw = useTransform(progress, [start, end], [0, 1]);
 
-
-        const opacity = useTransform(progress, [start, end], [0, 1]);
-
-        const isSymbol = word === "&";
+        const x = useSpring(xRaw, { stiffness: 60, damping: 20, mass: 0.5 });
+        const opacity = useSpring(opacityRaw, { stiffness: 60, damping: 20 });
 
         return (
           <motion.span
             key={i}
             style={{ x, opacity }}
-            className={`inline-block ${
-              isSymbol ? "text-white text-2xl md:text-7xl font-semibold mt-2" : className
-            }`}
+            className="inline-block whitespace-nowrap mr-[0.3em]"
           >
-            {word}&nbsp;
+            {word}
           </motion.span>
         );
       })}
-    </p>
+    </div>
   );
 };
-
-
 
 export default AnimatedWords;

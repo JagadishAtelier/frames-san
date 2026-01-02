@@ -16,6 +16,7 @@ import HeroSection from "./Components/HeroSection";
 import TickerSection from "./Components/TickerSection";
 import Footer from "./Components/Footer";
 import NewBrandSec from "./Components/NewBrandSec";
+import CallToAction from "./Components/CallToAction";
 
 // Initialize AOS once
 AOS.init({

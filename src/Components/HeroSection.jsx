@@ -151,15 +151,13 @@ function HeroSection() {
                 style={{ x: isDesktop ? leftTextX : 0 }}
                 className="text-[10vw] font-bold leading-none uppercase"
               >
-                <span>Visi</span>
-                <span>lity</span>
+                <span data-aos="fade-down" data-aos-delay="0">Visility</span>
               </motion.p>
               <motion.p
                 style={{ x: isDesktop ? rightTextX : 0 }}
                 className="text-[10vw] font-bold leading-none text-red-600 uppercase"
               >
-                                <span>Imp</span>
-                <span>act</span>
+                <span data-aos="fade-up" data-aos-delay="0">Impact</span>
               </motion.p>
             </motion.div>
 
