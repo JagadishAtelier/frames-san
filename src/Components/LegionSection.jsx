@@ -1,4 +1,5 @@
 import React from 'react';
+import FadeUpText from './FadeUpText';
 
 const LegionSection = () => {
   // const keys = [
@@ -14,13 +15,13 @@ const LegionSection = () => {
     { src: "/Keys/R.png" },
     { src: "/Keys/A.png", },
     { src: "/Keys/M.png", },
-    { src: "/Keys/E.png",},
+    { src: "/Keys/E.png", },
     { src: "/Keys/S.png", },
   ];
   const keys2 = [
     { src: "/Keys/O.png", },
     { src: "/Keys/F_.png" },
-    
+
   ]
   const keys3 = [
     { src: "/Keys/S-RED.png", },
@@ -30,71 +31,70 @@ const LegionSection = () => {
 
   return (
     <section className="flex items-center justify-center px-6 py-10 font-sans text-[#0a0a0a]">
-      <div className="w-full text-center flex flex-col items-center">
-        
-        {/* Subheading */}
-        <span className="text-lg mb-6 opacity-80 block border-b-2 border-red-600 w-fit"data-aos="fade-down" data-aos-delay="0">Who are we</span>
-
-        {/* Main Headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-12" data-aos="fade-down" data-aos-delay="1">
-         We don’t just take photos <br className="hidden md:block" />
-          we frame emotions, <br className="hidden md:block" />
-          stories, and timeless moments.
-        </h1>
+      <div className="w-1/2 text-center flex flex-col items-center">
+        <FadeUpText
+          text="Who are we"
+          className="text-lg mb-6 opacity-80 block border-b-2 border-red-600 w-fit"
+        />
+        <FadeUpText
+          text="We don’t just take photos we frame emotions, stories, and timeless moments."
+          className="text-4xl md:text-6xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-12"
+        />
 
         {/* Keycaps Container */}
         <div className="flex justify-center items-center gap-2 md:gap-0  lg:h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
           {keys.map((key, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`transition-transform duration-500 hover:scale-110 ${key.rotate} ${key.translate}`}
             >
-              <img 
-                src={key.src} 
-                alt={`Keycap ${index}`} 
+              <img
+                src={key.src}
+                alt={`Keycap ${index}`}
                 className="w-16 md:w-28 h-auto drop-shadow-xl"
               />
             </div>
           ))}
         </div>
         <div className='flex flex-col gap-0 lg:mb-10 mb-4'>
-        <div className="flex justify-center items-center gap-2 md:gap-0 lg:h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
-          {keys2.map((key, index) => (
-            <div 
-              key={index} 
-              className={`transition-transform duration-500 hover:scale-110 ${key.rotate} ${key.translate}`}
-            >
-              <img 
-                src={key.src} 
-                alt={`Keycap ${index}`} 
-                className="w-16 md:w-28 h-auto drop-shadow-xl"
-              />
-            </div>
-          ))}
+          <div className="flex justify-center items-center gap-2 md:gap-0 lg:h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
+            {keys2.map((key, index) => (
+              <div
+                key={index}
+                className={`transition-transform duration-500 hover:scale-110 ${key.rotate} ${key.translate}`}
+              >
+                <img
+                  src={key.src}
+                  alt={`Keycap ${index}`}
+                  className="w-16 md:w-28 h-auto drop-shadow-xl"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="flex justify-center items-center gap-2 md:gap-0 lg:h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
+            {keys3.map((key, index) => (
+              <div
+                key={index}
+                className={`transition-transform duration-500 hover:scale-110 ${key.rotate} ${key.translate}`}
+              >
+                <img
+                  src={key.src}
+                  alt={`Keycap ${index}`}
+                  className="w-16 md:w-28 h-auto drop-shadow-xl"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="flex justify-center items-center gap-2 md:gap-0 lg:h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
-          {keys3.map((key, index) => (
-            <div 
-              key={index} 
-              className={`transition-transform duration-500 hover:scale-110 ${key.rotate} ${key.translate}`}
-            >
-              <img 
-                src={key.src} 
-                alt={`Keycap ${index}`} 
-                className="w-16 md:w-28 h-auto drop-shadow-xl"
-              />
-            </div>
-          ))}
-        </div>
-</div>
         {/* Description Paragraph */}
-        <div className="max-w-2xl mb-6">
-          <p className="text-lg md:text-xl text-black leading-relaxed" data-aos="fade-down" data-aos-delay="3">
-Frames of San is a creative photography studio dedicated to capturing authentic emotions, 
-natural expressions, and meaningful stories. From portraits to events, we craft visuals 
-that feel timeless, personal, and truly yours.
 
-          </p>
+        <div className="max-w-2xl mb-6">
+          <FadeUpText
+            text="Frames of San is a creative photography studio dedicated to capturing authentic emotions, 
+natural expressions, and meaningful stories. From portraits to events, we craft visuals 
+that feel timeless, personal, and truly yours."
+            className="text-lg md:text-xl text-black leading-relaxed"
+          />
         </div>
 
         {/* CTA Button */}

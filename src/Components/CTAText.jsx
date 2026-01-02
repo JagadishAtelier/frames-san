@@ -13,7 +13,7 @@ const socialLinks = [
 
 const CTAText = () => {
   return (
-    <section className="relative lg:mt-10" data-aos="fade-down" data-aos-delay="0">
+    <section className="relative lg:mt-10">
       <div className="relative z-10 text-center">
         {/* ===== Text ===== */}
       <FadeUpText
