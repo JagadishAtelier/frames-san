@@ -151,13 +151,12 @@ const NewBrandSec = () => {
                             ["110vh", "0vh"],
                             { clamp: true }
                         );
-
-                        const rotate = useTransform(
-                            rawScrollYProgress,
-                            [start, end],
-                            [0, 0],
-                            { clamp: true }
-                        );
+const rotateX = useTransform(
+    rawScrollYProgress,
+    [start, end],
+    [25, 0], 
+    { clamp: true }
+);
 
                         const opacity = useTransform(
                             rawScrollYProgress,
@@ -167,16 +166,18 @@ const NewBrandSec = () => {
                         );
 
                         return (
-                            <motion.div
-                                key={card.id}
-                                style={{
-                                    y,
-                                    rotate,
-                                    opacity,
-                                    zIndex: 50 + i,
-                                }}
-                                className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden hover:shadow-[0_0_80px_90px_rgba(0,0,0,0.2)] bg-white group"
-                            >
+<motion.div
+        key={card.id}
+        style={{
+            y,
+            rotateX,
+            opacity,
+            transformOrigin: "bottom center",
+            perspective: "1200px",
+            zIndex: 50 + i,
+        }}
+        className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden shadow-2xl bg-white group"
+    >
                                 {/* Image Container */}
                                 <div className="relative w-full h-[60vh] md:h-[60vh]">
                                     <img
