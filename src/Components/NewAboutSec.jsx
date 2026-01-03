@@ -25,8 +25,8 @@ function NewAboutSec() {
     <div className='relative' id='about'>
       <section ref={sectionRef} className="relative h-[450vh] bg-[#040406]">
 
-        <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden px-6 md:px-12 lg:px-20 pt-20 z-10">
-          <div className="mx-auto flex flex-col lg:flex-row items-center w-full gap-10 overflow-visible">
+        <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden px-6 md:px-12 lg:px-20 lg:pt-20 pt-52 z-10">
+          <div className="mx-auto flex flex-col lg:flex-row items-center w-full lg:gap-10 overflow-visible">
 
             {/* ================= LEFT COLUMN (TEXT) ================= */}
             <div className="flex-1 space-y-6">
