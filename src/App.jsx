@@ -49,12 +49,11 @@ export default function App() {
 <HeroSection/>
 <NewAboutSec/>
 <NewBrandSec/>
+<LegionSection/>
 <HomeGallery/>
 <SkillsSection/>
-<LegionSection/>
 <CTASection/>
 <Testimonials/>
-<CTAText/>
 <TickerSection/>
 <Footer/>
 </>

@@ -35,22 +35,20 @@ const NewBrandSec = () => {
     );
 
     /* ---------------- TEXT ANIMATIONS (UNCHANGED) ---------------- */
-    const smoothYLets = useSpring(
-        useTransform(rawScrollYProgress, [0.15, 0.45], ["100%", "0%"]),
-        { stiffness: 40, damping: 25 }
-    );
-    const smoothYBrand = useSpring(
-        useTransform(rawScrollYProgress, [0.15, 0.45], ["-100%", "0%"]),
-        { stiffness: 40, damping: 25 }
-    );
-    const smoothYBuild = useSpring(
-        useTransform(rawScrollYProgress, [0.3, 0.6], ["100%", "0%"]),
-        { stiffness: 40, damping: 25 }
-    );
-    const smoothYYour = useSpring(
-        useTransform(rawScrollYProgress, [0.3, 0.6], ["-100%", "0%"]),
-        { stiffness: 40, damping: 25 }
-    );
+const textScroll = useSpring(rawScrollYProgress, {
+  stiffness: 80,  // higher = faster movement
+  damping: 20,    // lower = more responsive
+  mass: 1,        // normal weight
+});
+
+
+const smoothYLets = useTransform(textScroll, [0.15, 0.25], ["100%", "0%"]);
+const smoothYBrand = useTransform(textScroll, [0.15, 0.25], ["-100%", "0%"]);
+
+const smoothYBuild = useTransform(textScroll, [0.28, 0.38], ["100%", "0%"]);
+const smoothYYour = useTransform(textScroll, [0.28, 0.38], ["-100%", "0%"]);
+
+
     const textOpacity = useTransform(rawScrollYProgress, [0.55, 0.65], [1, 0]);
     const textScale = useTransform(rawScrollYProgress, [0.55, 0.65], [1, 0.95]);
 
@@ -151,12 +149,12 @@ const NewBrandSec = () => {
                             ["110vh", "0vh"],
                             { clamp: true }
                         );
-const rotateX = useTransform(
-    rawScrollYProgress,
-    [start, end],
-    [25, 0], 
-    { clamp: true }
-);
+                        const rotateX = useTransform(
+                            rawScrollYProgress,
+                            [start, end],
+                            [25, 0],
+                            { clamp: true }
+                        );
 
                         const opacity = useTransform(
                             rawScrollYProgress,
@@ -166,18 +164,18 @@ const rotateX = useTransform(
                         );
 
                         return (
-<motion.div
-        key={card.id}
-        style={{
-            y,
-            rotateX,
-            opacity,
-            transformOrigin: "bottom center",
-            perspective: "1200px",
-            zIndex: 50 + i,
-        }}
-        className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden shadow-2xl bg-white group"
-    >
+                            <motion.div
+                                key={card.id}
+                                style={{
+                                    y,
+                                    rotateX,
+                                    opacity,
+                                    transformOrigin: "bottom center",
+                                    perspective: "1200px",
+                                    zIndex: 50 + i,
+                                }}
+                                className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden shadow-2xl bg-white group"
+                            >
                                 {/* Image Container */}
                                 <div className="relative w-full h-[60vh] md:h-[60vh]">
                                     <img

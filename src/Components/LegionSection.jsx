@@ -56,7 +56,7 @@ const LegionSection = () => {
             </div>
           ))}
         </div>
-        <div className='flex flex-col gap-0'>
+        <div className='flex flex-row gap-10'>
           <div className="flex justify-center items-center gap-2 md:gap-0 lg:h-32" data-aos="fade-down" data-aos-delay="2">
             {keys2.map((key, index) => (
               <div

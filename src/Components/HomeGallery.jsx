@@ -86,37 +86,38 @@ const HomeGallery = () => {
 
                 {/* 3. STACKED CARDS (Individually Staggered) */}
                 <div className="relative md:w-1/2 md:h-[50vh] w-[85%] h-[35vh] z-20">
-                    {cards.map((card, index) => {
-                        const reverseIndex = cards.length - 1 - index;
-                        const start = reverseIndex * 0.12;
-                        const end = start + 0.25;
+{cards.map((card, index) => {
+    const delay = index * 0.5; // 0.5s, 1s, 1.5s, 2s ...
+    
+    const reverseIndex = cards.length - 1 - index;
+    const start = reverseIndex * 0.12;
+    const end = start + 0.25;
 
-                        const scrollY = useTransform(smoothProgress, [start, end], [0, -1200]);
-                        const scrollRotate = useTransform(smoothProgress, [start, end], [card.rotate, 0]);
+    const scrollY = useTransform(smoothProgress, [start, end], [0, -1200]);
+    const scrollRotate = useTransform(smoothProgress, [start, end], [card.rotate, 0]);
 
-                        return (
-                            <motion.div
-                                key={card.id}
-                                // Each card starts large (zoomed in) and invisible
-                                initial={{ scale: 2.5, opacity: 0 }}
-                                // They zoom out to scale: 1 when the stage changes
-                                animate={stage !== 'idle' && stage !== 'bg-opening' ? { scale: 1, opacity: 1 } : {}}
-                                transition={{ 
-                                    duration: 1.5, 
-                                    delay: index * 0.50, // This creates the "one by one" zoom out effect
-                                    ease: [0.22, 1, 0.36, 1],
-                                }}
-                                style={{
-                                    y: stage === 'ready' ? scrollY : 0,
-                                    rotate: stage === 'ready' ? scrollRotate : card.rotate,
-                                    zIndex: index,
-                                }}
-                                className="absolute inset-0 rounded-[2rem] overflow-hidden shadow-2xl border border-white/10"
-                            >
-                                <img src={card.img} alt="" className="w-full h-full object-cover" />
-                            </motion.div>
-                        );
-                    })}
+    return (
+        <motion.div
+            key={card.id}
+            initial={{ scale: 2.5, opacity: 0 }}
+            animate={stage !== 'idle' && stage !== 'bg-opening' ? { scale: 1, opacity: 1 } : {}}
+            transition={{ 
+                duration: 0.5,      // each zoom animation lasts 0.5s
+                delay: delay,       // stagger based on index
+                ease: [0.22, 1, 0.36, 1],
+            }}
+            style={{
+                y: stage === 'ready' ? scrollY : 0,
+                rotate: stage === 'ready' ? scrollRotate : card.rotate,
+                zIndex: index,
+            }}
+            className="absolute inset-0 rounded-[2rem] overflow-hidden shadow-2xl border border-white/10"
+        >
+            <img src={card.img} alt="" className="w-full h-full object-cover" />
+        </motion.div>
+    );
+})}
+
                 </div>
             </div>
 
