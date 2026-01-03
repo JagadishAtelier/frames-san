@@ -28,39 +28,43 @@ export default function SkillsSection() {
   );
   const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const centerY = window.innerHeight / 2;
-      const maxDistance = window.innerHeight / 1.5;
+useEffect(() => {
+  const handleScroll = () => {
+    const centerY = window.innerHeight / 2;
+    const maxDistance = window.innerHeight / 1.5;
+    const centerThreshold = 5; // 🔥 pixels around center
 
-      let closestIndex = 0;
-      let closestDistance = Infinity;
+    let active = 1;
 
-      const newOpacities = itemRefs.current.map((el, index) => {
-        if (!el) return index === 0 ? 1 : 0.15;
+    const newOpacities = itemRefs.current.map((el, index) => {
+      if (!el) return index === 0 ? 1 : 0.15;
 
-        const rect = el.getBoundingClientRect();
-        const itemCenter = rect.top + rect.height / 2;
-        const distance = Math.abs(centerY - itemCenter);
+      const rect = el.getBoundingClientRect();
+      const itemCenter = rect.top + rect.height / 2;
+      const distance = Math.abs(centerY - itemCenter);
 
-        // 🔥 Detect active item
-        if (distance < closestDistance) {
-          closestDistance = distance;
-          closestIndex = index;
-        }
+      // ✅ Activate ONLY when inside center line
+      if (distance <= centerThreshold) {
+        active = index;
+      }
 
-        let opacity = 1 - distance / maxDistance;
-        return Math.max(0.15, Math.min(1, opacity));
-      });
+      let opacity = 1 - distance / maxDistance;
+      return Math.max(0.15, Math.min(1, opacity));
+    });
 
-      setOpacities(newOpacities);
-      setActiveIndex(closestIndex);
-    };
+    setOpacities(newOpacities);
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    // 🔒 Prevent early red text
+    if (active !== -1) {
+      setActiveIndex(active);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll();
+  return () => window.removeEventListener("scroll", handleScroll);
+}, []);
+
 
   return (
     <section className="border-t border-b border-gray-500 md:w-fit mx-auto lg:py-20 py-10">
@@ -77,7 +81,7 @@ export default function SkillsSection() {
         </div>
 
         {/* RIGHT — SCROLLING TEXT */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-0">
           {skills.map((skill, index) => (
             <div
               key={index}

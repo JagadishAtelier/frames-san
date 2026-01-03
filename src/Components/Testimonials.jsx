@@ -61,7 +61,7 @@ export default function Testimonials() {
     const swiperRef = useRef(null);
 
     return (
-        <section className="relative bg-[#050505] text-white py-24 px-6 md:px-12 lg:px-20 overflow-hidden min-h-screen flex flex-col justify-center my-30">
+        <section className="relative bg-[#050505] text-white py-24 px-6 md:px-12 lg:px-20 overflow-hidden min-h-screen flex flex-col justify-center my-10">
             <div className="max-w-[1400px] mx-auto w-full">
                 {/* HEADER SECTION */}
                 <div className="flex flex-col md:flex-row justify-between items-center sm:mb-24 gap-8">

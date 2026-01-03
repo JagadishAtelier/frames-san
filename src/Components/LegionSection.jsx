@@ -38,11 +38,11 @@ const LegionSection = () => {
         />
         <FadeUpText
           text="We don’t just take photos we frame emotions, stories, and timeless moments."
-          className="text-4xl md:text-6xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-12"
+          className="text-4xl md:text-6xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-0"
         />
 
         {/* Keycaps Container */}
-        <div className="flex justify-center items-center gap-2 md:gap-0  lg:h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
+        <div className="flex justify-center items-center gap-2 md:gap-0  lg:h-32" data-aos="fade-down" data-aos-delay="2">
           {keys.map((key, index) => (
             <div
               key={index}
@@ -56,8 +56,8 @@ const LegionSection = () => {
             </div>
           ))}
         </div>
-        <div className='flex flex-col gap-0 lg:mb-10 mb-4'>
-          <div className="flex justify-center items-center gap-2 md:gap-0 lg:h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
+        <div className='flex flex-col gap-0'>
+          <div className="flex justify-center items-center gap-2 md:gap-0 lg:h-32" data-aos="fade-down" data-aos-delay="2">
             {keys2.map((key, index) => (
               <div
                 key={index}
@@ -71,7 +71,7 @@ const LegionSection = () => {
               </div>
             ))}
           </div>
-          <div className="flex justify-center items-center gap-2 md:gap-0 lg:h-32 mt-5" data-aos="fade-down" data-aos-delay="2">
+          <div className="flex justify-center items-center gap-2 md:gap-0 lg:h-32" data-aos="fade-down" data-aos-delay="2">
             {keys3.map((key, index) => (
               <div
                 key={index}
