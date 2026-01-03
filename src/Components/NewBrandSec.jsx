@@ -13,58 +13,50 @@ const cards = [
 const NewBrandSec = () => {
     const containerRef = useRef(null);
 
-    /* ---------------- RAW SCROLL (TEXT & LINEAR CARDS) ---------------- */
     const { scrollYProgress: rawScrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"],
     });
 
-    /* ---------------- SPRING SCROLL (ONLY FOR ROTATION/SMOOTHNESS) ---------------- */
-    const slowScrollYProgress = useSpring(rawScrollYProgress, {
-        stiffness: 30,
-        damping: 25,
-        mass: 1.3,
+    /* ---------------- TEXT REVEAL SMOOTHING ---------------- */
+    // Increased mass and damping creates that "one smooth motion" feel
+    const textSpring = useSpring(rawScrollYProgress, {
+        stiffness: 25,   // Lower stiffness for a slower start
+        damping: 30,     // Higher damping to prevent bounciness
+        mass: 2,         // Higher mass gives it "weight" so it glides
     });
 
-    /* ---------------- BACKGROUND REVEAL (UNCHANGED) ---------------- */
-    const rawReveal = useTransform(rawScrollYProgress, [0.05, 0.45], [60, 0]);
-    const smoothReveal = useSpring(rawReveal, { stiffness: 30, damping: 20 });
-    const clipPath = useTransform(
-        smoothReveal,
-        v => `inset(${v}% 0% ${v}% 0%)`
-    );
+    /* ---------------- BACKGROUND REVEAL ---------------- */
+    // We map the background clip reveal to happen early (0.05 to 0.3)
+    const clipReveal = useTransform(textSpring, [0.05, 0.3], [60, 0]);
+    const clipPath = useTransform(clipReveal, v => `inset(${v}% 0% ${v}% 0%)`);
 
-    /* ---------------- TEXT ANIMATIONS (UNCHANGED) ---------------- */
-    const textScroll = useSpring(rawScrollYProgress, {
-        stiffness: 100,  // higher = faster movement
-        damping: 20,    // lower = more responsive
-        mass: 1,        // normal weight
-    });
+    /* ---------------- TEXT ANIMATIONS ---------------- */
+/* ---------------- TEXT ANIMATIONS ---------------- */
+// Text finishes its "opening" animation by 0.25
+const smoothYLets = useTransform(textSpring, [0.10, 0.22], ["100%", "0%"]);
+const smoothYBrand = useTransform(textSpring, [0.10, 0.22], ["-100%", "0%"]);
+const smoothYBuild = useTransform(textSpring, [0.12, 0.25], ["100%", "0%"]);
+const smoothYYour = useTransform(textSpring, [0.12, 0.25], ["-100%", "0%"]);
 
-
-    const smoothYLets = useTransform(textScroll, [0.15, 0.25], ["100%", "0%"]);
-    const smoothYBrand = useTransform(textScroll, [0.15, 0.25], ["-100%", "0%"]);
-
-    const smoothYBuild = useTransform(textScroll, [0.28, 0.38], ["100%", "0%"]);
-    const smoothYYour = useTransform(textScroll, [0.28, 0.38], ["-100%", "0%"]);
-
-
-    const textOpacity = useTransform(rawScrollYProgress, [0.55, 0.65], [1, 0]);
-    const textScale = useTransform(rawScrollYProgress, [0.55, 0.65], [1, 0.95]);
+/* ---------------- THE FIX: QUICKER HIDING ---------------- */
+// CHANGED: Starts hiding at 0.28 and is GONE by 0.32
+// This ensures the text is completely invisible before the first card hits the center.
+const textOpacity = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0]);
+const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9]);
 
     return (
-        /* INCREASED HEIGHT TO 1400vh FOR SLOW BUT CONSTANT SPEED */
-        <section ref={containerRef} className="relative w-full h-[1400vh]" id="work">
+        <section ref={containerRef} className="relative w-full h-[1200vh]" id="work">
             <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
 
-                {/* KEEP SCROLLING */}
+                {/* KEEP SCROLLING HINT */}
                 <div className="absolute top-1/4 inset-0 flex items-start justify-center">
-                    <p className="text-sm tracking-[0.3em] uppercase text-black">
+                    <p className="text-sm tracking-[0.3em] uppercase text-black/40">
                         Keep scrolling
                     </p>
                 </div>
 
-                {/* TEXT + BG */}
+                {/* TEXT + BG SECTION */}
                 <motion.div
                     style={{ clipPath }}
                     className="relative z-10 w-full h-full flex items-center justify-center"
@@ -125,43 +117,24 @@ const NewBrandSec = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* ---------------- IMAGE CARDS ---------------- */}
+                {/* ---------------- IMAGE CARDS (UNAFFECTED BY TEXT SPRING) ---------------- */}
                 <div className="absolute inset-0 flex items-center justify-center z-50" style={{ perspective: 1200 }}>
                     {cards.map((card, i) => {
-                        const CARDS_START = 0.68;
-                        const CARDS_END = 0.98;
+                        // Cards remain on the linear rawScrollYProgress
+                        const CARDS_START = 0.30; 
+                        const CARDS_END = 0.95;
                         const TOTAL_RANGE = CARDS_END - CARDS_START;
 
-                        // ACTIVE: duration of movement relative to scroll progress
-                        // GAP: space between cards (now significantly increased)
-                        const ACTIVE = TOTAL_RANGE * 0.10;
-                        const GAP = TOTAL_RANGE * 0.20;
+                        const ACTIVE = TOTAL_RANGE * 0.12;
+                        const GAP = TOTAL_RANGE * 0.18;
                         const STEP = ACTIVE + GAP;
 
                         const start = CARDS_START + i * STEP;
                         const end = start + ACTIVE;
 
-                        // Using rawScrollYProgress instead of slowScrollYProgress 
-                        // for "y" to ensure speed is constant (linear) and not easing at the end.
-                        const y = useTransform(
-                            rawScrollYProgress,
-                            [start, end],
-                            ["110vh", "0vh"],
-                            { clamp: true }
-                        );
-                        const rotateX = useTransform(
-                            rawScrollYProgress,
-                            [start, end],
-                            [25, 0],
-                            { clamp: true }
-                        );
-
-                        const opacity = useTransform(
-                            rawScrollYProgress,
-                            [start - 0.01, start],
-                            [0, 1],
-                            { clamp: true }
-                        );
+                        const y = useTransform(rawScrollYProgress, [start, end], ["110vh", "0vh"], { clamp: true });
+                        const rotateX = useTransform(rawScrollYProgress, [start, end], [25, 0], { clamp: true });
+                        const opacity = useTransform(rawScrollYProgress, [start - 0.02, start], [0, 1], { clamp: true });
 
                         return (
                             <motion.div
@@ -171,40 +144,22 @@ const NewBrandSec = () => {
                                     rotateX,
                                     opacity,
                                     transformOrigin: "bottom center",
-                                    perspective: "1200px",
                                     zIndex: 50 + i,
                                 }}
                                 className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden shadow-2xl bg-white group"
                             >
-                                {/* Image Container */}
-                                <div className="relative w-full h-[60vh] md:h-[60vh]">
-                                    <img
-                                        src={card.image}
-                                        alt={card.title}
-                                        className="w-full h-full object-cover"
-                                    />
-
-                                    {/* Title Overlay (Glassmorphism Effect) */}
-                                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 
-     w-[65%] md:w-[55%] 
-     group-hover:w-[90%] md:group-hover:w-[85%]
-     transition-[width] duration-500 ease-out">
-
+                                <div className="relative w-full h-[60vh]">
+                                    <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
+                                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[65%] md:w-[55%] group-hover:w-[85%] transition-[width] duration-500 ease-out">
                                         <div className="flex items-center justify-between px-6 py-4 bg-white/60 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl">
                                             <div className="flex items-center gap-3">
-                                                {/* Red Pulse/Production Dot */}
                                                 <span className="relative flex h-3 w-3">
                                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                                                     <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
                                                 </span>
-                                                <h3 className="text-black font-medium text-sm md:text-base">
-                                                    {card.title}
-                                                </h3>
+                                                <h3 className="text-black font-medium text-sm md:text-base">{card.title}</h3>
                                             </div>
-
-                                            <span className="text-black/60 text-xs md:text-sm font-light italic">
-                                                ( Production )
-                                            </span>
+                                            <span className="text-black/60 text-xs md:text-sm font-light italic">( Production )</span>
                                         </div>
                                     </div>
                                 </div>

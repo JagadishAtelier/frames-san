@@ -1,71 +1,50 @@
-import React, { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
-const FadeUpText = ({ text, className = "" }) => {
+const ScrollRevealText = ({ text, className = "" }) => {
+  const containerRef = useRef(null);
   const words = text.split(" ");
-  const controls = useAnimation();
 
-  const { ref, inView } = useInView({
-    threshold: 1,
-    triggerOnce: false, // Allow re-animation
+  // Track scroll progress of this specific element
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    // "start end" means start when top of element hits bottom of viewport
+    // "end center" means finish when bottom of element hits center of viewport
+    offset: ["start 0.8", "start 0.2"], 
   });
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    } else {
-      controls.start("hidden");
-    }
-  }, [inView, controls]);
-
-  const springConfig = { type: "spring", stiffness: 50, damping: 25 };
-
-  const containerVariants = {
-    hidden: {
-      transition: {
-        staggerChildren: 0.1,
-        staggerDirection: -1, // Reverse order when hiding
-      },
-    },
-    visible: {
-      transition: {
-        staggerChildren: 0.1, // Forward order when showing
-        staggerDirection: 1,
-      },
-    },
-  };
-
-  const wordVariants = {
-    hidden: {
-      y: 100,      // Move down when hiding
-      opacity: 0,
-      transition: springConfig,
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: springConfig,
-    },
-  };
-
   return (
-    <motion.div
-      ref={ref}
-      className={`flex flex-wrap justify-center overflow-hidden ${className}`}
-      variants={containerVariants}
-      initial="hidden"
-      animate={controls}
-    >
-      {words.map((word, idx) => (
-        <span key={idx} className="inline-block overflow-hidden mr-2 py-1">
-          <motion.span variants={wordVariants} className="inline-block">
+    <div ref={containerRef} className={`flex flex-wrap ${className}`}>
+      {words.map((word, i) => {
+        // Calculate the start and end range for each word individually
+        const start = i / words.length;
+        const end = (i + 1) / words.length;
+        
+        return (
+          <Word key={i} progress={scrollYProgress} range={[start, end]}>
             {word}
-          </motion.span>
-        </span>
-      ))}
-    </motion.div>
+          </Word>
+        );
+      })}
+    </div>
   );
 };
 
-export default FadeUpText;
+const Word = ({ children, progress, range }) => {
+  // Map the scroll progress (0 to 1) to an opacity value
+  // This creates the "filling in" effect
+  const opacity = useTransform(progress, range, [0.2, 1]);
+
+  return (
+    <span className="relative mr-2 lg:mr-3 mt-2">
+      {/* Background/Base Layer (Grayed out) */}
+      <span className="absolute opacity-20 text-black">{children}</span>
+      {/* Animated Layer (Turns Black) */}
+      <motion.span style={{ opacity }} className="text-black">
+        {children}
+      </motion.span>
+    </span>
+  );
+};
+
+export default ScrollRevealText;

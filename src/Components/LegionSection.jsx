@@ -1,5 +1,6 @@
 import React from 'react';
 import FadeUpText from './FadeUpText';
+import ScrollRevealText from './FadeUpText';
 
 const LegionSection = () => {
   // const keys = [
@@ -32,13 +33,13 @@ const LegionSection = () => {
   return (
     <section className="flex items-center justify-center px-6 py-10 font-sans text-[#0a0a0a]">
       <div className="max-w-5xl text-center flex flex-col items-center">
-        <FadeUpText
+        <ScrollRevealText
           text="Who are we"
           className="text-lg mb-6 opacity-80 block border-b-2 border-red-600 w-fit"
         />
-        <FadeUpText
+        <ScrollRevealText
           text="We don’t just take photos we frame emotions, stories, and timeless moments."
-          className="text-4xl md:text-6xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-0"
+          className="text-4xl md:text-6xl lg:text-5xl font-bold leading-[1.1] tracking-tight mb-0 items-center justify-center"
         />
 
         {/* Keycaps Container */}
@@ -88,14 +89,14 @@ const LegionSection = () => {
         </div>
         {/* Description Paragraph */}
 
-        <div className="max-w-4xl mb-6">
+        {/* <div className="max-w-4xl mb-6">
           <FadeUpText
             text="Frames of San is a creative photography studio dedicated to capturing authentic emotions, 
 natural expressions, and meaningful stories. From portraits to events, we craft visuals 
 that feel timeless, personal, and truly yours."
             className="text-lg md:text-xl text-black leading-relaxed"
           />
-        </div>
+        </div> */}
 
         {/* CTA Button */}
         {/* <a 
