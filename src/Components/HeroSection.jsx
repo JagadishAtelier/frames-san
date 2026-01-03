@@ -183,7 +183,7 @@ function HeroSection() {
             <div
               className="relative flex items-center justify-center"
             >
-              <motion.div
+              {/* <motion.div
                 style={{
                   x: leftImgX,
                   rotate: leftImgRotate,
@@ -213,11 +213,11 @@ function HeroSection() {
                   className="rounded-2xl h-full w-full object-cover shadow-xl"
                   alt=""
                 />
-              </motion.div>
+              </motion.div> */}
 
               <motion.div
                 style={{ y: isDesktop ? stackY : 0 }}
-                className="relative w-[250px] h-[65vh] z-20"
+                className="relative w-[400px] h-[65vh] z-20"
               >
                 <img
                   src="/SanthoshPNG.png"

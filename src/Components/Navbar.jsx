@@ -54,7 +54,7 @@ export default function Navbar() {
                             {/* Blur ONLY when not at top */}
                             <div
                                 className={`absolute inset-0 rounded-md transition-all duration-300 ${!isAtTop && showNav
-                                        ? "backdrop-blur-md bg-white/30"
+                                        ? "backdrop-blur-md bg-white/20"
                                         : "backdrop-blur-0 bg-transparent"
                                     }`}
                             />
@@ -65,11 +65,7 @@ export default function Navbar() {
                             />
                         </a>
                     </div>
-                        <nav className="hidden sm:flex items-center gap-10 text-sm font-semibold bg-white py-3 px-5 rounded-4xl">
-                            <NavLink href="/" label="Home" />
-                            <NavLink href="#work" label="Work" />
-                            <NavLink href="#about" label="About" />
-                        </nav>
+
                     {/* Right Actions */}
                     <div className="hidden md:flex items-center gap-6">
 
@@ -82,13 +78,18 @@ export default function Navbar() {
                                 />
                                 <span className="text-black">Email</span>
                             </a> */}
-
-                            <a
+                        <nav className="hidden sm:flex items-center gap-10 text-sm font-semibold bg-white py-3 px-5 rounded-4xl">
+                            <NavLink href="/" label="Home" />
+                            <NavLink href="#work" label="Work" />
+                            <NavLink href="#about" label="About" />
+                                                        <a
                                 href="/contact/contact-1"
                                 className="px-8 py-1.5 bg-black rounded-full text-sm text-white"
                             >
                                 Contact
                             </a>
+                        </nav>
+
                         </div>
                     </div>
 

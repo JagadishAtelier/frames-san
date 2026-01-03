@@ -95,12 +95,12 @@ const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9]);
                                         <motion.span style={{ y: smoothYLets, display: "block" }}>Let’s</motion.span>
                                     </div>
                                     <div className="overflow-hidden">
-                                        <motion.span style={{ y: smoothYBuild, display: "block" }} className="text-red-600">Build</motion.span>
+                                        <motion.h1 style={{ y: smoothYBuild, display: "block" }} className="h-tag">Build</motion.h1>
                                     </div>
                                 </div>
                                 <div className="flex justify-center gap-4 text-6xl md:text-[9rem]">
                                     <div className="overflow-hidden">
-                                        <motion.span style={{ y: smoothYYour, display: "block" }} className="text-red-600">Your</motion.span>
+                                        <motion.span style={{ y: smoothYYour, display: "block" }} className="h-tag">Your</motion.span>
                                     </div>
                                     <div className="overflow-hidden">
                                         <motion.span style={{ y: smoothYBrand, display: "block" }}>Brand</motion.span>
@@ -146,11 +146,12 @@ const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9]);
                                     transformOrigin: "bottom center",
                                     zIndex: 50 + i,
                                 }}
-                                className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden shadow-2xl bg-white group"
+                                className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden shadow-2xl group hover:shadow-[0_0_150px_30px_rgba(0,0,0,0.2)]
+"
                             >
-                                <div className="relative w-full h-[60vh]">
+                                <div className="relative w-full h-[60vh] ">
                                     <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
-                                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[65%] md:w-[55%] group-hover:w-[85%] transition-[width] duration-500 ease-out">
+                                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[65%] md:w-[55%] group-hover:w-[85%] transition-[width] duration-500 ease-out ">
                                         <div className="flex items-center justify-between px-6 py-4 bg-white/60 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl">
                                             <div className="flex items-center gap-3">
                                                 <span className="relative flex h-3 w-3">

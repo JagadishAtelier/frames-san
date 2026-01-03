@@ -49,8 +49,8 @@ export default function App() {
 <HeroSection/>
 <NewAboutSec/>
 <NewBrandSec/>
-<LegionSection/>
-<HomeGallery/>
+{/* <LegionSection/>
+<HomeGallery/> */}
 <SkillsSection/>
 <CTASection/>
 <Testimonials/>

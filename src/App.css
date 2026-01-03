@@ -7,7 +7,17 @@
   font-family: "Mona Sans", sans-serif !important;
   background-color: #f3f3f3;
 }
-
+.h-tag{
+  background-image: linear-gradient(150deg, #5a5a5a, #0e0e0e);
+  color: var(--heading);
+    letter-spacing: -.01em;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 104%;
+}
 .btn-bg-primery {
   background-color: #FFC299;
 }
