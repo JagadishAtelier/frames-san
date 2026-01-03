@@ -103,7 +103,7 @@ const HomeGallery = () => {
                                 animate={stage !== 'idle' && stage !== 'bg-opening' ? { scale: 1, opacity: 1 } : {}}
                                 transition={{ 
                                     duration: 1.5, 
-                                    delay: index * 0.25, // This creates the "one by one" zoom out effect
+                                    delay: index * 0.50, // This creates the "one by one" zoom out effect
                                     ease: [0.22, 1, 0.36, 1],
                                 }}
                                 style={{

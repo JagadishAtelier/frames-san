@@ -18,11 +18,11 @@ const CTAText = () => {
         {/* ===== Text ===== */}
       <FadeUpText
         text="Frames of San is a creative studio delivering focused design solutions for modern brands."
-        className="mx-auto max-w-3xl text-3xl font-medium text-black md:text-4xl"
+        className="mx-auto max-w-3xl text-3xl font-medium text-black md:text-4xl font-handwriting"
       />
       <FadeUpText
         text="We value speed, simplicity, and strong visual direction."
-        className="mx-auto max-w-3xl text-3xl font-medium text-black md:text-4xl"
+        className="mx-auto max-w-3xl text-3xl font-medium text-black md:text-4xl font-handwriting"
       />
 
 

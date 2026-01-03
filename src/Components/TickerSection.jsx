@@ -4,7 +4,8 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const images = [
-    "/follow/f1.jpg",
+    
+    "/follow/f7.jpg",
     "/follow/f2.jpg",
     "/follow/f3.jpg",
     "/follow/f4.jpg",
@@ -103,7 +104,7 @@ const x = useSpring(rawX, {
                     }}
                     className="absolute z-10 overflow-hidden lg:mt-24 mt-0 hidden md:block"
                 >
-                    <img src={images[0]} className="w-full h-full object-cover" />
+                    <img src="/follow/f1.jpg" className="w-full h-full object-cover" />
                 </motion.div>
 
                 {/* SLIDER */}
