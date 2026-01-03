@@ -13,20 +13,20 @@ const cards = [
 const NewBrandSec = () => {
     const containerRef = useRef(null);
 
-    /* ---------------- RAW SCROLL (TEXT) ---------------- */
+    /* ---------------- RAW SCROLL (TEXT & LINEAR CARDS) ---------------- */
     const { scrollYProgress: rawScrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"],
     });
 
-    /* ---------------- SLOWED SCROLL (CARDS ONLY) ---------------- */
+    /* ---------------- SPRING SCROLL (ONLY FOR ROTATION/SMOOTHNESS) ---------------- */
     const slowScrollYProgress = useSpring(rawScrollYProgress, {
         stiffness: 30,
         damping: 25,
         mass: 1.3,
     });
 
-    /* ---------------- BACKGROUND REVEAL ---------------- */
+    /* ---------------- BACKGROUND REVEAL (UNCHANGED) ---------------- */
     const rawReveal = useTransform(rawScrollYProgress, [0.05, 0.45], [60, 0]);
     const smoothReveal = useSpring(rawReveal, { stiffness: 30, damping: 20 });
     const clipPath = useTransform(
@@ -39,27 +39,24 @@ const NewBrandSec = () => {
         useTransform(rawScrollYProgress, [0.15, 0.45], ["100%", "0%"]),
         { stiffness: 40, damping: 25 }
     );
-
     const smoothYBrand = useSpring(
         useTransform(rawScrollYProgress, [0.15, 0.45], ["-100%", "0%"]),
         { stiffness: 40, damping: 25 }
     );
-
     const smoothYBuild = useSpring(
         useTransform(rawScrollYProgress, [0.3, 0.6], ["100%", "0%"]),
         { stiffness: 40, damping: 25 }
     );
-
     const smoothYYour = useSpring(
         useTransform(rawScrollYProgress, [0.3, 0.6], ["-100%", "0%"]),
         { stiffness: 40, damping: 25 }
     );
-
     const textOpacity = useTransform(rawScrollYProgress, [0.55, 0.65], [1, 0]);
     const textScale = useTransform(rawScrollYProgress, [0.55, 0.65], [1, 0.95]);
 
     return (
-        <section ref={containerRef} className="relative w-full h-[380vh]" id="work">
+        /* INCREASED HEIGHT TO 1400vh FOR SLOW BUT CONSTANT SPEED */
+        <section ref={containerRef} className="relative w-full h-[1400vh]" id="work">
             <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
 
                 {/* KEEP SCROLLING */}
@@ -79,8 +76,6 @@ const NewBrandSec = () => {
                         className="w-full h-full flex flex-col items-center justify-center text-black"
                     >
                         <div className="flex flex-col items-center px-6 text-center">
-
-                            {/* MARQUEE */}
                             <div className="mb-10">
                                 <div className="w-[280px] sm:w-[420px] md:w-[600px] overflow-hidden">
                                     <Swiper
@@ -104,47 +99,27 @@ const NewBrandSec = () => {
                                 </div>
                             </div>
 
-                            {/* TEXT */}
                             <div className="space-y-0 md:space-y-2 font-bold uppercase leading-[0.85]">
-
                                 <div className="flex justify-center gap-4 text-6xl md:text-[9rem]">
                                     <div className="overflow-hidden">
-                                        <motion.span style={{ y: smoothYLets, display: "block" }}>
-                                            Let’s
-                                        </motion.span>
+                                        <motion.span style={{ y: smoothYLets, display: "block" }}>Let’s</motion.span>
                                     </div>
                                     <div className="overflow-hidden">
-                                        <motion.span
-                                            style={{ y: smoothYBuild, display: "block" }}
-                                            className="text-red-600"
-                                        >
-                                            Build
-                                        </motion.span>
+                                        <motion.span style={{ y: smoothYBuild, display: "block" }} className="text-red-600">Build</motion.span>
                                     </div>
                                 </div>
-
                                 <div className="flex justify-center gap-4 text-6xl md:text-[9rem]">
                                     <div className="overflow-hidden">
-                                        <motion.span
-                                            style={{ y: smoothYYour, display: "block" }}
-                                            className="text-red-600"
-                                        >
-                                            Your
-                                        </motion.span>
+                                        <motion.span style={{ y: smoothYYour, display: "block" }} className="text-red-600">Your</motion.span>
                                     </div>
                                     <div className="overflow-hidden">
-                                        <motion.span style={{ y: smoothYBrand, display: "block" }}>
-                                            Brand
-                                        </motion.span>
+                                        <motion.span style={{ y: smoothYBrand, display: "block" }}>Brand</motion.span>
                                     </div>
                                 </div>
                             </div>
 
                             <div className="mt-16">
-                                <a
-                                    href="/contact"
-                                    className="px-12 py-5 border border-black bg-black text-white rounded-full uppercase tracking-widest hover:bg-transparent hover:text-black transition-all"
-                                >
+                                <a href="/contact" className="px-12 py-5 border border-black bg-black text-white rounded-full uppercase tracking-widest hover:bg-transparent hover:text-black transition-all">
                                     Get in Touch
                                 </a>
                             </div>
@@ -152,65 +127,91 @@ const NewBrandSec = () => {
                     </motion.div>
                 </motion.div>
 
-                {/* ---------------- IMAGE CARDS (SLOWED) ---------------- */}
-                <div
-                    className="absolute inset-0 flex items-center justify-center z-50"
-                    style={{ perspective: 1200 }}
-                >
+                {/* ---------------- IMAGE CARDS ---------------- */}
+                <div className="absolute inset-0 flex items-center justify-center z-50" style={{ perspective: 1200 }}>
                     {cards.map((card, i) => {
-                        const CARDS_START = 0.6;
-                        const CARDS_END = 0.95;
+                        const CARDS_START = 0.68;
+                        const CARDS_END = 0.98;
                         const TOTAL_RANGE = CARDS_END - CARDS_START;
 
-                        const ACTIVE = TOTAL_RANGE * 0.22; // movement
-                        const GAP = TOTAL_RANGE * 0.25;    // pause
+                        // ACTIVE: duration of movement relative to scroll progress
+                        // GAP: space between cards (now significantly increased)
+                        const ACTIVE = TOTAL_RANGE * 0.10;
+                        const GAP = TOTAL_RANGE * 0.20;
                         const STEP = ACTIVE + GAP;
 
                         const start = CARDS_START + i * STEP;
                         const end = start + ACTIVE;
 
-                        // Card moves only in its window
+                        // Using rawScrollYProgress instead of slowScrollYProgress 
+                        // for "y" to ensure speed is constant (linear) and not easing at the end.
                         const y = useTransform(
-                            slowScrollYProgress,
+                            rawScrollYProgress,
                             [start, end],
-                            ["100vh", "0vh"],
+                            ["110vh", "0vh"],
                             { clamp: true }
                         );
 
-                        // Hide future cards completely
+                        const rotate = useTransform(
+                            rawScrollYProgress,
+                            [start, end],
+                            [0, 0],
+                            { clamp: true }
+                        );
+
                         const opacity = useTransform(
-                            slowScrollYProgress,
-                            [start - 0.02, start],
+                            rawScrollYProgress,
+                            [start - 0.01, start],
                             [0, 1],
                             { clamp: true }
                         );
-
-                        const smoothY = useSpring(y, {
-                            stiffness: 40,
-                            damping: 26,
-                            mass: 1.4,
-                        });
 
                         return (
                             <motion.div
                                 key={card.id}
                                 style={{
-                                    y: smoothY,
+                                    y,
+                                    rotate,
                                     opacity,
-                                    zIndex: i,
-                                    pointerEvents: "none",
+                                    zIndex: 50 + i,
                                 }}
-                                className="absolute w-[90vw] md:w-[70vw] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.3)]"
+                                className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden hover:shadow-[0_0_80px_90px_rgba(0,0,0,0.2)] bg-white group"
                             >
-                                <img
-                                    src={card.image}
-                                    alt={card.title}
-                                    className="w-full h-[60vh] md:h-[70vh] object-cover"
-                                />
+                                {/* Image Container */}
+                                <div className="relative w-full h-[60vh] md:h-[60vh]">
+                                    <img
+                                        src={card.image}
+                                        alt={card.title}
+                                        className="w-full h-full object-cover"
+                                    />
+
+                                    {/* Title Overlay (Glassmorphism Effect) */}
+                                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 
+     w-[65%] md:w-[55%] 
+     group-hover:w-[90%] md:group-hover:w-[85%]
+     transition-[width] duration-500 ease-out">
+
+                                        <div className="flex items-center justify-between px-6 py-4 bg-white/60 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl">
+                                            <div className="flex items-center gap-3">
+                                                {/* Red Pulse/Production Dot */}
+                                                <span className="relative flex h-3 w-3">
+                                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
+                                                </span>
+                                                <h3 className="text-black font-medium text-sm md:text-base">
+                                                    {card.title}
+                                                </h3>
+                                            </div>
+
+                                            <span className="text-black/60 text-xs md:text-sm font-light italic">
+                                                ( Production )
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </motion.div>
                         );
                     })}
-
                 </div>
             </div>
         </section>
