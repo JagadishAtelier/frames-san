@@ -7,55 +7,56 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 const testimonials = [
-    {
-        name: "Emily Johnson",
-        location: "USA, California",
-        rating: 5,
-        text: "Damien's photography doesn’t just capture moments; it captures emotions. His work is simply mesmerizing.",
-    },
-    {
-        name: "John Smith",
-        location: "UK, London",
-        rating: 5,
-        text: "Damien has an incredible talent for making every event feel effortless, and the results speak for themselves.",
-    },
-    {
-        name: "Samantha Davis",
-        location: "Canada, Toronto",
-        rating: 5,
-        text: "I was blown away by Damien’s ability to capture the essence of our wedding day. His photographs are our memories.",
-    },
-    {
-        name: "Michael Brown",
-        location: "Australia, Sydney",
-        rating: 5,
-        text: "Working with Damien was a dream. He made us feel comfortable and the photos turned out absolutely stunning.",
-    },
-    {
-        name: "Sarah Wilson",
-        location: "USA, New York",
-        rating: 5,
-        text: "The best photographer we could have asked for. He saw details that everyone else missed. Highly recommended!",
-    },
-    {
-        name: "David Lee",
-        location: "Singapore",
-        rating: 5,
-        text: "Each shot is a masterpiece. The lighting, quantity, and composition are always perfect. A true artist.",
-    },
-    {
-        name: "Emma Watson",
-        location: "UK, Manchester",
-        rating: 5,
-        text: "We will cherish these photos forever. Thank you for being so patient and creative with our family.",
-    },
-    {
-        name: "Oliver Martinez",
-        location: "Spain, Barcelona",
-        rating: 5,
-        text: "Incredible energy and output. The photos are vibrant and full of life, just like the event itself.",
-    }
+  {
+    name: "Arun Kumar",
+    location: "Chennai, Tamil Nadu",
+    rating: 5,
+    text: "The photography was beyond expectations. Every emotion and detail was captured beautifully. Truly memorable work.",
+  },
+  {
+    name: "Priya Shankar",
+    location: "Coimbatore, Tamil Nadu",
+    rating: 5,
+    text: "An amazing experience from start to finish. The photos reflect creativity, patience, and pure passion.",
+  },
+  {
+    name: "Suresh Raman",
+    location: "Madurai, Tamil Nadu",
+    rating: 5,
+    text: "The way moments were captured felt natural and timeless. These photographs will stay with us forever.",
+  },
+  {
+    name: "Meena Lakshmi",
+    location: "Trichy, Tamil Nadu",
+    rating: 5,
+    text: "Professional, friendly, and extremely talented. The final output was elegant and emotionally powerful.",
+  },
+  {
+    name: "Vigneshwaran S",
+    location: "Salem, Tamil Nadu",
+    rating: 5,
+    text: "Attention to detail was outstanding. Every frame tells a story. Highly recommended for any special occasion.",
+  },
+  {
+    name: "Kavitha R",
+    location: "Tirunelveli, Tamil Nadu",
+    rating: 5,
+    text: "The photographs captured the soul of the event. Lighting, angles, and timing were just perfect.",
+  },
+  {
+    name: "Ramesh Babu",
+    location: "Erode, Tamil Nadu",
+    rating: 5,
+    text: "A truly talented photographer who understands moments. The results exceeded all our expectations.",
+  },
+  {
+    name: "Anitha Murugan",
+    location: "Thanjavur, Tamil Nadu",
+    rating: 5,
+    text: "Beautiful storytelling through visuals. Every picture feels alive and full of emotion.",
+  }
 ];
+
 
 export default function Testimonials() {
     const swiperRef = useRef(null);

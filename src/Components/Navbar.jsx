@@ -67,8 +67,8 @@ export default function Navbar() {
                     </div>
                         <nav className="hidden sm:flex items-center gap-10 text-sm font-semibold bg-white py-3 px-5 rounded-4xl">
                             <NavLink href="/" label="Home" />
-                            <NavLink href="/work/work-1" label="Work" />
-                            <NavLink href="/about" label="About" />
+                            <NavLink href="#work" label="Work" />
+                            <NavLink href="#about" label="About" />
                         </nav>
                     {/* Right Actions */}
                     <div className="hidden md:flex items-center gap-6">

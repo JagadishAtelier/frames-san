@@ -142,7 +142,7 @@ function HeroSection() {
   }, []);
 
   return (
-    <div className="bg-cover bg-center bg-no-repeat">
+    <div className="bg-cover bg-center bg-no-repeat" id="hero">
       {/* ================= DESKTOP ================= */}
       <section ref={containerRef} className="hidden lg:block w-full h-[220vh]">
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
@@ -217,7 +217,7 @@ function HeroSection() {
 
               <motion.div
                 style={{ y: isDesktop ? stackY : 0 }}
-                className="relative w-[250px] h-[55vh] z-20"
+                className="relative w-[250px] h-[65vh] z-20"
               >
                 <img
                   src="/SanthoshPNG.png"

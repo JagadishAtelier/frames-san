@@ -31,9 +31,9 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
             {/* Nav Links */}
             <div className="flex flex-wrap gap-6 text-sm">
-              <a href="/home" className="hover:opacity-70 font-bold text-base">Home</a>
-              <a href="/about-us" className="hover:opacity-70 font-bold text-base">About</a>
-              <a href="/works" className="hover:opacity-70 font-bold text-base">Work</a>
+              <a href="/" className="hover:opacity-70 font-bold text-base">Home</a>
+              <a href="#about" className="hover:opacity-70 font-bold text-base">About</a>
+              <a href="#work" className="hover:opacity-70 font-bold text-base">Work</a>
             </div>
 
             {/* Copyright */}

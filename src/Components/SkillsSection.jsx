@@ -32,9 +32,9 @@ useEffect(() => {
   const handleScroll = () => {
     const centerY = window.innerHeight / 2;
     const maxDistance = window.innerHeight / 1.5;
-    const centerThreshold = 5; // 🔥 pixels around center
+    const centerThreshold = 10; // 🔥 pixels around center
 
-    let active = 1;
+    let active = -1;
 
     const newOpacities = itemRefs.current.map((el, index) => {
       if (!el) return index === 0 ? 1 : 0.15;
@@ -67,7 +67,7 @@ useEffect(() => {
 
 
   return (
-    <section className="border-t border-b border-gray-500 md:w-fit mx-auto lg:py-20 py-10">
+    <section className="border-t border-b border-gray-500 md:w-[90vw] mx-auto lg:py-20 py-10 ">
       <div className="px-6 flex md:flex-row flex-col md:gap-7 justify-center">
 
         {/* LEFT — STICKY */}

@@ -31,7 +31,7 @@ const LegionSection = () => {
 
   return (
     <section className="flex items-center justify-center px-6 py-10 font-sans text-[#0a0a0a]">
-      <div className="w-1/2 text-center flex flex-col items-center">
+      <div className="max-w-5xl text-center flex flex-col items-center">
         <FadeUpText
           text="Who are we"
           className="text-lg mb-6 opacity-80 block border-b-2 border-red-600 w-fit"
@@ -88,7 +88,7 @@ const LegionSection = () => {
         </div>
         {/* Description Paragraph */}
 
-        <div className="max-w-2xl mb-6">
+        <div className="max-w-4xl mb-6">
           <FadeUpText
             text="Frames of San is a creative photography studio dedicated to capturing authentic emotions, 
 natural expressions, and meaningful stories. From portraits to events, we craft visuals 

@@ -22,7 +22,7 @@ function NewAboutSec() {
   );
 
   return (
-    <div className='relative'>
+    <div className='relative' id='about'>
       <section ref={sectionRef} className="relative h-[450vh] bg-[#040406]">
 
         <div className="sticky top-0 h-screen w-full flex items-center overflow-hidden px-6 md:px-12 lg:px-20 pt-20 z-10">
@@ -77,7 +77,7 @@ function NewAboutSec() {
 
               <motion.div
                 style={{ opacity: card3Opacity, scale: cardScale }}
-                className="absolute top-[0%]  right-0 md:w-full md:h-full w-full h-50 z-0 flex items-center justify-center bg-[radial-gradient(circle,_rgba(120,0,0,1)_0%,_rgba(0,0,0,1)_65%)] "
+                className="absolute top-[0%]  right-0 md:w-full md:h-full w-full h-50 z-0 flex items-center justify-center bg-[radial-gradient(circle,_rgba(120,0,0,1)_0%,_#040406_65%)] "
               >
                 <img
                   src="/aboutBgprop.svg"
