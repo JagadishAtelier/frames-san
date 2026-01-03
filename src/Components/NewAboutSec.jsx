@@ -28,7 +28,7 @@ function NewAboutSec() {
 
   return (
     <div className='relative' id='about'>
-      <section ref={sectionRef} className="relative h-[450vh] bg-[#040406] pb-20">
+      <section ref={sectionRef} className="relative h-[450vh] bg-[#040406] pb-20 lg:block hidden">
         
         <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden px-6 md:px-12 lg:px-20 z-10">
           
@@ -94,7 +94,7 @@ function NewAboutSec() {
 
         </div>
       </section>
-<div className="pointer-events-none relative bottom-10 left-0 w-full h-32 bg-gradient-to-b from-[#040406] to-[#f3f3f3]" />
+<div className="lg:block hidden pointer-events-none relative bottom-10 left-0 w-full h-32 bg-gradient-to-b from-[#040406] to-[#f3f3f3]" />
 
       {/* ================= MOBILE ONLY (STATIC) ================= */}
 <div className="block lg:hidden bg-[#040406] px-6 py-20" id="about">
