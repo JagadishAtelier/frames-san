@@ -35,18 +35,18 @@ const NewBrandSec = () => {
     );
 
     /* ---------------- TEXT ANIMATIONS (UNCHANGED) ---------------- */
-const textScroll = useSpring(rawScrollYProgress, {
-  stiffness: 80,  // higher = faster movement
-  damping: 20,    // lower = more responsive
-  mass: 1,        // normal weight
-});
+    const textScroll = useSpring(rawScrollYProgress, {
+        stiffness: 100,  // higher = faster movement
+        damping: 20,    // lower = more responsive
+        mass: 1,        // normal weight
+    });
 
 
-const smoothYLets = useTransform(textScroll, [0.15, 0.25], ["100%", "0%"]);
-const smoothYBrand = useTransform(textScroll, [0.15, 0.25], ["-100%", "0%"]);
+    const smoothYLets = useTransform(textScroll, [0.15, 0.25], ["100%", "0%"]);
+    const smoothYBrand = useTransform(textScroll, [0.15, 0.25], ["-100%", "0%"]);
 
-const smoothYBuild = useTransform(textScroll, [0.28, 0.38], ["100%", "0%"]);
-const smoothYYour = useTransform(textScroll, [0.28, 0.38], ["-100%", "0%"]);
+    const smoothYBuild = useTransform(textScroll, [0.28, 0.38], ["100%", "0%"]);
+    const smoothYYour = useTransform(textScroll, [0.28, 0.38], ["-100%", "0%"]);
 
 
     const textOpacity = useTransform(rawScrollYProgress, [0.55, 0.65], [1, 0]);
