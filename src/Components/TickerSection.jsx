@@ -68,7 +68,7 @@ export default function TickerSection() {
   /* ---------------- MOBILE / TABLET VIEW ---------------- */
   if (isMobile) {
     return (
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative pb-10 md:pb-20 overflow-hidden">
         <p className="uppercase font-anton text-4xl text-center mb-6">
           stay connected
         </p>
@@ -89,14 +89,22 @@ export default function TickerSection() {
           </a>
 
           {/* Swiper */}
-          <Swiper
-            modules={[Autoplay]}
-            slidesPerView={1}
-            spaceBetween={16}
-            loop
-            autoplay={{ delay: 2500, disableOnInteraction: false }}
-            className="px-4 w-[90%]"
-          >
+<Swiper
+  modules={[Autoplay]}
+  loop
+  autoplay={{ delay: 2500, disableOnInteraction: false }}
+  spaceBetween={16}
+  className="px-4 w-[90%]"
+  breakpoints={{
+    0: {
+      slidesPerView: 1, // mobile
+    },
+    768: {
+      slidesPerView: 2, // tablet
+    },
+  }}
+>
+
             {images.map((img, i) => (
               <SwiperSlide key={i}>
                 <div className="h-[45vh] rounded-xl overflow-hidden">
