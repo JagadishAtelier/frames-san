@@ -5,10 +5,29 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const cards = [
-    { id: 1, title: "Moments in Motion", image: "/h1.jpg" },
-    { id: 2, title: "Timeless Portraits", image: "/h2.jpg" },
-    { id: 3, title: "Visual Storytelling", image: "/h3.jpg" },
+  {
+    id: 1,
+    title: "Moments in Motion",
+    image: "/h1.jpg",
+   glow: "rgba(255, 140, 0, 0.45)"
+
+  },
+  {
+    id: 2,
+    title: "Timeless Portraits",
+    image: "/h2.jpg",
+    glow: "rgba(0, 0, 0, 0.55)"
+
+  },
+  {
+    id: 3,
+    title: "Visual Storytelling",
+    image: "/h3.jpg",
+    glow: "rgba(255, 193, 7, 0.45)"
+
+  },
 ];
+
 
 const NewBrandSec = () => {
     const containerRef = useRef(null);
@@ -137,22 +156,28 @@ const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9]);
                         const opacity = useTransform(rawScrollYProgress, [start - 0.02, start], [0, 1], { clamp: true });
 
                         return (
-                            <motion.div
-                                key={card.id}
-                                style={{
-                                    y,
-                                    rotateX,
-                                    opacity,
-                                    transformOrigin: "bottom center",
-                                    zIndex: 50 + i,
-                                }}
-                                className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden shadow-2xl group hover:shadow-[0_0_150px_30px_rgba(0,0,0,0.2)]
-"
-                            >
-                                <div className="relative w-full h-[60vh] ">
+<motion.div
+  key={card.id}
+  style={{
+    y,
+    rotateX,
+    opacity,
+    transformOrigin: "bottom center",
+    zIndex: 50 + i,
+  }}
+  whileHover={{
+    boxShadow: `0 0 160px 35px ${card.glow}`,
+  }}
+  transition={{
+    boxShadow: { duration: 0.4, ease: "easeOut" },
+  }}
+  className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden shadow-2xl group"
+>
+
+                                <div className="relative w-full lg:h-[60vh] h-[35vh] ">
                                     <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
                                     <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[65%] md:w-[55%] group-hover:w-[85%] transition-[width] duration-500 ease-out ">
-                                        <div className="flex items-center justify-between px-6 py-4 bg-white/60 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl">
+                                        <div className="flex flex-col lg:flex-row items-center justify-between px-6 py-4 bg-white/60 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl">
                                             <div className="flex items-center gap-3">
                                                 <span className="relative flex h-3 w-3">
                                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>

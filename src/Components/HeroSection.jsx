@@ -245,33 +245,18 @@ function HeroSection() {
           </div>
         </div>
       </section>
-
-      {/* ================= TABLET ================= */}
-      <section className="hidden md:flex lg:hidden w-full min-h-screen flex-col items-center justify-center px-6 text-center bg-gray-50">
-        <h1 className="text-6xl font-bold mb-8 uppercase">Capturing Stories. Creating Legacy.</h1>
-        <div className="flex items-center justify-center gap-4">
-          <img className="w-[220px] h-[380px] rounded-2xl object-cover" src="/hero1.jpg" alt="" />
-          <img className="w-[240px] h-[420px] rounded-2xl z-10 object-cover" src="/SanthoshPNG.png" alt="" />
-          <img className="w-[220px] h-[380px] rounded-2xl object-cover" src="/hero3.jpg" alt="" />
-        </div>
-        <div className="flex items-center gap-2 mt-10">
-          <MapPin />
-          <span className="font-medium">Based in Coimbatore</span>
-        </div>
-      </section>
-
       {/* ================= MOBILE ================= */}
-      <section className="flex md:hidden w-full min-h-[85vh] flex-col items-center justify-center px-6 pt-20 text-center bg-gray-50">
+      <section className="flex lg:hidden w-full min-h-[85vh] flex-col items-center justify-center px-6 pt-20 text-center">
         <h1 className="text-4xl font-bold mb-6 uppercase">Capturing Stories. Creating Legacy.</h1>
         <img
           src="/SanthoshPNG.png"
-          className="w-full max-w-[320px] h-[45vh] rounded-2xl mb-8 object-cover shadow-xl"
+          className="w-full max-w-[320px] h-[45vh] rounded-2xl mb-8 object-cover"
           alt=""
         />
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           <MapPin size={20} />
           <span className="font-medium">Based in Coimbatore</span>
-        </div>
+        </div> */}
       </section>
     </div>
   );

@@ -42,16 +42,23 @@ export default function Navbar() {
       className={`fixed top-2 w-full z-50 transition-transform duration-500
         ${showNav ? "translate-y-0" : "-translate-y-32"}
       `}
-      data-aos="fade-down" data-aos-delay="0"
+      data-aos="fade-down"
     >
       <div className="mx-auto lg:px-10">
-        <div className="grid grid-cols-3 items-center h-20">
+        <div className="lg:grid flex justify-between grid-cols-3 items-center h-20">
 
-          {/* LEFT LOGO (TOP ONLY) */}
-          <a href="/" className="relative flex items-center">
+          {/* MOBILE SINGLE LOGO */}
+          <a href="/" className="flex sm:hidden items-center">
+            <img src="/san1.png" alt="Logo" className="h-16" />
+          </a>
+
+          {/* DESKTOP LEFT LOGO (TOP ONLY) */}
+          <a href="/" className="relative hidden sm:flex items-center">
             <div
               className={`transition-all duration-500 ease-out
-                ${isAtTop ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"}
+                ${isAtTop
+                  ? "opacity-100 scale-100"
+                  : "opacity-0 scale-90 pointer-events-none"}
               `}
             >
               <img
@@ -62,57 +69,42 @@ export default function Navbar() {
             </div>
           </a>
 
-          {/* NAV LINKS */}
+          {/* NAV LINKS (DESKTOP ONLY) */}
           <nav
-            className={`hidden sm:flex   gap-10 text-sm font-semibold transition-all duration-300
+            className={`hidden lg:flex gap-10 text-sm font-semibold transition-all duration-300
               ${isAtTop
                 ? "bg-transparent px-0 py-0 text-black justify-center items-baseline"
-                : "bg-white px-6 py-3 rounded-2xl text-black mx-auto w-fit shadow-lg items-center"
-              }
+                : "bg-white px-6 py-3 rounded-2xl text-black mx-auto w-fit shadow-lg items-center"}
             `}
           >
             <NavLink href="/" label="Home" />
             <NavLink href="#work" label="Work" />
 
-            {/* CENTER LOGO (SCROLL ONLY, NO GAP AT TOP) */}
-            <div
-              className={`flex justify-center transition-all duration-500 ease-out relative
-                ${isAtTop ? "hidden" : "w-fit"}
-              `}
-            >
+            {/* CENTER LOGO (SCROLL ONLY – DESKTOP) */}
+            <div className={`${isAtTop ? "hidden" : "flex"} justify-center`}>
               <img
                 src="/logoonly.png"
                 alt="Logo"
-                className={`h-7 transition-all duration-500
-                  ${isAtTop
-                    ? "opacity-0 scale-90 -translate-y-1"
-                    : "opacity-100 scale-100 translate-y-0"
-                  }
-                `}
+                className="h-7 transition-all duration-500"
               />
             </div>
 
             <NavLink href="#about" label="About" />
             <NavLink href="/Contact" label="Contact" />
-            {/* <a href="/contact/contact-1">Contact</a> */}
           </nav>
 
           {/* MOBILE MENU BUTTON */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="md:hidden pe-5"
-          >
+          <button onClick={() => setOpen(!open)} className="lg:hidden pe-5">
             <div className="w-6 h-[2px] bg-black mb-1" />
             <div className="w-6 h-[2px] bg-black mb-1" />
             <div className="w-6 h-[2px] bg-black" />
           </button>
-
         </div>
       </div>
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="fixed top-[90px] left-1/2 -translate-x-1/2 z-[999] md:hidden w-[95%]">
+        <div className="fixed top-[90px] left-1/2 -translate-x-1/2 z-[999] lg:hidden w-[95%]">
           <div className="flex flex-col bg-white p-6 rounded-2xl items-center space-y-6 font-semibold shadow-xl">
             <NavLink href="/" label="Home" />
             <NavLink href="/work/work-1" label="Work" />

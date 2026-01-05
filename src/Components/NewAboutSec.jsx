@@ -97,7 +97,7 @@ function NewAboutSec() {
 <div className="lg:block hidden pointer-events-none relative bottom-10 left-0 w-full h-32 bg-gradient-to-b from-[#040406] to-[#f3f3f3]" />
 
       {/* ================= MOBILE ONLY (STATIC) ================= */}
-<div className="block lg:hidden bg-[#040406] px-6 py-20" id="about">
+<div className="block lg:hidden bg-[#040406] px-6 py-10" id="about">
   <div className="flex flex-col gap-10">
 
     {/* TEXT */}
@@ -123,7 +123,7 @@ function NewAboutSec() {
     </div>
 
     {/* IMAGE SECTION */}
-    <div className="relative w-full h-[300px] flex items-center justify-center overflow-hidden rounded-2xl bg-[radial-gradient(circle,_rgba(120,0,0,1)_0%,_#040406_65%)]">
+    <div className="relative w-full h-[30vh] flex items-center justify-center overflow-hidden rounded-2xl bg-[radial-gradient(circle,_rgba(120,0,0,1)_0%,_#040406_65%)]">
       <img
         src="/aboutBgprop.svg"
         className="absolute w-full h-full object-contain opacity-60"

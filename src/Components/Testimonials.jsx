@@ -62,24 +62,24 @@ export default function Testimonials() {
     const swiperRef = useRef(null);
 
     return (
-        <section className="relative bg-[#050505] text-white py-24 px-6 md:px-12 lg:px-20 overflow-hidden min-h-screen flex flex-col justify-center my-10">
+        <section className="relative bg-[#050505] text-white py-10 px-6 lg:px-12 lg:px-20 overflow-hidden min-h-screen flex flex-col justify-center my-10">
             <div className="max-w-[1400px] mx-auto w-full">
                 {/* HEADER SECTION */}
-                <div className="flex flex-col md:flex-row justify-between items-center sm:mb-24 gap-8">
+                <div className="flex flex-col lg:flex-row justify-between lg:items-center lg:mb-24 gap-8">
                     <div>
                         <p className="text-sm tracking-[0.2em] text-[#666] uppercase mb-5 font-semibold">
                             TESTIMONIALS
                         </p>
-                        <h2 className="text-6xl md:text-8xl leading-none uppercase font-anton tracking-wide text-white">
+                        <h2 className="text-6xl lg:text-8xl leading-none uppercase font-anton tracking-wide text-white">
                             WHAT MY <br />
-                            <span className="text-[#D00] font-handwriting text-5xl md:text-8xl capitalize ml-1 mt-2 inline-block transform -rotate-2">
+                            <span className="text-[#D00] font-handwriting text-5xl lg:text-8xl capitalize ml-1 mt-2 inline-block transform -rotate-2">
                                 Clients Say
                             </span>
                         </h2>
                     </div>
 
                     {/* NAVIGATION BUTTONS */}
-                    <div className="flex flex-col-reverse md:flex-row items-center gap-4 mb-4">
+                    <div className="flex flex-col-reverse lg:flex-row items-center gap-4 mb-4 ms-auto lg:ms-0">
                         <div className="flex gap-4 items-center">
                             <button
                             onClick={() => swiperRef.current?.slidePrev()}
@@ -95,7 +95,7 @@ export default function Testimonials() {
                         </button>
                         </div>
 
-                        <button className="ml-6 px-8 h-14 rounded-lg bg-[#1a1a1a] hover:bg-[#252525] border border-transparent hover:border-[#333] text-sm font-medium hidden sm:flex items-center gap-3 transition-all text-gray-300 hover:text-white">
+                        <button className="ml-6 px-8 h-14 rounded-lg bg-[#1a1a1a] hover:bg-[#252525] border border-transparent hover:border-[#333] text-sm font-medium hidden lg:flex items-center gap-3 transition-all text-gray-300 hover:text-white">
                             View All Testimonials <ArrowRight size={18} />
                         </button>
                     </div>
@@ -126,7 +126,7 @@ export default function Testimonials() {
                             <div className="h-full group bg-[#0a0a0a] border border-[#1f1f1f] rounded-2xl p-10 hover:border-[#333] transition-all duration-300 relative shadow-2xl shadow-black/50 flex flex-col justify-between">
                                 <div className="h-full">
                                     {/* SOCIALS PILL */}
-                                    <div className="absolute top-8 right-8 flex items-center gap-4 bg-[#141414] px-5 py-2.5 rounded-full border border-[#222]">
+                                    <div className="absolute top-8 right-8 hidden lg:flex items-center gap-4 bg-[#141414] px-5 py-2.5 rounded-full border border-[#222]">
                                         <div className="w-full h-full rounded-full border-gray-400 border p-2"><FaFacebookF size={16} className="text-gray-100 hover:text-white cursor-pointer transition-colors" /></div>
                                         <div className="w-full h-full rounded-full border-gray-400 border p-2"><FaTwitter size={16} className="text-gray-100 hover:text-white cursor-pointer transition-colors" /></div>
                                         <div className="w-full h-full rounded-full border-gray-400 border p-2"><FaLinkedinIn size={16} className="text-gray-100 hover:text-white cursor-pointer transition-colors" /></div>
