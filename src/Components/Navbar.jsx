@@ -11,7 +11,7 @@ export default function Navbar() {
       const currentY = window.scrollY;
       setIsAtTop(currentY === 0);
 
-      if (currentY > lastScrollY && currentY > 120) {
+      if (currentY > lastScrollY && currentY > 0) {
         setShowNav(false);
       } else {
         setShowNav(true);
@@ -42,6 +42,7 @@ export default function Navbar() {
       className={`fixed top-2 w-full z-50 transition-transform duration-500
         ${showNav ? "translate-y-0" : "-translate-y-32"}
       `}
+      data-aos="fade-down" data-aos-delay="0"
     >
       <div className="mx-auto lg:px-10">
         <div className="grid grid-cols-3 items-center h-20">

@@ -107,7 +107,7 @@ function HeroSection() {
             style={{ backgroundImage: "url('/hero-image-bg.jpg')" }}
           >
             {/* TEXT LAYER */}
-            <div className="absolute z-30 flex w-full justify-center px-20 pointer-events-none">
+            <div className="absolute z-30 flex w-full justify-center px-20 pointer-events-none" data-aos="fade-right" data-aos-delay="0">
               <motion.p
                 style={{
                   x: isDesktop ? leftTextX : 0,
@@ -117,7 +117,6 @@ function HeroSection() {
                   textAlign: leftAlign
                 }}
                 className="text-[5vw] font-bold font-anton leading-[0.9] uppercase text-black"
-                data-aos="fade-left" data-aos-delay="0"
               >
                 Capturing Stories.{" "}
               </motion.p>
@@ -131,7 +130,6 @@ function HeroSection() {
                   textAlign: rightAlign
                 }}
                 className="text-[5vw] font-bold font-anton leading-[0.9] uppercase text-black"
-                data-aos="fade-right" data-aos-delay="0"
               >
                 Creating Legacy.
               </motion.p>

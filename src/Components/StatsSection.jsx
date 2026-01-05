@@ -26,10 +26,10 @@ const StatCard = ({ number, suffix, label }) => {
 
 const StatsSection = () => {
   const stats = [
-    { number: 15, suffix: '+', label: 'Years in Business' },
-    { number: 500, suffix: '+', label: 'Happy Clients' },
+    { number: 5, suffix: '+', label: 'Years in Business' },
+    { number: 50, suffix: '+', label: 'Happy Clients' },
     { number: 10, suffix: '+', label: 'Photography Awards' },
-    { number: 5, suffix: '+', label: 'International Shoots', prefix: '0' },
+    { number: 2, suffix: '+', label: 'International Shoots', prefix: '0' },
     { number: 10000, suffix: '+', label: 'Social Media Followers' },
     { number: 90, suffix: '%', label: 'Client Retention Rate' },
   ];
