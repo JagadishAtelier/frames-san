@@ -7,6 +7,63 @@ import {
 } from "framer-motion";
 import { MapPin } from "lucide-react";
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.035,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const letterVariants = {
+  hidden: { y: "120%", opacity: 0 },
+  visible: {
+    y: "0%",
+    opacity: 1,
+    transition: {
+      duration: 0.55,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  },
+};
+
+const LetterReveal = ({ text }) => {
+  const words = text.split(" ");
+
+  return (
+    <motion.span
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      {words.map((word, wi) => (
+        <span key={wi} className="inline-block overflow-hidden">
+          {word.split("").map((letter, li) => (
+            <span key={li} className="inline-block overflow-hidden">
+              <motion.span
+                variants={letterVariants}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
+            </span>
+          ))}
+
+          {/* ✅ Proper visible space between words */}
+          {wi !== words.length - 1 && (
+            <span className="inline-block w-[0.35em]">&nbsp;</span>
+          )}
+        </span>
+      ))}
+    </motion.span>
+  );
+};
+
+
+
 function HeroSection() {
   const [isDesktop, setIsDesktop] = useState(false);
   const containerRef = useRef(null);
@@ -38,7 +95,7 @@ function HeroSection() {
   */
 
   /* ================= TEXT MOVEMENT ================= */
-  const leftTextX = useSpring(useTransform(scrollYProgress, [0, 0.3], [0, -120]), springConfig);
+  const leftTextX = useSpring(useTransform(scrollYProgress, [0, 0.3], [0, -80]), springConfig);
   const leftTextY = useSpring(useTransform(scrollYProgress, [0, 0.3], [0, 150]), springConfig);
   const rightTextX = useSpring(useTransform(scrollYProgress, [0, 0.3], [0, 120]), springConfig);
   const rightTextY = useSpring(useTransform(scrollYProgress, [0, 0.3], [0, -150]), springConfig);
@@ -107,7 +164,7 @@ function HeroSection() {
             style={{ backgroundImage: "url('/hero-image-bg.jpg')" }}
           >
             {/* TEXT LAYER */}
-            <div className="absolute z-30 flex w-full justify-center px-20 pointer-events-none" data-aos="fade-right" data-aos-delay="0">
+            <div className="absolute z-30 flex w-full justify-center px-20 pointer-events-none" >
               <motion.p
                 style={{
                   x: isDesktop ? leftTextX : 0,
@@ -118,8 +175,9 @@ function HeroSection() {
                 }}
                 className="text-[5vw] font-bold font-anton leading-[0.9] uppercase text-black"
               >
-                Capturing Stories.{" "}
+                <LetterReveal text="Capturing Stories." />
               </motion.p>
+
 
               <motion.p
                 style={{
@@ -131,8 +189,9 @@ function HeroSection() {
                 }}
                 className="text-[5vw] font-bold font-anton leading-[0.9] uppercase text-black"
               >
-                Creating Legacy.
+                <LetterReveal text="Creating Legacy." />
               </motion.p>
+
             </div>
 
             {/* IMAGES LAYER */}

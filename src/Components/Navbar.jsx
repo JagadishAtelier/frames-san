@@ -76,7 +76,7 @@ export default function Navbar() {
 
             {/* CENTER LOGO (SCROLL ONLY, NO GAP AT TOP) */}
             <div
-              className={`flex justify-center transition-all duration-500 ease-out
+              className={`flex justify-center transition-all duration-500 ease-out relative
                 ${isAtTop ? "hidden" : "w-fit"}
               `}
             >
