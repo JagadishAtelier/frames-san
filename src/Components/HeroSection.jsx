@@ -246,7 +246,8 @@ function HeroSection() {
         </div>
       </section>
       {/* ================= MOBILE ================= */}
-      <section className="flex lg:hidden w-full min-h-[85vh] flex-col items-center justify-center px-6 pt-20 text-center">
+      <section className="flex lg:hidden w-full min-h-[85vh] flex-col items-center justify-center px-6 pt-20 text-center  bg-cover bg-center"
+                  style={{ backgroundImage: "url('/hero-image-bg.jpg')" }}>
         <h1 className="text-4xl font-bold mb-6 uppercase">Capturing Stories. Creating Legacy.</h1>
         <img
           src="/SanthoshPNG.png"
