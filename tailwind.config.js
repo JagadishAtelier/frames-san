@@ -13,7 +13,10 @@ module.exports = {
       },
       colors: {
         secondary: '#999', // Matches the grey-ish secondary text in CSS
-      }
+      },
+            fontFamily: {
+        mona: ['"Mona Sans Narrow"', 'Impact', 'sans-serif'],
+      },
     },
   },
 }

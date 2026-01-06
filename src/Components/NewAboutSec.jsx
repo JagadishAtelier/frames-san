@@ -18,13 +18,25 @@ function NewAboutSec() {
 
   // --- RIGHT SIDE & STATS REVEAL (Starts AFTER text is done at 0.5) ---
   // This ensures the camera and stats stay hidden until the text is readable
-  const revealOpacity = useTransform(scrollYProgress, [0.5, 0.65], [0, 1]);
-  const revealY = useTransform(scrollYProgress, [0.5, 0.65], [40, 0]); // Subtle slide up
+const revealOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
 
-  const cardScale = useSpring(
-    useTransform(scrollYProgress, [0.5, 0.7], [0.8, 1]),
-    { stiffness: 100, damping: 18 }
-  );
+const revealY = useSpring(
+  useTransform(scrollYProgress, [0.5, 0.7], [120, 0]),
+  { stiffness: 120, damping: 22 }
+);
+
+// Overshoot scale (pop effect)
+const cardScale = useSpring(
+  useTransform(scrollYProgress, [0.5, 0.6, 0.75], [0.6, 1.08, 1]),
+  { stiffness: 160, damping: 18 }
+);
+
+// Tiny tilt for life
+const cardRotate = useSpring(
+  useTransform(scrollYProgress, [0.5, 0.7], [-6, 0]),
+  { stiffness: 120, damping: 20 }
+);
+
 
   return (
     <div className='relative' id='about'>
@@ -69,10 +81,17 @@ function NewAboutSec() {
             </div>
 
             {/* RIGHT COLUMN: REVEALS AFTER TEXT */}
-            <motion.div 
-              style={{ opacity: revealOpacity, scale: cardScale, y: revealY }}
-              className="flex-none lg:flex-1 relative w-full h-[30vh] lg:h-[500px]"
-            >
+<motion.div 
+  style={{
+    opacity: revealOpacity,
+    scale: cardScale,
+    y: revealY,
+    rotate: cardRotate,
+    transformPerspective: 1000
+  }}
+  className="flex-none lg:flex-1 relative w-full h-[30vh] lg:h-[500px]"
+>
+
               <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle,_rgba(120,0,0,0.3)_0%,_transparent_70%)]">
                 <img
                   src="/about1.png"

@@ -23,10 +23,7 @@ const CTASection = () => {
           i === 1 ? 0.96 :
             0.92;
 
-      const opacity =
-        i === 0 ? 1 :
-          i === 1 ? 0.9 :
-            0.85;
+      const opacity =1
 
       // 🔥 HOLD TIME AT CENTER
       const centerHold =
