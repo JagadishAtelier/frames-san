@@ -313,13 +313,13 @@ img {
 }
 @media (max-width:480px) {
   .font-mona-narrow{
-    font-size: 4rem;
+    font-size: 3rem;
         font-weight: bold !important;
   }
 }
 @media (max-width:376px) {
   .font-mona-narrow{
-    font-size: 4rem;
+    font-size: 3rem;
         font-weight: bold !important;
   }
 }
