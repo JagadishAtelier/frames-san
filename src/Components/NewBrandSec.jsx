@@ -111,7 +111,7 @@ const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9]);
                             <div className="space-y-0 md:space-y-2 font-bold uppercase leading-[0.85]">
                                 <div className="flex justify-center gap-4 text-6xl md:text-[9rem]">
                                     <div className="overflow-hidden font-mona-narrow">
-                                        <motion.span className="font-mona" style={{ y: smoothYLets, display: "block" }}>Let’s</motion.span>
+                                        <motion.span className="font-mona-narrow" style={{ y: smoothYLets, display: "block" }}>Let’s</motion.span>
                                     </div>
                                     <div className="overflow-hidden">
                                         <motion.h1 style={{ y: smoothYBuild, display: "block" }} className="h-tag font-mona-narrow">Build</motion.h1>
