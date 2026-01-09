@@ -17,8 +17,9 @@ import TickerSection from "./Components/TickerSection";
 import Footer from "./Components/Footer";
 import NewBrandSec from "./Components/NewBrandSec";
 import CallToAction from "./Components/CallToAction";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Testimonials from "./Components/Testimonials";
+import ContactModal from "./Components/ContactModal";
 
 // Initialize AOS once
 AOS.init({
@@ -28,6 +29,7 @@ AOS.init({
   offset: 120,        // trigger distance
 });
 export default function App() {
+    const [open, setOpen] = useState(false);
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2, // scroll duration in seconds
@@ -45,7 +47,8 @@ export default function App() {
   }, []);
   return (
 <>
-<Navbar/>
+<Navbar onOpenModal={() => setOpen(true)}/>
+<ContactModal isOpen={open} onClose={() => setOpen(false)} />
 <HeroSection/>
 <NewAboutSec/>
 <NewBrandSec/>

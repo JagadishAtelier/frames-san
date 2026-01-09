@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function Navbar() {
+export default function Navbar({ onOpenModal }) {
   const [open, setOpen] = useState(false);
   const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -45,7 +45,7 @@ export default function Navbar() {
       data-aos="fade-down"
     >
       <div className="mx-auto lg:px-10">
-        <div className="lg:grid flex justify-between grid-cols-3 items-center h-20">
+        <div className="lg:flex flex justify-between grid-cols-3 items-center h-20">
 
           {/* MOBILE SINGLE LOGO */}
           <a href="/" className="flex sm:hidden items-center">
@@ -92,7 +92,23 @@ export default function Navbar() {
             <NavLink href="#about" label="About" />
             <NavLink href="/Contact" label="Contact" />
           </nav>
-
+      <button
+        onClick={onOpenModal}
+        className="lg:flex hidden items-center bg-black text-white rounded-full p-2 pr-5 hover:bg-zinc-900 w-fit"
+      >
+        <img
+          src="/04.jpg"
+          className="w-10 h-10 rounded-full"
+          alt="Eric"
+        />
+        <div className="ml-3 text-left">
+          <p className="text-sm font-bold">Santhosh</p>
+          <p className="text-xs text-zinc-400">Photograher</p>
+        </div>
+        <span className="ml-4 bg-white text-black px-5 py-2 font-semibold rounded-full text-sm">
+          Book a call
+        </span>
+      </button>
           {/* MOBILE MENU BUTTON */}
           <button onClick={() => setOpen(!open)} className="lg:hidden pe-5">
             <div className="w-6 h-[2px] bg-black mb-1" />
@@ -109,11 +125,12 @@ export default function Navbar() {
             <NavLink href="/" label="Home" />
             <NavLink href="/work/work-1" label="Work" />
             <NavLink href="/about" label="About" />
+            <NavLink href="/Contact" label="Contact" />
             <a
-              href="/contact/contact-1"
+              onClick={onOpenModal}
               className="px-8 py-2 bg-black text-white rounded-full text-sm"
             >
-              Contact
+              Book a call
             </a>
           </div>
         </div>
