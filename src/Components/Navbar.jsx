@@ -92,23 +92,44 @@ export default function Navbar({ onOpenModal }) {
             <NavLink href="#about" label="About" />
             <NavLink href="/Contact" label="Contact" />
           </nav>
-      <button
-        onClick={onOpenModal}
-        className="lg:flex hidden items-center bg-black text-white rounded-full p-2 pr-5 hover:bg-zinc-900 w-fit"
-      >
-        <img
-          src="/04.jpg"
-          className="w-10 h-10 rounded-full"
-          alt="Eric"
-        />
-        <div className="ml-3 text-left">
-          <p className="text-sm font-bold">Santhosh</p>
-          <p className="text-xs text-zinc-400">Photograher</p>
-        </div>
-        <span className="ml-4 bg-white text-black px-5 py-2 font-semibold rounded-full text-sm">
-          Book a call
-        </span>
-      </button>
+<button
+  onClick={onOpenModal}
+  className="group lg:flex hidden items-center bg-black text-white rounded-full p-2 hover:bg-zinc-900 w-fit transition-all duration-300"
+>
+  {/* Profile Image */}
+  <img
+    src="/04.jpg"
+    className="w-10 h-10 rounded-full flex-shrink-0"
+    alt="Santhosh"
+  />
+
+  {/* Hidden text (reveals on hover) */}
+  <div
+    className="
+      overflow-hidden
+      max-w-0
+      opacity-0
+      group-hover:max-w-[180px]
+      group-hover:opacity-100
+      transition-all
+      duration-1500
+      ml-0
+      group-hover:ml-3
+      text-left
+    "
+  >
+    <p className="text-sm font-bold whitespace-nowrap">Santhosh</p>
+    <p className="text-xs text-zinc-400 whitespace-nowrap">
+      Photographer
+    </p>
+  </div>
+
+  {/* CTA Button */}
+  <span className="ml-3 bg-white text-black px-5 py-2 font-semibold rounded-full text-sm whitespace-nowrap">
+    Book a call
+  </span>
+</button>
+
           {/* MOBILE MENU BUTTON */}
           <button onClick={() => setOpen(!open)} className="lg:hidden pe-5">
             <div className="w-6 h-[2px] bg-black mb-1" />
