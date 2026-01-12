@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-
+import { useNavigate } from "react-router-dom";
 export default function Navbar({ onOpenModal }) {
-    const [open, setOpen] = useState(false);
-    const [showNav, setShowNav] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
-    const [isAtTop, setIsAtTop] = useState(true);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const currentY = window.scrollY;
-            setIsAtTop(currentY === 0);
+  const [open, setOpen] = useState(false);
+  const [showNav, setShowNav] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isAtTop, setIsAtTop] = useState(true);
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setIsAtTop(currentY === 0);
 
             if (currentY > lastScrollY && currentY > 0) {
                 setShowNav(false);
@@ -80,14 +79,14 @@ export default function Navbar({ onOpenModal }) {
                         <NavLink href="/" label="Home" />
                         <NavLink href="#work" label="Work" />
 
-                        {/* CENTER LOGO (SCROLL ONLY – DESKTOP) */}
-                        <div className={`${isAtTop ? "hidden" : "flex"} justify-center`}>
-                            <img
-                                src="/logoonly.png"
-                                alt="Logo"
-                                className="h-7 transition-all duration-500"
-                            />
-                        </div>
+            {/* CENTER LOGO (SCROLL ONLY – DESKTOP) */}
+            <a href="/" className={`${isAtTop ? "hidden" : "flex"} justify-center cursor-pointer`}>
+              <img
+                src="/logoonly.png"
+                alt="Logo"
+                className="h-7 transition-all duration-500"
+              />
+            </a>
 
                         <NavLink href="#about" label="About" />
                         <NavLink href="/Contact" label="Contact" />

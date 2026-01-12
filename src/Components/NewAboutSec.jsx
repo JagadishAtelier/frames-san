@@ -92,7 +92,8 @@ function NewAboutSec() {
               className="flex-none lg:flex-1 relative w-full h-[30vh] lg:h-[600px]"
             >
 
-              <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle,_rgba(120,0,0,0.3)_0%,_transparent_70%)]">
+              <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle,_rgba(120,0,0,1)_0%,#040406_65%)]">
+                <img src="/aboutBgprop.svg" className="absolute -right-20 w-full h-full object-contain scale-110 opacity-60 z-0" alt="" />
                 <img
                   src="/about1.png"
                   className="relative z-10 w-full h-full object-contain"
@@ -126,10 +127,10 @@ function NewAboutSec() {
             </h2>
 
             <h1 className="text-3xl font-semibold text-[#BD0100] uppercase tracking-tighter leading-tight">
-              <span className="text-white font-handwriting capitalize tracking-wide">
-                Visuals That
-              </span>{" "}
-              Speak Louder Than Words
+              <span className="text-white font-handwriting capitalize tracking-wide me-2 lg:me-0">
+                Visuals That 
+              </span> {" "} 
+               Speak Louder Than Words
             </h1>
 
             <p className="text-base text-white/80 leading-relaxed">
@@ -155,6 +156,7 @@ function NewAboutSec() {
               alt="about"
             />
           </div>
+          <StatsSection/>
 
         </div>
       </div>
