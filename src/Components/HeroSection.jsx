@@ -29,7 +29,7 @@ const letterVariants = {
 };
 
 const LetterReveal = ({ text }) => {
-  const words = text.split(" ");
+  const characters = text.split("");
 
   return (
     <motion.span
@@ -37,21 +37,25 @@ const LetterReveal = ({ text }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
+      className="inline-block" // Removed break-all to keep words intact
+      layout
     >
-      {words.map((word, wi) => (
-        <span key={wi} className="inline-block overflow-hidden">
-          {word.split("").map((letter, li) => (
-            <span key={li} className="inline-block overflow-hidden">
-              <motion.span variants={letterVariants} className="inline-block">
-                {letter}
-              </motion.span>
-            </span>
-          ))}
-          {wi !== words.length - 1 && (
-            <span className="inline-block w-[0.35em]">&nbsp;</span>
-          )}
-        </span>
-      ))}
+      {characters.map((char, index) => {
+        if (char === " ") {
+          return <span key={index}> </span>;
+        }
+        return (
+          <motion.span
+            key={index}
+            variants={letterVariants}
+            layout
+            transition={{ type: "spring", stiffness: 40, damping: 15 }}
+            className="inline-block"
+          >
+            {char}
+          </motion.span>
+        );
+      })}
     </motion.span>
   );
 };
@@ -80,25 +84,23 @@ function HeroSection() {
   };
 
   /* ================= TEXT ================= */
-  const leftTextX = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, -80]), springConfig);
+  const leftTextX = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, -150]), springConfig);
   const leftTextY = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, 150]), springConfig);
 
   const rightTextX = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, 120]), springConfig);
   const rightTextY = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, -150]), springConfig);
 
-  const leftTextMaxWidth = useSpring(
-    useTransform(scrollYProgress, [0.12, 0.25], ["70vw", "32vw"]),
+  const leftTextMaxWidthVal = useSpring(
+    useTransform(scrollYProgress, [0.12, 0.26], [55, 26]),
     springConfig
   );
+  const leftTextMaxWidth = useTransform(leftTextMaxWidthVal, (v) => `${v}vw`);
 
-  const rightTextMaxWidth = useSpring(
-    useTransform(scrollYProgress, [0.12, 0.25], ["55vw", "32vw"]),
+  const rightTextMaxWidthVal = useSpring(
+    useTransform(scrollYProgress, [0.12, 0.26], [55, 23]),
     springConfig
   );
-
-  const textWrap = useTransform(scrollYProgress, v => (v < 0.12 ? "nowrap" : "normal"));
-  const leftAlign = useTransform(scrollYProgress, v => (v < 0.12 ? "left" : "flex-start"));
-  const rightAlign = useTransform(scrollYProgress, v => (v < 0.12 ? "right" : "flex-end"));
+  const rightTextMaxWidth = useTransform(rightTextMaxWidthVal, (v) => `${v}vw`);
 
   /* ================= MAIN IMAGE ================= */
   const stackY = useSpring(
@@ -150,16 +152,14 @@ function HeroSection() {
             style={{ backgroundImage: "url('/hero-image-bg.jpg')" }}
           >
             {/* TEXT */}
-            <div className="absolute z-30 flex w-full justify-center px-20 pointer-events-none">
+            <div className="absolute z-30 flex w-full justify-center px-4 pointer-events-none">
               <motion.p
                 style={{
                   x: leftTextX,
                   y: leftTextY,
                   maxWidth: leftTextMaxWidth,
-                  whiteSpace: textWrap,
-                  textAlign: leftAlign
                 }}
-                className="text-[5vw] font-bold font-anton leading-[0.9] uppercase text-black"
+                className="text-[5vw] font-bold font-anton leading-none uppercase text-black text-left"
               >
                 <LetterReveal text="Capturing Stories." />
               </motion.p>
@@ -169,10 +169,8 @@ function HeroSection() {
                   x: rightTextX,
                   y: rightTextY,
                   maxWidth: rightTextMaxWidth,
-                  whiteSpace: textWrap,
-                  textAlign: rightAlign
                 }}
-                className="text-[5vw] font-bold font-anton leading-[0.9] uppercase text-black"
+                className="text-[5vw] font-bold font-anton leading-none uppercase text-black text-right"
               >
                 <LetterReveal text="Creating Legacy." />
               </motion.p>
@@ -181,11 +179,11 @@ function HeroSection() {
             {/* IMAGE */}
             <motion.div
               style={{ y: stackY }}
-              className="relative w-[400px] h-[65vh] z-20"
+              className="relative w-auto h-[65vh] z-20"
             >
               <img
                 src="/SanthoshPNG.png"
-                className="rounded-2xl h-full w-full object-cover"
+                className="rounded-2xl h-full w-auto object-cover"
                 alt="Main Portrait"
               />
             </motion.div>
@@ -198,7 +196,7 @@ function HeroSection() {
         className="flex lg:hidden w-full min-h-[85vh] flex-col items-center justify-center px-6 pt-20 text-center bg-cover bg-center"
         style={{ backgroundImage: "url('/hero-image-bg.jpg')" }}
       >
-        <h1 className="text-4xl font-bold mb-6 uppercase">
+        <h1 className="text-[4.5vh] tracking-widest font-medium mb-6 uppercase font-only-anton leading-normal">
           Capturing Stories. Creating Legacy.
         </h1>
 

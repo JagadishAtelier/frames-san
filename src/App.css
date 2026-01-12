@@ -40,6 +40,9 @@ button {
   font-family: 'Anton', sans-serif  !important;
   letter-spacing: 0.5rem;
 }
+.font-only-anton{
+  font-family: 'Anton', sans-serif  !important;
+}
 .font-handwriting {
   font-family: "Yellowtail", cursive !important;
 }

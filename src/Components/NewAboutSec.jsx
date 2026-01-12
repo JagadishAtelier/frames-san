@@ -42,7 +42,7 @@ function NewAboutSec() {
     <div className='relative' id='about'>
       <section ref={sectionRef} className="relative h-[450vh] bg-[#040406] pb-20 lg:block hidden">
 
-        <div className="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden px-6 md:px-12 lg:px-20 z-10">
+        <div className="sticky top-10 h-screen w-full flex flex-col justify-center overflow-hidden px-6 md:px-12 lg:px-20 z-10">
 
           <div className="mx-auto flex flex-col lg:flex-row items-center w-full gap-10">
 
@@ -89,13 +89,13 @@ function NewAboutSec() {
                 rotate: cardRotate,
                 transformPerspective: 1000
               }}
-              className="flex-none lg:flex-1 relative w-full h-[30vh] lg:h-[500px]"
+              className="flex-none lg:flex-1 relative w-full h-[30vh] lg:h-[600px]"
             >
 
               <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle,_rgba(120,0,0,0.3)_0%,_transparent_70%)]">
                 <img
                   src="/about1.png"
-                  className="relative z-10 w-full h-full object-contain scale-[1.35]"
+                  className="relative z-10 w-full h-full object-contain"
                   style={{ transform: "scaleX(-1)" }}
                   alt="camera"
                 />
