@@ -127,10 +127,10 @@ function NewAboutSec() {
             </h2>
 
             <h1 className="text-3xl font-semibold text-[#BD0100] uppercase tracking-tighter leading-tight">
-              <span className="text-white font-handwriting capitalize tracking-wide">
-                Visuals That
-              </span>{" "}
-              Speak Louder Than Words
+              <span className="text-white font-handwriting capitalize tracking-wide me-2 lg:me-0">
+                Visuals That 
+              </span> {" "} 
+               Speak Louder Than Words
             </h1>
 
             <p className="text-base text-white/80 leading-relaxed">
@@ -156,6 +156,7 @@ function NewAboutSec() {
               alt="about"
             />
           </div>
+          <StatsSection/>
 
         </div>
       </div>

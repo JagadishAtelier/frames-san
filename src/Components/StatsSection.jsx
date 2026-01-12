@@ -36,7 +36,7 @@ const StatsSection = () => {
 
   return (
     <section className="flex items-center justify-center relative z-50 mx-auto">
-      <div className="max-w-7xl mx-auto flex gap-3">
+      <div className="max-w-7xl mx-auto lg:flex gap-3 grid grid-cols-2 md:grid-cols-3">
         {stats.map((stat, index) => (
           <StatCard 
             key={index} 
