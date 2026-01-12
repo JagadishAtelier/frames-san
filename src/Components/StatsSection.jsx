@@ -11,9 +11,9 @@ const StatCard = ({ number, suffix, label }) => {
   return (
     <div 
       ref={ref}
-      className="flex lg:w-40 w-35 flex-col items-center justify-center lg:py-4 py-1 bg-[#121212] rounded-2xl border border-white/5 shadow-2xl transition-transform hover:scale-105"
+      className="flex lg:w-40 w-35 flex-col items-center justify-center lg:py-4 py-2 bg-[#121212] rounded-2xl border border-white/5 shadow-2xl transition-transform hover:scale-105"
     >
-      <h2 className="lg:text-3xl text-lg font-bold text-white lg:mb-2">
+      <h2 className="lg:text-3xl text-2xl font-bold text-white lg:mb-2">
         {inView ? <CountUp end={number} duration={2.5} separator="," /> : '0'}
         {suffix}
       </h2>
