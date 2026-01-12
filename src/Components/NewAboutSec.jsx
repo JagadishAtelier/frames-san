@@ -92,7 +92,7 @@ function NewAboutSec() {
               className="flex-none lg:flex-1 relative w-full h-[30vh] lg:h-[500px]"
             >
 
-              <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle,_rgba(120,0,0,1)_0%,_rgba(0,0,0,1)_65%)]">
+              <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle,_rgba(120,0,0,1)_0%,#040406_65%)]">
                 <img src="/aboutBgprop.svg" className="absolute -right-20 w-full h-full object-contain scale-110 opacity-60 z-0" alt="" />
                 <img
                   src="/about1.png"
