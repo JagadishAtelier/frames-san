@@ -5,27 +5,27 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const cards = [
-  {
-    id: 1,
-    title: "Moments in Motion",
-    image: "/h1.jpg",
-   glow: "rgba(255, 140, 0, 0.45)"
+    {
+        id: 1,
+        title: "Moments in Motion",
+        image: "/h1.jpg",
+        glow: "rgba(255, 140, 0, 0.45)"
 
-  },
-  {
-    id: 2,
-    title: "Timeless Portraits",
-    image: "/h2.jpg",
-    glow: "rgba(0, 0, 0, 0.55)"
+    },
+    {
+        id: 2,
+        title: "Timeless Portraits",
+        image: "/h2.jpg",
+        glow: "rgba(0, 0, 0, 0.55)"
 
-  },
-  {
-    id: 3,
-    title: "Visual Storytelling",
-    image: "/h3.jpg",
-    glow: "rgba(255, 193, 7, 0.45)"
+    },
+    {
+        id: 3,
+        title: "Visual Storytelling",
+        image: "/h3.jpg",
+        glow: "rgba(255, 193, 7, 0.45)"
 
-  },
+    },
 ];
 
 
@@ -51,21 +51,21 @@ const NewBrandSec = () => {
     const clipPath = useTransform(clipReveal, v => `inset(${v}% 0% ${v}% 0%)`);
 
     /* ---------------- TEXT ANIMATIONS ---------------- */
-/* ---------------- TEXT ANIMATIONS ---------------- */
-// Text finishes its "opening" animation by 0.25
-const smoothYLets = useTransform(textSpring, [0.10, 0.22], ["100%", "0%"]);
-const smoothYBrand = useTransform(textSpring, [0.10, 0.22], ["-100%", "0%"]);
-const smoothYBuild = useTransform(textSpring, [0.12, 0.25], ["100%", "0%"]);
-const smoothYYour = useTransform(textSpring, [0.12, 0.25], ["-100%", "0%"]);
+    /* ---------------- TEXT ANIMATIONS ---------------- */
+    // Text finishes its "opening" animation by 0.25
+    const smoothYLets = useTransform(textSpring, [0.10, 0.22], ["100%", "0%"]);
+    const smoothYBrand = useTransform(textSpring, [0.10, 0.22], ["-100%", "0%"]);
+    const smoothYBuild = useTransform(textSpring, [0.12, 0.25], ["100%", "0%"]);
+    const smoothYYour = useTransform(textSpring, [0.12, 0.25], ["-100%", "0%"]);
 
-/* ---------------- THE FIX: QUICKER HIDING ---------------- */
-// CHANGED: Starts hiding at 0.28 and is GONE by 0.32
-// This ensures the text is completely invisible before the first card hits the center.
-const textOpacity = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0]);
-const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9]);
+    /* ---------------- THE FIX: QUICKER HIDING ---------------- */
+    // CHANGED: Starts hiding at 0.28 and is GONE by 0.32
+    // This ensures the text is completely invisible before the first card hits the center.
+    const textOpacity = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0]);
+    const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9]);
 
     return (
-        <section ref={containerRef} className="relative w-full h-[1200vh]" id="work">
+        <section ref={containerRef} className="relative w-full h-[500vh] md:h-[1200vh]" id="work">
             <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
 
                 {/* KEEP SCROLLING HINT */}
@@ -140,7 +140,7 @@ const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9]);
                 <div className="absolute inset-0 flex items-center justify-center z-50" style={{ perspective: 1200 }}>
                     {cards.map((card, i) => {
                         // Cards remain on the linear rawScrollYProgress
-                        const CARDS_START = 0.30; 
+                        const CARDS_START = 0.25;
                         const CARDS_END = 0.95;
                         const TOTAL_RANGE = CARDS_END - CARDS_START;
 
@@ -156,23 +156,23 @@ const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9]);
                         const opacity = useTransform(rawScrollYProgress, [start - 0.02, start], [0, 1], { clamp: true });
 
                         return (
-<motion.div
-  key={card.id}
-  style={{
-    y,
-    rotateX,
-    opacity,
-    transformOrigin: "bottom center",
-    zIndex: 50 + i,
-  }}
-  whileHover={{
-    boxShadow: `0 0 160px 35px ${card.glow}`,
-  }}
-  transition={{
-    boxShadow: { duration: 0.4, ease: "easeOut" },
-  }}
-  className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden shadow-2xl group"
->
+                            <motion.div
+                                key={card.id}
+                                style={{
+                                    y,
+                                    rotateX,
+                                    opacity,
+                                    transformOrigin: "bottom center",
+                                    zIndex: 50 + i,
+                                }}
+                                whileHover={{
+                                    boxShadow: `0 0 160px 35px ${card.glow}`,
+                                }}
+                                transition={{
+                                    boxShadow: { duration: 0.4, ease: "easeOut" },
+                                }}
+                                className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden shadow-2xl group"
+                            >
 
                                 <div className="relative w-full lg:h-[60vh] h-[35vh] ">
                                     <img src={card.image} alt={card.title} className="w-full h-full object-cover" />

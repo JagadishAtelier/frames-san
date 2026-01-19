@@ -4,10 +4,11 @@ const Footer = () => {
   return (
     <footer
       className="relative text-white z-50 bg-cover bg-black"
-      // style={{
-      //   backgroundImage:
-      //     "url('https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68debb91563c010cc6f555b3_Cya%20Image.avif')",
-      // }}
+      id="footer"
+    // style={{
+    //   backgroundImage:
+    //     "url('https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68debb91563c010cc6f555b3_Cya%20Image.avif')",
+    // }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60"></div>

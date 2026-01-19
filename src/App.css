@@ -4,27 +4,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'Japanese 3017';
+  src: url('/fonts/Japanese 3017.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #root {
   font-family: "Mona Sans", sans-serif !important;
   background-color: #f3f3f3;
 }
-.h-tag{
+
+.h-tag {
   background-image: linear-gradient(150deg, #5a5a5a, #0e0e0e);
   color: var(--heading);
-    letter-spacing: -.01em;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 104%;
+  letter-spacing: -.01em;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 104%;
 }
-.font-mona-narrow{
+
+.font-mona-narrow {
   font-family: "Mona Sans Narrow", Impact, sans-serif !important;
   line-height: 1;
   font-weight: 100;
   font-size: 10rem;
 }
+
 .btn-bg-primery {
   background-color: #FFC299;
 }
@@ -36,15 +46,18 @@
 button {
   cursor: pointer;
 }
-.font-anton{
-  font-family: 'Anton', sans-serif  !important;
+
+.font-anton {
+  font-family: 'Anton', sans-serif !important;
   letter-spacing: 0.5rem;
 }
-.font-only-anton{
-  font-family: 'Anton', sans-serif  !important;
+
+.font-only-anton {
+  font-family: 'Anton', sans-serif !important;
 }
+
 .font-handwriting {
-  font-family: "Yellowtail", cursive !important;
+  font-family: "Japanese 3017" !important;
 }
 
 html,
@@ -286,6 +299,7 @@ img {
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -295,6 +309,7 @@ img {
   0% {
     transform: translateX(-50%);
   }
+
   100% {
     transform: translateX(0%);
   }
@@ -309,25 +324,28 @@ img {
 }
 
 @media (max-width:768px) {
-  .font-mona-narrow{
+  .font-mona-narrow {
     font-size: 8rem;
-        font-weight: bold;
+    font-weight: bold;
   }
 }
+
 @media (max-width:480px) {
-  .font-mona-narrow{
+  .font-mona-narrow {
     font-size: 3rem;
-        font-weight: bold !important;
+    font-weight: bold !important;
   }
 }
+
 @media (max-width:376px) {
-  .font-mona-narrow{
+  .font-mona-narrow {
     font-size: 3rem;
-        font-weight: bold !important;
+    font-weight: bold !important;
   }
 }
+
 @media (max-width:321px) {
-  .font-mona-narrow{
+  .font-mona-narrow {
     font-size: 3rem;
     font-weight: bold !important;
   }

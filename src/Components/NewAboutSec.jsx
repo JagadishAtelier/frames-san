@@ -89,15 +89,15 @@ function NewAboutSec() {
                 rotate: cardRotate,
                 transformPerspective: 1000
               }}
-              className="flex-none lg:flex-1 relative w-full h-[30vh] lg:h-[600px]"
+              className="flex-none lg:flex-1 relative w-full h-[35vh] lg:h-[600px]"
             >
 
               <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(circle,_rgba(120,0,0,1)_0%,#040406_65%)]">
                 <img src="/aboutBgprop.svg" className="absolute -right-20 w-full h-full object-contain scale-110 opacity-60 z-0" alt="" />
                 <img
-                  src="/about1.png"
+                  src="/Sony_Camera.png"
                   className="relative z-10 w-full h-full object-contain"
-                  style={{ transform: "scaleX(-1)" }}
+                  style={{ transform: "scale(1.1) translate(50px, -52px)" }}
                   alt="camera"
                 />
               </div>
@@ -107,7 +107,7 @@ function NewAboutSec() {
           {/* STATS SECTION: ALSO REVEALS AFTER TEXT */}
           <motion.div
             style={{ opacity: revealOpacity, y: revealY }}
-            className="w-full mt-12"
+            className="w-full -mt-5"
           >
             <StatsSection />
           </motion.div>
@@ -117,7 +117,7 @@ function NewAboutSec() {
       <div className="lg:block hidden pointer-events-none relative bottom-10 left-0 w-full h-32 bg-gradient-to-b from-[#040406] to-[#f3f3f3]" />
 
       {/* ================= MOBILE ONLY (STATIC) ================= */}
-      <div className="block lg:hidden bg-[#040406] px-6 py-10" id="about">
+      <div className="block lg:hidden bg-[#040406] px-6 py-10">
         <div className="flex flex-col gap-10">
 
           {/* TEXT */}
@@ -128,9 +128,9 @@ function NewAboutSec() {
 
             <h1 className="text-3xl font-semibold text-[#BD0100] uppercase tracking-tighter leading-tight">
               <span className="text-white font-handwriting capitalize tracking-wide me-2 lg:me-0">
-                Visuals That 
-              </span> {" "} 
-               Speak Louder Than Words
+                Visuals That
+              </span> {" "}
+              Speak Louder Than Words
             </h1>
 
             <p className="text-base text-white/80 leading-relaxed">
@@ -150,13 +150,13 @@ function NewAboutSec() {
               alt=""
             />
             <img
-              src="/about1.png"
+              src="/Sony_Camera.png"
               className="relative z-10 w-full h-full object-contain scale-[1.25]"
-              style={{ transform: "scaleX(-1)" }}
+              style={{ transform: "translate(0px, -11px)" }}
               alt="about"
             />
           </div>
-          <StatsSection/>
+          <StatsSection />
 
         </div>
       </div>
