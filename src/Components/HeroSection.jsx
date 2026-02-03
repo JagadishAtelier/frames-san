@@ -159,7 +159,7 @@ function HeroSection() {
                   y: leftTextY,
                   maxWidth: leftTextMaxWidth,
                 }}
-                className="text-[5vw] font-bold font-anton leading-none uppercase text-black text-left"
+                className="text-[5vw] font-medium font-handwriting leading-none uppercase text-black text-left"
               >
                 <LetterReveal text="Capturing Stories." />
               </motion.p>
@@ -170,7 +170,7 @@ function HeroSection() {
                   y: rightTextY,
                   maxWidth: rightTextMaxWidth,
                 }}
-                className="text-[5vw] font-bold font-anton leading-none uppercase text-black text-right"
+                className="text-[5vw] font-medium font-handwriting leading-none uppercase text-[#BD0100] text-right"
               >
                 <LetterReveal text="Creating Legacy." />
               </motion.p>
