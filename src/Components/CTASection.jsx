@@ -73,10 +73,10 @@ const CTASection = () => {
 
 
   return (
-    <section className="relative overflow-hidden lg:mt-0 mt-0 larger-cta-sec" data-aos="fade-right" data-aos-delay="0">
+    <section className="relative overflow-hidden lg:mt-5 mt-0 larger-cta-sec min-[1024px]:p-0 min-[1280px]:p-5 min-[1536px]:p-5 min-[1537px]:p-5" data-aos="fade-right" data-aos-delay="0">
 
       {/* ===== BACKGROUND TEXT (Top) ===== */}
-      <div className="absolute lg:-top-2 top-0 left-0 w-full z-0 opacity-10 pointer-events-none">
+      <div className="absolute min-[1024px]:-top-2 min-[1280px]:-top-2 min-[1556px]:-top-10 min-[1557px]:-top-10 top-0 left-0 w-full z-0 opacity-10 pointer-events-none">
         <MarqueeText text="Let’s Create" direction="left" speed={5} />
       </div>
 
@@ -104,7 +104,7 @@ const CTASection = () => {
       </div>
 
       {/* ===== BACKGROUND TEXT (Bottom) ===== */}
-      <div className="absolute lg:-bottom-2 bottom-0 left-0 w-full z-0 opacity-10">
+      <div className="absolute min-[1024px]:-bottom-2 min-[1280px]:-bottom-2  min-[1556px]:bottom-10 min-[1557px]:-bottom-10 bottom-0 left-0 w-full z-0 opacity-10">
         <MarqueeText text="Let’s Create" direction="right" speed={5} />
       </div>
 

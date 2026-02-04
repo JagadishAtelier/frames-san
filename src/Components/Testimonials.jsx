@@ -67,7 +67,7 @@ export default function Testimonials() {
                 {/* HEADER SECTION */}
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center lg:mb-24 gap-8">
                     <div>
-                        <p className="text-sm tracking-[0.2em] text-[#666] uppercase mb-5 font-semibold">
+                        <p className="text-sm min-[1556px]:text-lg min-[1557px]:text-lg tracking-[0.2em] text-[#666] uppercase mb-5 font-semibold">
                             TESTIMONIALS
                         </p>
                         <h2 className="text-6xl lg:text-8xl leading-none uppercase font-anton tracking-wide text-white">
@@ -95,7 +95,7 @@ export default function Testimonials() {
                         </button>
                         </div>
 
-                        <button className="ml-6 px-8 h-14 rounded-lg bg-[#1a1a1a] hover:bg-[#252525] border border-transparent hover:border-[#333] text-sm font-medium hidden lg:flex items-center gap-3 transition-all text-gray-300 hover:text-white">
+                        <button className="ml-6 px-8 h-14 rounded-lg bg-[#1a1a1a] hover:bg-[#252525] border border-transparent hover:border-[#333] text-sm min-[1556px]:text-lg min-[1557px]:text-lg font-medium hidden lg:flex items-center gap-3 transition-all text-gray-300 hover:text-white">
                             View All Testimonials <ArrowRight size={18} />
                         </button>
                     </div>
@@ -134,19 +134,19 @@ export default function Testimonials() {
 
                                     {/* USER INFO */}
                                     <div className="mb-8 pt-2">
-                                        <h4 className="text-xl font-bold text-gray-100 mb-1 tracking-wide">{item.name}</h4>
-                                        <p className="text-xs text-gray-600 font-medium uppercase tracking-wider">{item.location}</p>
+                                        <h4 className="text-xl min-[1556px]:text-lg min-[1557px]:text-2xl font-bold text-gray-100 mb-1 tracking-wide">{item.name}</h4>
+                                        <p className="text-xs min-[1556px]:text-lg min-[1557px]:text-lg text-gray-600 font-medium uppercase tracking-wider">{item.location}</p>
                                     </div>
 
                                     {/* STARS */}
-                                    <div className="flex gap-1.5 text-yellow-500 mb-8 text-sm">
+                                    <div className="flex gap-1.5 text-yellow-500 mb-8 text-sm min-[1556px]:text-lg min-[1557px]:text-lg">
                                         {[...Array(5)].map((_, index) => (
                                             <span key={index} className="text-lg">★</span>
                                         ))}
                                     </div>
 
                                     {/* TEXT */}
-                                    <p className="text-[#888] leading-relaxed text-[15px] font-medium pr-4">
+                                    <p className="text-[#888] leading-relaxed text-[15px] min-[1556px]:text-lg min-[1557px]:text-lg font-medium pr-4">
                                         {item.text}
                                     </p>
                                 </div>
