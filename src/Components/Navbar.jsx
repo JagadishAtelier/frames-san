@@ -56,7 +56,7 @@ export default function Navbar({ onOpenModal }) {
 
           {/* MOBILE SINGLE LOGO */}
           <a href="/" className="flex sm:hidden items-center">
-            <img src="/san1.png" alt="Logo" className="h-16" />
+            <img src="/LOGO2.png" alt="Logo" className="h-16 invert brightness-100" />
           </a>
 
           {/* DESKTOP LEFT LOGO (TOP ONLY) */}
@@ -69,9 +69,9 @@ export default function Navbar({ onOpenModal }) {
               `}
             >
               <img
-                src="/san1.png"
+                src="/LOGO2.png"
                 alt="Logo"
-                className="h-20 transition-all duration-500"
+                className="h-15 transition-all duration-500 invert brightness-100"
               />
             </div>
           </a>
@@ -90,9 +90,9 @@ export default function Navbar({ onOpenModal }) {
             {/* CENTER LOGO (SCROLL ONLY – DESKTOP) */}
             <a href="/" className={`${isAtTop ? "hidden" : "flex"} justify-center cursor-pointer`}>
               <img
-                src="/logoonly.png"
+                src="/LOGO2.png"
                 alt="Logo"
-                className="h-7 transition-all duration-500"
+                className="h-7 transition-all duration-500 invert brightness-100"
               />
             </a>
 
@@ -104,12 +104,13 @@ export default function Navbar({ onOpenModal }) {
             className="group lg:flex hidden items-center bg-black text-white rounded-full p-2 hover:bg-zinc-900 w-fit transition-all duration-300"
           >
             {/* Profile Image */}
+            <div className="bg-white rounded-full w-10 h-10 ">
             <img
-              src="/04.jpg"
-              className="w-10 h-10 rounded-full flex-shrink-0"
+              src="/LOGO2.png"
+              className="w-full h-full flex-shrink-0 invert brightness-100"
               alt="Santhosh"
             />
-
+</div>
             {/* Hidden text (reveals on hover) */}
             <div
               className="

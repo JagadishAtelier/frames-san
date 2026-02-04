@@ -55,7 +55,10 @@ min-[1536px]:max-w-[1800px]
               className="
                 inline-flex
                 w-full
-                sm:w-auto
+                min-[1024px]:w-auto
+                min-[1280px]:w-40
+                min-[1536px]:w-40
+                min-[1537px]:w-55
                 items-center
                 justify-center
                 min-[1536px]:text-lg min-[1537px]:text-2xl
