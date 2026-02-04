@@ -20,6 +20,7 @@ import CallToAction from "./Components/CallToAction";
 import { useEffect, useState } from "react";
 import Testimonials from "./Components/Testimonials";
 import ContactModal from "./Components/ContactModal";
+import AboutClients from "./Components/AboutClients";
 
 // Initialize AOS once
 AOS.init({
@@ -50,6 +51,7 @@ export default function App() {
 <Navbar onOpenModal={() => setOpen(true)}/>
 <ContactModal isOpen={open} onClose={() => setOpen(false)} />
 <HeroSection/>
+<AboutClients/>
 <NewAboutSec/>
 <NewBrandSec/>
 {/* <LegionSection/>

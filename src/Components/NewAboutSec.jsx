@@ -40,6 +40,7 @@ function NewAboutSec() {
 
   return (
     <div className='relative' id='about'>
+      
       <section ref={sectionRef} className="relative h-[250vh] bg-[#040406] pb-20 lg:block hidden">
 
         <div className="sticky top-10 h-screen w-full flex flex-col justify-center overflow-hidden px-6 md:px-12 lg:px-20 z-10">

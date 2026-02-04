@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="absolute inset-0 bg-black/60"></div>
 
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-6 pt-20 py-10">
+      <div className="relative lg:max-w-7xl xl:max-w-7xl mx-auto px-6 pt-20 py-10">
         {/* Top CTA */}
         <div className="space-y-10">
           <p className="text-lg text-white">Have a moment worth capturing?</p>

@@ -3,26 +3,26 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const clients = [
-    { src: "/brand1.png", classes: "lg:h-20 h-6" },
-    { src: "/brand2.png", classes: "lg:h-20 h-5" },
-    { src: "/brand3.png", classes: "lg:h-20 h-5" },
-    { src: "/brand4.png", classes: "lg:h-20 h-7" },
-    { src: "/brand5.png", classes: "lg:h-20 h-6" },
-    { src: "/brand6.png", classes: "lg:h-20 h-5" },
-    { src: "/brand7.png", classes: "lg:h-12 h-6" },
-    { src: "/brand8.png", classes: "lg:h-20 h-6" },
-    { src: "/brand9.png", classes: "lg:h-20 h-5" },
-    { src: "/brand10.png", classes: "lg:h-20 h-7" },
+    { src: "/brand1.png", classes: "lg:h-25 h-6" },
+    { src: "/brand2.png", classes: "lg:h-25 h-5 bg-white" },
+    { src: "/brand3.png", classes: "lg:h-25 h-5" },
+    { src: "/brand4.png", classes: "lg:h-25 h-7" },
+    { src: "/brand5.png", classes: "lg:h-25 h-6" },
+    { src: "/brand6.png", classes: "lg:h-25 h-5" },
+    { src: "/brand7.png", classes: "lg:h-15 h-6" },
+    { src: "/brand8.png", classes: "lg:h-25 h-6" },
+    { src: "/brand9.png", classes: "lg:h-25 h-5" },
+    { src: "/brand10.png", classes: "lg:h-25 h-7" },
 ];
 
 
 export default function AboutClients() {
     return (
-        <section className="pt-20 text-black overflow-hidden">
+        <section className="pt-20 text-black overflow-hidden bg-black">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-1 grid-cols-1 gap-20 items-center">
 
                 {/* LEFT CONTENT */}
-                <div className="flex lg:flex-row flex-col gap-5 items-start lg:justify-end lg:ms-auto w-full">
+                {/* <div className="flex lg:flex-row flex-col gap-5 items-start lg:justify-end lg:ms-auto w-full">
                     <div className="flex justify-between items-center">
                         <img src="/fs-logo.png" data-aos="fade-down" data-aos-delay="0"/>
                         <div data-aos="fade-left" data-aos-delay="0">
@@ -38,13 +38,13 @@ export default function AboutClients() {
                             </h2>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* RIGHT CAROUSEL */}
                 <div className="relative">
                     {/* Gradient fade */}
-                    <div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-[#f3f3f3] to-transparent z-10" />
-                    <div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-[#f3f3f3] to-transparent z-10" />
+                    {/* <div className="pointer-events-none absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-[#f3f3f3] to-transparent z-10" />
+                    <div className="pointer-events-none absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-[#f3f3f3] to-transparent z-10" /> */}
 
                     <Swiper
                         modules={[Autoplay]}
