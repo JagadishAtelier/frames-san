@@ -1,0 +1,185 @@
+/* =========================
+   ROOT
+========================= */
+.FOOTERSEC {
+  position: relative;
+  background: black;
+  color: white;
+  z-index: 50;
+  overflow: hidden;
+}
+
+/* Overlay */
+.FOOTERSEC__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Container */
+.FOOTERSEC__container {
+  position: relative;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 5rem 2rem 2.5rem;
+}
+
+/* =========================
+   CTA SECTION
+========================= */
+.FOOTERSEC__cta {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.FOOTERSEC__subtitle {
+  font-size: 1.125rem;
+}
+
+.FOOTERSEC__ctaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.FOOTERSEC__title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  max-width: 900px;
+}
+
+.FOOTERSEC__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2.5rem;
+  border-radius: 999px;
+  background: #dc2626;
+  color: white;
+  border: 1px solid #dc2626;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.FOOTERSEC__btn:hover {
+  background: white;
+  color: black;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+.FOOTERSEC__divider {
+  margin: 3rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* =========================
+   BOTTOM FOOTER
+========================= */
+.FOOTERSEC__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.FOOTERSEC__nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.FOOTERSEC__nav a {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.FOOTERSEC__nav a:hover {
+  opacity: 0.7;
+}
+
+.FOOTERSEC__copyright {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.FOOTERSEC__copyright a {
+  color: white;
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINTS
+========================= */
+
+/* 2560px+ */
+@media (max-width: 2560px) {
+  .FOOTERSEC__container {
+    max-width: 80%;
+  }
+  .FOOTERSEC__nav a {
+  font-size: 1.4rem;
+}
+}
+
+/* 1536px */
+@media (max-width: 1536px) {
+  .FOOTERSEC__container {
+    max-width: 80%;
+  }
+        .FOOTERSEC__nav a {
+        font-size: 1.2rem;
+    }
+}
+
+/* 1280px */
+@media (max-width: 1280px) {
+  .FOOTERSEC__container {
+    max-width: 80%;
+  }
+        .FOOTERSEC__nav a {
+        font-size: 1rem;
+    }
+}
+
+/* 1024px */
+@media (max-width: 1024px) {
+  .FOOTERSEC__ctaRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .FOOTERSEC__btn {
+    width: 100%;
+  }
+        .FOOTERSEC__nav a {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .FOOTERSEC__container {
+    padding: 4rem 1.25rem 2rem;
+  }
+
+  .FOOTERSEC__title {
+    font-size: 2.2rem;
+  }
+
+  .FOOTERSEC__bottom {
+    flex-direction: column;
+  }
+      .FOOTERSEC__nav a {
+        font-size: 1rem;
+    }
+}

@@ -2,51 +2,97 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer
-      className="relative text-white z-50 bg-cover bg-black"
-      id="footer"
-    // style={{
-    //   backgroundImage:
-    //     "url('https://cdn.prod.website-files.com/68de1493b47616b2526c4ba7/68debb91563c010cc6f555b3_Cya%20Image.avif')",
-    // }}
-    >
+    <footer className="relative z-50 bg-black text-white" id="footer">
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/60" />
 
-      {/* Content */}
-      <div className="relative lg:max-w-7xl xl:max-w-7xl mx-auto px-6 pt-20 py-10">
-        {/* Top CTA */}
+      {/* CONTENT CONTAINER */}
+      <div
+        className="
+          relative
+          mx-auto
+          w-full
+
+          max-w-[1600px]
+min-[1280px]:max-w-[1280px]
+min-[1536px]:max-w-[1800px]
+    min-[1537px]:max-w-none
+    min-[1537px]:w-[90%]
+
+          px-6
+          min-[1024px]:px-6
+          min-[1280px]:px-6
+          min-[1536px]:px-20
+          min-[1537px]:px-24
+
+          pt-20
+          py-10
+        "
+      >
+        {/* DEBUG FLAG */}
+
+        {/* TOP CTA */}
         <div className="space-y-10">
-          <p className="text-lg text-white">Have a moment worth capturing?</p>
-
-          <div className="flex flex-col lg:flex-row lg:items-center md:justify-between gap-8">
-            <p className="text-4xl md:text-7xl font-semibold">
+          <p className="text-lg min-[1536px]:text-lg min-[1537px]:text-lg text-white">
+            Have a moment worth capturing?
+          </p>
+          <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+            <p
+              className="
+                font-semibold
+                text-4xl
+                min-[1024px]:text-5xl
+                min-[1280px]:text-7xl
+                min-[1536px]:text-7xl
+                min-[1537px]:text-7xl
+              "
+            >
               Let’s tell your story through lenses
             </p>
 
             <a
               href="/contact-us"
-              className="inline-flex md:w-1/4 w-full lg:w-[10rem] items-center justify-center px-8 py-4 text-sm font-medium border border-red-600 bg-red-600 rounded-full hover:bg-white hover:text-black transition"
+              className="
+                inline-flex
+                w-full
+                sm:w-auto
+                items-center
+                justify-center
+                min-[1536px]:text-lg min-[1537px]:text-2xl
+                px-8
+                py-4
+                text-sm
+                font-medium
+
+                border
+                border-red-600
+                bg-red-600
+                rounded-full
+
+                hover:bg-white
+                hover:text-black
+                transition
+              "
             >
               Let's Talk
             </a>
           </div>
         </div>
 
-        {/* Divider */}
-        <div className="border-t border-white/20 my-10"></div>
+        {/* DIVIDER */}
+        <div className="border-t border-white/20 my-10" />
 
-        {/* Bottom Footer */}
+        {/* BOTTOM FOOTER */}
         <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
-          {/* Nav Links */}
-          <div className="flex flex-wrap gap-6 text-sm">
-            <a href="/" className="hover:opacity-70 font-bold text-base">Home</a>
-            <a href="#about" className="hover:opacity-70 font-bold text-base">About</a>
-            <a href="#work" className="hover:opacity-70 font-bold text-base">Work</a>
+          {/* NAV */}
+          <div className="flex flex-wrap gap-6 text-base min-[1536px]:text-lg min-[1537px]:text-lg font-bold">
+            <a href="/" className="hover:opacity-70">Home</a>
+            <a href="#about" className="hover:opacity-70">About</a>
+            <a href="#work" className="hover:opacity-70">Work</a>
           </div>
 
-          {/* Copyright */}
-          <div className="text-base text-white max-w-xl leading-relaxed">
+          {/* COPYRIGHT */}
+          <div className="max-w-xl min-[1536px]:max-w-none min-[1537px]:max-w-none text-base min-[1536px]:text-lg min-[1537px]:text-lg leading-relaxed">
             Copyright © 2025. All Rights Reserved.{" "}
             <a
               href="https://theateliercreation.com/"

@@ -63,7 +63,7 @@ export default function Testimonials() {
 
     return (
         <section className="relative bg-[#050505] text-white py-10 px-6 lg:px-12 lg:px-20 overflow-hidden min-h-screen flex flex-col justify-center my-10">
-            <div className="max-w-[1400px] mx-auto w-full">
+            <div className=" mx-auto w-full">
                 {/* HEADER SECTION */}
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center lg:mb-24 gap-8">
                     <div>

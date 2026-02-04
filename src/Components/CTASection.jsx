@@ -73,7 +73,7 @@ const CTASection = () => {
 
 
   return (
-    <section className="relative overflow-hidden lg:py-5 py-0 lg:mt-0 mt-0" data-aos="fade-right" data-aos-delay="0">
+    <section className="relative overflow-hidden lg:mt-0 mt-0 larger-cta-sec" data-aos="fade-right" data-aos-delay="0">
 
       {/* ===== BACKGROUND TEXT (Top) ===== */}
       <div className="absolute lg:-top-2 top-0 left-0 w-full z-0 opacity-10 pointer-events-none">

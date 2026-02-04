@@ -89,21 +89,21 @@ export default function TickerSection() {
           </a>
 
           {/* Swiper */}
-<Swiper
-  modules={[Autoplay]}
-  loop
-  autoplay={{ delay: 2500, disableOnInteraction: false }}
-  spaceBetween={16}
-  className="px-4 w-[90%]"
-  breakpoints={{
-    0: {
-      slidesPerView: 1, // mobile
-    },
-    768: {
-      slidesPerView: 2, // tablet
-    },
-  }}
->
+          <Swiper
+            modules={[Autoplay]}
+            loop
+            autoplay={{ delay: 2500, disableOnInteraction: false }}
+            spaceBetween={16}
+            className="px-4 w-[90%]"
+            breakpoints={{
+              0: {
+                slidesPerView: 1, // mobile
+              },
+              768: {
+                slidesPerView: 2, // tablet
+              },
+            }}
+          >
 
             {images.map((img, i) => (
               <SwiperSlide key={i}>
