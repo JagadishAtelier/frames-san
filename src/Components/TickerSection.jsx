@@ -120,7 +120,7 @@ export default function TickerSection() {
 
   /* ---------------- DESKTOP VIEW ---------------- */
   return (
-    <section ref={sectionRef} className="relative h-[400vh] mt-10">
+    <section ref={sectionRef} className="relative h-[350vh] mt-10">
       <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center">
         <p className="absolute uppercase font-anton top-18 left-1/2 -translate-x-1/2 text-8xl font-bold">
           stay connected

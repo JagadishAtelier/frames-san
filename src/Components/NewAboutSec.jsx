@@ -12,35 +12,35 @@ function NewAboutSec() {
   });
 
   // --- TEXT ANIMATION (0.0 to 0.5) ---
-  const aboutUsProgress = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
-  const visualsProgress = useTransform(scrollYProgress, [0.1, 0.3], [0, 1]);
-  const paraProgress = useTransform(scrollYProgress, [0.3, 0.5], [0, 1]);
+  const aboutUsProgress = useTransform(scrollYProgress, [0, 0.1], [0, 1],{ clamp: true });
+  const visualsProgress = useTransform(scrollYProgress, [0.1, 0.3], [0, 1],{ clamp: true });
+  const paraProgress = useTransform(scrollYProgress, [0.3, 0.5], [0, 1],{ clamp: true });
 
   // --- RIGHT SIDE & STATS REVEAL (Starts AFTER text is done at 0.5) ---
   // This ensures the camera and stats stay hidden until the text is readable
-  const revealOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1]);
+  const revealOpacity = useTransform(scrollYProgress, [0.5, 0.6], [0, 1],{ clamp: true });
 
   const revealY = useSpring(
-    useTransform(scrollYProgress, [0.5, 0.7], [120, 0]),
+    useTransform(scrollYProgress, [0.5, 0.7], [120, 0],{ clamp: true }),
     { stiffness: 120, damping: 22 }
   );
 
   // Overshoot scale (pop effect)
   const cardScale = useSpring(
-    useTransform(scrollYProgress, [0.5, 0.6, 0.75], [0.6, 1.08, 1]),
+    useTransform(scrollYProgress, [0.5, 0.6, 0.75], [0.6, 1.08, 1],{ clamp: true }),
     { stiffness: 160, damping: 18 }
   );
 
   // Tiny tilt for life
   const cardRotate = useSpring(
-    useTransform(scrollYProgress, [0.5, 0.7], [-6, 0]),
+    useTransform(scrollYProgress, [0.5, 0.7], [-6, 0],{ clamp: true }),
     { stiffness: 120, damping: 20 }
   );
 
 
   return (
     <div className='relative' id='about'>
-      <section ref={sectionRef} className="relative h-[450vh] bg-[#040406] pb-20 lg:block hidden">
+      <section ref={sectionRef} className="relative h-[250vh] bg-[#040406] pb-20 lg:block hidden">
 
         <div className="sticky top-10 h-screen w-full flex flex-col justify-center overflow-hidden px-6 md:px-12 lg:px-20 z-10">
 

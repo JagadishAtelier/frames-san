@@ -84,27 +84,27 @@ function HeroSection() {
   };
 
   /* ================= TEXT ================= */
-  const leftTextX = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, -150]), springConfig);
-  const leftTextY = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, 150]), springConfig);
+  const leftTextX = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, -150],{ clamp: true }), springConfig);
+  const leftTextY = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, 150],{ clamp: true }), springConfig);
 
-  const rightTextX = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, 120]), springConfig);
-  const rightTextY = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, -150]), springConfig);
+  const rightTextX = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, 120],{ clamp: true }), springConfig);
+  const rightTextY = useSpring(useTransform(scrollYProgress, [0, 0.25], [0, -150],{ clamp: true }), springConfig);
 
   const leftTextMaxWidthVal = useSpring(
-    useTransform(scrollYProgress, [0.12, 0.26], [55, 26]),
+    useTransform(scrollYProgress, [0.12, 0.26], [55, 30]),
     springConfig
   );
   const leftTextMaxWidth = useTransform(leftTextMaxWidthVal, (v) => `${v}vw`);
 
   const rightTextMaxWidthVal = useSpring(
-    useTransform(scrollYProgress, [0.12, 0.26], [55, 23]),
+    useTransform(scrollYProgress, [0.12, 0.26], [55, 26],{ clamp: true }),
     springConfig
   );
   const rightTextMaxWidth = useTransform(rightTextMaxWidthVal, (v) => `${v}vw`);
 
   /* ================= MAIN IMAGE ================= */
   const stackY = useSpring(
-    useTransform(scrollYProgress, [0, 0.25], [800, 0]),
+    useTransform(scrollYProgress, [0, 0.25], [800, 0],{ clamp: true }),
     springConfig
   );
 
@@ -144,7 +144,7 @@ function HeroSection() {
       {/* ================= DESKTOP ================= */}
       <section
         ref={containerRef}
-        className="hidden lg:block w-full h-[260vh] relative"
+        className="hidden lg:block w-full h-[160vh] relative"
       >
         <div className="sticky top-0 h-screen overflow-hidden">
           <div
