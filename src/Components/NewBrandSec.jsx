@@ -40,29 +40,31 @@ const NewBrandSec = () => {
     /* ---------------- TEXT REVEAL SMOOTHING ---------------- */
     // Increased mass and damping creates that "one smooth motion" feel
     const textSpring = useSpring(rawScrollYProgress, {
-        stiffness: 25,   // Lower stiffness for a slower start
-        damping: 30,     // Higher damping to prevent bounciness
-        mass: 2,         // Higher mass gives it "weight" so it glides
+        stiffness: 120,
+        damping: 14,
+        mass: 0.6,
     });
+
+
 
     /* ---------------- BACKGROUND REVEAL ---------------- */
     // We map the background clip reveal to happen early (0.05 to 0.3)
-    const clipReveal = useTransform(textSpring, [0.05, 0.3], [60, 0],{ clamp: true });
+    const clipReveal = useTransform(textSpring, [0.05, 0.3], [60, 0], { clamp: true });
     const clipPath = useTransform(clipReveal, v => `inset(${v}% 0% ${v}% 0%)`);
 
     /* ---------------- TEXT ANIMATIONS ---------------- */
     /* ---------------- TEXT ANIMATIONS ---------------- */
     // Text finishes its "opening" animation by 0.25
-    const smoothYLets = useTransform(textSpring, [0.10, 0.22], ["100%", "0%"],{ clamp: true });
-    const smoothYBrand = useTransform(textSpring, [0.10, 0.22], ["-100%", "0%"],{ clamp: true });
-    const smoothYBuild = useTransform(textSpring, [0.12, 0.25], ["100%", "0%"],{ clamp: true });
-    const smoothYYour = useTransform(textSpring, [0.12, 0.25], ["-100%", "0%"],{ clamp: true });
+    const smoothYLets = useTransform(textSpring, [0.10, 0.22], ["100%", "0%"], { clamp: true });
+    const smoothYBrand = useTransform(textSpring, [0.10, 0.22], ["-100%", "0%"], { clamp: true });
+    const smoothYBuild = useTransform(textSpring, [0.12, 0.25], ["100%", "0%"], { clamp: true });
+    const smoothYYour = useTransform(textSpring, [0.12, 0.25], ["-100%", "0%"], { clamp: true });
 
     /* ---------------- THE FIX: QUICKER HIDING ---------------- */
     // CHANGED: Starts hiding at 0.28 and is GONE by 0.32
     // This ensures the text is completely invisible before the first card hits the center.
-    const textOpacity = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0],{ clamp: true });
-    const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9],{ clamp: true });
+    const textOpacity = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0], { clamp: true });
+    const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9], { clamp: true });
 
     return (
         <section ref={containerRef} className="relative w-full h-[400vh] md:h-[500vh]" id="work">

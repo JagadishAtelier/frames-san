@@ -21,6 +21,7 @@ import { useEffect, useState } from "react";
 import Testimonials from "./Components/Testimonials";
 import ContactModal from "./Components/ContactModal";
 import AboutClients from "./Components/AboutClients";
+import PortfolioSection from "./Components/PortfolioSection";
 
 // Initialize AOS once
 AOS.init({
@@ -53,6 +54,7 @@ export default function App() {
 <HeroSection/>
 <AboutClients/>
 <NewAboutSec/>
+<PortfolioSection/>
 <NewBrandSec/>
 {/* <LegionSection/>
 <HomeGallery/> */}
