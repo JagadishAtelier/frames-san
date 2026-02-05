@@ -22,6 +22,9 @@ import Testimonials from "./Components/Testimonials";
 import ContactModal from "./Components/ContactModal";
 import AboutClients from "./Components/AboutClients";
 import PortfolioSection from "./Components/PortfolioSection";
+import VideoSection from "./Components/VideoSection";
+import ExperienceSection from "./Components/ExperienceSection";
+import FAQSection from "./Components/FAQSection";
 
 // Initialize AOS once
 AOS.init({
@@ -52,6 +55,7 @@ export default function App() {
 <Navbar onOpenModal={() => setOpen(true)}/>
 <ContactModal isOpen={open} onClose={() => setOpen(false)} />
 <HeroSection/>
+<VideoSection/>
 <AboutClients/>
 <NewAboutSec/>
 <PortfolioSection/>
@@ -60,7 +64,9 @@ export default function App() {
 <HomeGallery/> */}
 <SkillsSection/>
 <CTASection/>
+<ExperienceSection/>
 <Testimonials/>
+<FAQSection/>
 <TickerSection/>
 <Footer/>
 </>

@@ -3,16 +3,16 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const clients = [
-    { src: "/brand1.png", classes: "lg:h-25 h-6" },
-    { src: "/brand2.png", classes: "lg:h-25 h-5 bg-white" },
-    { src: "/brand3.png", classes: "lg:h-25 h-5" },
-    { src: "/brand4.png", classes: "lg:h-25 h-7" },
-    { src: "/brand5.png", classes: "lg:h-25 h-6" },
-    { src: "/brand6.png", classes: "lg:h-25 h-5" },
-    { src: "/brand7.png", classes: "lg:h-15 h-6" },
-    { src: "/brand8.png", classes: "lg:h-25 h-6" },
-    { src: "/brand9.png", classes: "lg:h-25 h-5" },
-    { src: "/brand10.png", classes: "lg:h-25 h-7" },
+    { src: "/brand1.png", classes: "lg:h-20 h-10" },
+    { src: "/brand2.png", classes: "lg:h-20 h-10" },
+    { src: "/brand3.png", classes: "lg:h-20 h-10" },
+    { src: "/brand4.png", classes: "lg:h-20 h-10" },
+    { src: "/brand5.png", classes: "lg:h-20 h-10" },
+    { src: "/brand6.png", classes: "lg:h-20 h-10" },
+    { src: "/brand7.png", classes: "lg:h-13 h-6" },
+    { src: "/brand8.png", classes: "lg:h-20 h-10" },
+    { src: "/brand9.png", classes: "lg:h-20 h-10" },
+    { src: "/brand10.png", classes: "lg:h-20 h-10" },
 ];
 
 
@@ -60,12 +60,14 @@ export default function AboutClients() {
                     >
                         {[...clients, ...clients].map((logo, index) => (
                             <SwiperSlide key={index} className="!w-auto flex items-center">
+                                <div className="bg-gray-300 md:p-2 md:w-50 w-30 h-16 lg:h-24 flex justify-center items-center rounded-md">
                                 <img
                                     src={logo.src}
                                     alt="Client logo"
                                     data-aos="fade-down" data-aos-delay="0"
                                     className={`${logo.classes} opacity-80 hover:opacity-100 transition`}
                                 />
+                                </div>
                             </SwiperSlide>
 
                         ))}
