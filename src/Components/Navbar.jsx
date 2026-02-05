@@ -51,12 +51,12 @@ export default function Navbar({ onOpenModal }) {
       `}
       data-aos="fade-down"
     >
-      <div className="mx-auto px-6 lg:px-10">
-        <div className="lg:flex flex justify-between grid-cols-3 items-center h-20">
+      <div className="mx-auto px-3 lg:px-10">
+        <div className="lg:flex flex justify-between grid-cols-3 items-center py-3">
 
           {/* MOBILE SINGLE LOGO */}
-          <a href="/" className="flex sm:hidden items-center">
-            <img src="/LOGO2.png" alt="Logo" className="h-16 invert brightness-100" />
+          <a href="/" className="flex lg:hidden items-center">
+            <img src="/LOGO2.png" alt="Logo" className="h-10 invert brightness-100" />
           </a>
 
           {/* DESKTOP LEFT LOGO (TOP ONLY) */}
@@ -85,7 +85,7 @@ export default function Navbar({ onOpenModal }) {
             `}
           >
             <NavLink href="/" label="Home" />
-            <NavLink href="#work" label="Work" />
+            <NavLink href="/#work" label="Work" />
 
             {/* CENTER LOGO (SCROLL ONLY – DESKTOP) */}
             <a href="/" className={`${isAtTop ? "hidden" : "flex"} justify-center cursor-pointer`}>
@@ -139,7 +139,7 @@ export default function Navbar({ onOpenModal }) {
           </button>
 
           {/* MOBILE MENU BUTTON */}
-          <button onClick={() => setOpen(!open)} className="lg:hidden pe-5">
+          <button onClick={() => setOpen(!open)} className="lg:hidden">
             <div className="w-6 h-[2px] bg-black mb-1" />
             <div className="w-6 h-[2px] bg-black mb-1" />
             <div className="w-6 h-[2px] bg-black" />
@@ -152,7 +152,7 @@ export default function Navbar({ onOpenModal }) {
         <div className="fixed top-[85px] left-1/2 -translate-x-1/2 z-[9999] lg:hidden w-[98%]">
           <div className="flex flex-col bg-white p-6 rounded-2xl items-center space-y-6 shadow-xl">
             <NavLink href="/" label="Home" onClick={() => setOpen(false)} />
-            <NavLink href="#work" label="Work" onClick={() => setOpen(false)} />
+            <NavLink href="/#work" label="Work" onClick={() => setOpen(false)} />
             <NavLink href="#about" label="About" onClick={() => setOpen(false)} />
             <NavLink href="#footer" label="Contact" onClick={() => setOpen(false)} />
             <a

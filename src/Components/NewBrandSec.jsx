@@ -101,7 +101,7 @@ const isMobile = window.innerWidth < 768;
 
 
     return (
-        <section ref={containerRef} className="relative w-full h-[300vh] md:h-[500vh]" id="work">
+        <section ref={containerRef} className="relative w-full h-[300vh] md:h-[500vh]">
             <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
 
                 {/* KEEP SCROLLING HINT */}
@@ -227,11 +227,11 @@ const isMobile = window.innerWidth < 768;
                     />
 
                     {/* IMAGE 6 */}
-                    <motion.img
+                    {/* <motion.img
                         src="/cardLogo.webp"
                         style={{ y: img6Y }}
                         className="absolute left-1/2 top-[60%] -translate-x-1/2 md:w-1/4 w-1/2 rounded-xl z-30"
-                    />
+                    /> */}
 
 
                 </motion.div>
