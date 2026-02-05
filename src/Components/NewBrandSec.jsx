@@ -4,34 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
-const cards = [
-    {
-        id: 1,
-        title: "Moments in Motion",
-        image: "/h1.jpg",
-        glow: "rgba(255, 140, 0, 0.45)"
-
-    },
-    {
-        id: 2,
-        title: "Timeless Portraits",
-        image: "/h2.jpg",
-        glow: "rgba(0, 0, 0, 0.55)"
-
-    },
-    {
-        id: 3,
-        title: "Visual Storytelling",
-        image: "/h3.jpg",
-        glow: "rgba(255, 193, 7, 0.45)"
-
-    },
-];
-
-
 const NewBrandSec = () => {
     const containerRef = useRef(null);
-
+const isMobile = window.innerWidth < 768;
     const { scrollYProgress: rawScrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"],
@@ -66,8 +41,67 @@ const NewBrandSec = () => {
     const textOpacity = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0], { clamp: true });
     const textScale = useTransform(rawScrollYProgress, [0.28, 0.35], [1, 0.9], { clamp: true });
 
+    /* ---------------- SECOND TEXT (PARA) ---------------- */
+    // Starts AFTER main text is fully hidden
+    const paraOpacity = useTransform(rawScrollYProgress, [0.36, 0.45], [0, 1], { clamp: true });
+    const paraY = useTransform(rawScrollYProgress, [0.36, 0.45], ["20px", "0px"], { clamp: true });
+    const paraScale = useTransform(rawScrollYProgress, [0.36, 0.45], [0.96, 1], { clamp: true });
+
+    /* ---------------- STAGGERED IMAGE MOTION ---------------- */
+
+    // IMAGE 1 (starts first)
+    const img1Y = useTransform(
+        rawScrollYProgress,
+        [0.45, 0.75],
+        isMobile ? ["320%", "-320%"] : ["150%", "-220%"],
+        { clamp: true }
+    );
+
+
+    // IMAGE 2 (slight delay)
+    const img2Y = useTransform(
+        rawScrollYProgress,
+       [0.52, 0.82],
+        isMobile ? ["350%", "-320%"] :["150%", "-220%"],
+        { clamp: true }
+    );
+
+
+    // IMAGE 3 (moves last)
+    const img3Y = useTransform(
+        rawScrollYProgress,
+        [0.60, 0.90],
+        isMobile ? ["320%", "-320%"] :["120%", "-220%"],
+        { clamp: true }
+    );
+
+    // IMAGE 4 (moves last)
+    const img4Y = useTransform(
+        rawScrollYProgress,
+        [0.68, 0.98],
+        isMobile ? ["320%", "-320%"] :["150%", "-220%"],
+        { clamp: true }
+    );
+
+    // IMAGE 5 (moves last)
+    const img5Y = useTransform(
+        rawScrollYProgress,
+         [0.76, 1.06],
+        isMobile ? ["350%", "-320%"] :["150%", "-220%"],
+        { clamp: true }
+    );
+
+    // IMAGE 6 (moves last)
+    const img6Y = useTransform(
+        rawScrollYProgress,
+        [0.84, 1.14],
+        isMobile ? ["320%", "-320%"] : ["150%", "-220%"],
+        { clamp: true }
+    );
+
+
     return (
-        <section ref={containerRef} className="relative w-full h-[400vh] md:h-[500vh]" id="work">
+        <section ref={containerRef} className="relative w-full h-[300vh] md:h-[500vh]" id="work">
             <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
 
                 {/* KEEP SCROLLING HINT */}
@@ -136,65 +170,71 @@ const NewBrandSec = () => {
                             </div>
                         </div>
                     </motion.div>
+                    <motion.div
+                        style={{
+                            opacity: paraOpacity,
+                            y: paraY,
+                            scale: paraScale,
+                        }}
+                        className="absolute inset-0 flex items-center justify-center text-center px-6"
+                    >
+                        <div className="w-[80%] space-y-6">
+                            <p className="text-lg md:text-3xl lg:text-5xl font-medium leading-relaxed text-black/80">
+                                We craft immersive brand experiences through design,
+                                motion, and technology — built to move people and
+                                elevate perception.
+                            </p>
+
+                            <p className="uppercase tracking-[0.3em] text-sm text-black/50">
+                                Strategy • Design • Execution
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    {/* FLOATING IMAGES */}
+                    {/* IMAGE 1 */}
+                    <motion.img
+                        src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
+                        style={{ y: img1Y }}
+                        className="absolute left-[8%] top-[48%] md:w-1/4 w-1/2 rounded-xl z-40"
+                    />
+
+                    {/* IMAGE 2 */}
+                    <motion.img
+                        src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
+                        style={{ y: img2Y }}
+                        className="absolute right-[10%] top-[42%] md:w-1/4 w-1/2 rounded-xl z-40"
+                    />
+
+                    {/* IMAGE 3 */}
+                    <motion.img
+                        src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
+                        style={{ y: img3Y }}
+                        className="absolute left-1/2 top-[60%] -translate-x-1/2 md:w-1/4 w-1/2 rounded-xl z-30"
+                    />
+                    {/* IMAGE 4 */}
+                    <motion.img
+                        src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
+                        style={{ y: img4Y }}
+                        className="absolute left-[8%] top-[48%] md:w-1/4 w-1/2 rounded-xl z-40"
+                    />
+
+                    {/* IMAGE 5 */}
+                    <motion.img
+                        src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
+                        style={{ y: img5Y }}
+                        className="absolute right-[10%] top-[42%] md:w-1/4 w-1/2 rounded-xl z-40"
+                    />
+
+                    {/* IMAGE 6 */}
+                    <motion.img
+                        src="/cardLogo.webp"
+                        style={{ y: img6Y }}
+                        className="absolute left-1/2 top-[60%] -translate-x-1/2 md:w-1/4 w-1/2 rounded-xl z-30"
+                    />
+
+
                 </motion.div>
-
-                {/* ---------------- IMAGE CARDS (UNAFFECTED BY TEXT SPRING) ---------------- */}
-                <div className="absolute inset-0 flex items-center justify-center z-50" style={{ perspective: 1200 }}>
-                    {cards.map((card, i) => {
-                        // Cards remain on the linear rawScrollYProgress
-                        const CARDS_START = 0.25;
-                        const CARDS_END = 0.95;
-                        const TOTAL_RANGE = CARDS_END - CARDS_START;
-
-                        const ACTIVE = TOTAL_RANGE * 0.12;
-                        const GAP = TOTAL_RANGE * 0.18;
-                        const STEP = ACTIVE + GAP;
-
-                        const start = CARDS_START + i * STEP;
-                        const end = start + ACTIVE;
-
-                        const y = useTransform(rawScrollYProgress, [start, end], ["110vh", "0vh"], { clamp: true });
-                        const rotateX = useTransform(rawScrollYProgress, [start, end], [25, 0], { clamp: true });
-                        const opacity = useTransform(rawScrollYProgress, [start - 0.02, start], [0, 1], { clamp: true });
-
-                        return (
-                            <motion.div
-                                key={card.id}
-                                style={{
-                                    y,
-                                    rotateX,
-                                    opacity,
-                                    transformOrigin: "bottom center",
-                                    zIndex: 50 + i,
-                                }}
-                                whileHover={{
-                                    boxShadow: `0 0 160px 35px ${card.glow}`,
-                                }}
-                                transition={{
-                                    boxShadow: { duration: 0.4, ease: "easeOut" },
-                                }}
-                                className="absolute w-[90vw] md:w-[60vw] rounded-3xl overflow-hidden shadow-2xl group"
-                            >
-
-                                <div className="relative w-full lg:h-[60vh] h-[35vh] ">
-                                    <img src={card.image} alt={card.title} className="w-full h-full object-cover" />
-                                    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-[65%] md:w-[55%] group-hover:w-[85%] transition-[width] duration-500 ease-out ">
-                                        <div className="flex flex-col lg:flex-row items-center justify-between px-6 py-4 bg-white/60 backdrop-blur-lg border border-white/30 rounded-2xl shadow-xl">
-                                            <div className="flex items-center gap-3">
-                                                <span className="relative flex h-3 w-3">
-                                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
-                                                </span>
-                                                <h3 className="text-black font-medium text-sm md:text-base">{card.title}</h3>
-                                            </div>
-                                            <span className="text-black/60 text-xs md:text-sm font-light italic">( Production )</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </motion.div>
-                        );
-                    })}
-                </div>
             </div>
         </section>
     );

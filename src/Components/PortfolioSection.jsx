@@ -60,7 +60,7 @@ const PortfolioSection = () => {
             {/* Grid Layout matches the staggered images in the prompt */}
             <div className="max-w-7xl min-[1024px]:max-w-7xl min-[1280px]:max-w-none min-[1537px]:max-w-none min-[1537px]:w-[100%] min-[1280px]:w-[100%] mx-auto">
                 {/* FIRST ROW – STAGGERED DESIGN */}
-                <div className="flex flex-col lg:flex-row gap-30 items-end">
+                <div className="flex flex-col lg:flex-row lg:gap-30 gap-10 items-end">
 
                     {/* LEFT BIG CARD */}
                     <div className="w-full lg:w-[52%]">
@@ -75,12 +75,12 @@ const PortfolioSection = () => {
                 </div>
 
                 {/* Project 3 (Full Width or Centered depending on layout preference) */}
-                <div className="w-full lg:w-[52%] my-24 mx-auto">
+                <div className="w-full lg:w-[52%] lg:my-24 my-10 mx-auto">
                     <ProjectCard project={projects[2]} />
                 </div>
 
                 {/* Project 4 & 5 Row */}
-                <div className="flex flex-col lg:flex-row gap-30 items-end">
+                <div className="flex flex-col lg:flex-row lg:gap-30 gap-10 items-end">
                     <div className="w-full lg:w-[42%] lg:mt-24">
                         <ProjectCard project={projects[3]} />
                     </div>
@@ -89,7 +89,7 @@ const PortfolioSection = () => {
                     </div>
                 </div>
             </div>
-                  <div className="lg:block hidden pointer-events-none absolute -bottom-30 left-0 w-full h-32 bg-gradient-to-b from-[#040406] to-[#f3f3f3]" />
+            <div className="lg:block hidden pointer-events-none absolute -bottom-30 left-0 w-full h-32 bg-gradient-to-b from-[#040406] to-[#f3f3f3]" />
         </section>
     );
 };
