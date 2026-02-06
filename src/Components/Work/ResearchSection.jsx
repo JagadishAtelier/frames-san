@@ -2,8 +2,8 @@ import React from 'react'
 
 function ResearchSection() {
     return (
-        <section className="w-full px-6 md:px-12 pb-16 overflow-hidden">
-            <div className=" mx-auto flex flex-col gap-12">
+        <section className="w-full px-6 md:px-12 pb-10 overflow-hidden">
+            <div className=" mx-auto flex flex-col lg:gap-12 gap-3">
 
                 {/* Block 1 */}
                 <div className="flex lg:flex-row justify-between items-start flex-col gap-4">

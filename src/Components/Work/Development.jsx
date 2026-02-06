@@ -2,7 +2,7 @@ import React from 'react'
 
 function Development() {
     return (
-        <section className="w-full px-6 md:px-12 pb-16 overflow-hidden">
+        <section className="w-full px-6 md:px-12 pb-10 overflow-hidden">
             <div className=" mx-auto flex flex-col gap-12">
 
                 {/* Block 1 */}

@@ -45,7 +45,7 @@ export default function Navbar({ onOpenModal }) {
 
   return (
     <header
-      className={`fixed lg:top-2 w-full z-[999] transition-transform duration-500
+      className={`fixed lg:top-2 w-full z-40 transition-transform duration-500
         ${showNav ? "translate-y-0" : "-translate-y-32"}
         bg-white lg:bg-transparent shadow-sm lg:shadow-none 
       `}

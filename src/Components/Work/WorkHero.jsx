@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import Navbar from '../Navbar'
 import Footer from '../Footer'
 import ParallaxImage from './ParallaxImage'
@@ -13,9 +13,11 @@ import MoreData from './MoreData'
 import { useParams } from "react-router-dom";
 import { projects } from '../../plugins/projectsData'
 import FAQSection from '../FAQSection'
+import ContactModal from '../ContactModal'
 
 function WorkHero() {
     const { title } = useParams();
+      const [open, setOpen] = useState(false);
     console.log(title)
     const project = projects.find((p) => p.slug === title);
     useEffect(()=>{
@@ -24,7 +26,8 @@ function WorkHero() {
     if (!project) return null;
     return (
         <div className=''>
-            <Navbar />
+            <Navbar onOpenModal={() => setOpen(true)}/>
+                      <ContactModal isOpen={open} onClose={() => setOpen(false)} />
             <div className='flex flex-col gap-5 justify-center items-center text-center md:w-[80%] w-full h-[90vh] mx-auto'>
                 <h1 className='font-handwriting min-[1024px]:text-7xl min-[1280px]:text-8xl min-[1536px]:text-9xl text-2xl text-[#BD0100]' data-aos="fade-down" data-aos-delay="2">{project.title}</h1>
                 <p className='min-[1024px]:text-base min-[1280px]:text-xl min-[1536px]:text-xl min-[1537px]:text-2xl text-base w-[70%]' data-aos="fade-up" data-aos-delay="4">{project.description}</p>

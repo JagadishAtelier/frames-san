@@ -4,7 +4,7 @@ function SliderText() {
     const items = Array(6).fill("More Works");
 
     return (
-        <div data-aos="fade-down" data-aos-delay="2" className="w-full overflow-hidden py-6">
+        <div data-aos="fade-down" data-aos-delay="2" className="w-full overflow-hidden lg:py-6">
             <div
                 className="relative w-full"
                 style={{

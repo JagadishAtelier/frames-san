@@ -25,7 +25,7 @@ min-[1536px]:max-w-[1800px]
           min-[1536px]:px-20
           min-[1537px]:px-24
 
-          pt-20
+          md:pt-20
           py-10
         "
       >

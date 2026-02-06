@@ -28,7 +28,7 @@ const ParallaxImage = ({data }) => {
                 />
             </div>
             <section className="relative w-full mx-auto">
-                <div className="relative flex justify-between p-10 border border-white/10 overflow-hidden">
+                <div className="relative flex md:flex-row flex-col justify-between md:p-10 p-5 border border-white/10 overflow-hidden">
 
                     {/* Category */}
                     <div className="flex flex-col gap-2 z-10" data-aos="fade-right" data-aos-delay="2">

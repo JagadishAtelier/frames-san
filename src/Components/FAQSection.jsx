@@ -49,7 +49,7 @@ const FAQSection = () => {
     };
 
     return (
-        <section className="bg-black text-white min-h-screen lg:py-20 lg:px-6 relative overflow-hidden">
+        <section className="bg-black text-white min-h-screen lg:py-20 pt-10 lg:px-6 relative overflow-hidden">
             <div className="min-[1024px]:w-[80%] w-full mx-auto relative z-10">
                 {/* Header Section */}
                 <div className="text-center lg:mb-16 mb-5" data-aos="fade-down" data-aos-delay="2">
