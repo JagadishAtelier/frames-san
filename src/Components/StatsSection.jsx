@@ -35,7 +35,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section className="flex items-center justify-center relative z-50 mx-auto">
+    <section className="flex items-center justify-center relative z-10 mx-auto">
       <div className="max-w-7xl mx-auto lg:flex lg:gap-3 grid grid-cols-2 md:grid-cols-3 gap-5">
         {stats.map((stat, index) => (
           <StatCard 

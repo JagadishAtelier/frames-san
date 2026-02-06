@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="relative z-50 bg-black text-white overflow-hidden" id="footer">
+    <footer className="relative z-30 bg-black text-white overflow-hidden" id="footer">
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60" />
 

@@ -160,8 +160,9 @@ const ContactModal = ({ isOpen, onClose }) => {
                         href="https://wa.me/918610878315"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-3 rounded-md py-3 bg-green-600 transition"
-                    >
+                        className="flex lg:flex-row flex-col items-center justify-center gap-3 rounded-md py-3 bg-green-600 transition"
+                    >   
+                        <div className="flex gap-2">
                         <img
                             src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
                             alt="WhatsApp"
@@ -170,7 +171,8 @@ const ContactModal = ({ isOpen, onClose }) => {
                         <span className="text-sm font-medium text-white">
                             Reach us on WhatsApp
                         </span>
-                        <span className="text-sm font-semibold text-white">
+                        </div>
+                        <span className="text-sm font-medium text-white">
                             +91 86108 78315
                         </span>
                     </a>
