@@ -52,7 +52,7 @@ const FAQSection = () => {
         <section className="bg-black text-white min-h-screen lg:py-20 lg:px-6 relative overflow-hidden">
             <div className="min-[1024px]:w-[80%] w-full mx-auto relative z-10">
                 {/* Header Section */}
-                <div className="text-center lg:mb-16 mb-5">
+                <div className="text-center lg:mb-16 mb-5" data-aos="fade-down" data-aos-delay="2">
                     <h2 className="text-2xl min[1024px]:text-5xl min-[1280px]:text-5xl min-[1536px]:text-6xl font-bold uppercase">
                         Frequently <br /> Asked Questions
                     </h2>
@@ -61,7 +61,7 @@ const FAQSection = () => {
                 {/* Accordion List */}
                 <div className="border-t border-zinc-800">
                     {faqData.map((item, index) => (
-                        <div key={item.id} className="border-b border-zinc-800">
+                        <div key={item.id} className="border-b border-zinc-800" data-aos="fade-down" data-aos-delay="2">
                             <button
                                 onClick={() => toggleFAQ(index)}
                                 className="w-full flex items-center py-8 text-left group hover:bg-zinc-900/30 transition-all px-4"

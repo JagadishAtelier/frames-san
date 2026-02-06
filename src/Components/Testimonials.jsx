@@ -67,10 +67,10 @@ export default function Testimonials() {
                 {/* HEADER SECTION */}
                 <div className="flex flex-col lg:flex-row justify-between lg:items-center lg:mb-24 gap-8">
                     <div>
-                        <p className="text-sm min-[1556px]:text-lg min-[1557px]:text-lg tracking-[0.2em] text-[#666] uppercase mb-5 font-semibold">
+                        <p data-aos="fade-down" data-aos-delay="0" className="text-sm min-[1556px]:text-lg min-[1557px]:text-lg tracking-[0.2em] text-[#666] uppercase mb-5 font-semibold">
                             TESTIMONIALS
                         </p>
-                        <h2 className="text-6xl lg:text-8xl leading-none uppercase font-anton tracking-wide text-white">
+                        <h2 data-aos="fade-right" data-aos-delay="0" className="text-6xl lg:text-8xl leading-none uppercase font-anton tracking-wide text-white">
                             WHAT MY <br />
                             <span className="text-[#D00] font-handwriting text-5xl lg:text-8xl capitalize ml-1 mt-2 inline-block transform -rotate-2">
                                 Clients Say
@@ -79,7 +79,7 @@ export default function Testimonials() {
                     </div>
 
                     {/* NAVIGATION BUTTONS */}
-                    <div className="flex flex-col-reverse lg:flex-row items-center gap-4 mb-4 ms-auto lg:ms-0">
+                    <div data-aos="fade-left" data-aos-delay="0" className="flex flex-col-reverse lg:flex-row items-center gap-4 mb-4 ms-auto lg:ms-0">
                         <div className="flex gap-4 items-center">
                             <button
                             onClick={() => swiperRef.current?.slidePrev()}
@@ -123,7 +123,7 @@ export default function Testimonials() {
                 >
                     {testimonials.map((item, i) => (
                         <SwiperSlide key={i} style={{height:"-webkit-fill-available"}}>
-                            <div className="h-full group bg-[#0a0a0a] border border-[#1f1f1f] rounded-2xl p-10 hover:border-[#333] transition-all duration-300 relative shadow-2xl shadow-black/50 flex flex-col justify-between">
+                            <div data-aos="fade-down" data-aos-delay="0" className="h-full group bg-[#0a0a0a] border border-[#1f1f1f] rounded-2xl p-10 hover:border-[#333] transition-all duration-300 relative shadow-2xl shadow-black/50 flex flex-col justify-between">
                                 <div className="h-full">
                                     {/* SOCIALS PILL */}
                                     <div className="absolute top-8 right-8 hidden lg:flex items-center gap-4 bg-[#141414] px-5 py-2.5 rounded-full border border-[#222]">

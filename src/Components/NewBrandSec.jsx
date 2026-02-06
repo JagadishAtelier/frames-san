@@ -53,7 +53,7 @@ const isMobile = window.innerWidth < 768;
     const img1Y = useTransform(
         rawScrollYProgress,
         [0.45, 0.75],
-        isMobile ? ["320%", "-320%"] : ["150%", "-220%"],
+        isMobile ? ["340%", "-320%"] : ["150%", "-220%"],
         { clamp: true }
     );
 
@@ -70,8 +70,8 @@ const isMobile = window.innerWidth < 768;
     // IMAGE 3 (moves last)
     const img3Y = useTransform(
         rawScrollYProgress,
-        [0.60, 0.90],
-        isMobile ? ["320%", "-320%"] :["120%", "-220%"],
+        [0.62, 0.92],
+        isMobile ? ["230%", "-320%"] :["150%", "-220%"],
         { clamp: true }
     );
 
@@ -98,6 +98,14 @@ const isMobile = window.innerWidth < 768;
         isMobile ? ["320%", "-320%"] : ["150%", "-220%"],
         { clamp: true }
     );
+/* ---------------- IMAGE FADE EFFECT ---------------- */
+
+const imgOpacity = useTransform(
+  rawScrollYProgress,
+  [0.44, 0.5],
+  [0, 1],
+  { clamp: true }
+);
 
 
     return (
@@ -195,34 +203,34 @@ const isMobile = window.innerWidth < 768;
                     {/* IMAGE 1 */}
                     <motion.img
                         src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
-                        style={{ y: img1Y }}
+                        style={{ y: img1Y , opacity: imgOpacity}}
                         className="absolute left-[8%] top-[48%] md:w-1/4 w-1/2 rounded-xl z-40"
                     />
 
                     {/* IMAGE 2 */}
                     <motion.img
                         src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
-                        style={{ y: img2Y }}
+                        style={{ y: img2Y, opacity: imgOpacity }}
                         className="absolute right-[10%] top-[42%] md:w-1/4 w-1/2 rounded-xl z-40"
                     />
 
                     {/* IMAGE 3 */}
                     <motion.img
                         src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
-                        style={{ y: img3Y }}
-                        className="absolute left-1/2 top-[60%] -translate-x-1/2 md:w-1/4 w-1/2 rounded-xl z-30"
+                        style={{ y: img3Y, opacity: imgOpacity }}
+                        className="absolute right-[10%] top-[42%] md:w-1/4 w-1/2 rounded-xl z-40"
                     />
                     {/* IMAGE 4 */}
                     <motion.img
                         src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
-                        style={{ y: img4Y }}
+                        style={{ y: img4Y, opacity: imgOpacity }}
                         className="absolute left-[8%] top-[48%] md:w-1/4 w-1/2 rounded-xl z-40"
                     />
 
                     {/* IMAGE 5 */}
                     <motion.img
                         src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
-                        style={{ y: img5Y }}
+                        style={{ y: img5Y, opacity: imgOpacity }}
                         className="absolute right-[10%] top-[42%] md:w-1/4 w-1/2 rounded-xl z-40"
                     />
 

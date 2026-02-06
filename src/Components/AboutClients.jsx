@@ -60,11 +60,11 @@ export default function AboutClients() {
                     >
                         {[...clients, ...clients].map((logo, index) => (
                             <SwiperSlide key={index} className="!w-auto flex items-center">
-                                <div className="bg-gray-300 md:p-2 md:w-50 w-30 h-16 lg:h-24 flex justify-center items-center rounded-md">
+                                <div data-aos="fade-down" data-aos-delay="0" className="bg-gray-300 md:p-2 md:w-50 w-30 h-16 lg:h-24 flex justify-center items-center rounded-md">
                                 <img
                                     src={logo.src}
                                     alt="Client logo"
-                                    data-aos="fade-down" data-aos-delay="0"
+                                    
                                     className={`${logo.classes} opacity-80 hover:opacity-100 transition`}
                                 />
                                 </div>

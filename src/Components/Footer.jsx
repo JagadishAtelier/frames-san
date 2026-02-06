@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="relative z-50 bg-black text-white" id="footer">
+    <footer className="relative z-50 bg-black text-white overflow-hidden" id="footer">
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/60" />
 
@@ -33,11 +33,12 @@ min-[1536px]:max-w-[1800px]
 
         {/* TOP CTA */}
         <div className="space-y-10">
-          <p className="text-lg min-[1536px]:text-lg min-[1537px]:text-lg text-white">
+          <p data-aos="fade-right" data-aos-delay="2" className="text-lg min-[1536px]:text-lg min-[1537px]:text-lg text-white">
             Have a moment worth capturing?
           </p>
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
             <p
+            data-aos="fade-right" data-aos-delay="2"
               className="
                 font-semibold
                 text-4xl
@@ -52,6 +53,7 @@ min-[1536px]:max-w-[1800px]
 
             <a
               href="/contact-us"
+              data-aos="fade-left" data-aos-delay="2"
               className="
                 inline-flex
                 w-full
@@ -86,7 +88,7 @@ min-[1536px]:max-w-[1800px]
         <div className="border-t border-white/20 my-10" />
 
         {/* BOTTOM FOOTER */}
-        <div className="flex flex-col lg:flex-row lg:justify-between gap-10">
+        <div className="flex flex-col lg:flex-row lg:justify-between gap-10" >
           {/* NAV */}
           <div className="flex flex-wrap gap-6 text-base min-[1536px]:text-lg min-[1537px]:text-lg font-bold">
             <a href="/" className="hover:opacity-70">Home</a>

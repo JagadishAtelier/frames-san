@@ -15,6 +15,7 @@ const ParallaxImage = ({data }) => {
     return (
         <section
             ref={sectionRef}
+            data-aos="fade-down" data-aos-delay="2"
             className="relative w-full overflow-hidden perspective-[1200px]"
         >
             {/* Fixed container */}
@@ -30,7 +31,7 @@ const ParallaxImage = ({data }) => {
                 <div className="relative flex justify-between p-10 border border-white/10 overflow-hidden">
 
                     {/* Category */}
-                    <div className="flex flex-col gap-2 z-10">
+                    <div className="flex flex-col gap-2 z-10" data-aos="fade-right" data-aos-delay="2">
                         <p className="text-sm min-[1024px]:text-lg min-[1280px]:text-lg min-[1536px]:text-2xl text-gray-600">{data.category}</p>
                         <h5 className="text-lg min-[1024px]:text-lg min-[1280px]:text-2xl min-[1536px]:text-2xl font-medium uppercase">
                             {data.title}
@@ -38,7 +39,7 @@ const ParallaxImage = ({data }) => {
                     </div>
 
                     {/* Product Duration */}
-                    <div className="flex flex-col gap-2 z-10">
+                    <div className="flex flex-col gap-2 z-10" data-aos="fade-left" data-aos-delay="2">
                         <p className="text-sm min-[1024px]:text-lg min-[1280px]:text-lg min-[1536px]:text-2xl text-gray-600">Product Duration</p>
                         <h5 className="text-lg min-[1024px]:text-lg min-[1280px]:text-2xl min-[1536px]:text-2xl font-medium uppercase">
                             3 - 4 Weeks

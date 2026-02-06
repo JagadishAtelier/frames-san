@@ -19,6 +19,7 @@ const ZoomImage = () => {
   return (
     <section
       ref={sectionRef}
+      data-aos="fade-down" data-aos-delay="2"
       className="w-full px-6 md:px-10 pb-10 overflow-hidden"
     >
       <div className="relative max-w-[2560px] mx-auto overflow-hidden rounded-xl h-[30vh] md:h-[90vh]">

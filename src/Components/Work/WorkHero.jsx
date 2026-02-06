@@ -26,9 +26,9 @@ function WorkHero() {
         <div className=''>
             <Navbar />
             <div className='flex flex-col gap-5 justify-center items-center text-center md:w-[80%] w-full h-[90vh] mx-auto'>
-                <h1 className='font-handwriting min-[1024px]:text-7xl min-[1280px]:text-8xl min-[1536px]:text-9xl text-2xl text-[#BD0100]'>{project.title}</h1>
-                <p className='min-[1024px]:text-base min-[1280px]:text-xl min-[1536px]:text-xl min-[1537px]:text-2xl text-base w-[70%]'>{project.description}</p>
-                <div className="mt-10">
+                <h1 className='font-handwriting min-[1024px]:text-7xl min-[1280px]:text-8xl min-[1536px]:text-9xl text-2xl text-[#BD0100]' data-aos="fade-down" data-aos-delay="2">{project.title}</h1>
+                <p className='min-[1024px]:text-base min-[1280px]:text-xl min-[1536px]:text-xl min-[1537px]:text-2xl text-base w-[70%]' data-aos="fade-up" data-aos-delay="4">{project.description}</p>
+                <div className="mt-10" data-aos="zoom-in" data-aos-delay="2">
                     <a href="/contact" className="px-12 py-5 border border-white bg-black text-white rounded-full uppercase tracking-widest hover:bg-[#BD0100] hover:border-[#BD0100] hover:text-white transition-all">
                         Live Preview
                     </a>

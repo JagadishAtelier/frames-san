@@ -26,19 +26,19 @@ const MoreData = () => {
 
 
     return (
-        <section className=" text-black pt-10 pb-16 px-6 md:px-10 relative">
+        <section className=" text-black pt-10 pb-16 px-6 md:px-10 relative overflow-hidden">
             {/* Grid Layout matches the staggered images in the prompt */}
             <div className="max-w-[2560px] mx-auto">
                 {/* FIRST ROW – STAGGERED DESIGN */}
                 <div className="flex flex-col lg:flex-row lg:gap-30 gap-10 items-end">
 
                     {/* LEFT BIG CARD */}
-                    <div className="w-full lg:w-[52%]">
+                    <div className="w-full lg:w-[52%]" data-aos="fade-right" data-aos-delay="2">
                         <ProjectCard project={projects[0]} />
                     </div>
 
                     {/* RIGHT SMALL CARD (OFFSET DOWN) */}
-                    <div className="w-full lg:w-[42%] lg:mt-24">
+                    <div className="w-full lg:w-[42%] lg:mt-24" data-aos="fade-left" data-aos-delay="2">
                         <ProjectCard project={projects[1]} />
                     </div>
 

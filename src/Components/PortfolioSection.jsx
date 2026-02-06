@@ -56,18 +56,18 @@ const PortfolioSection = () => {
 
 
     return (
-        <section id="work" className="bg-black text-white pt-0 pb-16 px-6 min-[1024px]:px-12 min-[1280px]:px-20 relative">
+        <section id="work" className="bg-black text-white pt-0 min-[1024px]:pt-10 min-[1280px]:pt-15 min-[1536px]:pt-0 pb-16 px-6 min-[1024px]:px-12 min-[1280px]:px-20 relative overflow-hidden">
             {/* Top Header Section */}
             <div className="max-w-7xl min-[1024px]:max-w-7xl min-[1280px]:max-w-none min-[1537px]:max-w-none mx-auto mb-16">
-                <div className="flex justify-between items-center">
+                <div data-aos="fade-right" data-aos-delay="0" className="flex justify-between items-center">
                     <span className="text-2xl md:text-2xl font-medium text-white">LATEST PROJECTS</span>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-8 items-center">
-                    <h2 className="text-6xl min-[1024px]:text-8xl min-[1280px]:text-9xl font-bold uppercase font-handwriting tracking-wider text-[#BD0100]">
+                    <h2 data-aos="fade-right" data-aos-delay="0" className="text-6xl min-[1024px]:text-8xl min-[1280px]:text-9xl font-bold uppercase font-handwriting tracking-wider text-[#BD0100]">
                         Our <br /> Services
                     </h2>
-                    <p className="text-white text-lg min-[1024px]:text-lg min-[1280px]:text-xl min-[1536px]:text-2xl md:max-w-xs md:ml-auto">
+                    <p data-aos="fade-left" data-aos-delay="0" className="text-white text-lg min-[1024px]:text-lg min-[1280px]:text-xl min-[1536px]:text-2xl md:max-w-xs md:ml-auto">
                         Precision hydrographics for vehicles and custom gear — flawless finishes, factory-grade durability. Precision dipped. Perfection delivered.
                     </p>
                 </div>
@@ -79,28 +79,28 @@ const PortfolioSection = () => {
                 <div className="flex flex-col lg:flex-row lg:gap-30 gap-10 items-end">
 
                     {/* LEFT BIG CARD */}
-                    <div className="w-full lg:w-[52%]">
+                    <div className="w-full lg:w-[52%]" data-aos="fade-right" data-aos-delay="0">
                         <ProjectCard project={projects[0]} />
                     </div>
 
                     {/* RIGHT SMALL CARD (OFFSET DOWN) */}
-                    <div className="w-full lg:w-[42%] lg:mt-24">
+                    <div className="w-full lg:w-[42%] lg:mt-24" data-aos="fade-left" data-aos-delay="0">
                         <ProjectCard project={projects[1]} />
                     </div>
 
                 </div>
 
                 {/* Project 3 (Full Width or Centered depending on layout preference) */}
-                <div className="w-full lg:w-[52%] lg:my-24 my-10 mx-auto">
+                <div className="w-full lg:w-[52%] lg:my-24 my-10 mx-auto" data-aos="fade-down" data-aos-delay="0">
                     <ProjectCard project={projects[2]} />
                 </div>
 
                 {/* Project 4 & 5 Row */}
                 <div className="flex flex-col lg:flex-row lg:gap-30 gap-10 items-end">
-                    <div className="w-full lg:w-[42%] lg:mt-24">
+                    <div className="w-full lg:w-[42%] lg:mt-24" data-aos="fade-right" data-aos-delay="0">
                         <ProjectCard project={projects[3]} />
                     </div>
-                    <div className="w-full lg:w-[52%]">
+                    <div className="w-full lg:w-[52%]" data-aos="fade-left" data-aos-delay="0">
                         <ProjectCard project={projects[4]} isLarge={true} />
                     </div>
                 </div>

@@ -29,7 +29,7 @@ const ExperienceSection = () => {
 
                 <div className="flex lg:flex-row flex-col justify-between w-full">
                     {/* Left Side: Large Title */}
-                    <div className="w-1/2 lg:sticky relative lg:top-24 top-0 h-fit">
+                    <div data-aos="fade-down" data-aos-delay="0" className="w-1/2 lg:sticky relative lg:top-24 top-0 h-fit">
                         <h2 className="text-2xl md:text-4xl font-bold uppercase">
                             Experiences
                         </h2>
@@ -42,21 +42,21 @@ const ExperienceSection = () => {
                                 <div className='flex justify-between items-start'>
                                     <div className="flex flex-col gap-4">
                                         <div className="flex justify-between items-start">
-                                            <h3 className="text-lg min-[1024px]:text-2xl min-[1280px]:text-2xl min-[1536px]:text-3xl font-bold  text-zinc-100 group-hover:text-white transition-colors">
+                                            <h3 data-aos="fade-down" data-aos-delay="0" className="text-lg min-[1024px]:text-2xl min-[1280px]:text-2xl min-[1536px]:text-3xl font-bold  text-zinc-100 group-hover:text-white transition-colors">
                                                 {exp.title}
                                             </h3>
                                         </div>
 
                                         <div className="flex flex-col justify-between items-start gap-2 text-xs min-[1024px]:text-sm min-[1280px]:text-sm min-[1536px]:text-base font-bold tracking-wider uppercase text-zinc-400">
-                                            <span>{exp.category}</span>
-                                            <div className=" text-zinc-500 block lg:hidden">{exp.date}</div>
+                                            <span data-aos="fade-down" data-aos-delay="0">{exp.category}</span>
+                                            <div data-aos="fade-down" data-aos-delay="0" className=" text-zinc-500 block lg:hidden">{exp.date}</div>
                                         </div>
 
-                                        <p className="text-zinc-400 leading-relaxed max-w-2xl mt-2 text-sm min-[1024px]:text-base min-[1280px]:text-base min-[1536px]:text-xl">
+                                        <p data-aos="fade-down" data-aos-delay="0" className="text-zinc-400 leading-relaxed max-w-2xl mt-2 text-sm min-[1024px]:text-base min-[1280px]:text-base min-[1536px]:text-xl">
                                             {exp.description}
                                         </p>
                                     </div>
-                                    <div className="hidden lg:block text-zinc-500 min-[1024px]:text-base min-[1280px]:text-base min-[1536px]:text-xl">{exp.date}</div>
+                                    <div data-aos="fade-down" data-aos-delay="0" className="hidden lg:block text-zinc-500 min-[1024px]:text-base min-[1280px]:text-base min-[1536px]:text-xl">{exp.date}</div>
                                 </div>
                             </div>
                         ))}
