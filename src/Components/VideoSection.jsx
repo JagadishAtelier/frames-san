@@ -10,7 +10,7 @@ function VideoSection() {
                 <div className="group relative cursor-pointer transition-transform duration-500">
 
                     <video
-                        src="https://framerusercontent.com/assets/H9MXKNvW25MQd8KJXISTeLMW21U.mp4"
+                        src="/FOS OUT_prob3.mp4"
                         autoPlay
                         loop
                         muted

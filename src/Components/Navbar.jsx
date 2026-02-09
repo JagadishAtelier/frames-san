@@ -105,12 +105,12 @@ export default function Navbar({ onOpenModal }) {
           >
             {/* Profile Image */}
             <div className="bg-white rounded-full w-10 h-10 p-1.5">
-            <img
-              src="/LOGO2.png"
-              className="w-full h-full flex-shrink-0 invert brightness-100"
-              alt="Santhosh"
-            />
-</div>
+              <img
+                src="/LOGO2.png"
+                className="w-full h-full flex-shrink-0 invert brightness-100"
+                alt="Santhosh"
+              />
+            </div>
             {/* Hidden text (reveals on hover) */}
             <div
               className="
