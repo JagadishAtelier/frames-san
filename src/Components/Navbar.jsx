@@ -78,7 +78,7 @@ export default function Navbar({ onOpenModal }) {
 
           {/* NAV LINKS (DESKTOP ONLY) */}
           <nav
-            className={`hidden lg:flex gap-10 text-sm font-medium transition-all duration-300
+            className={`hidden lg:flex gap-10 text-sm min-[1024px]:text-sm min-[1280px]:text-sm min-[1536px]:text-base font-medium transition-all duration-300
               ${isAtTop
                 ? "bg-transparent px-0 py-0 text-black justify-center items-baseline"
                 : "bg-white px-6 py-3 rounded-2xl text-black mx-auto w-fit shadow-lg items-center"}
@@ -126,14 +126,14 @@ export default function Navbar({ onOpenModal }) {
       text-left
     "
             >
-              <p className="text-sm font-medium whitespace-nowrap uppercase">Santhosh</p>
-              <p className="text-xs text-zinc-400 whitespace-nowrap">
+              <p className="text-sm min-[1024px]:text-sm min-[1280px]:text-sm min-[1536px]:text-base font-medium whitespace-nowrap uppercase">Santhosh</p>
+              <p className="text-xs min-[1024px]:text-xs min-[1280px]:text-xs min-[1536px]:text-sm text-zinc-400 whitespace-nowrap">
                 Photographer
               </p>
             </div>
 
             {/* CTA Button */}
-            <span className="ml-3 bg-white text-black px-5 py-2  rounded-full font-medium text-sm uppercase whitespace-nowrap">
+            <span className="ml-3 bg-white text-black px-5 py-2  rounded-full font-medium text-sm min-[1024px]:text-sm min-[1280px]:text-sm min-[1536px]:text-base uppercase whitespace-nowrap">
               Book a call
             </span>
           </button>
