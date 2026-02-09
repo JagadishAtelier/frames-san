@@ -104,7 +104,7 @@ export default function Navbar({ onOpenModal }) {
             className="group lg:flex hidden items-center bg-black text-white rounded-full p-2 hover:bg-zinc-900 w-fit transition-all duration-300"
           >
             {/* Profile Image */}
-            <div className="bg-white rounded-full w-10 h-10 ">
+            <div className="bg-white rounded-full w-10 h-10 p-1.5">
             <img
               src="/LOGO2.png"
               className="w-full h-full flex-shrink-0 invert brightness-100"

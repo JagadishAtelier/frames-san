@@ -2,7 +2,7 @@ import React from "react";
 
 function VideoSection() {
     return (
-        <section className="relative flex md:h-screen w-full items-center justify-center bg-black overflow-hidden">
+        <section className="relative flex md:h-screen w-full items-center justify-center bg-[#040406] overflow-hidden">
 
             {/* Content Container */}
             <div className="relative z-10 flex flex-col items-center">

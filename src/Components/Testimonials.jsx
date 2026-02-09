@@ -70,7 +70,7 @@ export default function Testimonials() {
                         <p data-aos="fade-down" data-aos-delay="0" className="text-sm min-[1556px]:text-lg min-[1557px]:text-lg tracking-[0.2em] text-[#666] uppercase mb-5 font-semibold">
                             TESTIMONIALS
                         </p>
-                        <h2 data-aos="fade-right" data-aos-delay="0" className="text-6xl lg:text-8xl leading-none uppercase font-anton tracking-wide text-white">
+                        <h2 data-aos="fade-right" data-aos-delay="0" className="text-6xl lg:text-8xl leading-none uppercase  text-white">
                             WHAT MY <br />
                             <span className="text-[#D00] font-handwriting text-5xl lg:text-8xl capitalize ml-1 mt-2 inline-block transform -rotate-2">
                                 Clients Say

@@ -56,7 +56,7 @@ const PortfolioSection = () => {
 
 
     return (
-        <section id="work" className="bg-black text-white pt-0 min-[1024px]:pt-10 min-[1280px]:pt-15 min-[1536px]:pt-0 pb-16 px-6 min-[1024px]:px-12 min-[1280px]:px-20 relative overflow-hidden">
+        <section id="work" className="bg-[#040406] text-white pt-0 min-[1024px]:pt-10 min-[1280px]:pt-15 min-[1536px]:pt-0 pb-16 px-6 min-[1024px]:px-12 min-[1280px]:px-20 relative overflow-hidden">
             {/* Top Header Section */}
             <div className="max-w-7xl min-[1024px]:max-w-7xl min-[1280px]:max-w-none min-[1537px]:max-w-none mx-auto mb-16">
                 <div data-aos="fade-right" data-aos-delay="0" className="flex justify-between items-center">

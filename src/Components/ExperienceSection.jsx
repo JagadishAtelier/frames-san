@@ -1,24 +1,24 @@
 import React from 'react';
 
 const experiences = [
-    {
-        title: "HYDRO GRAPHICS SPECIALIST",
-        category: "Automotive & Product Customization",
-        date: "2022 - PRESENT",
-        description: "Crafted premium hydrographic finishes using water-transfer printing for complex automotive and lifestyle surfaces. Delivered seamless, durable patterns that elevate product aesthetics beyond traditional paint or wraps."
-    },
-    {
-        title: "CUSTOM FINISHING & QUALITY CONTROL",
-        category: "SURFACE PREPARATION & COATING",
-        date: "2022 - PRESENT",
-        description: "Prepared and treated surfaces through sanding, priming, dipping, and clear coating to ensure long-lasting adhesion and flawless finishes. Maintained consistent quality standards across every customized component."
-    },
-    {
-        title: "CLIENT COLLABORATION",
-        category: "CUSTOM PROJECT HANDLING",
-        date: "2012 – 2013",
-        description: "Worked closely with clients to understand design preferences and usage needs. Delivered tailored hydrographic solutions that balanced aesthetics, durability, and functionality."
-    }
+{
+    title: "PROFESSIONAL PHOTOGRAPHER",
+    category: "PORTRAIT, PRODUCT & EVENT PHOTOGRAPHY",
+    date: "2022 - PRESENT",
+    description: "Captured high-quality portraits, product shots, and event photography with a strong focus on composition, lighting, and storytelling. Delivered visually compelling images aligned with client branding and creative goals."
+  },
+  {
+    title: "PHOTO EDITING & POST-PRODUCTION",
+    category: "LIGHTROOM & PHOTOSHOP",
+    date: "2022 - PRESENT",
+    description: "Performed advanced photo retouching, color correction, and image optimization using Adobe Lightroom and Photoshop to ensure professional-grade output across digital and print platforms."
+  },
+  {
+    title: "CLIENT COLLABORATION & CREATIVE DIRECTION",
+    category: "CUSTOM PHOTOSHOOTS",
+    date: "2021 - PRESENT",
+    description: "Worked closely with clients to understand concepts, themes, and usage requirements. Planned and executed customized photoshoots that balanced creativity, technical precision, and client expectations."
+  }
 ];
 
 const ExperienceSection = () => {

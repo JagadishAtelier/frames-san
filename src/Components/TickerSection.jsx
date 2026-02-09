@@ -133,7 +133,7 @@ export default function TickerSection() {
                      bg-white px-10 py-3 rounded-full text-2xl font-bold"
         >
           <img src="https://cdn.prod.website-files.com/681af738842b1d81a3872bfb/681c8b1ac28985d91e1df7e8_Button%20CTA%20Icon.svg" />
-          <p className="font-handwriting">frames_of_san</p>
+          <p className="">frames_of_san</p>
         </a>
 
         {/* HERO */}

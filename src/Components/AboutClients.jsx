@@ -18,7 +18,7 @@ const clients = [
 
 export default function AboutClients() {
     return (
-        <section className="pt-20 text-black overflow-hidden bg-black">
+        <section className="pt-20 text-black overflow-hidden bg-[#040406]">
             <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-1 grid-cols-1 gap-20 items-center">
 
                 {/* LEFT CONTENT */}

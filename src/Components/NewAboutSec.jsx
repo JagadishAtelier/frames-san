@@ -53,7 +53,7 @@ function NewAboutSec() {
                 text="About Us"
                 progress={aboutUsProgress}
                 limit={0.1}
-                className="text-2xl md:text-3xl font-medium text-white"
+                className="text-2xl md:text-3xl font-semibold text-white uppercase"
               />
               <div className="w-full">
                 <AnimatedWords
@@ -123,7 +123,7 @@ function NewAboutSec() {
 
           {/* TEXT */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-medium text-white">
+            <h2 className="text-2xl font-semibold uppercase text-white">
               About Us
             </h2>
 
