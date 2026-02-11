@@ -6,9 +6,9 @@ import MarqueeText from "./MarqueeText";
 
 const CTASection = () => {
   const images = [
-    "/h4.jpg",
-    "/h2.jpg", // Replace with your 2nd image
-    "/h6.jpg", // Replace with your 3rd image
+    "/sliderImage/s1.jpeg",
+    "/sliderImage/s2.jpeg", // Replace with your 2nd image
+    "/sliderImage/s3.jpeg", // Replace with your 3rd image
   ];
 
   const cardVariants = {

@@ -6,18 +6,18 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
 const images = [
-  "/follow/f7.jpg",
-  "/follow/f2.jpg",
-  "/follow/f3.jpg",
-  "/follow/f4.jpg",
-  "/follow/f5.jpg",
-  "/follow/f6.jpg",
-  "/follow/f7.jpg",
-  "/follow/f1.jpg",
-  "/follow/f2.jpg",
-  "/follow/f3.jpg",
-  "/follow/f4.jpg",
-  "/follow/f1.jpg",
+  "/Ticker/t2.jpeg",
+  "/Ticker/t1.jpeg",
+  "/Ticker/t3.jpeg",
+  "/Ticker/t4.jpeg",
+  "/Ticker/t5.jpeg",
+  "/Ticker/t6.jpeg",
+  "/Ticker/t7.jpeg",
+    "/Ticker/t11.jpeg",
+  "/Ticker/t8.jpeg",
+  "/Ticker/t9.jpeg",
+  "/Ticker/t10.jpeg",
+    "/follow/f1.jpg",
 ];
 
 export default function TickerSection() {

@@ -87,7 +87,7 @@ const isMobile = window.innerWidth < 768;
     const img5Y = useTransform(
         rawScrollYProgress,
          [0.76, 1.06],
-        isMobile ? ["350%", "-320%"] :["150%", "-220%"],
+        isMobile ? ["370%", "-320%"] :["150%", "-220%"],
         { clamp: true }
     );
 
@@ -202,36 +202,36 @@ const imgOpacity = useTransform(
                     {/* FLOATING IMAGES */}
                     {/* IMAGE 1 */}
                     <motion.img
-                        src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
+                        src="/BrandImage/b1.jpeg"
                         style={{ y: img1Y , opacity: imgOpacity}}
-                        className="absolute left-[8%] top-[48%] md:w-1/4 w-1/2 rounded-xl z-40"
+                        className="absolute left-[8%] top-[48%] md:w-1/4 w-1/2 lg:h-[70vh] md:h-[40vh] h-[35vh] rounded-xl z-40 object-cover"
                     />
 
                     {/* IMAGE 2 */}
                     <motion.img
-                        src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
+                        src="/BrandImage/b2.jpeg"
                         style={{ y: img2Y, opacity: imgOpacity }}
-                        className="absolute right-[10%] top-[42%] md:w-1/4 w-1/2 rounded-xl z-40"
+                        className="absolute right-[10%] top-[42%] md:w-1/4 w-1/2 rounded-xl z-40 lg:h-[70vh] md:h-[40vh] h-[35vh] object-cover"
                     />
 
                     {/* IMAGE 3 */}
                     <motion.img
-                        src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
+                        src="/BrandImage/b4.jpeg"
                         style={{ y: img3Y, opacity: imgOpacity }}
-                        className="absolute right-[10%] top-[42%] md:w-1/4 w-1/2 rounded-xl z-40"
+                        className="absolute right-[10%] top-[42%] md:w-1/4 w-1/2 rounded-xl z-40 lg:h-[70vh] md:h-[40vh] h-[35vh] object-cover"
                     />
                     {/* IMAGE 4 */}
                     <motion.img
-                        src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
+                        src="/BrandImage/b5.jpeg"
                         style={{ y: img4Y, opacity: imgOpacity }}
-                        className="absolute left-[8%] top-[48%] md:w-1/4 w-1/2 rounded-xl z-40"
+                        className="absolute left-[8%] top-[48%] md:w-1/4 w-1/2 rounded-xl z-40 lg:h-[70vh] md:h-[40vh] h-[35vh] object-cover"
                     />
 
                     {/* IMAGE 5 */}
                     <motion.img
-                        src="https://framerusercontent.com/images/tsluI8yTSUaemKTnvdjeZLUdbI.jpeg?scale-down-to=1024&width=960&height=1280"
+                        src="/BrandImage/b7.jpeg"
                         style={{ y: img5Y, opacity: imgOpacity }}
-                        className="absolute right-[10%] top-[42%] md:w-1/4 w-1/2 rounded-xl z-40"
+                        className="absolute right-[10%] top-[42%] md:w-1/4 w-1/2 rounded-xl z-40 lg:h-[70vh] md:h-[40vh] h-[35vh] object-cover"
                     />
 
                     {/* IMAGE 6 */}
